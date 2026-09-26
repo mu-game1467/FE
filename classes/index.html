@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クラス - FE万紫千紅 データベース</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <h1>ファイアーエムブレム 万紫千紅 データベース</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="../characters/">キャラクター</a></li>
+                <li><a href="../classes/" class="active">クラス</a></li>
+                <li><a href="../skills/">スキル</a></li>
+                <li><a href="../items/">アイテム</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>クラス</h2>
+            <p class="page-note">階級・成長ボーナス・移動力・使用可能技能・解放条件。</p>
+            <div id="toolbar"></div>
+            <div id="classes-list" class="data-grid"></div>
+        </section>
+    </main>
+    <footer>
+        <p>FE万紫千紅 個人用データベース</p>
+        <p class="credit">データは <a href="https://game8.jp/fe-banshisenko" target="_blank" rel="noopener">ゲームエイト「FE 万紫千紅」</a> の公開データを加工して生成（<code>tools/build-from-game8.ps1</code>）</p>
+    </footer>
+    <script src="../app.js"></script>
+</body>
+</html>

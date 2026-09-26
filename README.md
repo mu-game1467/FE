@@ -5,22 +5,35 @@
 
 ## ページ
 
+公開URLは <https://mu-game1467.github.io/FE/> です。末尾に `.html` を付けない
+ディレクトリ形式（`/FE/characters/` など）でアクセスできます。
+
 | ページ | 内容 | データ |
 |--------|------|--------|
-| `index.html` | ダッシュボード | - |
-| `characters.html` | 64名のキャラクター。成長率・ルート別の加入条件（支援Lv／名声Lv）、カード表示／早見表表示の切替 | `data/characters.json` |
-| `classes.html` | 60兵種。階級・成長ボーナス・移動力・使用可能技能・解放条件 | `data/classes.json` |
-| `skills.html` | 個人スキル・血印・ルーツ・ブレイズアーツ／スキル／タイプ・兵種＆マスタースキル | `data/skills.json` |
-| `items.html` | 消費アイテム・指南書など（手入力データ） | `data/items.json` |
+| `index.html` → `/FE/` | ダッシュボード | - |
+| `characters/index.html` → `/FE/characters/` | 64名のキャラクター。成長率・ルート別の加入条件（支援Lv／名声Lv）、カード表示／早見表表示の切替 | `data/characters.json` |
+| `classes/index.html` → `/FE/classes/` | 60兵種。階級・成長ボーナス・移動力・使用可能技能・解放条件 | `data/classes.json` |
+| `skills/index.html` → `/FE/skills/` | 個人スキル・血印・ルーツ・ブレイズアーツ／スキル／タイプ・兵種＆マスタースキル | `data/skills.json` |
+| `items/index.html` → `/FE/items/` | 消費アイテム・指南書など（手入力データ） | `data/items.json` |
+
+各ページは1ディレクトリ下に置いてあり（`characters/index.html`）、
+GitHub Pages が `…/characters/` を `characters/index.html` に解決します。
+ルート直下の `characters.html` などは、旧的リンクが壊れないように
+`characters/` へ（meta refresh で）転送するだけのページに留めています。
 
 ## 構成
 
-- `index.html` `characters.html` `classes.html` `skills.html` `items.html`
+- `index.html` — ダッシュボード
+- `characters/` `classes/` `skills/` `items/` — 各ページ（`index.html` を内包）
 - `styles.css` - スタイルシート
 - `app.js` - データ読み込み・検索・並び替え・表示ロジック
 - `data/` - JSONデータファイル
 - `tools/build-from-game8.ps1` - データを再生成するスクリプト
+- `tools/serve.ps1` - ローカル確認用の簡易HTTPサーバー
 - `tools/MAPPINGS.md` - 元JSONの列（`col_1`…）と出力キーの対応表
+
+`app.js` はページがルート直下（`index.html`）でも1階層下（`characters/index.html`）でも
+動くよう、`data/` のJSONを `data/…` → `../data/…` の順に試行して読み込みます。
 
 ## データの再生成
 

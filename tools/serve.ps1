@@ -25,6 +25,11 @@ try {
         $path = [System.Net.WebUtility]::UrlDecode($ctx.Request.Url.AbsolutePath).TrimStart('/')
         if ($path -eq '') { $path = 'index.html' }
         $file = Join-Path $Root ($path -replace '/', '\')
+        # GitHub Pages serves <dir>/index.html for directory URLs; do the same so
+        # the clean URLs (/characters/) can be checked locally too.
+        if ((Test-Path -LiteralPath $file -PathType Container)) {
+            $file = Join-Path $file 'index.html'
+        }
         if (Test-Path -LiteralPath $file -PathType Leaf) {
             $mime = switch ([System.IO.Path]::GetExtension($file).ToLower()) {
                 '.html' { 'text/html; charset=utf-8' }

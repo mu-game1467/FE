@@ -482,6 +482,29 @@ function buildToolbar() {
 
 /* -------------------------------------------------------------- boot -- */
 
+/**
+ * The data files live in <site root>/data, while the pages live either at the
+ * site root (index.html) or one folder deep (characters/index.html). Trying both
+ * relative prefixes keeps every page working at either depth.
+ */
+function dataCandidates(file) {
+    return [file, `../${file}`];
+}
+
+async function fetchJson(page) {
+    let lastError = null;
+    for (const candidate of dataCandidates(page.file)) {
+        try {
+            const response = await fetch(candidate);
+            if (response.ok) return await response.json();
+            lastError = new Error(`${candidate} -> ${response.status}`);
+        } catch (error) {
+            lastError = error;
+        }
+    }
+    throw lastError || new Error(`could not load ${page.file}`);
+}
+
 async function loadData() {
     state.type = currentType();
     if (!state.type) return;
@@ -491,9 +514,7 @@ async function loadData() {
     if (!container) return;
 
     try {
-        const response = await fetch(page.file);
-        if (!response.ok) throw new Error(response.statusText);
-        const data = await response.json();
+        const data = await fetchJson(page);
         state.data = Array.isArray(data) ? data : [];
     } catch (error) {
         console.error(`Failed to load ${page.file}`, error);
