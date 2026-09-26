@@ -434,12 +434,13 @@ function sortByRoute(list, routeId, order) {
         if (!ea) return 1;
         if (!eb) return -1;
 
+        // ascending: the comparator must return a - b so the smallest comes first
         let diff = 0;
         if (order === 'fame' || order === 'both') {
-            diff = (eb.fame_level ?? Number.MAX_SAFE_INTEGER) - (ea.fame_level ?? Number.MAX_SAFE_INTEGER);
+            diff = (ea.fame_level ?? Number.MAX_SAFE_INTEGER) - (eb.fame_level ?? Number.MAX_SAFE_INTEGER);
         }
         if (!diff && (order === 'support' || order === 'both')) {
-            diff = (eb.support_level ?? Number.MAX_SAFE_INTEGER) - (ea.support_level ?? Number.MAX_SAFE_INTEGER);
+            diff = (ea.support_level ?? Number.MAX_SAFE_INTEGER) - (eb.support_level ?? Number.MAX_SAFE_INTEGER);
         }
         return diff || byName(a, b);
     });
@@ -746,9 +747,9 @@ function buildToolbar() {
                 <label>
                     <span>並び替え</span>
                     <select id="table-order">
-                        <option value="both"${state.tableOrder === 'both' ? ' selected' : ''}>名声 → 支援の順</option>
-                        <option value="fame"${state.tableOrder === 'fame' ? ' selected' : ''}>名声の小さい順</option>
-                        <option value="support"${state.tableOrder === 'support' ? ' selected' : ''}>支援の小さい順</option>
+                        <option value="both"${state.tableOrder === 'both' ? ' selected' : ''}>名声 → 支援の少ない順</option>
+                        <option value="fame"${state.tableOrder === 'fame' ? ' selected' : ''}>名声の少ない順</option>
+                        <option value="support"${state.tableOrder === 'support' ? ' selected' : ''}>支援の少ない順</option>
                         <option value="name"${state.tableOrder === 'name' ? ' selected' : ''}>名前順</option>
                     </select>
                 </label>
