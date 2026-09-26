@@ -261,6 +261,26 @@ footer {
     color: #8b7355;
 }
 
+/* table view only controls (route + order) */
+#table-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid #e8ddd0;
+}
+
+#table-controls[hidden] { display: none; }
+
+#table-controls label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: #6d4c41;
+}
+
 /* -------------------------------------------------------------- card -- */
 .card-head {
     display: flex;
@@ -418,6 +438,8 @@ table.hayakabe { min-width: 720px; }
 table.hayakabe td.na { color: #bcae9e; text-align: center; }
 table.hayakabe .sticky { background: #faf6f0; white-space: nowrap; }
 table.hayakabe tbody tr:hover td, table.hayakabe tbody tr:hover th { background: #fdf3e7; }
+table.hayakabe .is-active { background: #fdf3e7; box-shadow: inset 1px 0 0 #d9b98c, inset -1px 0 0 #d9b98c; }
+table.hayakabe thead th.is-active { background: #f6e7d8; color: #8b4513; }
 
 .cell-main { display: block; font-weight: 600; color: #5d4037; }
 .cell-sub { display: block; color: #8b7355; font-size: 0.72rem; }

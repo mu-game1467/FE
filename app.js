@@ -37,7 +37,9 @@ const state = {
     data: [],
     query: '',
     sort: 'default',
-    view: 'cards'
+    view: 'cards',
+    tableRoute: 'kai',
+    tableOrder: 'both'
 };
 
 /* ------------------------------------------------------------ helpers -- */
@@ -220,15 +222,14 @@ function renderCharacter(item) {
 }
 
 /* the "hayakabe" view: one row per unit, one column per route */
-function renderRecruitTable() {
-    const list = state.data.filter(matchesQuery);
+function renderRecruitTable(list) {
     return `
         <div class="tablewrap">
             <table class="hayakabe">
                 <thead>
                     <tr>
                         <th class="sticky">キャラ</th>
-                        ${ROUTES.map((r) => `<th>${esc(r.label)}</th>`).join('')}
+                        ${ROUTES.map((r) => `<th class="${r.id === state.tableRoute ? 'is-active' : ''}">${esc(r.label)}</th>`).join('')}
                     </tr>
                 </thead>
                 <tbody>
@@ -237,12 +238,13 @@ function renderRecruitTable() {
                         <th class="sticky">${esc(item.name)}</th>
                         ${ROUTES.map((r) => {
                             const e = (item.recruit || {})[r.id];
-                            if (!e) return '<td class="na">-</td>';
-                            if (e.method === '対象外') return '<td class="na">対象外</td>';
+                            const active = r.id === state.tableRoute ? ' class="is-active"' : '';
+                            if (!e) return `<td class="na"${active}>-</td>`;
+                            if (e.method === '対象外') return `<td class="na"${active}>対象外</td>`;
                             if (e.fame_level === undefined) {
-                                return `<td><span class="cell-main">${esc(e.method || '')}</span><span class="cell-sub">${esc([e.part, e.stage].filter(Boolean).join(' '))}</span></td>`;
+                                return `<td${active}><span class="cell-main">${esc(e.method || '')}</span><span class="cell-sub">${esc([e.part, e.stage].filter(Boolean).join(' '))}</span></td>`;
                             }
-                            return `<td>
+                            return `<td${active}>
                                 <span class="cell-main">支援${esc(e.support_level)} / 名声${esc(e.fame_level)}</span>
                                 <span class="cell-sub">${esc([e.stage, e.place].filter(Boolean).join(' '))}</span>
                             </td>`;
@@ -293,8 +295,6 @@ function renderClass(item) {
                     <h4>使用可能技能</h4>
                     ${tagList(item.usable_skills)}
                 </div>` : ''}
-
-                ${item.source_url ? `<a class="source" href="${esc(item.source_url)}" target="_blank" rel="noopener">出典</a>` : ''}
             </div>
         </article>`;
 }
@@ -354,17 +354,24 @@ function renderList() {
     const container = listElement(state.type);
     if (!container) return;
 
-    let list = state.data.filter(matchesQuery);
-    list = sortData(list, state.sort);
+    const filtered = state.data.filter(matchesQuery);
+    const isTable = state.type === 'characters' && state.view === 'table';
+    const list = isTable
+        ? sortByRoute(filtered, state.tableRoute, state.tableOrder)
+        : sortData(filtered, state.sort);
+
+    const tableControls = document.getElementById('table-controls');
+    if (tableControls) tableControls.hidden = !isTable;
 
     if (!list.length) {
+        container.classList.remove('as-table');
         container.innerHTML = emptyState(`${get(state.type).label}が見つかりません`);
         return;
     }
 
-    if (state.type === 'characters' && state.view === 'table') {
+    if (isTable) {
         container.classList.add('as-table');
-        container.innerHTML = renderRecruitTable();
+        container.innerHTML = renderRecruitTable(list);
     } else {
         container.classList.remove('as-table');
         const render = RENDERERS[state.type] || renderItem;
@@ -393,6 +400,42 @@ function sortData(list, mode) {
 
 function statTotal(item, key) {
     return ((item.growth_rates || {})[key] || 0) + ((item.growth_bonus || {})[key] || 0);
+}
+
+/** support / fame level of a unit on one route, or null when it does not apply */
+function routeLevels(item, routeId) {
+    const entry = (item.recruit || {})[routeId];
+    if (!entry) return null;
+    const hasSupport = typeof entry.support_level === 'number';
+    const hasFame = typeof entry.fame_level === 'number';
+    return hasSupport || hasFame ? entry : null;
+}
+
+/**
+ * Sort the recruit table by the support / fame numbers of one route.
+ * order: 'name' | 'fame' | 'support' | 'both' (fame first, then support).
+ * Units that cannot be recruited on that route are kept but pushed to the end.
+ */
+function sortByRoute(list, routeId, order) {
+    const byName = (a, b) => a.name.localeCompare(b.name, 'ja');
+    if (order === 'name') return list.slice().sort(byName);
+
+    return list.slice().sort((a, b) => {
+        const ea = routeLevels(a, routeId);
+        const eb = routeLevels(b, routeId);
+        if (!ea && !eb) return byName(a, b);
+        if (!ea) return 1;
+        if (!eb) return -1;
+
+        let diff = 0;
+        if (order === 'fame' || order === 'both') {
+            diff = (eb.fame_level ?? Number.MAX_SAFE_INTEGER) - (ea.fame_level ?? Number.MAX_SAFE_INTEGER);
+        }
+        if (!diff && (order === 'support' || order === 'both')) {
+            diff = (eb.support_level ?? Number.MAX_SAFE_INTEGER) - (ea.support_level ?? Number.MAX_SAFE_INTEGER);
+        }
+        return diff || byName(a, b);
+    });
 }
 
 function tierIndex(tier) {
@@ -453,7 +496,24 @@ function buildToolbar() {
                     <option value="cards"${state.view === 'cards' ? ' selected' : ''}>カード</option>
                     <option value="table"${state.view === 'table' ? ' selected' : ''}>加入条件の早見表</option>
                 </select>
-            </label>` : ''}
+            </label>
+            <span class="control" id="table-controls" hidden>
+                <label>
+                    <span>ルート</span>
+                    <select id="table-route">
+                        ${ROUTES.map((r) => `<option value="${esc(r.id)}"${r.id === state.tableRoute ? ' selected' : ''}>${esc(r.label)}</option>`).join('')}
+                    </select>
+                </label>
+                <label>
+                    <span>並び替え</span>
+                    <select id="table-order">
+                        <option value="both"${state.tableOrder === 'both' ? ' selected' : ''}>名声 → 支援の順</option>
+                        <option value="fame"${state.tableOrder === 'fame' ? ' selected' : ''}>名声の小さい順</option>
+                        <option value="support"${state.tableOrder === 'support' ? ' selected' : ''}>支援の小さい順</option>
+                        <option value="name"${state.tableOrder === 'name' ? ' selected' : ''}>名前順</option>
+                    </select>
+                </label>
+            </span>` : ''}
             <span class="result-count" id="result-count"></span>
         </div>`;
 
@@ -475,6 +535,20 @@ function buildToolbar() {
     if (view) {
         view.addEventListener('change', (event) => {
             state.view = event.target.value;
+            renderList();
+        });
+    }
+    const tableRoute = host.querySelector('#table-route');
+    if (tableRoute) {
+        tableRoute.addEventListener('change', (event) => {
+            state.tableRoute = event.target.value;
+            renderList();
+        });
+    }
+    const tableOrder = host.querySelector('#table-order');
+    if (tableOrder) {
+        tableOrder.addEventListener('change', (event) => {
+            state.tableOrder = event.target.value;
             renderList();
         });
     }
