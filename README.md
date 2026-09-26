@@ -8,7 +8,7 @@
 | ページ | 内容 | データ |
 |--------|------|--------|
 | `index.html` | ダッシュボード | - |
-| `characters.html` | 64名のキャラクター。成長率・登場時ステータス・ルート別の加入条件（支援Lv／名声Lv）、カード表示／早見表表示の切替 | `data/characters.json` |
+| `characters.html` | 64名のキャラクター。成長率・ルート別の加入条件（支援Lv／名声Lv）、カード表示／早見表表示の切替 | `data/characters.json` |
 | `classes.html` | 60兵種。階級・成長ボーナス・移動力・使用可能技能・解放条件 | `data/classes.json` |
 | `skills.html` | 個人スキル・血印・ルーツ・ブレイズアーツ／スキル／タイプ・兵種＆マスタースキル | `data/skills.json` |
 | `items.html` | 消費アイテム・指南書など（手入力データ） | `data/items.json` |

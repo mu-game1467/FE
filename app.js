@@ -145,11 +145,9 @@ function emptyState(message) {
 
 function renderCharacter(item) {
     const growth = item.growth_rates || {};
-    const start = item.start || {};
 
     const badges = [];
     if (item.gender) badges.push(`<span class="tag">${esc(item.gender)}</span>`);
-    if (start.class) badges.push(`<span class="tag tag-class">${esc(start.class)}${start.level ? ' Lv' + esc(start.level) : ''}</span>`);
     if (item.blaze_type) badges.push(`<span class="tag tag-blaze">${esc(item.blaze_type)}</span>`);
     if (item.blaze_skill) badges.push(`<span class="tag tag-blaze">${esc(item.blaze_skill)}</span>`);
     if (item.blaze_arts) badges.push(`<span class="tag tag-blaze">${esc(item.blaze_arts)}</span>`);
@@ -215,11 +213,8 @@ function renderCharacter(item) {
                 </div>` : ''}
 
                 ${rows([
-                    ['好きなもの', item.favorites],
-                    ['声優', item.voice_actor]
+                    ['好きなもの', item.favorites]
                 ])}
-
-                ${item.source_url ? `<a class="source" href="${esc(item.source_url)}" target="_blank" rel="noopener">出典</a>` : ''}
             </div>
         </article>`;
 }
