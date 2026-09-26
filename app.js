@@ -174,7 +174,7 @@ function renderCharacter(item) {
         <article class="card" data-id="${esc(item.id)}">
             <div class="card-content">
                 <header class="card-head">
-                    <h3 class="card-name">${esc(item.name)}</h3>
+                    <h3 class="card-name"><a href="${encodeURIComponent(item.id)}/">${esc(item.name)}</a></h3>
                     <div class="taglist">${badges.join('')}</div>
                 </header>
 
@@ -388,18 +388,25 @@ function sortData(list, mode) {
     switch (mode) {
         case 'name':      return copy.sort(byName);
         case 'name-desc': return copy.sort((a, b) => byName(b, a));
-        case 'total':     return copy.sort((a, b) => ((b.growth_rates || {}).total || 0) - ((a.growth_rates || {}).total || 0));
-        case 'hp':        return copy.sort((a, b) => statTotal(b, 'hp') - statTotal(a, 'hp'));
-        case 'spd':       return copy.sort((a, b) => statTotal(b, 'spd') - statTotal(a, 'spd'));
+        case 'total':     return copy.sort((a, b) => statTotal(b) - statTotal(a));
         case 'movement':  return copy.sort((a, b) => (b.movement || 0) - (a.movement || 0));
         case 'tier':      return copy.sort((a, b) => tierIndex(a.tier) - tierIndex(b.tier) || byName(a, b));
         case 'type':      return copy.sort((a, b) => String(a.type || '').localeCompare(String(b.type || ''), 'ja') || byName(a, b));
-        default:          return copy;
+        default:
+            if (STAT_KEYS.has(mode)) {
+                return copy.sort((a, b) => statOf(b, mode) - statOf(a, mode));
+            }
+            return copy;
     }
 }
 
-function statTotal(item, key) {
+/** effective value of one stat: character growth plus class growth bonus */
+function statOf(item, key) {
     return ((item.growth_rates || {})[key] || 0) + ((item.growth_bonus || {})[key] || 0);
+}
+
+function statTotal(item) {
+    return STATS.reduce((sum, s) => sum + statOf(item, s.key), 0);
 }
 
 /** support / fame level of a unit on one route, or null when it does not apply */
@@ -444,7 +451,232 @@ function tierIndex(tier) {
 }
 
 
-/* ---------------------------------------------------------- toolbar -- */
+/* ------------------------------------------------- character detail page -- */
+
+const detail = { tier: 'all', order: 'total-desc' };
+
+/** growth rates this character would have in the given class */
+function mergedGrowth(character, cls) {
+    const base = character.growth_rates || {};
+    const bonus = (cls && cls.growth_bonus) || {};
+    const growth = {};
+    let total = 0;
+    STATS.forEach((s) => {
+        const value = (base[s.key] || 0) + (bonus[s.key] || 0);
+        growth[s.key] = value;
+        total += value;
+    });
+    growth.total = total;
+    return growth;
+}
+
+function classGrowthRows(character, classes) {
+    const base = character.growth_rates || {};
+    const rows = classes.map((cls) => {
+        const growth = mergedGrowth(character, cls);
+        return { cls, growth, diff: growth.total - (base.total || 0) };
+    });
+
+    const filtered = detail.tier === 'all' ? rows : rows.filter((r) => r.cls.tier === detail.tier);
+    const byName = (a, b) => a.cls.name.localeCompare(b.cls.name, 'ja');
+    filtered.sort((a, b) => {
+        if (detail.order === 'name') return byName(a, b);
+        if (detail.order === 'total-asc') return a.growth.total - b.growth.total || byName(a, b);
+        return b.growth.total - a.growth.total || byName(a, b);
+    });
+    return filtered;
+}
+
+function classGrowthTable(character, classes) {
+    const base = character.growth_rates || {};
+    const rows = classGrowthRows(character, classes);
+    if (!rows.length) return '<p class="muted">該当する兵種がありません</p>';
+
+    const best = rows.reduce((acc, r) => Math.max(acc, r.growth.total), Number.NEGATIVE_INFINITY);
+
+    return `
+        <div class="tablewrap">
+            <table class="classtable">
+                <thead>
+                    <tr>
+                        <th class="sticky">兵種</th>
+                        <th>階級</th>
+                        ${STATS.map((s) => `<th class="num">${esc(s.label)}</th>`).join('')}
+                        <th class="num">合計</th>
+                        <th class="num">差</th>
+                    </tr>
+                </thead>
+                <tbody>
+                ${rows.map((r) => `
+                    <tr${r.growth.total === best ? ' class="is-best"' : ''}>
+                        <th class="sticky">${esc(r.cls.name)}</th>
+                        <td class="muted">${esc(r.cls.tier || '')}</td>
+                        ${STATS.map((s) => {
+                            const value = r.growth[s.key];
+                            const origin = base[s.key] || 0;
+                            const cls = value > origin ? 'up' : (value < origin ? 'down' : '');
+                            return `<td class="num ${cls}">${esc(value)}</td>`;
+                        }).join('')}
+                        <td class="num"><strong>${esc(r.growth.total)}</strong></td>
+                        <td class="num ${r.diff > 0 ? 'up' : (r.diff < 0 ? 'down' : '')}">${r.diff > 0 ? '+' : ''}${esc(r.diff)}</td>
+                    </tr>`).join('')}
+                </tbody>
+            </table>
+        </div>`;
+}
+
+
+function renderCharacterDetail(character, classes, container) {
+    const growth = character.growth_rates || {};
+    const start = character.start || {};
+
+    const badges = [];
+    if (character.gender) badges.push(`<span class="tag">${esc(character.gender)}</span>`);
+    if (start.class) badges.push(`<span class="tag tag-class">${esc(start.class)}${start.level ? ' Lv' + esc(start.level) : ''}</span>`);
+    if (character.blaze_type) badges.push(`<span class="tag tag-blaze">${esc(character.blaze_type)}</span>`);
+    if (character.blaze_skill) badges.push(`<span class="tag tag-blaze">${esc(character.blaze_skill)}</span>`);
+    if (character.blaze_arts) badges.push(`<span class="tag tag-blaze">${esc(character.blaze_arts)}</span>`);
+
+    const own = [];
+    if (character.personal_skill) {
+        own.push(['個人スキル', `<strong>${esc(character.personal_skill.name)}</strong>${character.personal_skill.effect ? `<br><span class="muted">${esc(character.personal_skill.effect)}</span>` : ''}`]);
+    }
+    (character.blood_seals || []).forEach((seal) => {
+        own.push(['血印', `<strong>${esc(seal.name)}</strong>${seal.effect ? `<br><span class="muted">${esc(seal.effect)}</span>` : ''}`]);
+    });
+    if (character.favorites) own.push(['好きなもの', esc(character.favorites)]);
+    if (character.voice_actor) own.push(['声優', esc(character.voice_actor)]);
+
+    const recruit = character.recruit || {};
+    const recruitRows = ROUTES.filter((r) => recruit[r.id]).map((r) => {
+        const e = recruit[r.id];
+        const other = [e.part, e.stage, e.place, e.condition, e.note].filter(Boolean).join(' / ');
+        return `<tr>
+            <td>${esc(r.label)}</td>
+            <td>${esc(e.method || '')}</td>
+            <td class="num">${e.support_level === undefined ? '' : esc(e.support_level)}</td>
+            <td class="num">${e.fame_level === undefined ? '' : esc(e.fame_level)}</td>
+            <td class="muted">${esc(other)}</td>
+        </tr>`;
+    }).join('');
+
+    const tierOptions = TIER_ORDER.map((tier) =>
+        `<option value="${esc(tier)}"${tier === detail.tier ? ' selected' : ''}>${esc(tier)}</option>`).join('');
+
+    container.innerHTML = `
+        <div class="detail">
+            <header class="detail-head">
+                <div>
+                    <h2 class="detail-name">${esc(character.name)}</h2>
+                    <div class="taglist">${badges.join('')}</div>
+                </div>
+                <a class="backlink" href="../">← キャラクター一覧</a>
+            </header>
+
+            <section class="panel">
+                <h3>成長率 <span class="muted">合計 ${esc(growth.total)}</span></h3>
+                ${growthGrid(growth, 70)}
+            </section>
+
+            ${own.length ? `<section class="panel"><h3>固有</h3>${rows(own)}</section>` : ''}
+
+            ${start.stats ? `
+            <section class="panel">
+                <h3>登場時ステータス <span class="muted">${esc(start.class || '')}${start.level ? ' Lv' + esc(start.level) : ''}</span></h3>
+                ${growthGrid(start.stats, 40)}
+            </section>` : ''}
+
+            ${(character.forte_skills || character.weak_skills) ? `
+            <section class="panel">
+                <h3>技能</h3>
+                ${character.forte_skills ? `<p class="skillline"><span class="skill-tag">得意</span>${tagList(character.forte_skills)}</p>` : ''}
+                ${character.weak_skills ? `<p class="skillline"><span class="skill-tag weak">苦手</span>${tagList(character.weak_skills)}</p>` : ''}
+            </section>` : ''}
+
+            ${recruitRows ? `
+            <section class="panel">
+                <h3>加入条件</h3>
+                <table class="mini">
+                    <thead><tr><th>ルート</th><th>方式</th><th>支援</th><th>名声</th><th>その他</th></tr></thead>
+                    <tbody>${recruitRows}</tbody>
+                </table>
+            </section>` : ''}
+
+            <section class="panel">
+                <h3>このキャラクターが各兵種になった場合の成長率</h3>
+                <p class="muted">素の成長率に各兵種の成長ボーナスを加えた値です。色付きの数値は素からの増減を示します。</p>
+                <div class="toolbar-inner">
+                    <label class="control">
+                        <span>階級</span>
+                        <select id="detail-tier">
+                            <option value="all"${detail.tier === 'all' ? ' selected' : ''}>すべて</option>
+                            ${tierOptions}
+                        </select>
+                    </label>
+                    <label class="control">
+                        <span>並び替え</span>
+                        <select id="detail-order">
+                            <option value="total-desc"${detail.order === 'total-desc' ? ' selected' : ''}>合計が高い順</option>
+                            <option value="total-asc"${detail.order === 'total-asc' ? ' selected' : ''}>合計が低い順</option>
+                            <option value="name"${detail.order === 'name' ? ' selected' : ''}>名前順</option>
+                        </select>
+                    </label>
+                </div>
+                <div id="detail-classes">${classGrowthTable(character, classes)}</div>
+            </section>
+        </div>`;
+
+    const refresh = () => {
+        const host = container.querySelector('#detail-classes');
+        if (host) host.innerHTML = classGrowthTable(character, classes);
+    };
+    const tierSelect = container.querySelector('#detail-tier');
+    if (tierSelect) {
+        tierSelect.addEventListener('change', (event) => {
+            detail.tier = event.target.value;
+            refresh();
+        });
+    }
+    const orderSelect = container.querySelector('#detail-order');
+    if (orderSelect) {
+        orderSelect.addEventListener('change', (event) => {
+            detail.order = event.target.value;
+            refresh();
+        });
+    }
+}
+
+async function loadDetailPage(id) {
+    const container = document.getElementById('character-detail');
+    if (!container) return;
+
+    try {
+        const [characters, classes] = await Promise.all([
+            fetchJson({ file: 'data/characters.json' }),
+            fetchJson({ file: 'data/classes.json' })
+        ]);
+        const character = characters.find((c) => c.id === id || c.name === id);
+        if (!character) {
+            container.innerHTML = emptyState('キャラクターが見つかりません');
+            return;
+        }
+        document.title = `${character.name} - FE万紫千紅 データベース`;
+        renderCharacterDetail(character, classes, container);
+    } catch (error) {
+        console.error('Failed to load the character detail page', error);
+        container.innerHTML = `
+            <div class="card empty">
+                <div class="card-image">👤</div>
+                <div class="card-content">
+                    <h3 class="card-name">データを読み込めませんでした</h3>
+                    <p class="muted">サーバー経由でアクセスしてください</p>
+                </div>
+            </div>`;
+    }
+}
+
+const STAT_KEYS = new Set(STATS.map((s) => s.key));
+
 
 const SORT_OPTIONS = {
     characters: [
@@ -453,7 +685,14 @@ const SORT_OPTIONS = {
         { value: 'name-desc', label: '名前（降順）' },
         { value: 'total', label: '成長合計が高い順' },
         { value: 'hp', label: 'HP が高い順' },
-        { value: 'spd', label: '速さが高い順' }
+        { value: 'str', label: '力 が高い順' },
+        { value: 'mag', label: '魔力 が高い順' },
+        { value: 'spd', label: '速さ が高い順' },
+        { value: 'dex', label: '技 が高い順' },
+        { value: 'def', label: '守備 が高い順' },
+        { value: 'res', label: '魔防 が高い順' },
+        { value: 'lck', label: '幸運 が高い順' },
+        { value: 'cha', label: '魅力 が高い順' }
     ],
     classes: [
         { value: 'tier', label: '階級順' },
@@ -557,12 +796,16 @@ function buildToolbar() {
 /* -------------------------------------------------------------- boot -- */
 
 /**
- * The data files live in <site root>/data, while the pages live either at the
- * site root (index.html) or one folder deep (characters/index.html). Trying both
- * relative prefixes keeps every page working at either depth.
+ * The data files live in <site root>/data, while pages sit at different depths
+ * (index.html, characters/index.html, characters/<name>/index.html). Trying the
+ * relative prefixes from the document upwards keeps every page working.
  */
 function dataCandidates(file) {
-    return [file, `../${file}`];
+    const candidates = [];
+    for (let depth = 0; depth <= 3; depth += 1) {
+        candidates.push(`${'../'.repeat(depth)}${file}`);
+    }
+    return candidates;
 }
 
 async function fetchJson(page) {
@@ -580,6 +823,13 @@ async function fetchJson(page) {
 }
 
 async function loadData() {
+    // per character pages carry their name in <body data-character="...">
+    const detailId = document.body && document.body.dataset ? document.body.dataset.character : null;
+    if (detailId) {
+        loadDetailPage(detailId);
+        return;
+    }
+
     state.type = currentType();
     if (!state.type) return;
 

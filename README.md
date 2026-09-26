@@ -11,7 +11,8 @@
 | ページ | 内容 | データ |
 |--------|------|--------|
 | `index.html` → `/FE/` | ダッシュボード | - |
-| `characters/index.html` → `/FE/characters/` | 64名のキャラクター。成長率・ルート別の加入条件（支援Lv／名声Lv）、カード表示／早見表表示の切替 | `data/characters.json` |
+| `characters/index.html` → `/FE/characters/` | 64名のキャラクター。成長率・ルート別の加入条件（支援Lv／名声Lv）、カード表示／早見表表示の切替。並び替えは名前・成長合計・9能力すべてに対応 | `data/characters.json` |
+| `characters/<名前>/index.html` → `/FE/characters/カイ/` etc. | キャラクター詳細。成長率・固有スキル・血印・登場時ステータス・技能・加入条件、そして**そのキャラクターが各兵種になった場合の成長率**（素の成長率＋兵種ボーナス、階級フィルタと並び替え付き） | `data/characters.json` + `data/classes.json` |
 | `classes/index.html` → `/FE/classes/` | 60兵種。階級・成長ボーナス・移動力・使用可能技能・解放条件 | `data/classes.json` |
 | `skills/index.html` → `/FE/skills/` | 個人スキル・血印・ルーツ・ブレイズアーツ／スキル／タイプ・兵種＆マスタースキル | `data/skills.json` |
 | `items/index.html` → `/FE/items/` | 消費アイテム・指南書など（手入力データ） | `data/items.json` |
@@ -24,16 +25,18 @@ GitHub Pages が `…/characters/` を `characters/index.html` に解決しま�
 ## 構成
 
 - `index.html` — ダッシュボード
-- `characters/` `classes/` `skills/` `items/` — 各ページ（`index.html` を内包）
+- `characters/` `classes/` `skills/` `items/` — 各一覧ページ（`index.html` を内包）
+- `characters/<名前>/index.html` — キャラクター詳細ページ（`tools/generate-character-pages.ps1` が生成）
 - `styles.css` - スタイルシート
 - `app.js` - データ読み込み・検索・並び替え・表示ロジック
 - `data/` - JSONデータファイル
 - `tools/build-from-game8.ps1` - データを再生成するスクリプト
+- `tools/generate-character-pages.ps1` - キャラクター詳細ページを生成するスクリプト
 - `tools/serve.ps1` - ローカル確認用の簡易HTTPサーバー
 - `tools/MAPPINGS.md` - 元JSONの列（`col_1`…）と出力キーの対応表
 
-`app.js` はページがルート直下（`index.html`）でも1階層下（`characters/index.html`）でも
-動くよう、`data/` のJSONを `data/…` → `../data/…` の順に試行して読み込みます。
+`app.js` はページの深さ（ルート直下／一覧ページ／詳細ページ）に応じて `data/` を
+`data/…` `../data/…` `../../data/…` の順に試行して読み込みます。
 
 ## データの再生成
 
@@ -47,6 +50,9 @@ powershell -ExecutionPolicy Bypass -File tools\build-from-game8.ps1
 
 # 最新を取り直す
 powershell -ExecutionPolicy Bypass -File tools\build-from-game8.ps1 -Download
+
+# データを更新したらキャラクター詳細ページも作り直す
+powershell -ExecutionPolicy Bypass -File tools\generate-character-pages.ps1
 ```
 
 スクリプトは次のことを行います。
