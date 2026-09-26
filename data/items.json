@@ -1,66 +1,452 @@
 [
-    {
-        "id": "iron_sword",
-        "name": "鉄の剣",
-        "type": "剣",
-        "mt": 8,
-        "hit": 90,
-        "crit": 0,
-        "wt": 5,
-        "uses": 46,
-        "range": 1,
-        "description": "最も一般的な剣。扱いやすい。"
-    },
-    {
-        "id": "steel_sword",
-        "name": "鋼の剣",
-        "type": "剣",
-        "mt": 11,
-        "hit": 80,
-        "crit": 0,
-        "wt": 8,
-        "uses": 36,
-        "range": 1,
-        "description": "鉄の剣より重く強力。"
-    },
-    {
-        "id": "silver_sword",
-        "name": "銀の剣",
-        "type": "剣",
-        "mt": 13,
-        "hit": 80,
-        "crit": 5,
-        "wt": 7,
-        "uses": 20,
-        "range": 1,
-        "description": "高威力の貴重な剣。使用回数が少ない。"
-    },
-    {
-        "id": "vulnerary",
-        "name": "傷薬",
-        "type": "回復アイテム",
-        "effect": "HPを10回復",
-        "uses": 3,
-        "description": "戦闘後の回復に必須のアイテム。"
-    },
-    {
-        "id": "elixir",
-        "name": "エリクサー",
-        "type": "回復アイテム",
-        "effect": "HPを全回復",
-        "uses": 1,
-        "description": "全HPを回復する貴重な薬。"
-    },
-    {
-        "id": "fire_tome",
-        "name": "ファイア",
-        "type": "火魔法",
-        "mt": 6,
-        "hit": 90,
-        "crit": 0,
-        "wt": 4,
-        "uses": 40,
-        "range": "1-2",
-        "description": "基本の火魔法書。軽量で扱いやすい。"
-    }
+  {
+    "id": "kizu_gusuri",
+    "name": "傷薬",
+    "category": "消費アイテム",
+    "type": "回復",
+    "effect": "自分のHPを20回復する(3回まで)",
+    "price": 300,
+    "shops": ["帝都ダグシオンの道具屋", "領都カッシートの道具屋", "リベイラ村の道具屋", "フィーナの漁村の道具屋"],
+    "quest_rewards": ["道具屋にお越しください", "失われた試合観戦", "狙われた古の石版"]
+  },
+  {
+    "id": "chougou_yaku",
+    "name": "調合薬",
+    "category": "消費アイテム",
+    "type": "回復",
+    "effect": "自分のHPを40回復する(2回まで)",
+    "price": 800,
+    "shops": ["帝都ダグシオンの道具屋", "領都カッシートの道具屋", "リベイラ村の道具屋", "フィーナの漁村の道具屋"],
+    "quest_rewards": ["ガルム・ガルム・ガルム！"]
+  },
+  {
+    "id": "tokkou_yaku",
+    "name": "特効薬",
+    "category": "消費アイテム",
+    "type": "回復",
+    "effect": "自分のHPを100回復する(1回まで)",
+    "price": 3000,
+    "shops": ["帝都ダグシオンの道具屋", "王都グラン・アラゴンの道具屋", "王都メガエラの道具屋", "カリアネイラの港の道具屋"],
+    "quest_rewards": ["遺構を彷徨う骸骨"]
+  },
+  {
+    "id": "rensou_no_ishi",
+    "name": "連携の石",
+    "category": "消費アイテム",
+    "type": "LP回復",
+    "effect": "LPが40回復する(クイックバトル限定)(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "sentsu_shinansho",
+    "name": "戦術指南書",
+    "category": "指南書",
+    "type": "技能上昇",
+    "effect": "指揮術技能が少し上がる(1回まで)",
+    "price": 1000,
+    "shops": ["帝都ダグシオンの道具屋", "王都グラン・アラゴンの道具屋", "カリアネイラの港の道具屋", "王都ブレストンの道具屋"],
+    "quest_rewards": []
+  },
+  {
+    "id": "bajutsu_shinansho",
+    "name": "馬術指南書",
+    "category": "指南書",
+    "type": "技能上昇",
+    "effect": "馬術技能が少し上がる(1回まで)",
+    "price": 1000,
+    "shops": ["帝都ダグシオンの道具屋", "カリアネイラの港の道具屋", "王都ブレストンの道具屋", "レギアの町の道具屋"],
+    "quest_rewards": ["伝説の彫刻家の遺産"]
+  },
+  {
+    "id": "juusou_jutsu_shinansho",
+    "name": "重装術指南書",
+    "category": "指南書",
+    "type": "技能上昇",
+    "effect": "重装術技能が少し上がる(1回まで)",
+    "price": 1000,
+    "shops": ["帝都ダグシオンの道具屋", "王都ブレストンの道具屋"],
+    "quest_rewards": ["伝説の彫刻家の遺産"]
+  },
+  {
+    "id": "hikou_jutsu_shinansho",
+    "name": "飛行術指南書",
+    "category": "指南書",
+    "type": "技能上昇",
+    "effect": "飛行術技能が少し上がる(1回まで)",
+    "price": 1000,
+    "shops": ["帝都ダグシオンの道具屋", "カリアネイラの港の道具屋"],
+    "quest_rewards": ["伝説の彫刻家の遺産"]
+  },
+  {
+    "id": "kuro_majutu_shinansho",
+    "name": "黒魔術指南書",
+    "category": "指南書",
+    "type": "技能上昇",
+    "effect": "黒魔術技能が少し上がる(1回まで)",
+    "price": 1000,
+    "shops": ["帝都ダグシオンの道具屋", "パンドラの港町の道具屋", "バスク宿場町の道具屋"],
+    "quest_rewards": ["禍々しき生贄集団"]
+  },
+  {
+    "id": "shiro_majutu_shinansho",
+    "name": "白魔術指南書",
+    "category": "指南書",
+    "type": "技能上昇",
+    "effect": "白魔術技能が少し上がる(1回まで)",
+    "price": 1000,
+    "shops": ["帝都ダグシオンの道具屋", "パンドラの港町の道具屋", "バスク宿場町の道具屋"],
+    "quest_rewards": ["姿を消す呪術道具", "奪われた星の記録"]
+  },
+  {
+    "id": "shuhin_bako",
+    "name": "祝品箱",
+    "category": "箱",
+    "type": "ランダム入手",
+    "effect": "開けると贈り物をランダムに1つ獲得する(1回まで)",
+    "price": 150,
+    "shops": ["バスク宿場町の道具屋", "海都アレクトーの道具屋"],
+    "quest_rewards": ["各地からの興行依頼多数"]
+  },
+  {
+    "id": "yubiwa_bako",
+    "name": "指輪箱",
+    "category": "箱",
+    "type": "ランダム入手",
+    "effect": "開けると指輪をランダムに1つ獲得する(1回まで)",
+    "price": 2000,
+    "shops": ["王都グラン・アラゴンの道具屋"],
+    "quest_rewards": []
+  },
+  {
+    "id": "nazo_no_bako",
+    "name": "謎の箱",
+    "category": "箱",
+    "type": "ランダム入手",
+    "effect": "開けるとアイテムをランダムに1つ獲得する(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "niku_bako",
+    "name": "肉箱",
+    "category": "箱",
+    "type": "ランダム入手",
+    "effect": "開けると肉をランダムに1つ獲得する(1回まで)",
+    "price": 100,
+    "shops": ["リベイラ村の道具屋", "ライ・オーの港の道具屋", "バスク宿場町の道具屋"],
+    "quest_rewards": []
+  },
+  {
+    "id": "seisui",
+    "name": "聖水",
+    "category": "消費アイテム",
+    "type": "バフ",
+    "effect": "魔防+10 (1ターン毎に2ずつ減少)(1回まで)",
+    "price": 500,
+    "shops": ["帝都ダグシオンの道具屋"],
+    "quest_rewards": []
+  },
+  {
+    "id": "doku_keshi",
+    "name": "毒消し",
+    "category": "消費アイテム",
+    "type": "状態異常回復",
+    "effect": "毒状態を解除する さらに毒状態に3ターンならなくなる(3回まで)",
+    "price": 400,
+    "shops": ["帝都ダグシオンの道具屋", "ザスタの集落の道具屋", "キラの村の道具屋"],
+    "quest_rewards": []
+  },
+  {
+    "id": "annei_no_tsuyu",
+    "name": "安寧の露",
+    "category": "消費アイテム",
+    "type": "バフ",
+    "effect": "必殺の一撃を受けなくなる(次の自フェイズまで)(1回まで)",
+    "price": 2000,
+    "shops": ["ジーマの港の道具屋"],
+    "quest_rewards": []
+  },
+  {
+    "id": "pyer_eid",
+    "name": "パイヤーエード",
+    "category": "消費アイテム",
+    "type": "バフ",
+    "effect": "攻撃力+2 必殺+3 (マップ終了まで)(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "mirani_eid",
+    "name": "ミラニラーエード",
+    "category": "消費アイテム",
+    "type": "バフ",
+    "effect": "防御力+3 必避+5 (マップ終了まで)(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "dechi_eid",
+    "name": "デーチーエード",
+    "category": "消費アイテム",
+    "type": "バフ",
+    "effect": "攻速+3 (マップ終了まで)(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "roka_eid",
+    "name": "ロカーエード",
+    "category": "消費アイテム",
+    "type": "バフ",
+    "effect": "戦技での攻撃時、命中+20 (マップ終了まで)(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "shokyuu_shiken_tegyou",
+    "name": "初級試験手形",
+    "category": "試験手形",
+    "type": "クラスチェンジ",
+    "effect": "初級職の資格試験に必要な証明書",
+    "price": 300,
+    "shops": ["領都カッシートの市場", "王都グラン・アラゴンの市場", "王都メガエラの市場", "ライ・オーの港の市場"],
+    "quest_rewards": []
+  },
+  {
+    "id": "chuukyuu_shiken_tegyou",
+    "name": "中級試験手形",
+    "category": "試験手形",
+    "type": "クラスチェンジ",
+    "effect": "中級職の資格試験に必要な証明書",
+    "price": 500,
+    "shops": ["王都グラン・アラゴンの市場", "王都メガエラの市場", "ライ・オーの港の市場", "オレンスの町の市場"],
+    "quest_rewards": ["帝国の安全のために"]
+  },
+  {
+    "id": "joukyuu_shiken_tegyou",
+    "name": "上級試験手形",
+    "category": "試験手形",
+    "type": "クラスチェンジ",
+    "effect": "上級職の資格試験に必要な証明書",
+    "price": 3000,
+    "shops": ["王都メガエラの市場"],
+    "quest_rewards": ["白髪鬼からの依頼"]
+  },
+  {
+    "id": "saijoukyuu_shiken_tegyou",
+    "name": "最上級試験手形",
+    "category": "試験手形",
+    "type": "クラスチェンジ",
+    "effect": "最上級職の資格試験に必要な証明書",
+    "price": 8000,
+    "shops": ["救世編：領都カッシートの市場", "救世編：リベイラ村の市場", "救世編：フィーナの漁村の市場", "救世編：王都グラン・アラゴンの市場"],
+    "quest_rewards": []
+  },
+  {
+    "id": "tenkan_no_kagi",
+    "name": "天冠の鍵",
+    "category": "鍵",
+    "type": "ダンジョン",
+    "effect": "天冠の神殿の扉を開くための鍵。神祖ソティスが遺した契約の証。",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": ["特定のダンジョン内の宝箱から入手"]
+  },
+  {
+    "id": "tengei_no_renge",
+    "name": "転生の蓮華",
+    "category": "試験手形",
+    "type": "神将職試験",
+    "effect": "これを手にした存在は聖転神将の試験を受けることができる",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "joukyuu_sentsu_shinansho",
+    "name": "上級戦術指南書",
+    "category": "指南書",
+    "type": "技能大幅上昇",
+    "effect": "使うと指揮術技能が大きく上がる(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "joukyuu_bajutsu_shinansho",
+    "name": "上級馬術指南書",
+    "category": "指南書",
+    "type": "技能大幅上昇",
+    "effect": "使うと馬術技能が大きく上がる(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "joukyuu_juusou_shinansho",
+    "name": "上級重装術指南書",
+    "category": "指南書",
+    "type": "技能大幅上昇",
+    "effect": "使うと重装術技能が大きく上がる(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "joukyuu_hikou_shinansho",
+    "name": "上級飛行術指南書",
+    "category": "指南書",
+    "type": "技能大幅上昇",
+    "effect": "使うと飛行術技能が大きく上がる(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "joukyuu_kuro_shinansho",
+    "name": "上級黒魔術指南書",
+    "category": "指南書",
+    "type": "技能大幅上昇",
+    "effect": "使うと黒魔術技能が大きく上がる(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "joukyuu_shiro_shinansho",
+    "name": "上級白魔術指南書",
+    "category": "指南書",
+    "type": "技能大幅上昇",
+    "effect": "使うと白魔術技能が大きく上がる(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "tenshi_no_koromo",
+    "name": "天使の衣",
+    "category": "消費アイテム",
+    "type": "ステータス上昇",
+    "effect": "使うと最大HP+4(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "chikara_no_shizuku",
+    "name": "力のしずく",
+    "category": "消費アイテム",
+    "type": "ステータス上昇",
+    "effect": "使うと力+2(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "seirei_no_kona",
+    "name": "精霊の粉",
+    "category": "消費アイテム",
+    "type": "ステータス上昇",
+    "effect": "使うと魔力+2(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "hayate_no_hane",
+    "name": "はやての羽",
+    "category": "消費アイテム",
+    "type": "ステータス上昇",
+    "effect": "使うと速さ+2(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "megami_no_zou",
+    "name": "女神の像",
+    "category": "消費アイテム",
+    "type": "ステータス上昇",
+    "effect": "使うと幸運+2(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "mayoke",
+    "name": "魔除け",
+    "category": "消費アイテム",
+    "type": "ステータス上昇",
+    "effect": "使うと魔防+2(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "kuro_shinju",
+    "name": "黒真珠",
+    "category": "消費アイテム",
+    "type": "ステータス上昇",
+    "effect": "使うと魅力+2(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "kazeyobi_no_kutsu",
+    "name": "風呼びの靴",
+    "category": "消費アイテム",
+    "type": "ステータス上昇",
+    "effect": "使うと移動力+1(1回まで)",
+    "price": 0,
+    "shops": [],
+    "quest_rewards": []
+  },
+  {
+    "id": "shitsona_bugu_bako",
+    "name": "質素な武具箱",
+    "category": "箱",
+    "type": "ランダム入手",
+    "effect": "開けると武器か装備品をランダムに1つ獲得する(1回まで)",
+    "price": 300,
+    "shops": ["領都カッシートの道具屋", "フィーナの漁村の道具屋"],
+    "quest_rewards": ["デモニクの村からの興行依頼"]
+  },
+  {
+    "id": "ryoushitsu_bugu_bako",
+    "name": "良質な武具箱",
+    "category": "箱",
+    "type": "ランダム入手",
+    "effect": "開けると武器か装備品をランダムに1つ獲得する(1回まで)",
+    "price": 800,
+    "shops": ["王都メガエラの道具屋"],
+    "quest_rewards": ["城塞都市モンスからの興行依頼", "海都アレクトーからの興行依頼", "マオン城郭からの興行依頼"]
+  },
+  {
+    "id": "koukyuu_bugu_bako",
+    "name": "高級な武具箱",
+    "category": "箱",
+    "type": "ランダム入手",
+    "effect": "開けると武器か装備品をランダムに1つ獲得する(1回まで)",
+    "price": 2000,
+    "shops": ["王都メガエラの道具屋", "王都ブレストンの道具屋", "アンナの秘密の店"],
+    "quest_rewards": ["消えた金貨の追跡"]
+  },
+  {
+    "id": "d_mina_bugu_bako",
+    "name": "ダ・ミナの武具箱",
+    "category": "箱",
+    "type": "ランダム入手",
+    "effect": "開けると武器か装備品をランダムに1つ獲得する(1回まで)",
+    "price": 3000,
+    "shops": ["アンナの秘密の店"],
+    "quest_rewards": ["王都ブレストンからの興行依頼", "ニーザの港からの興行依頼", "ベネトナシュの村からの興行依頼"]
+  }
 ]

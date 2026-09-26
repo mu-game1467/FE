@@ -1,58 +1,195 @@
 [
-    {
-        "id": "protagonist",
-        "name": "主人公",
-        "class": "ロード",
-        "hp": 28,
-        "str": 8,
-        "mag": 4,
-        "dex": 9,
-        "spd": 10,
-        "lck": 7,
-        "def": 6,
-        "res": 3,
-        "description": "万紫千紅の主人公。運命に導かれし者。"
-    },
-    {
-        "id": "heroine",
-        "name": "ヒロイン",
-        "class": "プリンセス",
-        "hp": 24,
-        "str": 4,
-        "mag": 10,
-        "dex": 8,
-        "spd": 9,
-        "lck": 12,
-        "def": 3,
-        "res": 8,
-        "description": "王国の姫君。光の力を宿す。"
-    },
-    {
-        "id": "knight",
-        "name": "騎士団長",
-        "class": "パラディン",
-        "hp": 32,
-        "str": 12,
-        "mag": 2,
-        "dex": 10,
-        "spd": 7,
-        "lck": 5,
-        "def": 11,
-        "res": 4,
-        "description": "主人公の護衛を務める忠義の騎士。"
-    },
-    {
-        "id": "mage",
-        "name": "賢者見習い",
-        "class": "メイジ",
-        "hp": 20,
-        "str": 3,
-        "mag": 12,
-        "dex": 7,
-        "spd": 8,
-        "lck": 8,
-        "def": 2,
-        "res": 9,
-        "description": "古代魔法を研究する若き魔道士。"
-    }
+  {
+    "id": "savior",
+    "name": "救世主",
+    "gender": "男/女",
+    "growth_rates": {"hp": 50, "str": 45, "mag": 45, "spd": 45, "dex": 45, "lck": 35, "def": 35, "res": 40, "cha": 50},
+    "personal_skill": "周囲2マスにいる敵の「冥府の加護」を無効化する",
+    "blood_seal": "攻撃時、5%で発動し命中+100",
+    "forte_skills": ["槍術", "指揮術"],
+    "scout_condition": "自動加入（主人公）"
+  },
+  {
+    "id": "kai",
+    "name": "カイ",
+    "gender": "男",
+    "growth_rates": {"hp": 45, "str": 45, "mag": 40, "spd": 45, "dex": 45, "lck": 35, "def": 35, "res": 40, "cha": 40},
+    "personal_skill": "移動力+1",
+    "blood_seal": "攻撃時、20%で発動し命中+20 / 攻撃時、25%で発動し攻撃力+3",
+    "forte_skills": ["剣術", "槍術", "馬術", "白魔術"],
+    "scout_condition": "【救世主編】3部1区分：カイ編の第1部をクリア"
+  },
+  {
+    "id": "dietrich",
+    "name": "ディートリヒ",
+    "gender": "男",
+    "growth_rates": {"hp": 50, "str": 45, "mag": 30, "spd": 50, "dex": 60, "lck": 40, "def": 30, "res": 50, "cha": 60},
+    "personal_skill": "先攻での戦闘時、必殺+5",
+    "blood_seal": "攻撃時、10%で発動し自分のHPを中回復する / 攻撃時、25%で発動し攻撃力+3",
+    "forte_skills": ["剣術", "歩兵術"],
+    "scout_condition": "【救世主編】3部1区分：ディートリヒ編の第1部をクリア"
+  },
+  {
+    "id": "theodora",
+    "name": "セオドラ",
+    "gender": "女",
+    "growth_rates": {"hp": 70, "str": 50, "mag": 30, "spd": 40, "dex": 50, "lck": 40, "def": 30, "res": 30, "cha": 50},
+    "personal_skill": "攻撃された時30%で発動し受けるダメージを半減する",
+    "blood_seal": "攻撃時、25%で発動し攻撃力+3",
+    "forte_skills": ["槍術", "白魔術", "指揮術"],
+    "scout_condition": "【救世主編】3部1区分：セオドラ編の第1部をクリア"
+  },
+  {
+    "id": "reda",
+    "name": "レダ",
+    "gender": "女",
+    "growth_rates": {"hp": 40, "str": 35, "mag": 35, "spd": 65, "dex": 50, "lck": 30, "def": 35, "res": 25, "cha": 55},
+    "personal_skill": "先攻での戦闘時、5%で発動し、反撃されなくなる",
+    "lv_skill": "ブレイズアーツを使用後、自分がオーバーブレイズ中なら、さらに攻撃できる",
+    "blood_seal": "攻撃時、3%で発動し攻撃力+7",
+    "forte_skills": ["剣術", "弓術", "白魔術", "歩兵術"],
+    "scout_condition": "【救世主編】3部1区分：レダ編の第1部をクリア"
+  },
+  {
+    "id": "tiara",
+    "name": "ティアラ",
+    "gender": "女",
+    "growth_rates": {"hp": 35, "str": 25, "mag": 45, "spd": 35, "dex": 40, "lck": 20, "def": 40, "res": 50, "cha": 45},
+    "personal_skill": "味方に使用可能な戦技の射程+1",
+    "lv_skill": "先攻での戦闘後、その敵の回避-10 ※1回戦闘すると元に戻る",
+    "forte_skills": ["黒魔術", "白魔術", "指揮術"],
+    "scout_condition": "カイ編1部1章で自動加入 / 他編：支援Lv3・名声Lv8-10・カイ外伝クリア・3000G支払い"
+  },
+  {
+    "id": "peter",
+    "name": "ピーテル",
+    "gender": "男",
+    "growth_rates": {"hp": 40, "str": 35, "mag": 20, "spd": 45, "dex": 60, "lck": 30, "def": 25, "res": 35, "cha": 30},
+    "personal_skill": "弓の戦技を使う時、射程+1",
+    "lv_skill": "戦闘時、自分の命中率が75%以上なら、命中+20",
+    "forte_skills": ["弓術", "歩兵術"],
+    "scout_condition": "カイ編1部1章で自動加入 / 他編：支援Lv3・名声Lv7-10・ピーテルの頼みクリア"
+  },
+  {
+    "id": "ultand",
+    "name": "ウルタンド",
+    "gender": "女",
+    "growth_rates": {"hp": 45, "str": 40, "mag": 40, "spd": 35, "dex": 40, "lck": 35, "def": 45, "res": 55, "cha": 50},
+    "personal_skill": "隣接する味方の戦闘後、その味方のHPを小回復する",
+    "lv_skill": "隣接する味方の必避+20",
+    "forte_skills": ["槍術", "白魔術", "飛行術"],
+    "scout_condition": "カイ編1部6章で自動加入 / 他編：支援Lv3・名声Lv5-8・ウルタンドの頼みクリア"
+  },
+  {
+    "id": "fabio",
+    "name": "ファビオ",
+    "gender": "男",
+    "growth_rates": {"hp": 40, "str": 25, "mag": 50, "spd": 35, "dex": 40, "lck": 30, "def": 45, "res": 35, "cha": 30},
+    "personal_skill": "隣接する敵の必避-5",
+    "lv_skill": "「闇呼び」の効果の範囲が周囲3マスになる",
+    "forte_skills": ["黒魔術", "指揮術"],
+    "scout_condition": "スカウト対象外（ディートリヒ編1部1章で自動加入）"
+  },
+  {
+    "id": "esmeralda",
+    "name": "エスメラルダ",
+    "gender": "女",
+    "growth_rates": {"hp": 55, "str": 55, "mag": 20, "spd": 35, "dex": 35, "lck": 45, "def": 25, "res": 35, "cha": 30},
+    "personal_skill": "自分が装備している武器、装備品の重さを80%に抑える",
+    "lv_skill": "戦闘時、槍を投げて攻撃するなら、命中+20、攻撃力+4",
+    "blood_seal": "攻撃時、3%で発動し与えるダメージが1.5倍になる",
+    "forte_skills": ["槍術", "斧術", "重装術"],
+    "scout_condition": "カイ編1部5章3月：支援Lv2・名声Lv7・エスメラルダの頼みクリア / ディートリヒ編1部2章で自動加入"
+  },
+  {
+    "id": "mikaela",
+    "name": "ミカエラ",
+    "gender": "女",
+    "growth_rates": {"hp": 50, "str": 45, "mag": 30, "spd": 40, "dex": 35, "lck": 40, "def": 25, "res": 30, "cha": 40},
+    "personal_skill": "隣接する敵との戦闘時、命中+10",
+    "lv_skill": "隣接する敵との戦闘時、攻撃力+3。さらにその攻撃時、30%で攻撃力+3",
+    "forte_skills": ["斧術", "弓術", "歩兵術"],
+    "scout_condition": "支援Lv3・名声Lv5・3000G支払い / ディートリヒ編1部4章で自動加入"
+  },
+  {
+    "id": "bonaparte",
+    "name": "ボナパルテ",
+    "gender": "男",
+    "growth_rates": {"hp": 35, "str": 35, "mag": 45, "spd": 40, "dex": 50, "lck": 30, "def": 40, "res": 35, "cha": 40},
+    "personal_skill": "隣接する味方の技+3",
+    "lv_skill": "隣接する味方の戦闘時、30%で発動。その味方の命中+20",
+    "forte_skills": ["剣術", "白魔術", "黒魔術", "指揮術"],
+    "scout_condition": "スカウト対象外（セオドラ編1部1章で自動加入）"
+  },
+  {
+    "id": "tobias",
+    "name": "トビヤス",
+    "gender": "男",
+    "growth_rates": {"hp": 55, "str": 60, "mag": 15, "spd": 25, "dex": 30, "lck": 45, "def": 20, "res": 40, "cha": 35},
+    "personal_skill": "戦技での攻撃時、攻撃力+3",
+    "lv_skill": "戦技での攻撃時、30%で発動。与えるダメージが1.5倍になる",
+    "forte_skills": ["斧術", "馬術", "重装術"],
+    "scout_condition": "スカウト対象外（セオドラ編1部1章で自動加入）"
+  },
+  {
+    "id": "lilian",
+    "name": "リリアン",
+    "gender": "女",
+    "growth_rates": {"hp": 35, "str": 35, "mag": 30, "spd": 40, "dex": 55, "lck": 30, "def": 35, "res": 50, "cha": 25},
+    "personal_skill": "戦闘時、敵が反撃できないなら、命中+10",
+    "lv_skill": "攻撃時、自分の命中率が100%なら、攻撃力+5",
+    "forte_skills": ["弓術", "歩兵術"],
+    "scout_condition": "カイ/ディートリヒ編：支援Lv2・名声Lv8・5000G / セオドラ編1部4章で自動加入 / レダ編：支援Lv2・名声Lv7・5000G"
+  },
+  {
+    "id": "lysander",
+    "name": "ライサンダー",
+    "gender": "男",
+    "growth_rates": {"hp": 45, "str": 40, "mag": 25, "spd": 50, "dex": 35, "lck": 40, "def": 30, "res": 35, "cha": 30},
+    "personal_skill": "先攻での戦闘時、回避+15",
+    "lv_skill": "敵を倒した時、速さ+2(最大+10) ※マップ終了まで",
+    "forte_skills": ["槍術", "斧術", "馬術", "飛行術"],
+    "scout_condition": "カイ/ディートリヒ/レダ編：支援Lv3・名声Lv6-8・鉄の槍×5 / セオドラ編1部4章で自動加入"
+  },
+  {
+    "id": "buccaneer",
+    "name": "バッカニア",
+    "gender": "男",
+    "growth_rates": {"hp": 50, "str": 50, "mag": 20, "spd": 25, "dex": 40, "lck": 45, "def": 20, "res": 30, "cha": 35},
+    "personal_skill": "攻撃された時、受けるダメージを90%に抑える",
+    "lv_skill": "後攻での攻撃時、10%で与えるダメージが1.3倍になる",
+    "forte_skills": ["槍術", "斧術", "馬術", "重装術"],
+    "scout_condition": "スカウト対象外（レダ編1部1章で自動加入 / 他編：支援Lv3・名声Lv8・レダ外伝クリア）"
+  },
+  {
+    "id": "sirocco",
+    "name": "シロッコ",
+    "gender": "男",
+    "growth_rates": {"hp": 40, "str": 40, "mag": 40, "spd": 45, "dex": 50, "lck": 35, "def": 35, "res": 50, "cha": 45},
+    "personal_skill": "戦闘後、自分のHPを5回復する",
+    "lv_skill": "戦闘時、「回避+1」「回避+5」「回避+20」「回避+30」のどれかが発動する",
+    "blood_seal": "攻撃時、25%で発動し攻撃力+3",
+    "forte_skills": ["剣術", "黒魔術", "白魔術", "指揮術"],
+    "scout_condition": "カイ/ディートリヒ/セオドラ編：支援Lv1-3・名声Lv5-9・シロッコの頼みクリア / レダ編1部1章で自動加入"
+  },
+  {
+    "id": "olympia",
+    "name": "オリンピア",
+    "gender": "女",
+    "growth_rates": {"hp": 35, "str": 35, "mag": 50, "spd": 35, "dex": 35, "lck": 30, "def": 40, "res": 40, "cha": 40},
+    "personal_skill": "魔法を装備中、必殺+10",
+    "lv_skill": "リザイアを使う戦闘時、攻撃力+5、必殺+10",
+    "forte_skills": ["斧術", "白魔術"],
+    "scout_condition": "カイ/ディートリヒ/セオドラ編：支援Lv3・名声Lv6-9・オリンピアの頼み1-3クリア / レダ編1部4章で自動加入"
+  },
+  {
+    "id": "muu",
+    "name": "ムウ",
+    "gender": "女",
+    "growth_rates": {"hp": 50, "str": 50, "mag": 25, "spd": 45, "dex": 40, "lck": 30, "def": 40, "res": 30, "cha": 35},
+    "personal_skill": "戦闘時、敵が魔法なら命中+10",
+    "lv_skill": "隣接する敵の守備-5",
+    "forte_skills": ["槍術", "斧術", "重装術"],
+    "scout_condition": "カイ編1部6章で自動加入 / 他編：支援Lv3・名声Lv6-8・ムウの頼みクリア"
+  }
 ]

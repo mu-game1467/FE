@@ -1,66 +1,410 @@
 [
-    {
-        "id": "hp_plus_5",
-        "name": "HP+5",
-        "type": "能力値上昇",
-        "effect": "最大HPが5上昇",
-        "class": "全クラス共通",
-        "description": "生存率を高める基本スキル。"
-    },
-    {
-        "id": "str_plus_2",
-        "name": "力+2",
-        "type": "能力値上昇",
-        "effect": "力が2上昇",
-        "class": "物理職",
-        "description": "物理攻撃の威力を底上げする。"
-    },
-    {
-        "id": "mag_plus_2",
-        "name": "魔力+2",
-        "type": "能力値上昇",
-        "effect": "魔力が2上昇",
-        "class": "魔法職",
-        "description": "魔法攻撃の威力を底上げする。"
-    },
-    {
-        "id": "vantage",
-        "name": "先制",
-        "type": "戦闘スキル",
-        "effect": "HP50%以下で敵より先に攻撃",
-        "class": "スナイパー/ソードマスター等",
-        "description": "ピンチ時に先手を取れる強力なスキル。"
-    },
-    {
-        "id": "wrath",
-        "name": "激昂",
-        "type": "戦闘スキル",
-        "effect": "HP50%以下で必殺率+50",
-        "class": "ウォーリア/バーサーカー等",
-        "description": "瀕死時に一発逆転を狙える。"
-    },
-    {
-        "id": "renewal",
-        "name": "再生",
-        "type": "回復スキル",
-        "effect": "ターン開始時にHP30%回復",
-        "class": "セージ/バトルモンク等",
-        "description": "持久戦に強い回復スキル。"
-    },
-    {
-        "id": "pavise",
-        "name": "大盾",
-        "type": "防御スキル",
-        "effect": "物理攻撃を確率で無効化(技×%)",
-        "class": "グレートナイト/ジェネラル等",
-        "description": "物理耐性を大幅に高める。"
-    },
-    {
-        "id": "aegis",
-        "name": "魔防盾",
-        "type": "防御スキル",
-        "effect": "魔法攻撃を確率で無効化(技×%)",
-        "class": "セージ/ダークナイト等",
-        "description": "魔法耐性を大幅に高める。"
-    }
+  {
+    "id": "kappatsu",
+    "name": "活発",
+    "type": "個人スキル",
+    "effect": "移動力+1",
+    "owner": "カイ",
+    "category": "移動"
+  },
+  {
+    "id": "gunshi_no_sai",
+    "name": "軍師の才",
+    "type": "個人スキル",
+    "effect": "味方に使用可能な戦技の射程+1",
+    "owner": "ティアラ",
+    "category": "支援"
+  },
+  {
+    "id": "aiba_to_no_rensuke",
+    "name": "愛馬との連携",
+    "type": "個人スキル",
+    "effect": "【騎兵】先行での戦闘時、防御力+3 必避+30",
+    "owner": "イオ",
+    "category": "戦闘"
+  },
+  {
+    "id": "sentou_no_kihon",
+    "name": "戦闘の基本",
+    "type": "マスタースキル",
+    "effect": "命中・回避+3",
+    "owner": "平民・貴族をマスター",
+    "category": "基本"
+  },
+  {
+    "id": "shoukae_no_shihainin",
+    "name": "商会の支配人",
+    "type": "個人スキル",
+    "effect": "自分を含め、周囲2マスにいる味方は道具袋を使用できる",
+    "owner": "ウーシュラ",
+    "category": "支援"
+  },
+  {
+    "id": "mi_kawashi",
+    "name": "身躱し",
+    "type": "技能スキル",
+    "effect": "【歩兵】戦闘時、敵が弓・魔法なら、回避+5",
+    "owner": "レダ、アナトリア、ウーシュラ",
+    "category": "回避"
+  },
+  {
+    "id": "kiryoku",
+    "name": "怪力",
+    "type": "個人スキル",
+    "effect": "自分が装備している武器、装備品の重さを80%に抑える",
+    "owner": "エスメラルダ",
+    "category": "装備"
+  },
+  {
+    "id": "kougeki_no_kihon",
+    "name": "攻撃の基本",
+    "type": "マスタースキル",
+    "effect": "力+1",
+    "owner": "闘士をマスター",
+    "category": "基本"
+  },
+  {
+    "id": "makezu_giwi",
+    "name": "負けず嫌い",
+    "type": "個人スキル",
+    "effect": "魔法を装備中、必殺+10",
+    "owner": "オリンピア",
+    "category": "必殺"
+  },
+  {
+    "id": "shiro_mag_lvl1",
+    "name": "白魔術Lv.1",
+    "type": "技能スキル",
+    "effect": "白魔法を装備中、命中+3",
+    "owner": "ティアラ、ウルタンド、ファビオ、ボナパルテ、オリンピア、サラン、ダンテ、ヨーカイ、ソフィア、フィアナ",
+    "category": "命中"
+  },
+  {
+    "id": "shippuu",
+    "name": "疾風",
+    "type": "個人スキル",
+    "effect": "戦闘時、自分の攻速が敵より3以上大きければ、命中+20",
+    "owner": "カターニャ",
+    "category": "命中"
+  },
+  {
+    "id": "kazeyomi",
+    "name": "風読み",
+    "type": "技能スキル",
+    "effect": "戦闘時、敵が弓なら、回避+10",
+    "owner": "ライサンダー、バッカニア、ヌディーヌ、カターニャ、アレキサンドラ、セテス、ロレッタ",
+    "category": "回避"
+  },
+  {
+    "id": "kishi_no_kankaku",
+    "name": "騎士の感覚",
+    "type": "技能スキル",
+    "effect": "戦闘時、敵が槍なら回避+10",
+    "owner": "カイ、セオドラ、エスメラルダ、トビヤス、ライサンダー、バッカニア、ゲイツ、ニネ、グザラン、ヌディーヌ、イオ、ベンディッツ、フィアナ、ハルヴィン",
+    "category": "回避"
+  },
+  {
+    "id": "futai_no_kakugo",
+    "name": "不退の覚悟",
+    "type": "個人スキル",
+    "effect": "攻撃された時30%で発動し受けるダメージを半減する",
+    "owner": "セオドラ",
+    "category": "防御"
+  },
+  {
+    "id": "bukkowaashi",
+    "name": "ぶっ壊し",
+    "type": "装備スキル",
+    "effect": "障害物を攻撃する時、与えるダメージが3倍になる",
+    "owner": "セオドラ",
+    "category": "特殊"
+  },
+  {
+    "id": "chokugeki",
+    "name": "直撃",
+    "type": "Lvスキル",
+    "effect": "ブレイズアーツでの攻撃時30%で発動し、与えるダメージ+10",
+    "owner": "Lvアップで習得",
+    "category": "火力"
+  },
+  {
+    "id": "soujutsu_lvl1",
+    "name": "槍術Lv.1",
+    "type": "技能スキル",
+    "effect": "槍を装備中、命中+3",
+    "owner": "カイ、セオドラ、エスメラルダ、トビヤス、ライサンダー、バッカニア、ニネ、グザラン、イオ、アレキサンドラ、セテス",
+    "category": "命中"
+  },
+  {
+    "id": "kensei",
+    "name": "牽制",
+    "type": "技能スキル",
+    "effect": "隣接する敵の回避−3",
+    "owner": "セオドラ、ミカエラ",
+    "category": "妨害"
+  },
+  {
+    "id": "kibun_ya",
+    "name": "気分屋",
+    "type": "個人スキル",
+    "effect": "戦闘時、命中・回避・必殺のどれかが+10",
+    "owner": "グザラン",
+    "category": "ランダム"
+  },
+  {
+    "id": "hakubyou_no_mahai",
+    "name": "白兵の間合い",
+    "type": "技能スキル",
+    "effect": "【歩兵】隣接する敵の移動力-1",
+    "owner": "ディートリヒ、ミカエラ、バッカニア、ベルトラン、シモン、ナジャ、グザラン、ノクチュラ、ルルディヤー",
+    "category": "移動制限"
+  },
+  {
+    "id": "juuryou_kyu_no_senshi",
+    "name": "重量級の戦士",
+    "type": "個人スキル",
+    "effect": "騎兵、飛行の兵種になれない 体格+5",
+    "owner": "ゴライアス",
+    "category": "制限/強化"
+  },
+  {
+    "id": "hissatsu_shubi",
+    "name": "必殺守備",
+    "type": "技能スキル",
+    "effect": "必殺の一撃を受けた時の30%で発動し受けるダメージを半減する",
+    "owner": "ミカエラ、ゴライアス、クラプカ",
+    "category": "防御"
+  },
+  {
+    "id": "onokama",
+    "name": "斧包丁",
+    "type": "個人スキル",
+    "effect": "斧を装備中、命中+10",
+    "owner": "ザーコネ",
+    "category": "命中"
+  },
+  {
+    "id": "shunten",
+    "name": "瞬転",
+    "type": "個人スキル",
+    "effect": "「入れ替え」を使用後、守備+3 ※次の自分のフェイズまで",
+    "owner": "ジェスター",
+    "category": "防御"
+  },
+  {
+    "id": "shini_sobire",
+    "name": "死にそびれ",
+    "type": "個人スキル",
+    "effect": "自分のHPが2以上で、HPが0になるようなダメージを受けた時、幸運%で発動し、HPが1残る",
+    "owner": "シモン",
+    "category": "生存"
+  },
+  {
+    "id": "megami_no_onchou",
+    "name": "女神の恩寵",
+    "type": "個人スキル",
+    "effect": "戦闘後、自分のHPを5回復する",
+    "owner": "シロッコ",
+    "category": "回復"
+  },
+  {
+    "id": "kenjutsu_lvl1",
+    "name": "剣術Lv.1",
+    "type": "技能スキル",
+    "effect": "剣を装備中、命中+3",
+    "owner": "カイ、ディートリヒ、レダ、ミカエラ、ボナパルテ、シロッコ、ウーシュラ、ディエゴ、ナジャ、グザラン、イオ、アレキサンドラ、ヌッツォ、ジェスター、ルルディヤー、ロレッタ、キロイカ、ペペ",
+    "category": "命中"
+  },
+  {
+    "id": "kuro_mag_lvl1",
+    "name": "黒魔術Lv.1",
+    "type": "技能スキル",
+    "effect": "黒魔法を装備中、命中+3",
+    "owner": "ティアラ、ファビオ、ボナパルテ、シロッコ、オリンピア、タリムーン、アナトリア、ダンテ、ヨーカイ、ソフィア",
+    "category": "命中"
+  },
+  {
+    "id": "nerai_uchi",
+    "name": "狙い射ち",
+    "type": "個人スキル",
+    "effect": "弓の戦技を使う時、射程+1",
+    "owner": "ピーテル",
+    "category": "射程"
+  },
+  {
+    "id": "senjou_no_sakugeki",
+    "name": "戦場の作劇",
+    "type": "個人スキル",
+    "effect": "周囲2マスにいる味方の戦闘時、その味方の(魅力÷2)%で発動し、その味方の必避+10",
+    "owner": "ダンテ",
+    "category": "支援"
+  },
+  {
+    "id": "reki_sen_no_tsuwamono",
+    "name": "歴戦の強者",
+    "type": "個人スキル",
+    "effect": "隣接する敵との戦闘時、命中+10",
+    "owner": "ミカエラ",
+    "category": "命中"
+  },
+  {
+    "id": "youjin_bou",
+    "name": "用心棒",
+    "type": "個人スキル",
+    "effect": "隣接する味方の戦闘時、5%で発動し、その味方は追撃されなくなる",
+    "owner": "ディエゴ",
+    "category": "防御"
+  },
+  {
+    "id": "rinzentaisei",
+    "name": "臨戦態勢",
+    "type": "個人スキル",
+    "effect": "敵のフェイズ中、1度目の戦闘時に50%で発動し、自身が先攻になる",
+    "owner": "セテス",
+    "category": "先制"
+  },
+  {
+    "id": "seirei_no_koe",
+    "name": "精霊の声",
+    "type": "個人スキル",
+    "effect": "戦闘時、敵が魔法なら命中・回避+10",
+    "owner": "ニネ",
+    "category": "対魔法"
+  },
+  {
+    "id": "satsui",
+    "name": "殺意",
+    "type": "個人スキル",
+    "effect": "先攻での戦闘時、必殺+5",
+    "owner": "ディートリヒ",
+    "category": "必殺"
+  },
+  {
+    "id": "kemono_no_shoudou",
+    "name": "獣の衝動",
+    "type": "Lvスキル",
+    "effect": "戦闘後、必殺+2(必殺の一撃が発生した戦闘後、元に戻る)",
+    "owner": "Lvアップで習得",
+    "category": "必殺"
+  },
+  {
+    "id": "kougeki_jinkei",
+    "name": "攻撃陣形",
+    "type": "技能スキル",
+    "effect": "隣接する味方の攻撃力+1",
+    "owner": "カイ、セオドラ、オリンピア、ベルトラン、タリムーン",
+    "category": "支援"
+  },
+  {
+    "id": "bougyo_no_kihon",
+    "name": "防衛の基本",
+    "type": "マスタースキル",
+    "effect": "守備+1",
+    "owner": "兵士をマスター",
+    "category": "基本"
+  },
+  {
+    "id": "shuryou_no_kihon",
+    "name": "狩猟の基本",
+    "type": "マスタースキル",
+    "effect": "速さ+1",
+    "owner": "猟兵をマスター",
+    "category": "基本"
+  },
+  {
+    "id": "mado_no_kihon",
+    "name": "魔道の基本",
+    "type": "マスタースキル",
+    "effect": "魔力+1",
+    "owner": "呪い師をマスター",
+    "category": "基本"
+  },
+  {
+    "id": "kosei",
+    "name": "好調",
+    "type": "マスタースキル",
+    "effect": "戦闘時、HPが満タンなら命中・必殺+5",
+    "owner": "アーチャーをマスター",
+    "category": "条件付き"
+  },
+  {
+    "id": "kage_kagurashi",
+    "name": "影晦まし",
+    "type": "マスタースキル",
+    "effect": "戦闘後、敵から反撃されない",
+    "owner": "ローグをマスター",
+    "category": "回避"
+  },
+  {
+    "id": "daigeki",
+    "name": "大反撃",
+    "type": "マスタースキル",
+    "effect": "後攻での戦闘時、受けるダメージを半減する",
+    "owner": "重装歩兵をマスター",
+    "category": "防御"
+  },
+  {
+    "id": "tairyoku_no_kyouka",
+    "name": "体力の強化",
+    "type": "マスタースキル",
+    "effect": "最大HP+5",
+    "owner": "軽騎兵をマスター",
+    "category": "HP"
+  },
+  {
+    "id": "totsuzen_taisei",
+    "name": "突進大勢",
+    "type": "マスタースキル",
+    "effect": "戦闘時、移動後なら攻撃力+3",
+    "owner": "戦車兵をマスター",
+    "category": "火力"
+  },
+  {
+    "id": "kyoui_no_satchi",
+    "name": "脅威の察知",
+    "type": "マスタースキル",
+    "effect": "戦闘時、敵の必殺率-10",
+    "owner": "騎甲駝兵をマスター",
+    "category": "防御"
+  },
+  {
+    "id": "waza_no_sae",
+    "name": "技の冴え",
+    "type": "マスタースキル",
+    "effect": "剣装備時、必殺+5",
+    "owner": "剣士をマスター",
+    "category": "必殺"
+  },
+  {
+    "id": "tachinaoshi",
+    "name": "立て直し",
+    "type": "マスタースキル",
+    "effect": "戦闘後、HPを20%回復",
+    "owner": "ブリガンドをマスター",
+    "category": "回復"
+  },
+  {
+    "id": "hit_and_away",
+    "name": "ヒット＆アウェイ",
+    "type": "マスタースキル",
+    "effect": "戦闘後、1マス移動できる",
+    "owner": "セスタスをマスター",
+    "category": "機動"
+  },
+  {
+    "id": "shageki_no_tatsujin",
+    "name": "射撃の達人",
+    "type": "マスタースキル",
+    "effect": "弓装備時、射程+1",
+    "owner": "スナイパーをマスター",
+    "category": "射程"
+  },
+  {
+    "id": "mori_no_shugo",
+    "name": "森の守護",
+    "type": "マスタースキル",
+    "effect": "森・茂みにいる時、回避+20",
+    "owner": "フォレストナイトをマスター",
+    "category": "回避"
+  }
 ]
