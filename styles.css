@@ -443,11 +443,36 @@ table.hayakabe tbody tr:hover td, table.hayakabe tbody tr:hover th { background:
 table.hayakabe .is-active { background: #fdf3e7; box-shadow: inset 1px 0 0 #d9b98c, inset -1px 0 0 #d9b98c; }
 table.hayakabe thead th.is-active { background: #f6e7d8; color: #8b4513; }
 
-/* ten columns: keep them readable and pin the name while scrolling sideways */
+/* Ten columns: keep them readable, pin the name on the left and freeze the
+   header row. .tablewrap already sets overflow-x, and an overflow other than
+   `visible` turns the wrapper into a scroll container on both axes - which is
+   exactly what position:sticky needs in order to stick to it. The max-height
+   is what gives it a scrollport at all, so the header has something to stick to. */
+.namewrap { max-height: 72vh; overflow: auto; }
 table.namegrowth { min-width: 660px; }
 table.namegrowth .sticky { position: sticky; left: 0; z-index: 1; }
+table.namegrowth thead th { position: sticky; top: 0; z-index: 2; }
+table.namegrowth thead th.sticky { left: 0; z-index: 3; }
 table.namegrowth a { color: inherit; text-decoration: none; }
 table.namegrowth a:hover { color: #a0522d; text-decoration: underline; }
+
+/* clickable header cells */
+table.namegrowth th button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    text-align: inherit;
+    white-space: nowrap;
+    cursor: pointer;
+}
+table.namegrowth th button:hover { color: #a0522d; }
+table.namegrowth th.num { text-align: center; }
+table.namegrowth thead th.is-active { background: #f6e7d8; color: #8b4513; }
+table.namegrowth thead th.is-active button { color: inherit; }
 
 .cell-main { display: block; font-weight: 600; color: #5d4037; }
 .cell-sub { display: block; color: #8b7355; font-size: 0.72rem; }

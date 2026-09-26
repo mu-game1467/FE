@@ -259,15 +259,60 @@ function renderRecruitTable(list) {
         </div>`;
 }
 
-/* the growth-rate view: one row per unit, name plus the nine growth rates */
+/* ------------------------------------------------- growth-rate table -- */
+
+/**
+ * Which column the current sort belongs to, as { key, dir }.
+ * 'default' (data order) has no column, so no header is marked.
+ * `state.sort` stays the single source of truth: the sort select and the
+ * table headers are two views of the same value.
+ */
+function growthSortState() {
+    const mode = state.sort;
+    if (mode === 'name' || mode === 'name-desc') {
+        return { key: 'name', dir: mode === 'name' ? 'asc' : 'desc' };
+    }
+    if (mode.endsWith('-asc') && STAT_KEYS.has(mode.slice(0, -4))) {
+        return { key: mode.slice(0, -4), dir: 'asc' };
+    }
+    if (STAT_KEYS.has(mode)) return { key: mode, dir: 'desc' };
+    return { key: null, dir: null };
+}
+
+/** header cell; clicking it flips that column between ascending/descending */
+function growthHeadCell(key, label, extraClass) {
+    const current = growthSortState();
+    const active = current.key === key;
+    const cls = ['sortable', extraClass || ''];
+    if (active) cls.push('is-active', current.dir);
+    const mark = active ? (current.dir === 'asc' ? ' ▲' : ' ▼') : '';
+    const aria = active ? (current.dir === 'asc' ? 'ascending' : 'descending') : 'none';
+    return `<th class="${cls.join(' ').trim()}" aria-sort="${aria}">` +
+        `<button type="button" data-sort="${esc(key)}">${esc(label)}${mark}</button></th>`;
+}
+
+function applyGrowthSort(key) {
+    const current = growthSortState();
+    const dir = current.key === key
+        ? (current.dir === 'desc' ? 'asc' : 'desc')
+        : (key === 'name' ? 'asc' : 'desc');
+    state.sort = dir === 'asc'
+        ? (key === 'name' ? 'name' : `${key}-asc`)
+        : (key === 'name' ? 'name-desc' : key);
+    const select = document.getElementById('sort');
+    if (select) select.value = state.sort;
+    renderList();
+}
+
+/* one row per unit: name plus the nine growth rates, frozen header */
 function renderNameGrowthTable(list) {
     return `
-        <div class="tablewrap">
+        <div class="tablewrap namewrap">
             <table class="namegrowth">
                 <thead>
                     <tr>
-                        <th class="sticky">名前</th>
-                        ${STATS.map((s) => `<th>${esc(s.label)}</th>`).join('')}
+                        ${growthHeadCell('name', '名前', 'sticky')}
+                        ${STATS.map((s) => growthHeadCell(s.key, s.label, 'num')).join('')}
                     </tr>
                 </thead>
                 <tbody>
@@ -425,8 +470,14 @@ function sortData(list, mode) {
         case 'tier':      return copy.sort((a, b) => tierIndex(a.tier) - tierIndex(b.tier) || byName(a, b));
         case 'type':      return copy.sort((a, b) => String(a.type || '').localeCompare(String(b.type || ''), 'ja') || byName(a, b));
         default:
+            // 'hp', 'str', ... sort high-to-low; the '-asc' variants (used by the
+            // growth table headers) sort the other way. Ties fall back to the name.
+            if (mode.endsWith('-asc') && STAT_KEYS.has(mode.slice(0, -4))) {
+                const key = mode.slice(0, -4);
+                return copy.sort((a, b) => statOf(a, key) - statOf(b, key) || byName(a, b));
+            }
             if (STAT_KEYS.has(mode)) {
-                return copy.sort((a, b) => statOf(b, mode) - statOf(a, mode));
+                return copy.sort((a, b) => statOf(b, mode) - statOf(a, mode) || byName(a, b));
             }
             return copy;
     }
@@ -717,7 +768,16 @@ const SORT_OPTIONS = {
         { value: 'def', label: '守備 が高い順' },
         { value: 'res', label: '魔防 が高い順' },
         { value: 'lck', label: '幸運 が高い順' },
-        { value: 'cha', label: '魅力 が高い順' }
+        { value: 'cha', label: '魅力 が高い順' },
+        { value: 'hp-asc', label: 'HP が低い順' },
+        { value: 'str-asc', label: '力 が低い順' },
+        { value: 'mag-asc', label: '魔力 が低い順' },
+        { value: 'spd-asc', label: '速さ が低い順' },
+        { value: 'dex-asc', label: '技 が低い順' },
+        { value: 'def-asc', label: '守備 が低い順' },
+        { value: 'res-asc', label: '魔防 が低い順' },
+        { value: 'lck-asc', label: '幸運 が低い順' },
+        { value: 'cha-asc', label: '魅力 が低い順' }
     ],
     classes: [
         { value: 'tier', label: '階級順' },
@@ -817,6 +877,13 @@ function buildToolbar() {
             renderList();
         });
     }
+
+    // Delegated on purpose: renderList() replaces the list's innerHTML, so a
+    // listener bound to the header cells themselves would not survive a re-render.
+    list.addEventListener('click', (event) => {
+        const button = event.target.closest('button[data-sort]');
+        if (button) applyGrowthSort(button.dataset.sort);
+    });
 }
 
 /* -------------------------------------------------------------- boot -- */
