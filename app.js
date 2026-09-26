@@ -259,6 +259,30 @@ function renderRecruitTable(list) {
         </div>`;
 }
 
+/* the growth-rate view: one row per unit, name plus the nine growth rates */
+function renderNameGrowthTable(list) {
+    return `
+        <div class="tablewrap">
+            <table class="namegrowth">
+                <thead>
+                    <tr>
+                        <th class="sticky">名前</th>
+                        ${STATS.map((s) => `<th>${esc(s.label)}</th>`).join('')}
+                    </tr>
+                </thead>
+                <tbody>
+                ${list.map((item) => {
+                    const growth = item.growth_rates || {};
+                    return `<tr>
+                        <th class="sticky"><a href="${encodeURIComponent(item.id)}/">${esc(item.name)}</a></th>
+                        ${STATS.map((s) => `<td class="num">${esc(statValue(growth, s.key))}</td>`).join('')}
+                    </tr>`;
+                }).join('')}
+                </tbody>
+            </table>
+        </div>`;
+}
+
 
 /* --------------------------------------------------- classes and lists -- */
 
@@ -360,6 +384,7 @@ function renderList() {
 
     const filtered = state.data.filter(matchesQuery);
     const isTable = state.type === 'characters' && state.view === 'table';
+    const isNameTable = state.type === 'characters' && state.view === 'names';
     const list = isTable
         ? sortByRoute(filtered, state.tableRoute, state.tableOrder)
         : sortData(filtered, state.sort);
@@ -376,6 +401,9 @@ function renderList() {
     if (isTable) {
         container.classList.add('as-table');
         container.innerHTML = renderRecruitTable(list);
+    } else if (isNameTable) {
+        container.classList.add('as-table');
+        container.innerHTML = renderNameGrowthTable(list);
     } else {
         container.classList.remove('as-table');
         const render = RENDERERS[state.type] || renderItem;
@@ -731,6 +759,7 @@ function buildToolbar() {
                 <select id="view">
                     <option value="cards"${state.view === 'cards' ? ' selected' : ''}>カード</option>
                     <option value="table"${state.view === 'table' ? ' selected' : ''}>加入条件の早見表</option>
+                    <option value="names"${state.view === 'names' ? ' selected' : ''}>成長率一覧表</option>
                 </select>
             </label>
             <span class="control" id="table-controls" hidden>

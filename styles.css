@@ -405,27 +405,28 @@ footer {
 .skill-tag.weak { color: #a33; }
 
 /* ------------------------------------------------------------ tables -- */
-table.mini, table.hayakabe {
+table.mini, table.hayakabe, table.namegrowth {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.8rem;
 }
 
-table.mini th, table.mini td, table.hayakabe th, table.hayakabe td {
+table.mini th, table.mini td, table.hayakabe th, table.hayakabe td,
+table.namegrowth th, table.namegrowth td {
     border: 1px solid #e2d6c5;
     padding: 0.3rem 0.4rem;
     text-align: left;
     vertical-align: top;
 }
 
-table.mini thead th, table.hayakabe thead th {
+table.mini thead th, table.hayakabe thead th, table.namegrowth thead th {
     background: #f5f0e8;
     color: #5d4037;
     font-weight: 600;
     white-space: nowrap;
 }
 
-table.mini td.num, table.hayakabe td.num { text-align: center; }
+table.mini td.num, table.hayakabe td.num, table.namegrowth td.num { text-align: center; }
 
 .tablewrap {
     overflow-x: auto;
@@ -436,10 +437,17 @@ table.mini td.num, table.hayakabe td.num { text-align: center; }
 
 table.hayakabe { min-width: 720px; }
 table.hayakabe td.na { color: #bcae9e; text-align: center; }
-table.hayakabe .sticky { background: #faf6f0; white-space: nowrap; }
+table.hayakabe .sticky,
+table.namegrowth .sticky { background: #faf6f0; white-space: nowrap; }
 table.hayakabe tbody tr:hover td, table.hayakabe tbody tr:hover th { background: #fdf3e7; }
 table.hayakabe .is-active { background: #fdf3e7; box-shadow: inset 1px 0 0 #d9b98c, inset -1px 0 0 #d9b98c; }
 table.hayakabe thead th.is-active { background: #f6e7d8; color: #8b4513; }
+
+/* ten columns: keep them readable and pin the name while scrolling sideways */
+table.namegrowth { min-width: 660px; }
+table.namegrowth .sticky { position: sticky; left: 0; z-index: 1; }
+table.namegrowth a { color: inherit; text-decoration: none; }
+table.namegrowth a:hover { color: #a0522d; text-decoration: underline; }
 
 .cell-main { display: block; font-weight: 600; color: #5d4037; }
 .cell-sub { display: block; color: #8b7355; font-size: 0.72rem; }
