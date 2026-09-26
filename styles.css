@@ -11,7 +11,7 @@ body {
     line-height: 1.6;
 }
 
-header {
+body > header {
     background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
     color: white;
     padding: 2rem;
@@ -19,7 +19,7 @@ header {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-header h1 {
+body > header h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -81,7 +81,7 @@ section h2 {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid #e8ddd0;
+    border: 1px solid #d9c9b4;
 }
 
 .card:hover {
@@ -96,7 +96,7 @@ section h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #8b7355;
+    color: #6f5b3c;
     font-size: 3rem;
 }
 
@@ -125,7 +125,7 @@ section h2 {
     border-radius: 4px;
 }
 
-footer {
+body > footer {
     background: #8b4513;
     color: white;
     text-align: center;
@@ -134,7 +134,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    header h1 {
+    body > header h1 {
         font-size: 1.8rem;
     }
     nav ul {
@@ -175,7 +175,7 @@ footer {
     text-decoration: none;
     color: inherit;
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid #e8ddd0;
+    border: 1px solid #d9c9b4;
     display: block;
 }
 
@@ -216,7 +216,7 @@ footer {
     align-items: center;
     gap: 0.75rem;
     background: #fff;
-    border: 1px solid #e8ddd0;
+    border: 1px solid #d9c9b4;
     border-radius: 8px;
     padding: 0.75rem 1rem;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
@@ -258,7 +258,7 @@ footer {
 .result-count {
     margin-left: auto;
     font-size: 0.85rem;
-    color: #8b7355;
+    color: #6f5b3c;
 }
 
 /* table view only controls (route + order) */
@@ -268,7 +268,7 @@ footer {
     align-items: center;
     gap: 0.75rem;
     padding-left: 0.75rem;
-    border-left: 2px solid #e8ddd0;
+    border-left: 2px solid #d9c9b4;
 }
 
 #table-controls[hidden] { display: none; }
@@ -288,7 +288,7 @@ footer {
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
-    border-bottom: 2px solid #efe5d8;
+    border-bottom: 2px solid #dfd2bf;
     padding-bottom: 0.5rem;
     margin-bottom: 0.75rem;
 }
@@ -333,7 +333,7 @@ footer {
 .statbar-track {
     flex: 1;
     height: 8px;
-    background: #efe5d8;
+    background: #e3d7c5;
     border-radius: 4px;
     overflow: hidden;
     position: relative;
@@ -378,7 +378,7 @@ footer {
 
 .kv-label {
     flex: 0 0 5.5em;
-    color: #8b7355;
+    color: #6f5b3c;
     font-weight: 600;
 }
 
@@ -386,7 +386,7 @@ footer {
 
 .kvs + .kvs, .kvs + .taglist, .card-block + .kvs, .kvs + .source { margin-top: 0.75rem; }
 
-.muted { color: #8b7355; font-size: 0.82rem; }
+.muted { color: #6f5b3c; font-size: 0.82rem; }
 .desc { margin: 0.5rem 0 0.75rem; }
 .effect { font-size: 0.88rem; margin-bottom: 0.6rem; color: #4a4a4a; }
 
@@ -396,7 +396,7 @@ footer {
 .tag {
     display: inline-block;
     background: #f5f0e8;
-    border: 1px solid #e2d6c5;
+    border: 1px solid #d3c3ac;
     color: #6d4c41;
     border-radius: 999px;
     padding: 0.1rem 0.6rem;
@@ -432,7 +432,7 @@ table.mini, table.hayakabe, table.namegrowth {
 
 table.mini th, table.mini td, table.hayakabe th, table.hayakabe td,
 table.namegrowth th, table.namegrowth td {
-    border: 1px solid #e2d6c5;
+    border: 1px solid #d3c3ac;
     padding: 0.3rem 0.4rem;
     text-align: left;
     vertical-align: top;
@@ -450,14 +450,14 @@ table.mini td.num, table.hayakabe td.num, table.namegrowth td.num { text-align: 
 .tablewrap {
     overflow-x: auto;
     background: #fff;
-    border: 1px solid #e8ddd0;
+    border: 1px solid #d9c9b4;
     border-radius: 8px;
 }
 
 table.hayakabe { min-width: 720px; }
 table.hayakabe td.na { color: #bcae9e; text-align: center; }
 table.hayakabe .sticky,
-table.namegrowth .sticky { background: #faf6f0; white-space: nowrap; }
+table.namegrowth .sticky { background: #f4ece1; white-space: nowrap; }
 table.hayakabe tbody tr:hover td, table.hayakabe tbody tr:hover th { background: #fdf3e7; }
 table.hayakabe .is-active { background: #fdf3e7; box-shadow: inset 1px 0 0 #d9b98c, inset -1px 0 0 #d9b98c; }
 table.hayakabe thead th.is-active { background: #f6e7d8; color: #8b4513; }
@@ -494,7 +494,7 @@ table.namegrowth thead th.is-active { background: #f6e7d8; color: #8b4513; }
 table.namegrowth thead th.is-active button { color: inherit; }
 
 .cell-main { display: block; font-weight: 600; color: #5d4037; }
-.cell-sub { display: block; color: #8b7355; font-size: 0.72rem; }
+.cell-sub { display: block; color: #6f5b3c; font-size: 0.72rem; }
 
 /* ----------------------------------------------------- detail page -- */
 .card-name a {
@@ -513,7 +513,7 @@ table.namegrowth thead th.is-active button { color: inherit; }
     justify-content: space-between;
     gap: 1rem;
     background: #fff;
-    border: 1px solid #e8ddd0;
+    border: 1px solid #d9c9b4;
     border-radius: 8px;
     padding: 1.25rem 1.5rem;
 }
@@ -529,7 +529,7 @@ table.namegrowth thead th.is-active button { color: inherit; }
 
 .panel {
     background: #fff;
-    border: 1px solid #e8ddd0;
+    border: 1px solid #d9c9b4;
     border-radius: 8px;
     padding: 1.25rem 1.5rem;
 }
@@ -551,7 +551,7 @@ table.classtable {
 }
 
 table.classtable th, table.classtable td {
-    border: 1px solid #e2d6c5;
+    border: 1px solid #d3c3ac;
     padding: 0.3rem 0.45rem;
     text-align: left;
     white-space: nowrap;
@@ -568,7 +568,7 @@ table.classtable thead th {
 table.classtable .sticky {
     position: sticky;
     left: 0;
-    background: #faf6f0;
+    background: #f4ece1;
     z-index: 1;
 }
 
@@ -583,11 +583,11 @@ table.classtable tr.is-best td.num strong { color: #8b4513; }
 .page-note a:hover { text-decoration: underline; }
 
 /* ------------------------------------------------------------ footer -- */
-footer .credit {
+body > footer .credit {
     font-size: 0.75rem;
     opacity: 0.85;
     margin-top: 0.4rem;
 }
 
-footer .credit a { color: #ffe9c9; }
-footer code { background: rgba(0,0,0,0.2); padding: 0 0.3em; border-radius: 3px; }
+body > footer .credit a { color: #ffe9c9; }
+body > footer code { background: rgba(0,0,0,0.2); padding: 0 0.3em; border-radius: 3px; }
