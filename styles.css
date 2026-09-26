@@ -336,13 +336,32 @@ footer {
     background: #efe5d8;
     border-radius: 4px;
     overflow: hidden;
+    position: relative;
 }
 
+/* positioned by left/width so a bar can start at the zero line instead of 0 */
 .statbar-fill {
     display: block;
     height: 100%;
     background: linear-gradient(90deg, #c97b3c, #8b4513);
     border-radius: 4px;
+    position: absolute;
+    top: 0;
+}
+
+/* a negative growth rate reads as a bar on the left of the zero line */
+.statbar-fill.neg { background: linear-gradient(90deg, #c96a6a, #8b2f2f); }
+
+/* mark where 0 sits, but only when the scale actually dips below zero */
+.statbar-track.is-split::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--zero, 0%);
+    width: 1px;
+    background: #b8a68f;
+    z-index: 1;
 }
 
 .statbar-value {

@@ -39,7 +39,9 @@ const state = {
     sort: 'default',
     view: 'cards',
     tableRoute: 'kai',
-    tableOrder: 'both'
+    tableOrder: 'both',
+    // { min, max } the growth bars are drawn against, derived from the data
+    scale: null
 };
 
 /* ------------------------------------------------------------ helpers -- */
@@ -92,22 +94,59 @@ function statValue(source, key) {
     return typeof value === 'number' ? value : null;
 }
 
-function statBar(label, value, max, suffix) {
-    const pct = Math.max(0, Math.min(100, (value / max) * 100));
+/**
+ * The { min, max } every bar of one data set is drawn against. It is derived
+ * from the data on purpose: a hard-coded scale below the real maximum silently
+ * clamps the longest bars, so e.g. 25 and 30 both render at 100% and look
+ * identical. One shared scale for the whole set also keeps bars comparable
+ * from card to card.
+ */
+function rateScale(items) {
+    let min = 0;
+    let max = 0;
+    (items || []).forEach((item) => {
+        const rates = (item && (item.growth_rates || item.growth_bonus)) || null;
+        if (!rates) return;
+        STATS.forEach((s) => {
+            const value = statValue(rates, s.key);
+            if (value === null) return;
+            if (value < min) min = value;
+            if (value > max) max = value;
+        });
+    });
+    return { min, max: max > min ? max : 1 };
+}
+
+/**
+ * One bar. Nothing is clamped: a value above the scale would be cut off and
+ * two different values would render the same length. When the scale dips below
+ * zero the track is split at 0, so a negative growth rate reads as a bar on the
+ * left of the line instead of an empty track indistinguishable from 0.
+ */
+function statBar(label, value, scale) {
+    const lo = scale && typeof scale.min === 'number' ? scale.min : 0;
+    const hi = scale && typeof scale.max === 'number' && scale.max > lo ? scale.max : 1;
+    const span = hi - lo;
+    const zero = ((0 - lo) / span) * 100;
+    const at = Math.max(0, Math.min(100, ((value - lo) / span) * 100));
+    const left = Math.min(at, zero);
+    const width = Math.abs(at - zero);
+    const split = lo < 0 ? ' is-split' : '';
     return `
         <div class="statbar">
             <span class="statbar-label">${esc(label)}</span>
-            <span class="statbar-track"><span class="statbar-fill" style="width:${pct.toFixed(1)}%"></span></span>
-            <span class="statbar-value">${esc(value)}${esc(suffix || '')}</span>
+            <span class="statbar-track${split}" style="--zero:${zero.toFixed(2)}%"><span class="statbar-fill${value < 0 ? ' neg' : ''}" style="left:${left.toFixed(2)}%;width:${width.toFixed(2)}%"></span></span>
+            <span class="statbar-value">${esc(value)}</span>
         </div>`;
 }
 
-function growthGrid(rates, max) {
+function growthGrid(rates, scale) {
     if (!rates) return '';
-    return `<div class="statgrid">${STATS.map((s) => {
+    const split = scale && scale.min < 0 ? ' is-split' : '';
+    return `<div class="statgrid${split}">${STATS.map((s) => {
         const value = statValue(rates, s.key);
         if (value === null) return '';
-        return statBar(s.label, value, max, '');
+        return statBar(s.label, value, scale);
     }).join('')}</div>`;
 }
 
@@ -184,7 +223,7 @@ function renderCharacter(item) {
 
                 <div class="card-block">
                     <h4>成長率 <span class="muted">合計 ${esc(growth.total)}</span></h4>
-                    ${growthGrid(growth, 70)}
+                    ${growthGrid(growth, state.scale)}
                 </div>
 
                 ${skills.length ? `<div class="card-block"><h4>固有</h4><div class="kvs">${skills.join('')}</div></div>` : ''}
@@ -349,7 +388,7 @@ function renderClass(item) {
                 ${item.growth_bonus ? `
                 <div class="card-block">
                     <h4>成長ボーナス</h4>
-                    ${growthGrid(item.growth_bonus, 25)}
+                    ${growthGrid(item.growth_bonus, state.scale)}
                 </div>` : ''}
 
                 ${item.description ? `<p class="muted desc">${esc(item.description)}</p>` : ''}
@@ -657,7 +696,7 @@ function renderCharacterDetail(character, classes, container) {
 
             <section class="panel">
                 <h3>成長率 <span class="muted">合計 ${esc(growth.total)}</span></h3>
-                ${growthGrid(growth, 70)}
+                ${growthGrid(growth, state.scale)}
             </section>
 
             ${own.length ? `<section class="panel"><h3>固有</h3>${rows(own, true)}</section>` : ''}
@@ -731,6 +770,7 @@ async function loadDetailPage(id) {
             fetchJson({ file: 'data/characters.json' }),
             fetchJson({ file: 'data/classes.json' })
         ]);
+        state.scale = rateScale(characters);
         const character = characters.find((c) => c.id === id || c.name === id);
         if (!character) {
             container.innerHTML = emptyState('キャラクターが見つかりません');
@@ -933,6 +973,7 @@ async function loadData() {
     try {
         const data = await fetchJson(page);
         state.data = Array.isArray(data) ? data : [];
+        state.scale = rateScale(state.data);
     } catch (error) {
         console.error(`Failed to load ${page.file}`, error);
         state.data = [];
