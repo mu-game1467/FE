@@ -46,6 +46,11 @@ nav a:hover {
     background: rgba(255,248,231,0.2);
 }
 
+nav a.active {
+    background: #fff8e7;
+    color: #8b4513;
+}
+
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -141,4 +146,58 @@ footer {
     .data-grid {
         grid-template-columns: 1fr;
     }
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.dashboard {
+    text-align: center;
+}
+
+.dashboard h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.dashboard-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 2.5rem 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #e8ddd0;
+    display: block;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.dashboard-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.dashboard-card h2 {
+    font-size: 1.4rem;
+    color: #8b4513;
+    margin-bottom: 0.5rem;
+    border: none;
+    padding: 0;
+}
+
+.dashboard-card p {
+    color: #6d4c41;
+    font-size: 0.95rem;
 }

@@ -11,34 +11,42 @@
         <h1>ファイアーエムブレム 万紫千紅 データベース</h1>
         <nav>
             <ul>
-                <li><a href="#characters">キャラクター</a></li>
-                <li><a href="#classes">クラス</a></li>
-                <li><a href="#items">アイテム</a></li>
-                <li><a href="#skills">スキル</a></li>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="characters.html">キャラクター</a></li>
+                <li><a href="classes.html">クラス</a></li>
+                <li><a href="items.html">アイテム</a></li>
+                <li><a href="skills.html">スキル</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="characters">
-            <h2>キャラクター</h2>
-            <div id="character-list" class="data-grid"></div>
-        </section>
-        <section id="classes">
-            <h2>クラス</h2>
-            <div id="class-list" class="data-grid"></div>
-        </section>
-        <section id="items">
-            <h2>アイテム</h2>
-            <div id="item-list" class="data-grid"></div>
-        </section>
-        <section id="skills">
-            <h2>スキル</h2>
-            <div id="skill-list" class="data-grid"></div>
+        <section class="dashboard">
+            <div class="dashboard-grid">
+                <a href="characters.html" class="dashboard-card">
+                    <div class="dashboard-icon">👤</div>
+                    <h2>キャラクター</h2>
+                    <p>登場人物のステータス・プロフィール</p>
+                </a>
+                <a href="classes.html" class="dashboard-card">
+                    <div class="dashboard-icon">⚔️</div>
+                    <h2>クラス</h2>
+                    <p>職業・上級職・武器タイプ一覧</p>
+                </a>
+                <a href="items.html" class="dashboard-card">
+                    <div class="dashboard-icon">📦</div>
+                    <h2>アイテム</h2>
+                    <p>武器・回復・魔法書など全アイテム</p>
+                </a>
+                <a href="skills.html" class="dashboard-card">
+                    <div class="dashboard-icon">✨</div>
+                    <h2>スキル</h2>
+                    <p>戦闘・支援・固有スキル一覧</p>
+                </a>
+            </div>
         </section>
     </main>
     <footer>
         <p>FE万紫千紅 個人用データベース</p>
     </footer>
-    <script src="app.js"></script>
 </body>
 </html>

@@ -12,18 +12,30 @@ const ICONS = {
     skills: '✨'
 };
 
+function getCurrentPageType() {
+    const path = window.location.pathname;
+    if (path.includes('characters')) return 'characters';
+    if (path.includes('classes')) return 'classes';
+    if (path.includes('items')) return 'items';
+    if (path.includes('skills')) return 'skills';
+    return null;
+}
+
 async function loadData() {
-    for (const [key, url] of Object.entries(DATA_FILES)) {
-        try {
-            const response = await fetch(url);
-            if (response.ok) {
-                const data = await response.json();
-                renderCards(key, data);
-            }
-        } catch (e) {
-            console.log(`No data file for ${key} yet`);
-            renderEmptyState(key);
+    const type = getCurrentPageType();
+    if (!type) return;
+
+    try {
+        const response = await fetch(DATA_FILES[type]);
+        if (response.ok) {
+            const data = await response.json();
+            renderCards(type, data);
+        } else {
+            renderEmptyState(type);
         }
+    } catch (e) {
+        console.log(`No data file for ${type} yet`);
+        renderEmptyState(type);
     }
 }
 
@@ -61,11 +73,17 @@ function createCard(type, item) {
 function renderEmptyState(type) {
     const container = document.getElementById(`${type}-list`);
     if (!container) return;
+    const labels = {
+        characters: 'キャラクター',
+        classes: 'クラス',
+        items: 'アイテム',
+        skills: 'スキル'
+    };
     container.innerHTML = `
         <div class="card" style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
             <div class="card-image">${ICONS[type]}</div>
             <div class="card-content">
-                <h3 class="card-name">${type === 'characters' ? 'キャラクター' : type === 'classes' ? 'クラス' : type === 'items' ? 'アイテム' : 'スキル'}データがありません</h3>
+                <h3 class="card-name">${labels[type]}データがありません</h3>
                 <p style="color: #888;">data/${type}.json を作成してデータを追加してください</p>
             </div>
         </div>
