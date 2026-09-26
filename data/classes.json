@@ -1,299 +1,2114 @@
 [
   {
-    "id": "heimin",
-    "name": "平民",
-    "tier": "基本職",
-    "type": "歩兵",
-    "movement": 0,
-    "growth_rates": {"hp": 0, "str": 0, "mag": 0, "spd": 0, "dex": 0, "lck": 0, "def": 0, "res": 0, "cha": 0},
-    "usable_skills": ["剣術", "槍術", "斧術", "弓術", "格闘術", "白魔術", "黒魔術", "歩兵術"],
-    "class_skill": "なし",
-    "master_skill": "戦闘の基本（命中・回避+3）",
-    "unlock_condition": "初期から解放"
+    "id":  "平民",
+    "name":  "平民",
+    "tier":  "基本職",
+    "growth_bonus":  {
+      "hp":  0,
+      "str":  0,
+      "mag":  0,
+      "spd":  0,
+      "dex":  0,
+      "def":  0,
+      "res":  0,
+      "lck":  0,
+      "cha":  0
+    },
+    "movement":  4,
+    "move_type":  "歩行",
+    "tp":  15,
+    "master_skill":  "戦闘の基本",
+    "description":  "ダグザに暮らす一般的な民/様々な出自や立場の者がいる"
   },
   {
-    "id": "kizoku",
-    "name": "貴族",
-    "tier": "基本職",
-    "type": "歩兵",
-    "movement": 0,
-    "growth_rates": {"hp": 0, "str": 0, "mag": 0, "spd": 0, "dex": 0, "lck": 0, "def": 0, "res": 0, "cha": 0},
-    "usable_skills": ["剣術", "槍術", "斧術", "弓術", "格闘術", "白魔術", "黒魔術", "歩兵術"],
-    "class_skill": "なし",
-    "master_skill": "戦闘の基本（命中・回避+3）",
-    "unlock_condition": "初期から解放"
+    "id":  "闘士",
+    "name":  "闘士",
+    "tier":  "初級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816670",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  10,
+      "mag":  0,
+      "spd":  0,
+      "dex":  0,
+      "def":  0,
+      "res":  0,
+      "lck":  0,
+      "cha":  0
+    },
+    "movement":  4,
+    "move_type":  "歩行",
+    "tp":  30,
+    "usable_skills":  [
+      "剣術",
+      "斧術",
+      "格闘術",
+      "歩兵術"
+    ],
+    "master_skill":  "攻撃の基本",
+    "weapon_exp_bonus":  "剣+1、斧+1、格闘+1",
+    "skill_caps":  [
+      "剣術 D",
+      "斧術 D",
+      "格闘術 D"
+    ],
+    "description":  "剣、斧、籠手といった武器を/巧みに使いこなす者/攻撃力に優れる",
+    "unlock_item":  "初級試験手形"
   },
   {
-    "id": "toushi",
-    "name": "闘士",
-    "tier": "初級職",
-    "type": "歩兵",
-    "movement": 0,
-    "growth_rates": {"hp": 10, "str": 10, "mag": 0, "spd": 0, "dex": 0, "lck": 0, "def": 0, "res": 0, "cha": 0},
-    "usable_skills": ["剣術", "斧術", "格闘術", "歩兵術"],
-    "required_skill": "格闘術D、斧術D、剣術D",
-    "class_skill": "なし",
-    "master_skill": "攻撃の基本（力+1）",
-    "unlock_condition": "初期から解放"
+    "id":  "猟兵",
+    "name":  "猟兵",
+    "tier":  "初級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816669",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  0,
+      "mag":  0,
+      "spd":  10,
+      "dex":  10,
+      "def":  0,
+      "res":  0,
+      "lck":  0,
+      "cha":  0
+    },
+    "movement":  4,
+    "move_type":  "歩行",
+    "tp":  30,
+    "usable_skills":  [
+      "剣術",
+      "弓術",
+      "歩兵術"
+    ],
+    "master_skill":  "狩猟の基本",
+    "weapon_exp_bonus":  "剣+1、弓+1、歩行+1",
+    "skill_caps":  [
+      "剣術 D",
+      "弓術 D"
+    ],
+    "description":  "剣と弓とを使い分け/戦場で獲物を狙う軽装な戦士/技と速さに優れる",
+    "unlock_item":  "初級試験手形"
   },
   {
-    "id": "ryohei",
-    "name": "猟兵",
-    "tier": "初級職",
-    "type": "歩兵",
-    "movement": 0,
-    "growth_rates": {"hp": 10, "str": 0, "mag": 0, "spd": 10, "dex": 10, "lck": 0, "def": 0, "res": 0, "cha": 0},
-    "usable_skills": ["剣術", "弓術", "歩兵術"],
-    "required_skill": "弓術D、剣術D",
-    "class_skill": "なし",
-    "master_skill": "狩猟の基本",
-    "unlock_condition": "初期から解放"
+    "id":  "兵士",
+    "name":  "兵士",
+    "tier":  "初級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816668",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  5,
+      "mag":  0,
+      "spd":  -5,
+      "dex":  5,
+      "def":  10,
+      "res":  0,
+      "lck":  0,
+      "cha":  0
+    },
+    "movement":  4,
+    "move_type":  "重装",
+    "tp":  30,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "斧術",
+      "歩兵術",
+      "重装術"
+    ],
+    "master_skill":  "防衛の基本",
+    "weapon_exp_bonus":  "槍+1、斧+1、重装+1",
+    "skill_caps":  [
+      "槍術 D",
+      "斧術 D"
+    ],
+    "description":  "槍の扱いを得意とする者/盾と鎧で身を固め/守備力に優れる",
+    "unlock_item":  "初級試験手形"
   },
   {
-    "id": "heishi",
-    "name": "兵士",
-    "tier": "初級職",
-    "type": "歩兵/重装",
-    "movement": 0,
-    "growth_rates": {"hp": 10, "str": 5, "mag": 0, "spd": -5, "dex": 5, "lck": 10, "def": 0, "res": 0, "cha": 0},
-    "usable_skills": ["剣術", "槍術", "斧術", "歩兵術", "重装術"],
-    "required_skill": "斧術D、槍術D",
-    "class_skill": "なし",
-    "master_skill": "防衛の基本",
-    "unlock_condition": "初期から解放"
+    "id":  "飛駝兵",
+    "name":  "飛駝兵",
+    "tier":  "初級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816667",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  0,
+      "mag":  0,
+      "spd":  10,
+      "dex":  5,
+      "def":  0,
+      "res":  5,
+      "lck":  5,
+      "cha":  0
+    },
+    "movement":  5,
+    "move_type":  "騎乗",
+    "tp":  30,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "斧術",
+      "馬術",
+      "飛行術"
+    ],
+    "class_skill":  "乗り降り",
+    "master_skill":  "攻勢の基本",
+    "weapon_exp_bonus":  "槍+1、騎乗+1、飛行+1",
+    "required_skills":  [
+      "馬術 E+"
+    ],
+    "skill_caps":  [
+      "槍術 D",
+      "斧術 D"
+    ],
+    "description":  "飛駝に乗った騎兵/障害物を跳び越えることができる",
+    "unlock_item":  "初級試験手形"
   },
   {
-    "id": "hidaheishi",
-    "name": "飛駝兵",
-    "tier": "初級職",
-    "type": "騎兵",
-    "movement": 0,
-    "growth_rates": {"hp": 10, "str": 0, "mag": 0, "spd": 10, "dex": 0, "lck": 0, "def": 5, "res": 5, "cha": 0},
-    "usable_skills": ["馬術", "斧術", "槍術", "剣術", "飛行術"],
-    "required_skill": "馬術E、斧術D、槍術D",
-    "class_skill": "乗り降り",
-    "master_skill": "攻勢の基本",
-    "unlock_condition": "初期から解放"
+    "id":  "呪い師",
+    "name":  "呪い師",
+    "tier":  "初級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816666",
+    "growth_bonus":  {
+      "hp":  5,
+      "str":  -5,
+      "mag":  15,
+      "spd":  0,
+      "dex":  5,
+      "def":  -5,
+      "res":  10,
+      "lck":  0,
+      "cha":  0
+    },
+    "movement":  4,
+    "move_type":  "歩行",
+    "tp":  30,
+    "usable_skills":  [
+      "剣術",
+      "斧術",
+      "格闘術",
+      "黒魔術",
+      "白魔術",
+      "歩兵術"
+    ],
+    "master_skill":  "魔道の基本",
+    "weapon_exp_bonus":  "黒魔道+1、白魔道+1",
+    "skill_caps":  [
+      "黒魔術 D",
+      "白魔術 D"
+    ],
+    "description":  "魔道を用いて、時に味方を癒やし、/時に敵と戦う者。魔力に優れる",
+    "unlock_item":  "初級試験手形"
   },
   {
-    "id": "noroi_shi",
-    "name": "呪い師",
-    "tier": "初級職",
-    "type": "歩兵",
-    "movement": 1,
-    "growth_rates": {"hp": 5, "str": -5, "mag": 15, "spd": 0, "dex": 5, "lck": -5, "def": 10, "res": 0, "cha": 0},
-    "usable_skills": ["剣術", "斧術", "格闘術", "白魔術", "黒魔術", "歩兵術"],
-    "required_skill": "白魔術D、黒魔術D",
-    "class_skill": "なし",
-    "master_skill": "魔道の基本",
-    "unlock_condition": "初期から解放"
+    "id":  "剣士",
+    "name":  "剣士",
+    "tier":  "中級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816665",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  0,
+      "mag":  0,
+      "spd":  15,
+      "dex":  10,
+      "def":  0,
+      "res":  0,
+      "lck":  5,
+      "cha":  5
+    },
+    "movement":  5,
+    "move_type":  "歩行",
+    "tp":  60,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+1、剣必殺+3",
+    "master_skill":  "技の冴え",
+    "weapon_exp_bonus":  "剣+2、歩行+1",
+    "required_skills":  [
+      "剣術 C"
+    ],
+    "description":  "剣の扱いに特化した戦士/素早い剣さばきで敵を攻撃する",
+    "unlock_item":  "中級試験手形"
   },
   {
-    "id": "kenshi",
-    "name": "剣士",
-    "tier": "中級職",
-    "type": "歩兵",
-    "movement": 1,
-    "growth_rates": {"hp": 10, "str": 0, "mag": 0, "spd": 15, "dex": 10, "lck": 0, "def": 0, "res": 5, "cha": 5},
-    "usable_skills": ["剣術", "槍術", "歩兵術"],
-    "required_skill": "剣術C",
-    "class_skill": "戦技装備+1、剣必殺+3",
-    "master_skill": "技の冴え",
-    "unlock_condition": "剣術C以上"
+    "id":  "ブリガンド",
+    "name":  "ブリガンド",
+    "tier":  "中級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816664",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  15,
+      "mag":  -5,
+      "spd":  5,
+      "dex":  0,
+      "def":  5,
+      "res":  0,
+      "lck":  0,
+      "cha":  5
+    },
+    "movement":  5,
+    "move_type":  "歩行",
+    "tp":  60,
+    "usable_skills":  [
+      "剣術",
+      "斧術",
+      "格闘術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+1、斧命中+3",
+    "master_skill":  "立て直し",
+    "weapon_exp_bonus":  "斧+2",
+    "skill_caps":  [
+      "剣術 C",
+      "斧術 C"
+    ],
+    "description":  "斧の扱いが自慢の荒くれ者/高い威力の一撃で敵を打ち倒す",
+    "unlock_item":  "中級試験手形"
   },
   {
-    "id": "brigand",
-    "name": "ブリガンド",
-    "tier": "中級職",
-    "type": "歩兵",
-    "movement": 1,
-    "growth_rates": {"hp": 15, "str": 15, "mag": -5, "spd": 5, "dex": 0, "lck": 5, "def": 0, "res": 0, "cha": 5},
-    "usable_skills": ["剣術", "斧術", "格闘術", "歩兵術"],
-    "required_skill": "斧術C、剣術C",
-    "class_skill": "戦技装備+1、斧命中+3",
-    "master_skill": "立て直し",
-    "unlock_condition": "斧術C以上"
+    "id":  "セスタス",
+    "name":  "セスタス",
+    "tier":  "中級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816663",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  10,
+      "mag":  -5,
+      "spd":  10,
+      "dex":  5,
+      "def":  10,
+      "res":  0,
+      "lck":  0,
+      "cha":  5
+    },
+    "movement":  5,
+    "move_type":  "歩行",
+    "tp":  60,
+    "usable_skills":  [
+      "格闘術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+1、格闘回避+3",
+    "master_skill":  "ヒット＆アウェイ",
+    "weapon_exp_bonus":  "格闘+2、歩行+2",
+    "required_skills":  [
+      "格闘術 C"
+    ],
+    "description":  "籠手の扱いに秀でた拳闘士/軽快な攻撃で敵を翻弄する",
+    "unlock_item":  "中級試験手形"
   },
   {
-    "id": "cestus",
-    "name": "セスタス",
-    "tier": "中級職",
-    "type": "歩兵",
-    "movement": 1,
-    "growth_rates": {"hp": 15, "str": 10, "mag": -5, "spd": 10, "dex": 5, "lck": 10, "def": 0, "res": 0, "cha": 5},
-    "usable_skills": ["格闘術", "歩兵術"],
-    "required_skill": "格闘術C",
-    "class_skill": "戦技装備+1",
-    "master_skill": "ヒット＆アウェイ",
-    "unlock_condition": "格闘術C以上"
+    "id":  "アーチャー",
+    "name":  "アーチャー",
+    "tier":  "中級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816662",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  0,
+      "mag":  0,
+      "spd":  10,
+      "dex":  15,
+      "def":  5,
+      "res":  0,
+      "lck":  5,
+      "cha":  5
+    },
+    "movement":  5,
+    "move_type":  "歩行",
+    "tp":  60,
+    "usable_skills":  [
+      "弓術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+1、弓命中+5",
+    "master_skill":  "好調",
+    "weapon_exp_bonus":  "弓+2、歩行+1",
+    "required_skills":  [
+      "弓術 C"
+    ],
+    "description":  "弓の扱いに優れる兵士/離れた場所への攻撃と/飛行する敵を得意とする",
+    "unlock_item":  "中級試験手形"
   },
   {
-    "id": "archer",
-    "name": "アーチャー",
-    "tier": "中級職",
-    "type": "歩兵",
-    "movement": 1,
-    "growth_rates": {"hp": 10, "str": 0, "mag": 0, "spd": 10, "dex": 15, "lck": 5, "def": 0, "res": 5, "cha": 5},
-    "usable_skills": ["弓術", "歩兵術"],
-    "required_skill": "弓術C",
-    "class_skill": "戦技装備+1、弓命中+5",
-    "master_skill": "好調",
-    "unlock_condition": "弓術C以上"
+    "id":  "ローグ",
+    "name":  "ローグ",
+    "tier":  "中級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816661",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  0,
+      "mag":  0,
+      "spd":  15,
+      "dex":  10,
+      "def":  0,
+      "res":  5,
+      "lck":  5,
+      "cha":  0
+    },
+    "movement":  5,
+    "move_type":  "歩行",
+    "tp":  60,
+    "usable_skills":  [
+      "剣術",
+      "弓術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+1、鍵開け、探索術",
+    "master_skill":  "影晦まし",
+    "weapon_exp_bonus":  "剣+1、弓+1、歩行+2",
+    "skill_caps":  [
+      "剣術 C",
+      "弓術 C"
+    ],
+    "description":  "鍵開けを行える盗賊/森林を軽快に動くことができ、/探索にも力を発揮する",
+    "unlock_item":  "中級試験手形"
   },
   {
-    "id": "rogue",
-    "name": "ローグ",
-    "tier": "中級職",
-    "type": "歩兵",
-    "movement": 1,
-    "growth_rates": {"hp": 10, "str": 0, "mag": 0, "spd": 15, "dex": 10, "lck": 0, "def": 5, "res": 5, "cha": 0},
-    "usable_skills": ["剣術", "弓術", "歩兵術"],
-    "required_skill": "弓術C、剣術C",
-    "class_skill": "戦技装備+1、鍵開け、探索術",
-    "master_skill": "影晦まし",
-    "unlock_condition": "弓術C以上・剣術C以上"
+    "id":  "重装歩兵",
+    "name":  "重装歩兵",
+    "tier":  "中級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816660",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  10,
+      "mag":  -5,
+      "spd":  -5,
+      "dex":  5,
+      "def":  25,
+      "res":  -5,
+      "lck":  0,
+      "cha":  5
+    },
+    "movement":  4,
+    "move_type":  "重装",
+    "tp":  60,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "斧術",
+      "歩兵術",
+      "重装術"
+    ],
+    "class_skill":  "戦技装備+1、後攻守備+3",
+    "master_skill":  "大反撃",
+    "weapon_exp_bonus":  "槍+1、斧+1、重装+2",
+    "required_skills":  [
+      "重装術 E+"
+    ],
+    "skill_caps":  [
+      "槍術 C",
+      "斧術 C"
+    ],
+    "description":  "全身を鎧で覆われた歩兵/厚い装甲で、味方の盾となる",
+    "unlock_item":  "中級試験手形"
   },
   {
-    "id": "ju_sou_heishi",
-    "name": "重装歩兵",
-    "tier": "中級職",
-    "type": "歩兵/重装",
-    "movement": 1,
-    "growth_rates": {"hp": 10, "str": 10, "mag": -5, "spd": -5, "dex": 5, "lck": 5, "def": -5, "res": 0, "cha": 5},
-    "usable_skills": ["剣術", "槍術", "斧術", "歩兵術", "重装術"],
-    "required_skill": "重装術E、斧術C、槍術C",
-    "class_skill": "戦技装備+1、後攻守備+3",
-    "master_skill": "大反撃",
-    "unlock_condition": "重装術E以上"
+    "id":  "軽騎兵",
+    "name":  "軽騎兵",
+    "tier":  "中級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816659",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  5,
+      "mag":  -5,
+      "spd":  5,
+      "dex":  5,
+      "def":  5,
+      "res":  0,
+      "lck":  5,
+      "cha":  10
+    },
+    "movement":  6,
+    "move_type":  "騎乗",
+    "tp":  60,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "斧術",
+      "馬術"
+    ],
+    "class_skill":  "乗り降り",
+    "master_skill":  "体力の強化",
+    "weapon_exp_bonus":  "槍+1、騎乗+2",
+    "required_skills":  [
+      "馬術 D"
+    ],
+    "skill_caps":  [
+      "剣術 C",
+      "槍術 C"
+    ],
+    "description":  "馬に乗って戦う騎兵/高い移動力で戦場を駆ける",
+    "unlock_item":  "中級試験手形"
   },
   {
-    "id": "kei_kishi",
-    "name": "軽騎兵",
-    "tier": "中級職",
-    "type": "騎兵",
-    "movement": 2,
-    "growth_rates": {"hp": 10, "str": 5, "mag": -5, "spd": 5, "dex": 0, "lck": 5, "def": 0, "res": 5, "cha": 10},
-    "usable_skills": ["剣術", "槍術", "斧術", "馬術"],
-    "required_skill": "馬術D、槍術C、剣術C",
-    "class_skill": "乗り降り",
-    "master_skill": "体力の強化",
-    "unlock_condition": "馬術D以上"
+    "id":  "戦車兵",
+    "name":  "戦車兵",
+    "tier":  "中級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816658",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  5,
+      "mag":  -5,
+      "spd":  -5,
+      "dex":  25,
+      "def":  10,
+      "res":  0,
+      "lck":  5,
+      "cha":  10
+    },
+    "movement":  5,
+    "move_type":  "騎乗",
+    "tp":  60,
+    "usable_skills":  [
+      "弓術",
+      "馬術"
+    ],
+    "class_skill":  "戦車の装甲、戦車兵の戦術、戦車兵の道",
+    "master_skill":  "突撃体勢",
+    "weapon_exp_bonus":  "弓+2、騎乗+1",
+    "required_skills":  [
+      "馬術 D",
+      "弓術 C"
+    ],
+    "description":  "戦闘馬車に乗って戦う特殊な騎兵/戦車の突撃や、弓で敵を蹂躙する/敵の攻撃を避けることができない",
+    "unlock_item":  "中級試験手形"
   },
   {
-    "id": "sensha_heishi",
-    "name": "戦車兵",
-    "tier": "中級職",
-    "type": "騎兵",
-    "movement": 1,
-    "growth_rates": {"hp": 10, "str": 5, "mag": -5, "spd": -5, "dex": 15, "lck": 10, "def": 0, "res": 5, "cha": 10},
-    "usable_skills": ["弓術", "歩兵術"],
-    "required_skill": "馬術D、弓術C",
-    "class_skill": "戦車の装甲、戦車兵の戦術、戦車兵の道",
-    "master_skill": "突進大勢",
-    "unlock_condition": "馬術D以上・弓術C以上"
+    "id":  "騎甲駝兵",
+    "name":  "騎甲駝兵",
+    "tier":  "中級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816657",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  0,
+      "mag":  -5,
+      "spd":  15,
+      "dex":  10,
+      "def":  10,
+      "res":  0,
+      "lck":  5,
+      "cha":  5
+    },
+    "movement":  6,
+    "move_type":  "騎乗",
+    "tp":  60,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "斧術",
+      "馬術",
+      "飛行術"
+    ],
+    "class_skill":  "乗り降り",
+    "master_skill":  "脅威の察知",
+    "weapon_exp_bonus":  "槍+1、斧+1、騎乗+1、飛行+1",
+    "required_skills":  [
+      "馬術 D"
+    ],
+    "skill_caps":  [
+      "槍術 C",
+      "斧術 C"
+    ],
+    "description":  "飛駝の扱いに長けた騎兵/障害物を跳び越えることができる",
+    "unlock_item":  "中級試験手形"
   },
   {
-    "id": "kikou_tahyou_heishi",
-    "name": "騎甲駝兵",
-    "tier": "中級職",
-    "type": "騎兵",
-    "movement": 2,
-    "growth_rates": {"hp": 10, "str": 0, "mag": -5, "spd": 10, "dex": 5, "lck": 10, "def": 0, "res": 5, "cha": 5},
-    "usable_skills": ["剣術", "槍術", "斧術", "馬術", "飛行術"],
-    "required_skill": "馬術D、斧術C、槍術C",
-    "class_skill": "乗り降り",
-    "master_skill": "脅威の察知",
-    "unlock_condition": "馬術D以上"
+    "id":  "天翼兵",
+    "name":  "天翼兵",
+    "tier":  "中級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816656",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  0,
+      "mag":  5,
+      "spd":  0,
+      "dex":  5,
+      "def":  5,
+      "res":  5,
+      "lck":  5,
+      "cha":  10
+    },
+    "movement":  6,
+    "move_type":  "飛行",
+    "tp":  60,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "飛行術"
+    ],
+    "class_skill":  "乗り降り",
+    "master_skill":  "天馬の護翼",
+    "weapon_exp_bonus":  "剣+1、槍+1、飛行+2",
+    "required_skills":  [
+      "飛行術 D"
+    ],
+    "skill_caps":  [
+      "剣術 C",
+      "槍術 C"
+    ],
+    "description":  "有翼馬に乗り、空を翔ける騎兵/移動力に優れ、魔法に強い",
+    "unlock_item":  "中級試験手形"
   },
   {
-    "id": "shaman",
-    "name": "シャーマン",
-    "tier": "中級職",
-    "type": "歩兵",
-    "movement": 1,
-    "growth_rates": {"hp": 5, "str": -5, "mag": 15, "spd": 10, "dex": 10, "lck": -10, "def": 10, "res": 10, "cha": 0},
-    "usable_skills": ["剣術", "格闘術", "黒魔術", "白魔術", "歩兵術"],
-    "required_skill": "黒魔術C",
-    "class_skill": "黒魔術の探求、魔法命中+5",
-    "master_skill": "技の呪縛",
-    "unlock_condition": "黒魔術C以上"
+    "id":  "シャーマン",
+    "name":  "シャーマン",
+    "tier":  "中級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816655",
+    "growth_bonus":  {
+      "hp":  5,
+      "str":  -5,
+      "mag":  15,
+      "spd":  10,
+      "dex":  10,
+      "def":  -10,
+      "res":  10,
+      "lck":  10,
+      "cha":  0
+    },
+    "movement":  5,
+    "move_type":  "歩行",
+    "tp":  60,
+    "usable_skills":  [
+      "剣術",
+      "格闘術",
+      "黒魔術",
+      "白魔術",
+      "歩兵術"
+    ],
+    "class_skill":  "黒魔術の探求、魔法命中+3",
+    "master_skill":  "技の呪縛",
+    "weapon_exp_bonus":  "剣+1、黒魔道+2、白魔道+1",
+    "required_skills":  [
+      "黒魔術 C"
+    ],
+    "description":  "黒魔法を専門とする呪術師/様々な攻撃魔法を扱うことができ、/装甲の厚い敵を得意とする",
+    "unlock_item":  "中級試験手形"
   },
   {
-    "id": "priest",
-    "name": "プリースト",
-    "tier": "中級職",
-    "type": "歩兵",
-    "movement": 1,
-    "growth_rates": {"hp": 5, "str": -5, "mag": 10, "spd": 5, "dex": 5, "lck": -10, "def": 15, "res": 15, "cha": 10},
-    "usable_skills": ["剣術", "格闘術", "黒魔術", "白魔術", "歩兵術"],
-    "required_skill": "白魔術C",
-    "class_skill": "白魔術の探求、魔法回復+5",
-    "master_skill": "信仰心",
-    "unlock_condition": "白魔術C以上"
+    "id":  "プリースト",
+    "name":  "プリースト",
+    "tier":  "中級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816654",
+    "growth_bonus":  {
+      "hp":  5,
+      "str":  -5,
+      "mag":  10,
+      "spd":  5,
+      "dex":  5,
+      "def":  -10,
+      "res":  15,
+      "lck":  15,
+      "cha":  10
+    },
+    "movement":  5,
+    "move_type":  "歩行",
+    "tp":  60,
+    "usable_skills":  [
+      "斧術",
+      "格闘術",
+      "黒魔術",
+      "白魔術",
+      "歩兵術"
+    ],
+    "class_skill":  "白魔術の探求、魔法回復+5",
+    "master_skill":  "信仰心",
+    "weapon_exp_bonus":  "格闘+1、黒魔道+1、白魔道+2",
+    "required_skills":  [
+      "白魔術 C"
+    ],
+    "description":  "白魔法を専門とする祈祷師/魔法で味方の回復と攻撃を/行うことができる",
+    "unlock_item":  "中級試験手形"
   },
   {
-    "id": "tenyoku_heishi",
-    "name": "天翼兵",
-    "tier": "中級職",
-    "type": "飛行",
-    "movement": 2,
-    "growth_rates": {"hp": 10, "str": 0, "mag": 5, "spd": 0, "dex": 5, "lck": 5, "def": 5, "res": 5, "cha": 10},
-    "usable_skills": ["剣術", "槍術", "飛行術"],
-    "required_skill": "飛行術D、槍術C、剣術C",
-    "class_skill": "乗り降り",
-    "master_skill": "天馬の護翼",
-    "unlock_condition": "飛行術D以上（女性限定）"
+    "id":  "シドー",
+    "name":  "シドー",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816653",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  5,
+      "mag":  0,
+      "spd":  15,
+      "dex":  10,
+      "def":  0,
+      "res":  -5,
+      "lck":  5,
+      "cha":  5
+    },
+    "movement":  5,
+    "move_type":  "歩行",
+    "tp":  100,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+2、剣必殺+5",
+    "master_skill":  "残心",
+    "weapon_exp_bonus":  "剣+3、槍+1、歩行+2",
+    "required_skills":  [
+      "剣術 B"
+    ],
+    "description":  "剣の精神を重んじ、修行した剣豪/素早い剣さばきで敵を攻撃し/時に必殺の一撃を狙う",
+    "unlock_item":  "上級試験手形"
   },
   {
-    "id": "cidor",
-    "name": "シドー",
-    "tier": "上級職",
-    "type": "歩兵",
-    "movement": 1,
-    "growth_rates": {"hp": 10, "str": 5, "mag": 0, "spd": 15, "dex": 10, "lck": 0, "def": -5, "res": 5, "cha": 5},
-    "usable_skills": ["剣術", "槍術", "歩兵術"],
-    "required_skill": "剣術B",
-    "class_skill": "戦技装備+2、剣必殺+5",
-    "master_skill": "残心",
-    "unlock_condition": "剣術B以上"
+    "id":  "ウォーリアー",
+    "name":  "ウォーリアー",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816652",
+    "growth_bonus":  {
+      "hp":  20,
+      "str":  20,
+      "mag":  -5,
+      "spd":  0,
+      "dex":  0,
+      "def":  5,
+      "res":  -5,
+      "lck":  0,
+      "cha":  5
+    },
+    "movement":  5,
+    "move_type":  "歩行",
+    "tp":  100,
+    "usable_skills":  [
+      "剣術",
+      "斧術",
+      "格闘術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+2、斧命中+5、格闘命中+5",
+    "master_skill":  "熟練の技",
+    "weapon_exp_bonus":  "剣+2、斧+3、格闘+2、歩行+1",
+    "skill_caps":  [
+      "剣術 B",
+      "斧術 B",
+      "格闘術 B"
+    ],
+    "description":  "斧の技を磨き抜いた斧闘士/鍛え上げた腕力で繰り出す/高い威力の一撃で敵を打ち倒す",
+    "unlock_item":  "上級試験手形"
   },
   {
-    "id": "warrior",
-    "name": "ウォーリアー",
-    "tier": "上級職",
-    "type": "歩兵",
-    "movement": 1,
-    "growth_rates": {"hp": 20, "str": 20, "mag": -5, "spd": 0, "dex": 0, "lck": 5, "def": -5, "res": 0, "cha": 5},
-    "usable_skills": ["剣術", "斧術", "格闘術", "歩兵術"],
-    "required_skill": "格闘術B、斧術B、剣術B",
-    "class_skill": "戦技装備+2、斧命中+5、格闘命中+5",
-    "master_skill": "熟練の技",
-    "unlock_condition": "格闘術B以上・斧術B以上・剣術B以上"
+    "id":  "スナイパー",
+    "name":  "スナイパー",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816651",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  5,
+      "mag":  0,
+      "spd":  10,
+      "dex":  20,
+      "def":  5,
+      "res":  5,
+      "lck":  5,
+      "cha":  5
+    },
+    "movement":  5,
+    "move_type":  "歩行",
+    "tp":  100,
+    "usable_skills":  [
+      "弓術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+2、弓命中+10",
+    "master_skill":  "射撃の達人",
+    "weapon_exp_bonus":  "弓+3、歩行+2",
+    "required_skills":  [
+      "弓術 B"
+    ],
+    "description":  "弓の扱いに精通する狙撃手/離れた場所への攻撃と/飛行する敵を得意とする",
+    "unlock_item":  "上級試験手形"
   },
   {
-    "id": "sniper",
-    "name": "スナイパー",
-    "tier": "上級職",
-    "type": "歩兵",
-    "movement": 1,
-    "growth_rates": {"hp": 10, "str": 5, "mag": 0, "spd": 10, "dex": 20, "lck": 5, "def": 5, "res": 5, "cha": 5},
-    "usable_skills": ["弓術", "歩兵術"],
-    "required_skill": "弓術B",
-    "class_skill": "戦技装備+2、弓命中+10",
-    "master_skill": "射撃の達人",
-    "unlock_condition": "弓術B以上"
+    "id":  "フォレストナイト",
+    "name":  "フォレストナイト",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816650",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  5,
+      "mag":  0,
+      "spd":  10,
+      "dex":  15,
+      "def":  5,
+      "res":  5,
+      "lck":  5,
+      "cha":  5
+    },
+    "movement":  6,
+    "move_type":  "騎乗",
+    "tp":  100,
+    "usable_skills":  [
+      "剣術",
+      "弓術",
+      "馬術"
+    ],
+    "class_skill":  "乗り降り、戦技装備+1、弓命中+5",
+    "master_skill":  "狩人の目",
+    "weapon_exp_bonus":  "剣+1、弓+2、騎乗+2",
+    "required_skills":  [
+      "馬術 D",
+      "弓術 B"
+    ],
+    "description":  "馬上から弓を射る森林騎士/移動力が高く、森も得意とする",
+    "unlock_item":  "上級試験手形"
   },
   {
-    "id": "forest_knight",
-    "name": "フォレストナイト",
-    "tier": "上級職",
-    "type": "騎兵",
-    "movement": 2,
-    "growth_rates": {"hp": 10, "str": 5, "mag": 0, "spd": 10, "dex": 10, "lck": 5, "def": 5, "res": 5, "cha": 10},
-    "usable_skills": ["剣術", "槍術", "斧術", "馬術"],
-    "required_skill": "馬術B、剣術B",
-    "class_skill": "乗り降り、剣必殺+5",
-    "master_skill": "森の守護",
-    "unlock_condition": "馬術B以上・剣術B以上"
+    "id":  "ヘヴィアーマー",
+    "name":  "ヘヴィアーマー",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816649",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  15,
+      "mag":  -5,
+      "spd":  -10,
+      "dex":  5,
+      "def":  30,
+      "res":  -10,
+      "lck":  0,
+      "cha":  5
+    },
+    "movement":  4,
+    "move_type":  "重装",
+    "tp":  100,
+    "usable_skills":  [
+      "槍術",
+      "斧術",
+      "歩兵術",
+      "重装術"
+    ],
+    "class_skill":  "戦技装備+2、後攻守備+5",
+    "master_skill":  "集中反撃",
+    "weapon_exp_bonus":  "槍+2、斧+2、歩行+1、重装+3",
+    "required_skills":  [
+      "重装術 D"
+    ],
+    "skill_caps":  [
+      "槍術 B",
+      "斧術 B"
+    ],
+    "description":  "強固な鎧に身を包んだ重装歩兵/厚い装甲で敵の攻撃を受けとめ、/味方を守る壁となる",
+    "unlock_item":  "上級試験手形"
+  },
+  {
+    "id":  "バーディンガー",
+    "name":  "バーディンガー",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816648",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  10,
+      "mag":  -5,
+      "spd":  0,
+      "dex":  5,
+      "def":  5,
+      "res":  10,
+      "lck":  5,
+      "cha":  10
+    },
+    "movement":  6,
+    "move_type":  "騎乗",
+    "tp":  100,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "斧術",
+      "馬術"
+    ],
+    "class_skill":  "乗り降り、戦技装備+2",
+    "master_skill":  "聖盾",
+    "weapon_exp_bonus":  "剣+2、槍+2、斧+1、騎乗+3",
+    "required_skills":  [
+      "馬術 C"
+    ],
+    "skill_caps":  [
+      "剣術 B",
+      "槍術 B"
+    ],
+    "description":  "馬を乗りこなす精鋭騎士/高い移動力で戦場を駆ける",
+    "unlock_item":  "上級試験手形"
+  },
+  {
+    "id":  "ウァテス",
+    "name":  "ウァテス",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816647",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  -5,
+      "mag":  20,
+      "spd":  5,
+      "dex":  15,
+      "def":  -10,
+      "res":  15,
+      "lck":  10,
+      "cha":  0
+    },
+    "movement":  5,
+    "move_type":  "歩行",
+    "tp":  100,
+    "usable_skills":  [
+      "剣術",
+      "格闘術",
+      "黒魔術",
+      "白魔術",
+      "歩兵術"
+    ],
+    "class_skill":  "黒魔術の探求、魔法命中+5",
+    "master_skill":  "速さの呪縛",
+    "weapon_exp_bonus":  "剣+2、格闘+1、黒魔道+3、白魔道+1、歩行+1",
+    "required_skills":  [
+      "黒魔術 B"
+    ],
+    "description":  "高度な黒魔法を扱う魔道士/攻撃魔法を巧みに操る/装甲の厚い敵を得意とする",
+    "unlock_item":  "上級試験手形"
+  },
+  {
+    "id":  "ビショップ",
+    "name":  "ビショップ",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816645",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  -5,
+      "mag":  15,
+      "spd":  0,
+      "dex":  5,
+      "def":  -10,
+      "res":  20,
+      "lck":  20,
+      "cha":  10
+    },
+    "movement":  5,
+    "move_type":  "歩行",
+    "tp":  100,
+    "usable_skills":  [
+      "斧術",
+      "格闘術",
+      "黒魔術",
+      "白魔術",
+      "歩兵術"
+    ],
+    "class_skill":  "白魔術の探求、魔法回復+10",
+    "master_skill":  "結界",
+    "weapon_exp_bonus":  "斧+1、格闘+2、黒魔道+1、白魔道+3、歩行+1",
+    "required_skills":  [
+      "白魔術 B"
+    ],
+    "description":  "高位な白魔法を扱う聖職者/魔法での回復や補助を得意とする",
+    "unlock_item":  "上級試験手形"
+  },
+  {
+    "id":  "戦象兵",
+    "name":  "戦象兵",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816718",
+    "growth_bonus":  {
+      "hp":  20,
+      "str":  10,
+      "mag":  -5,
+      "spd":  20,
+      "dex":  -10,
+      "def":  15,
+      "res":  -5,
+      "lck":  5,
+      "cha":  10
+    },
+    "movement":  5,
+    "move_type":  "騎兵",
+    "tp":  100,
+    "usable_skills":  [
+      "馬術"
+    ],
+    "class_skill":  "戦象の装脚、戦象兵の戦術、戦象兵の道",
+    "master_skill":  "戦象の旗手",
+    "weapon_exp_bonus":  "騎乗+2",
+    "required_skills":  [
+      "馬術 C"
+    ],
+    "description":  "戦象に乗って戦う特殊な騎兵／象の突撃や、鼻撃で敵を掃討する／敵の攻撃を避けることができない",
+    "unlock_item":  "戦象兵試験手形",
+    "unlock_note":  "救世篇1区分クリア"
+  },
+  {
+    "id":  "カラドリオス",
+    "name":  "カラドリオス",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816717",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  0,
+      "mag":  10,
+      "spd":  5,
+      "dex":  10,
+      "def":  10,
+      "res":  10,
+      "lck":  5,
+      "cha":  5
+    },
+    "movement":  6,
+    "move_type":  "騎兵",
+    "tp":  100,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "斧術",
+      "黒魔術",
+      "馬術",
+      "飛行術"
+    ],
+    "class_skill":  "乗り降り、黒魔術の探求、戦技装備+1",
+    "master_skill":  "駆け抜け",
+    "weapon_exp_bonus":  "剣+1、槍+2、斧+2、黒魔道+2、騎乗+1、飛行+1",
+    "required_skills":  [
+      "馬術 D",
+      "黒魔術 B"
+    ],
+    "description":  "黒魔法を扱える魔法飛駝兵/障害物を跳び越えることができる",
+    "unlock_item":  "上級試験手形"
+  },
+  {
+    "id":  "ドラグーン",
+    "name":  "ドラグーン",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816716",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  5,
+      "mag":  0,
+      "spd":  0,
+      "dex":  5,
+      "def":  10,
+      "res":  10,
+      "lck":  10,
+      "cha":  5
+    },
+    "movement":  6,
+    "move_type":  "飛行",
+    "tp":  100,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "斧術",
+      "飛行術"
+    ],
+    "class_skill":  "乗り降り、戦技装備+1",
+    "master_skill":  "籠城崩し",
+    "weapon_exp_bonus":  "剣+1、槍+1、斧+3、飛行+3",
+    "required_skills":  [
+      "飛行術 C"
+    ],
+    "skill_caps":  [
+      "斧術 B",
+      "槍術 B"
+    ],
+    "description":  "飛竜に乗り、空を翔ける竜騎兵/移動力と戦闘力が高い",
+    "unlock_item":  "上級試験手形"
+  },
+  {
+    "id":  "トルバドール",
+    "name":  "トルバドール",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816715",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  0,
+      "mag":  15,
+      "spd":  5,
+      "dex":  0,
+      "def":  5,
+      "res":  15,
+      "lck":  15,
+      "cha":  10
+    },
+    "movement":  6,
+    "move_type":  "騎兵",
+    "tp":  100,
+    "usable_skills":  [
+      "黒魔術",
+      "白魔術",
+      "馬術"
+    ],
+    "class_skill":  "乗り降り、魔法回復+5、魔法命中+3",
+    "master_skill":  "勇気の呪歌",
+    "weapon_exp_bonus":  "黒魔道+2、白魔道+2、騎乗+2",
+    "required_skills":  [
+      "馬術 D"
+    ],
+    "skill_caps":  [
+      "白魔術 B",
+      "黒魔術 B"
+    ],
+    "description":  "白魔法と黒魔法を操る魔法騎兵/武器は扱えず、呪歌を覚える",
+    "unlock_item":  "上級試験手形"
+  },
+  {
+    "id":  "バトルマスター",
+    "name":  "バトルマスター",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816714",
+    "growth_bonus":  {
+      "hp":  25,
+      "str":  25,
+      "mag":  -5,
+      "spd":  -5,
+      "dex":  5,
+      "def":  10,
+      "res":  -5,
+      "lck":  -5,
+      "cha":  5
+    },
+    "movement":  5,
+    "move_type":  "歩兵",
+    "tp":  130,
+    "usable_skills":  [
+      "剣術",
+      "斧術",
+      "格闘術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+3、斧命中+7、格闘命中+7",
+    "master_skill":  "戦鬼の一撃",
+    "weapon_exp_bonus":  "剣+2、斧+4、格闘+2、歩行+1",
+    "skill_caps":  [
+      "格闘術 A",
+      "斧術 A",
+      "剣術 A"
+    ],
+    "description":  "斧の戦いを極めし闘将/あり余る体力と腕力を持ち、/前線に立って活躍する",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇1区分クリア"
+  },
+  {
+    "id":  "マスターアーチ",
+    "name":  "マスターアーチ",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816713",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  5,
+      "mag":  0,
+      "spd":  20,
+      "dex":  15,
+      "def":  5,
+      "res":  5,
+      "lck":  5,
+      "cha":  5
+    },
+    "movement":  5,
+    "move_type":  "歩兵",
+    "tp":  130,
+    "usable_skills":  [
+      "弓術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+3、弓命中+15",
+    "master_skill":  "スカイハンター",
+    "weapon_exp_bonus":  "弓+4、歩行+2",
+    "required_skills":  [
+      "弓術 A"
+    ],
+    "description":  "弓の扱いを極めた射の達人/遠方の敵を狙い、正確に射貫く/飛行する敵を得意とする",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇1区分クリア"
+  },
+  {
+    "id":  "シャドーシーカー",
+    "name":  "シャドーシーカー",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816712",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  5,
+      "mag":  0,
+      "spd":  15,
+      "dex":  25,
+      "def":  0,
+      "res":  10,
+      "lck":  15,
+      "cha":  0
+    },
+    "movement":  5,
+    "move_type":  "歩兵",
+    "tp":  130,
+    "usable_skills":  [
+      "剣術",
+      "弓術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+3、鍵開け、最上級探索術",
+    "master_skill":  "落影の刃",
+    "weapon_exp_bonus":  "剣+2、弓+3、歩行+4",
+    "skill_caps":  [
+      "弓術 A",
+      "剣術 A"
+    ],
+    "description":  "影の世界で生きる暗殺者/解錠、探索はお手の物/森林を軽快に動くことができる",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇1区分クリア"
+  },
+  {
+    "id":  "ホーリーランサー",
+    "name":  "ホーリーランサー",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816711",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  15,
+      "mag":  0,
+      "spd":  5,
+      "dex":  5,
+      "def":  10,
+      "res":  15,
+      "lck":  5,
+      "cha":  5
+    },
+    "movement":  5,
+    "move_type":  "歩兵",
+    "tp":  130,
+    "usable_skills":  [
+      "槍術",
+      "白魔術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+3、魔法回復+10、白魔術の探求",
+    "master_skill":  "不退の構え",
+    "weapon_exp_bonus":  "槍+4、白魔道+2、歩行+1",
+    "required_skills":  [
+      "槍術 A"
+    ],
+    "description":  "槍を極め、白魔法も扱う聖槍兵/戦闘は勿論、味方の援護など、/様々な局面で活躍する",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇1区分クリア"
+  },
+  {
+    "id":  "フォートレス",
+    "name":  "フォートレス",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816710",
+    "growth_bonus":  {
+      "hp":  25,
+      "str":  20,
+      "mag":  -5,
+      "spd":  -15,
+      "dex":  5,
+      "def":  30,
+      "res":  -10,
+      "lck":  0,
+      "cha":  5
+    },
+    "movement":  4,
+    "move_type":  "歩兵・重装",
+    "tp":  130,
+    "usable_skills":  [
+      "槍術",
+      "斧術",
+      "歩兵術",
+      "重装術"
+    ],
+    "class_skill":  "戦技装備+3、後攻守備+7",
+    "master_skill":  "遮断",
+    "weapon_exp_bonus":  "槍+2、斧+2、歩行+1、重装+4",
+    "required_skills":  [
+      "重装術 C"
+    ],
+    "skill_caps":  [
+      "斧術 A",
+      "槍術 A"
+    ],
+    "description":  "圧倒的な装甲を誇る守護の要/移動と機敏さは捨て、その分/堅牢な守りで敵の攻撃を遮る",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇1区分クリア"
+  },
+  {
+    "id":  "オリハルディア",
+    "name":  "オリハルディア",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816709",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  15,
+      "mag":  -5,
+      "spd":  0,
+      "dex":  5,
+      "def":  5,
+      "res":  5,
+      "lck":  5,
+      "cha":  10
+    },
+    "movement":  7,
+    "move_type":  "騎兵",
+    "tp":  130,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "斧術",
+      "馬術"
+    ],
+    "class_skill":  "乗り降り、戦技装備+3",
+    "master_skill":  "騎士烈槍",
+    "weapon_exp_bonus":  "剣+2、槍+3、斧+1、騎乗+4",
+    "required_skills":  [
+      "馬術 B"
+    ],
+    "skill_caps":  [
+      "槍術 A",
+      "剣術 A"
+    ],
+    "description":  "騎乗戦闘を極めた神金騎士/人馬一体の動きで/縦横無尽に戦場を駆ける",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇1区分クリア"
+  },
+  {
+    "id":  "聖天翼兵",
+    "name":  "聖天翼兵",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816708",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  5,
+      "mag":  -5,
+      "spd":  5,
+      "dex":  10,
+      "def":  5,
+      "res":  15,
+      "lck":  15,
+      "cha":  10
+    },
+    "movement":  7,
+    "move_type":  "飛行",
+    "tp":  130,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "飛行術"
+    ],
+    "class_skill":  "乗り降り、戦技装備+1、飛行回避+7",
+    "master_skill":  "迅雷風烈",
+    "weapon_exp_bonus":  "剣+2、槍+3、飛行+4",
+    "required_skills":  [
+      "飛行術 C"
+    ],
+    "skill_caps":  [
+      "槍術 A",
+      "剣術 A"
+    ],
+    "description":  "有翼馬を乗りこなす精鋭飛行騎士/移動力が高く、魔法に強い",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇1区分クリア"
+  },
+  {
+    "id":  "ドラゴンマスター",
+    "name":  "ドラゴンマスター",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816707",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  5,
+      "mag":  0,
+      "spd":  0,
+      "dex":  5,
+      "def":  10,
+      "res":  10,
+      "lck":  10,
+      "cha":  5
+    },
+    "movement":  7,
+    "move_type":  "飛行",
+    "tp":  130,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "斧術",
+      "飛行術"
+    ],
+    "class_skill":  "乗り降り、戦技装備+2",
+    "master_skill":  "襲撃",
+    "weapon_exp_bonus":  "剣+1、槍+2、斧+3、飛行+4",
+    "required_skills":  [
+      "飛行術 C"
+    ],
+    "skill_caps":  [
+      "斧術 A",
+      "槍術 A"
+    ],
+    "description":  "飛竜を乗りこなす熟練の竜騎士/移動力と戦闘力が高い",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇1区分クリア"
+  },
+  {
+    "id":  "ドルイド",
+    "name":  "ドルイド",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816706",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  -5,
+      "mag":  30,
+      "spd":  15,
+      "dex":  10,
+      "def":  -10,
+      "res":  20,
+      "lck":  10,
+      "cha":  0
+    },
+    "movement":  5,
+    "move_type":  "歩兵",
+    "tp":  130,
+    "usable_skills":  [
+      "剣術",
+      "格闘術",
+      "黒魔術",
+      "歩兵術"
+    ],
+    "class_skill":  "黒魔術の探求、魔法命中+7",
+    "master_skill":  "魔防の呪縛",
+    "weapon_exp_bonus":  "剣+2、格闘+1、黒魔道+4、歩行+1",
+    "required_skills":  [
+      "黒魔術 A"
+    ],
+    "description":  "黒魔法を極めし魔術師/高威力の攻撃魔法を多彩に操り/敵に甚大な被害を与える",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇1区分クリア"
+  },
+  {
+    "id":  "ワイズマン",
+    "name":  "ワイズマン",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816705",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  -5,
+      "mag":  20,
+      "spd":  0,
+      "dex":  5,
+      "def":  -10,
+      "res":  25,
+      "lck":  20,
+      "cha":  10
+    },
+    "movement":  5,
+    "move_type":  "歩兵",
+    "tp":  130,
+    "usable_skills":  [
+      "斧術",
+      "格闘術",
+      "白魔術",
+      "歩兵術"
+    ],
+    "class_skill":  "白魔術の探求、魔法回復+15",
+    "master_skill":  "魔力掌握",
+    "weapon_exp_bonus":  "斧+1、格闘+2、白魔道+4、歩行+1",
+    "required_skills":  [
+      "白魔術 A"
+    ],
+    "description":  "白魔法を極めし賢者/魔法で傷ついた味方を癒やし/戦いを後衛で補佐する",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇1区分クリア"
+  },
+  {
+    "id":  "踊り子",
+    "name":  "踊り子",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816861",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  5,
+      "mag":  0,
+      "spd":  25,
+      "dex":  10,
+      "def":  0,
+      "res":  5,
+      "lck":  10,
+      "cha":  20
+    },
+    "movement":  5,
+    "move_type":  "歩兵",
+    "tp":  100,
+    "usable_skills":  [
+      "剣術",
+      "弓術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+2、踊る",
+    "master_skill":  "特別な踊り",
+    "weapon_exp_bonus":  "剣+3、弓+2、歩行+4",
+    "skill_caps":  [
+      "弓術 B",
+      "剣術 B"
+    ],
+    "description":  "戦場で華麗に舞う舞踏家/美しい踊りで仲間を元気づけ、/再行動させることができる",
+    "unlock_item":  "踊姫の首飾り"
+  },
+  {
+    "id":  "ガーディアン",
+    "name":  "ガーディアン",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816860",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  10,
+      "mag":  0,
+      "spd":  0,
+      "dex":  5,
+      "def":  10,
+      "res":  15,
+      "lck":  5,
+      "cha":  5
+    },
+    "movement":  5,
+    "move_type":  "歩兵",
+    "tp":  100,
+    "usable_skills":  [
+      "槍術",
+      "白魔術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+2、魔法回復+10",
+    "master_skill":  "引き締め",
+    "weapon_exp_bonus":  "槍+3、白魔道+1、歩行+1",
+    "required_skills":  [
+      "槍術 B"
+    ],
+    "description":  "槍の扱いに熟達し、/白魔法も扱うことができる衛士/攻守の均整が取れた戦いをする",
+    "unlock_item":  "上級試験手形"
+  },
+  {
+    "id":  "レンジャー",
+    "name":  "レンジャー",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816859",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  5,
+      "mag":  0,
+      "spd":  15,
+      "dex":  15,
+      "def":  0,
+      "res":  10,
+      "lck":  15,
+      "cha":  0
+    },
+    "movement":  5,
+    "move_type":  "歩兵",
+    "tp":  100,
+    "usable_skills":  [
+      "剣術",
+      "弓術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+2、鍵開け、上級探索術",
+    "master_skill":  "反撃射撃",
+    "weapon_exp_bonus":  "剣+2、弓+2、歩行+3",
+    "skill_caps":  [
+      "弓術 B",
+      "剣術 B"
+    ],
+    "description":  "鍵開けを得意とする仕事人/森林を軽快に動くことができ/探索の際にも活躍する",
+    "unlock_item":  "上級試験手形"
+  },
+  {
+    "id":  "カタフラクト",
+    "name":  "カタフラクト",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816858",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  15,
+      "mag":  -5,
+      "spd":  -10,
+      "dex":  0,
+      "def":  10,
+      "res":  -5,
+      "lck":  0,
+      "cha":  5
+    },
+    "movement":  5,
+    "move_type":  "騎兵・重装",
+    "tp":  100,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "斧術",
+      "馬術",
+      "重装術"
+    ],
+    "class_skill":  "乗り降り、戦技装備+1、後攻守備+3",
+    "master_skill":  "大盾",
+    "weapon_exp_bonus":  "剣+1、槍+2、斧+2、騎乗+1、重装+1",
+    "required_skills":  [
+      "重装術 E+",
+      "馬術 D"
+    ],
+    "skill_caps":  [
+      "斧術 B",
+      "槍術 B"
+    ],
+    "description":  "装甲で身を固めた重装騎士/重装と騎兵の特徴を併せ持つ",
+    "unlock_item":  "上級試験手形"
+  },
+  {
+    "id":  "貴族",
+    "name":  "貴族",
+    "tier":  "基本職",
+    "growth_bonus":  {
+      "hp":  0,
+      "str":  0,
+      "mag":  0,
+      "spd":  0,
+      "dex":  0,
+      "def":  0,
+      "res":  0,
+      "lck":  0,
+      "cha":  0
+    },
+    "movement":  4,
+    "move_type":  "歩行",
+    "tp":  15,
+    "master_skill":  "戦闘の基本"
+  },
+  {
+    "id":  "ソードマスター",
+    "name":  "ソードマスター",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816951",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  10,
+      "mag":  0,
+      "spd":  20,
+      "dex":  15,
+      "def":  0,
+      "res":  0,
+      "lck":  5,
+      "cha":  5
+    },
+    "movement":  5,
+    "move_type":  "歩兵",
+    "tp":  130,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+3、剣必殺+7",
+    "master_skill":  "流星",
+    "weapon_exp_bonus":  "剣+4、槍+1、歩行+2",
+    "required_skills":  [
+      "剣術 A"
+    ],
+    "description":  "剣の道を極めし剣聖/目にもとまらぬ鋭い剣技で/必殺の一撃を繰り出す",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇第3区分で「マーズ神殿」修復後に発生するサブクエクリア"
+  },
+  {
+    "id":  "バトルモンク",
+    "name":  "バトルモンク",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816950",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  10,
+      "mag":  0,
+      "spd":  15,
+      "dex":  0,
+      "def":  5,
+      "res":  15,
+      "lck":  5,
+      "cha":  5
+    },
+    "movement":  5,
+    "move_type":  "歩兵",
+    "tp":  130,
+    "usable_skills":  [
+      "格闘術",
+      "白魔術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+3、白魔術の探求、格闘回避+7",
+    "master_skill":  "ブロー＆ヒール",
+    "weapon_exp_bonus":  "格闘+4、白魔道+2、歩行+2",
+    "required_skills":  [
+      "白魔術 D",
+      "格闘術 B"
+    ],
+    "description":  "篤き信仰を胸に拳を振るう戦僧/強力な打撃力を誇り、同時に/白魔法を扱うことができる",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇第2区分残り1ターン時に発生するサブクエ「アウロラの依頼」クリア"
+  },
+  {
+    "id":  "ボウナイト",
+    "name":  "ボウナイト",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816949",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  10,
+      "mag":  0,
+      "spd":  15,
+      "dex":  10,
+      "def":  5,
+      "res":  0,
+      "lck":  5,
+      "cha":  5
+    },
+    "movement":  7,
+    "move_type":  "騎兵",
+    "tp":  130,
+    "usable_skills":  [
+      "剣術",
+      "弓術",
+      "馬術"
+    ],
+    "class_skill":  "乗り降り、戦技装備+2、弓命中+10",
+    "master_skill":  "ハンタークロス",
+    "weapon_exp_bonus":  "剣+1、弓+3、騎乗+2",
+    "required_skills":  [
+      "馬術 D",
+      "弓術 A"
+    ],
+    "description":  "弓の扱いに長けた弓騎士/移動力が高く、森も得意とする",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇第3区分で「カーラ神殿」修復後に発生するサブクエクリア"
+  },
+  {
+    "id":  "グレートナイト",
+    "name":  "グレートナイト",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816948",
+    "growth_bonus":  {
+      "hp":  20,
+      "str":  20,
+      "mag":  -5,
+      "spd":  -10,
+      "dex":  0,
+      "def":  15,
+      "res":  -10,
+      "lck":  0,
+      "cha":  5
+    },
+    "movement":  6,
+    "move_type":  "騎兵・重装",
+    "tp":  130,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "斧術",
+      "馬術",
+      "重装術"
+    ],
+    "class_skill":  "乗り降り、戦技装備+2、後攻守備+5",
+    "master_skill":  "猛盾",
+    "weapon_exp_bonus":  "剣+1、槍+2、斧+3、騎乗+2、重装+2",
+    "required_skills":  [
+      "重装術 D",
+      "馬術 D"
+    ],
+    "skill_caps":  [
+      "斧術 A",
+      "槍術 A"
+    ],
+    "description":  "全身鎧に身を包んだ重甲騎士/重装と騎兵の特徴を併せ持つ",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇第3区分で「クレール神殿」修復後に発生するサブクエクリア"
+  },
+  {
+    "id":  "ヴァルキュリウム",
+    "name":  "ヴァルキュリウム",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816947",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  0,
+      "mag":  15,
+      "spd":  5,
+      "dex":  5,
+      "def":  5,
+      "res":  10,
+      "lck":  15,
+      "cha":  10
+    },
+    "movement":  7,
+    "move_type":  "騎兵",
+    "tp":  130,
+    "usable_skills":  [
+      "黒魔術",
+      "白魔術",
+      "馬術"
+    ],
+    "class_skill":  "乗り降り、魔法回復+10、魔法命中+5",
+    "master_skill":  "静心の呪歌",
+    "weapon_exp_bonus":  "黒魔道+3、白魔道+2、騎乗+2",
+    "required_skills":  [
+      "馬術 D"
+    ],
+    "skill_caps":  [
+      "白魔術 A",
+      "黒魔術 A"
+    ],
+    "description":  "白魔法と黒魔法に秀でた魔法騎士/武器は扱えず、呪歌を覚える",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇第3区分で「ジュラ神殿」修復後に発生するサブクエクリア"
+  },
+  {
+    "id":  "ハイエピタフ",
+    "name":  "ハイエピタフ",
+    "tier":  "最上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816946",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  15,
+      "mag":  15,
+      "spd":  10,
+      "dex":  5,
+      "def":  5,
+      "res":  5,
+      "lck":  5,
+      "cha":  5
+    },
+    "movement":  7,
+    "move_type":  "騎兵",
+    "tp":  130,
+    "usable_skills":  [
+      "剣術",
+      "黒魔術",
+      "馬術"
+    ],
+    "class_skill":  "乗り降り、戦技装備+2、黒魔術の探求",
+    "master_skill":  "暗月",
+    "weapon_exp_bonus":  "剣+3、黒魔道+2、騎乗+2",
+    "required_skills":  [
+      "馬術 D",
+      "黒魔術 D",
+      "剣術 B"
+    ],
+    "description":  "剣と黒魔法を操る魔剣騎士/馬を駆り、敵を一刀に伏す",
+    "unlock_item":  "最上級試験手形",
+    "unlock_note":  "救世篇第3区分で「スミルノス神殿」修復後に発生するサブクエクリア"
+  },
+  {
+    "id":  "ザ・ブレイド",
+    "name":  "ザ・ブレイド",
+    "tier":  "神将職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816945",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  10,
+      "mag":  10,
+      "spd":  20,
+      "dex":  20,
+      "def":  5,
+      "res":  5,
+      "lck":  5,
+      "cha":  10
+    },
+    "movement":  6,
+    "move_type":  "歩兵",
+    "tp":  160,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+3、剣必殺+10",
+    "master_skill":  "戦神",
+    "weapon_exp_bonus":  "剣+5、槍+1、歩行+2",
+    "required_skills":  [
+      "剣術 S"
+    ],
+    "description":  "剣に生き剣に死す、神衛の剣士/その刃に断てぬ物なし",
+    "unlock_item":  "妖刀の鍔",
+    "unlock_note":  "4区分開始時に解放（天冠の神殿で妖刀の鍔を入手すると転職可能）"
+  },
+  {
+    "id":  "ジ・アプサラス",
+    "name":  "ジ・アプサラス",
+    "tier":  "神将職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816944",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  5,
+      "mag":  10,
+      "spd":  25,
+      "dex":  15,
+      "def":  5,
+      "res":  5,
+      "lck":  10,
+      "cha":  30
+    },
+    "movement":  6,
+    "move_type":  "歩兵",
+    "tp":  160,
+    "usable_skills":  [
+      "剣術",
+      "弓術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+3、踊る",
+    "master_skill":  "神舞",
+    "weapon_exp_bonus":  "剣+4、弓+2、歩行+5",
+    "required_skills":  [
+      "弓術 C",
+      "剣術 A"
+    ],
+    "description":  "神聖なる舞を納めし舞巫子/その美芸は神の御心をも癒やす",
+    "unlock_item":  "ムーサの首飾り",
+    "unlock_note":  "4区分開始時に解放（天冠の神殿でムーサの首飾りを入手すると転職可能）"
+  },
+  {
+    "id":  "ジ・エターナル",
+    "name":  "ジ・エターナル",
+    "tier":  "神将職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816943",
+    "growth_bonus":  {
+      "hp":  30,
+      "str":  30,
+      "mag":  0,
+      "spd":  10,
+      "dex":  0,
+      "def":  15,
+      "res":  0,
+      "lck":  0,
+      "cha":  10
+    },
+    "movement":  6,
+    "move_type":  "歩兵",
+    "tp":  160,
+    "usable_skills":  [
+      "剣術",
+      "斧術",
+      "格闘術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+3、斧命中+10、格闘命中+10",
+    "master_skill":  "武神",
+    "weapon_exp_bonus":  "剣+3、斧+5、格闘+3、歩行+1",
+    "skill_caps":  [
+      "格闘術 S",
+      "斧術 S",
+      "剣術 S"
+    ],
+    "description":  "無窮の力を持つ戦いの申し子/烈斧にて神の征く道を切り拓く",
+    "unlock_item":  "裁きの天秤",
+    "unlock_note":  "4区分開始時に解放（天冠の神殿で裁きの天秤を入手すると転職可能）"
+  },
+  {
+    "id":  "ザ・ゴッドハンド",
+    "name":  "ザ・ゴッドハンド",
+    "tier":  "神将職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816942",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  10,
+      "mag":  10,
+      "spd":  15,
+      "dex":  5,
+      "def":  10,
+      "res":  15,
+      "lck":  5,
+      "cha":  10
+    },
+    "movement":  6,
+    "move_type":  "歩兵",
+    "tp":  160,
+    "usable_skills":  [
+      "格闘術",
+      "白魔術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+3、白魔術の極限、格闘回避+10",
+    "master_skill":  "神装",
+    "weapon_exp_bonus":  "格闘+5、白魔道+3、歩行+3",
+    "required_skills":  [
+      "白魔術 C",
+      "格闘術 S"
+    ],
+    "description":  "全てを打ち砕く神拳の持ち主/その拳を時に癒やしの掌に変え、/弱き者を救う",
+    "unlock_item":  "大帝の腹帯",
+    "unlock_note":  "4区分開始時に解放（天冠の神殿で大帝の腹帯を入手すると転職可能）"
+  },
+  {
+    "id":  "ザ・カラミティ",
+    "name":  "ザ・カラミティ",
+    "tier":  "神将職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816941",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  5,
+      "mag":  15,
+      "spd":  25,
+      "dex":  20,
+      "def":  5,
+      "res":  15,
+      "lck":  15,
+      "cha":  5
+    },
+    "movement":  6,
+    "move_type":  "歩兵",
+    "tp":  160,
+    "usable_skills":  [
+      "剣術",
+      "弓術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+3、鍵開け、超級探索術",
+    "master_skill":  "神命",
+    "weapon_exp_bonus":  "剣+2、弓+4、歩行+5",
+    "skill_caps":  [
+      "弓術 S",
+      "剣術 S"
+    ],
+    "description":  "神意により戦場に厄災を蒔く者/闇を暴き、人々に福音をもたらす",
+    "unlock_item":  "闇の結晶",
+    "unlock_note":  "4区分開始時に解放（天冠の神殿で闇の結晶を入手すると転職可能）"
+  },
+  {
+    "id":  "ザ・トライデント",
+    "name":  "ザ・トライデント",
+    "tier":  "神将職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816940",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  15,
+      "mag":  5,
+      "spd":  10,
+      "dex":  10,
+      "def":  15,
+      "res":  15,
+      "lck":  5,
+      "cha":  10
+    },
+    "movement":  6,
+    "move_type":  "歩兵",
+    "tp":  160,
+    "usable_skills":  [
+      "槍術",
+      "白魔術",
+      "歩兵術"
+    ],
+    "class_skill":  "戦技装備+3、魔法回復+10、白魔術の極限",
+    "master_skill":  "神壁",
+    "weapon_exp_bonus":  "槍+5、白魔道+3、歩行+1",
+    "required_skills":  [
+      "槍術 S"
+    ],
+    "description":  "不浄なる神敵を貫く神槍士/聖なる魔法により苦境の者を守る",
+    "unlock_item":  "三叉の矛",
+    "unlock_note":  "4区分開始時に解放（天冠の神殿で三叉の矛を入手すると転職可能）"
+  },
+  {
+    "id":  "ザ・キャバリアー",
+    "name":  "ザ・キャバリアー",
+    "tier":  "神将職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816939",
+    "growth_bonus":  {
+      "hp":  20,
+      "str":  15,
+      "mag":  5,
+      "spd":  10,
+      "dex":  10,
+      "def":  15,
+      "res":  10,
+      "lck":  5,
+      "cha":  15
+    },
+    "movement":  8,
+    "move_type":  "騎兵",
+    "tp":  160,
+    "usable_skills":  [
+      "剣術",
+      "槍術",
+      "斧術",
+      "馬術"
+    ],
+    "class_skill":  "乗り降り、戦技装備+3、黄金騎走",
+    "master_skill":  "神技",
+    "weapon_exp_bonus":  "剣+3、槍+3、斧+3、騎乗+5",
+    "required_skills":  [
+      "馬術 A"
+    ],
+    "skill_caps":  [
+      "斧術 S",
+      "槍術 S",
+      "剣術 S"
+    ],
+    "description":  "神速で戦場を馳せる護神騎士/その姿、地を走る雷がごとし",
+    "unlock_item":  "神鉄の鞍",
+    "unlock_note":  "4区分開始時に解放（天冠の神殿で神鉄の鞍を入手すると転職可能）"
+  },
+  {
+    "id":  "ジ・アヴァタール",
+    "name":  "ジ・アヴァタール",
+    "tier":  "神将職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816938",
+    "growth_bonus":  {
+      "hp":  10,
+      "str":  -5,
+      "mag":  30,
+      "spd":  10,
+      "dex":  5,
+      "def":  -5,
+      "res":  30,
+      "lck":  20,
+      "cha":  10
+    },
+    "movement":  6,
+    "move_type":  "歩兵",
+    "tp":  160,
+    "usable_skills":  [
+      "剣術",
+      "斧術",
+      "格闘術",
+      "黒魔術",
+      "白魔術",
+      "歩兵術"
+    ],
+    "class_skill":  "全魔術極限、魔法命中+10、魔法回復+20",
+    "master_skill":  "神法",
+    "weapon_exp_bonus":  "剣+2、斧+1、格闘+2、黒魔道+5、白魔道+5、歩行+1",
+    "skill_caps":  [
+      "白魔術 S",
+      "黒魔術 S"
+    ],
+    "description":  "神の御業を写し、魔法を統べる者/白と黒の理を極めた至尊の魔道士",
+    "unlock_item":  "転生の蓮華",
+    "unlock_note":  "4区分開始時に解放（天冠の神殿で転生の蓮華を入手すると転職可能）"
+  },
+  {
+    "id":  "鍛冶師",
+    "name":  "鍛冶師",
+    "tier":  "上級職",
+    "source_url":  "https://game8.jp/fe-banshisenko/816973",
+    "growth_bonus":  {
+      "hp":  15,
+      "str":  10,
+      "mag":  10,
+      "spd":  0,
+      "dex":  5,
+      "def":  10,
+      "res":  10,
+      "lck":  0,
+      "cha":  5
+    },
+    "movement":  5,
+    "move_type":  "歩兵",
+    "tp":  100,
+    "usable_skills":  [
+      "斧術",
+      "黒魔術",
+      "歩兵術"
+    ],
+    "class_skill":  "黒魔術の探求、斧命中+5",
+    "master_skill":  "即席修理",
+    "weapon_exp_bonus":  "斧+3、黒魔道+1、歩行+1",
+    "required_skills":  [
+      "黒魔術 D",
+      "斧術 C"
+    ],
+    "description":  "斧の扱いに熟達し、黒魔法も/使うことができる特殊な斧戦士/臨機応変な戦い方ができる",
+    "unlock_item":  "上級試験手形"
   }
 ]

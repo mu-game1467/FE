@@ -1,0 +1,6 @@
+# 一時ファイル（取得した元データ、解析ログ、検証用ダンプなど）
+.tmp/
+
+# OS / editor
+Thumbs.db
+.DS_Store
