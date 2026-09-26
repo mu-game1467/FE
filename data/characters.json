@@ -18,6 +18,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/817278",
     "voice_actor":  "世戸さおり",
     "favorites":  "噂話、安売り、お金、掘り出し物",
+    "image":  "images/characters/アンナ.webp",
     "forte_skills":  [
       "槍術",
       "馬術"
@@ -78,6 +79,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816463",
     "voice_actor":  "三輪夏紀",
     "favorites":  "家族、故郷、狩猟、畑仕事、弓の手入れ",
+    "image":  "images/characters/イニオニ.webp",
     "forte_skills":  [
       "斧術",
       "弓術"
@@ -173,6 +175,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816462",
     "voice_actor":  "秋葉佑",
     "favorites":  "伝統、誇り、巨大な力",
+    "image":  "images/characters/ヌッツォ.webp",
     "forte_skills":  [
       "剣術",
       "弓術",
@@ -266,6 +269,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816461",
     "voice_actor":  "大久保藍子",
     "favorites":  "伴侶との思い出、傭兵団の仲間たち、儲け話",
+    "image":  "images/characters/ジャスミン.webp",
     "forte_skills":  [
       "槍術",
       "斧術",
@@ -361,6 +365,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816460",
     "voice_actor":  "藤堂駿介",
     "favorites":  "根こそぎ奪い取ること、海、船、手下たち",
+    "image":  "images/characters/キロイカ.webp",
     "forte_skills":  [
       "弓術"
     ],
@@ -454,6 +459,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816877",
     "voice_actor":  "武田幸史",
     "favorites":  "アウロラ神殿での職務、見回り",
+    "image":  "images/characters/セントリオン.webp",
     "forte_skills":  [
       "槍術",
       "斧術",
@@ -529,6 +535,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816459",
     "voice_actor":  "小野寺悠貴",
     "favorites":  "酒、女、喧嘩、漲る体力",
+    "image":  "images/characters/マジーデ.webp",
     "forte_skills":  [
       "斧術",
       "格闘術"
@@ -624,6 +631,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816458",
     "voice_actor":  "峰晃弘",
     "favorites":  "金、暴力、いい女、野菜、気の合う仲間との酒盛り",
+    "image":  "images/characters/ザーコネ.webp",
     "forte_skills":  [
       "剣術",
       "斧術"
@@ -719,6 +727,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816457",
     "voice_actor":  "佳原萌枝",
     "favorites":  "大道芸、野菜作り、見物客の笑顔、買い物",
+    "image":  "images/characters/ハルヴィン.webp",
     "forte_skills":  [
       "弓術",
       "馬術"
@@ -814,6 +823,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816456",
     "voice_actor":  "洲崎綾",
     "favorites":  "詩集、辛い食べ物、テフ、信頼できる相手",
+    "image":  "images/characters/フィアナ.webp",
     "forte_skills":  [
       "黒魔術",
       "白魔術",
@@ -915,6 +925,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816455",
     "voice_actor":  "山口勝平",
     "favorites":  "女（特にアナトリア）、機械操作、うまい飯、喧嘩",
+    "image":  "images/characters/ダイトウ.webp",
     "forte_skills":  [
       "斧術",
       "重装術"
@@ -1010,6 +1021,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816454",
     "voice_actor":  "橘杏咲",
     "favorites":  "物語を書くこと、美術品の鑑賞、色恋の話題",
+    "image":  "images/characters/ルルディヤー.webp",
     "forte_skills":  [
       "剣術",
       "槍術",
@@ -1105,6 +1117,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816453",
     "voice_actor":  "綿貫竟之介",
     "favorites":  "暴れること、食べること、動物、燻製肉の作成",
+    "image":  "images/characters/ゴライアス.webp",
     "forte_skills":  [
       "斧術",
       "重装術"
@@ -1200,6 +1213,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816452",
     "voice_actor":  "永塚拓馬",
     "favorites":  "ボクを楽しませてくれる白髪鬼、恐怖に顔を引きつらせた対戦相手",
+    "image":  "images/characters/ジェスター.webp",
     "forte_skills":  [
       "剣術",
       "弓術",
@@ -1295,6 +1309,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816451",
     "voice_actor":  "松田颯水",
     "favorites":  "頼れる相手、甘い物、友達",
+    "image":  "images/characters/ロレッタ.webp",
     "forte_skills":  [
       "剣術",
       "槍術",
@@ -1390,6 +1405,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816450",
     "voice_actor":  "子安武人",
     "favorites":  "セイロス教の教え、釣り、自分の娘、勤勉な者",
+    "image":  "images/characters/セテス.webp",
     "forte_skills":  [
       "槍術",
       "斧術",
@@ -1483,6 +1499,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816449",
     "voice_actor":  "井藤智哉",
     "favorites":  "精霊たち、ブリギットの民、太陽、故郷",
+    "image":  "images/characters/ペペ.webp",
     "forte_skills":  [
       "剣術",
       "弓術",
@@ -1569,6 +1586,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816448",
     "voice_actor":  "清都ありさ",
     "favorites":  "美味しい物、食事が沐山並んだ瞬間（すぐに消え去ってしまうけど）",
+    "image":  "images/characters/ソフィア.webp",
     "forte_skills":  [
       "弓術",
       "白魔術"
@@ -1660,6 +1678,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816447",
     "voice_actor":  "夏陽りんこ",
     "favorites":  "都会の生活、都会の人間、拳での殴り合い",
+    "image":  "images/characters/ノクチュラ.webp",
     "forte_skills":  [
       "斧術",
       "格闘術",
@@ -1751,6 +1770,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816446",
     "voice_actor":  "喜屋武和輝",
     "favorites":  "酒、古い説話、遠方への旅、弱者の救済",
+    "image":  "images/characters/ヨーカイ.webp",
     "forte_skills":  [
       "斧術",
       "白魔術"
@@ -1845,6 +1865,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816478",
     "voice_actor":  "仲村かおり",
     "favorites":  "同期たち、豊かな自然",
+    "image":  "images/characters/トロイア.webp",
     "forte_skills":  [
       "格闘術",
       "黒魔術",
@@ -1893,6 +1914,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816477",
     "voice_actor":  "大津愛理",
     "favorites":  "幸せな頃の思い出",
+    "image":  "images/characters/コウカ.webp",
     "forte_skills":  [
       "黒魔術",
       "白魔術"
@@ -1943,6 +1965,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816910",
     "voice_actor":  "岩澤俊樹",
     "favorites":  "王から賜った緑の鎧、美しい女性",
+    "image":  "images/characters/キリーク.webp",
     "forte_skills":  [
       "剣術",
       "馬術"
@@ -2003,6 +2026,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816909",
     "voice_actor":  "金子誠",
     "favorites":  "王から賜った赤い鎧、忠義を貫くこと",
+    "image":  "images/characters/ネイサン.webp",
     "forte_skills":  [
       "槍術",
       "馬術",
@@ -2063,6 +2087,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816445",
     "voice_actor":  "芝崎典子",
     "favorites":  "両親、ブーケパラス、素敵な男性、恋の話題",
+    "image":  "images/characters/アレキサンドラ.webp",
     "forte_skills":  [
       "剣術",
       "槍術",
@@ -2154,6 +2179,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816444",
     "voice_actor":  "近藤浩徳",
     "favorites":  "大アウグストの戦術、見どころのある若者",
+    "image":  "images/characters/ベンディッツ.webp",
     "forte_skills":  [
       "弓術",
       "指揮術",
@@ -2245,6 +2271,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816443",
     "voice_actor":  "三浦冴子",
     "favorites":  "義を重んじること、飛騼の世話",
+    "image":  "images/characters/ヌディーヌ.webp",
     "forte_skills":  [
       "斧術",
       "黒魔術",
@@ -2340,6 +2367,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816442",
     "voice_actor":  "飯田ヒカル",
     "favorites":  "一流の品物、一流の人物、一流の食事",
+    "image":  "images/characters/カターニャ.webp",
     "forte_skills":  [
       "剣術",
       "槍術",
@@ -2431,6 +2459,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816441",
     "voice_actor":  "小林秀行",
     "favorites":  "騎士道、自律、愛馬のロシナン",
+    "image":  "images/characters/イオ.webp",
     "forte_skills":  [
       "槍術",
       "斧術",
@@ -2526,6 +2555,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816440",
     "voice_actor":  "金子隼人",
     "favorites":  "酒、女、面白い奴、青臭い若者",
+    "image":  "images/characters/グザラン.webp",
     "forte_skills":  [
       "剣術",
       "格闘術",
@@ -2617,6 +2647,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816439",
     "voice_actor":  "葉山翔太",
     "favorites":  "身体を動かすこと、正義、喧嘩、うまい飯",
+    "image":  "images/characters/ナジャ.webp",
     "forte_skills":  [
       "剣術",
       "格闘術",
@@ -2712,6 +2743,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816438",
     "voice_actor":  "矢作紗友里",
     "favorites":  "美味しい食事、お酒、他者との交流",
+    "image":  "images/characters/サラン.webp",
     "forte_skills":  [
       "槍術",
       "白魔術",
@@ -2795,6 +2827,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816885",
     "voice_actor":  "小笠原亜里沙",
     "favorites":  "易による占い、丸いもの",
+    "image":  "images/characters/アナトリア.webp",
     "blaze_type":  "天柱",
     "blaze_skill":  "覚醒",
     "forte_skills":  [
@@ -2874,6 +2907,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816437",
     "voice_actor":  "篠原侑",
     "favorites":  "かわいそうな人、精霊との会話、形見の首飾り、空を見ること",
+    "image":  "images/characters/ニネ.webp",
     "forte_skills":  [
       "槍術",
       "白魔術",
@@ -2975,6 +3009,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816436",
     "voice_actor":  "高梨謙吾",
     "favorites":  "森の中を歩くこと、薬草摘み、オルヘル",
+    "image":  "images/characters/ディエゴ.webp",
     "forte_skills":  [
       "剣術",
       "弓術",
@@ -3066,6 +3101,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816884",
     "voice_actor":  "本渡楓",
     "favorites":  "動物との触れ合い、歌を聴くこと、お掃除、お洗濯、お料理",
+    "image":  "images/characters/オルヘル.webp",
     "blaze_type":  "絡繰",
     "blaze_skill":  "守護天使解放",
     "blaze_arts":  "エリザベート",
@@ -3156,6 +3192,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816435",
     "voice_actor":  "小林親弘",
     "favorites":  "命のやり取り、故郷の料理、女遊び",
+    "image":  "images/characters/シモン.webp",
     "forte_skills":  [
       "剣術",
       "斧術",
@@ -3251,6 +3288,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816434",
     "voice_actor":  "八巻アンナ",
     "favorites":  "お気に入りの詩集、動物、日陰に咲く花、金勘定",
+    "image":  "images/characters/ウーシュラ.webp",
     "forte_skills":  [
       "剣術",
       "弓術",
@@ -3338,6 +3376,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816883",
     "voice_actor":  "三木眞一郎",
     "favorites":  "金、冒険、肉桂、女を口説くこと、己の心に従うこと",
+    "image":  "images/characters/タリムーン.webp",
     "blaze_type":  "冥府",
     "blaze_skill":  "抵抗",
     "forte_skills":  [
@@ -3423,6 +3462,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816433",
     "voice_actor":  "鷲見友美ジェナ",
     "favorites":  "自分、筆を動かすこと、劇的な主題を探すこと",
+    "image":  "images/characters/ダンテ.webp",
     "forte_skills":  [
       "黒魔術",
       "白魔術",
@@ -3518,6 +3558,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816432",
     "voice_actor":  "小柳良寛",
     "favorites":  "サイの国の茶、赤毛の馬、打ち合い、毛筆での筆記",
+    "image":  "images/characters/ゲイツ.webp",
     "forte_skills":  [
       "槍術",
       "斧術",
@@ -3594,6 +3635,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816882",
     "voice_actor":  "安元洋貴",
     "favorites":  "鍛錬、塩漬け肉、ガルム、造りの良い武器",
+    "image":  "images/characters/ベルトラン.webp",
     "blaze_type":  "冥府",
     "blaze_skill":  "暴走",
     "blaze_arts":  "冥狂",
@@ -3674,6 +3716,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816431",
     "voice_actor":  "山口茜",
     "favorites":  "新しい薬の調合、父親、母親、甘いお菓子を食べること",
+    "image":  "images/characters/ムウ.webp",
     "forte_skills":  [
       "剣術",
       "斧術",
@@ -3764,6 +3807,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816430",
     "voice_actor":  "巽悠衣子",
     "favorites":  "歌、踊り、楽器の演奏、詩作り、注目を集めること",
+    "image":  "images/characters/オリンピア.webp",
     "forte_skills":  [
       "斧術",
       "白魔術"
@@ -3856,6 +3900,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816429",
     "voice_actor":  "三浦勝之",
     "favorites":  "女神カーラ、すべての女性たち、詩を詠むこと",
+    "image":  "images/characters/シロッコ.webp",
     "forte_skills":  [
       "剣術",
       "黒魔術",
@@ -3948,6 +3993,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816428",
     "voice_actor":  "石井隆之",
     "favorites":  "忠義、鍛錬、酒、レダの幸福を妄想すること",
+    "image":  "images/characters/バッカニア.webp",
     "forte_skills":  [
       "槍術",
       "斧術",
@@ -4032,6 +4078,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816427",
     "voice_actor":  "柳田淳一",
     "favorites":  "空を見ること、女性との食事",
+    "image":  "images/characters/ライサンダー.webp",
     "forte_skills":  [
       "槍術",
       "斧術",
@@ -4124,6 +4171,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816426",
     "voice_actor":  "斉藤朱夏",
     "favorites":  "金貨、宝石、年上の男性",
+    "image":  "images/characters/リリアン.webp",
     "forte_skills":  [
       "弓術",
       "歩兵術"
@@ -4216,6 +4264,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816425",
     "voice_actor":  "利根健太朗",
     "favorites":  "酒、闘争、歌、人付き合い",
+    "image":  "images/characters/トビヤス.webp",
     "forte_skills":  [
       "斧術",
       "馬術",
@@ -4290,6 +4339,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816424",
     "voice_actor":  "鶴岡聡",
     "favorites":  "知識の記憶、賢者との問答、他国の歴史や軍略を学ぶこと",
+    "image":  "images/characters/ボナパルテ.webp",
     "forte_skills":  [
       "剣術",
       "黒魔術",
@@ -4364,6 +4414,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816423",
     "voice_actor":  "平田宏美",
     "favorites":  "身体を動かすこと、他人の世話を焼くこと",
+    "image":  "images/characters/ミカエラ.webp",
     "forte_skills":  [
       "斧術",
       "弓術",
@@ -4456,6 +4507,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816422",
     "voice_actor":  "菱川花菜",
     "favorites":  "いい顔の男、銛打ち、漁具の手入れ",
+    "image":  "images/characters/エスメラルダ.webp",
     "forte_skills":  [
       "槍術",
       "斧術",
@@ -4554,6 +4606,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816421",
     "voice_actor":  "山口恵",
     "favorites":  "各種の苦痛、忘れかけた感情、美しいものの解剖",
+    "image":  "images/characters/ファビオ.webp",
     "forte_skills":  [
       "黒魔術",
       "指揮術"
@@ -4634,6 +4687,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816420",
     "voice_actor":  "稲垣好",
     "favorites":  "世話を焼くこと、家族、家事全般、恋愛物語",
+    "image":  "images/characters/ウルタンド.webp",
     "forte_skills":  [
       "槍術",
       "白魔術",
@@ -4726,6 +4780,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816419",
     "voice_actor":  "山本和臣",
     "favorites":  "母親の手料理、ギンジの実",
+    "image":  "images/characters/ピーテル.webp",
     "forte_skills":  [
       "弓術",
       "歩兵術"
@@ -4818,6 +4873,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816418",
     "voice_actor":  "河瀬茉希",
     "favorites":  "書庫、噂話、恋の話題、一人の時間、おじいさま",
+    "image":  "images/characters/ティアラ.webp",
     "forte_skills":  [
       "黒魔術",
       "白魔術",
@@ -4910,6 +4966,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816417",
     "voice_actor":  "伊瀬茉莉也",
     "favorites":  "両親の思い出、故郷の歌の演奏、可愛い女の子、宝石、喝采",
+    "image":  "images/characters/レダ.webp",
     "blaze_type":  "冥府",
     "blaze_skill":  "暴走",
     "blaze_arts":  "冥狂",
@@ -4993,6 +5050,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816416",
     "voice_actor":  "高山みなみ",
     "favorites":  "闘争、ユ・ファス、サラミスの民の幸福",
+    "image":  "images/characters/セオドラ.webp",
     "blaze_type":  "冥府",
     "blaze_skill":  "掌握",
     "blaze_arts":  "冥静",
@@ -5076,6 +5134,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816415",
     "voice_actor":  "日野聡",
     "favorites":  "「美しい」と感じるもの、猫などの可愛いもの、甘い物、妹",
+    "image":  "images/characters/ディートリヒ.webp",
     "blaze_type":  "冥府",
     "blaze_skill":  "抵抗",
     "forte_skills":  [
@@ -5158,6 +5217,7 @@
     "source_url":  "https://game8.jp/fe-banshisenko/816414",
     "voice_actor":  "山下大輝",
     "favorites":  "身体を動かすこと、動物を捕まえること",
+    "image":  "images/characters/カイ.webp",
     "blaze_type":  "冥府",
     "blaze_skill":  "掌握",
     "blaze_arts":  "冥静",
@@ -5244,6 +5304,7 @@
     },
     "source_url":  "https://game8.jp/fe-banshisenko/816479",
     "favorites":  "名も無き小さな花、志の高い物、自分の予想を超えるもの",
+    "image":  "images/characters/救世主.webp",
     "blaze_type":  "天柱",
     "blaze_skill":  "覚醒",
     "forte_skills":  [
@@ -5314,6 +5375,7 @@
     },
     "source_url":  "https://game8.jp/fe-banshisenko/816902",
     "favorites":  "ダンテの戯曲、盤上遊戯、裁縫、美しい風景",
+    "image":  "images/characters/アスワン.webp",
     "forte_skills":  [
       "弓術",
       "指揮術",
@@ -5367,6 +5429,7 @@
     },
     "source_url":  "https://game8.jp/fe-banshisenko/816903",
     "favorites":  "読書、裁縫、鍛錬",
+    "image":  "images/characters/タホウニア.webp",
     "forte_skills":  [
       "格闘術"
     ],
@@ -5414,6 +5477,7 @@
     },
     "source_url":  "https://game8.jp/fe-banshisenko/817240",
     "favorites":  "モーザの誇り、最愛の妻、英雄譚",
+    "image":  "images/characters/クラプカ.webp",
     "forte_skills":  [
       "槍術",
       "白魔術",

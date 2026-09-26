@@ -11,7 +11,7 @@
 | ページ | 内容 | データ |
 |--------|------|--------|
 | `index.html` → `/FE/` | ダッシュボード | - |
-| `characters/index.html` → `/FE/characters/` | 64名のキャラクター。成長率・ルート別の加入条件（支援Lv／名声Lv）、カード／加入条件の早見表／成長率一覧表（名前＋9能力の内訳）の表示切替。成長率一覧表はヘッダ行と名前列が固定され、ヘッダのクリックで昇順・降順を切り替え。並び替えは名前・成長合計・9能力すべてに対応 | `data/characters.json` |
+| `characters/index.html` → `/FE/characters/` | 64名のキャラクター（立ち絵付き）。成長率・ルート別の加入条件（支援Lv／名声Lv）、カード／加入条件の早見表／成長率一覧表（名前＋9能力の内訳）の表示切替。成長率一覧表はヘッダ行と名前列が固定され、ヘッダのクリックで昇順・降順を切り替え。並び替えは名前・成長合計・9能力すべてに対応。スマホ表示にも対応 | `data/characters.json` |
 | `characters/<名前>/index.html` → `/FE/characters/カイ/` etc. | キャラクター詳細。成長率・固有スキル・血印・登場時ステータス・技能・加入条件、そして**そのキャラクターが各兵種になった場合の成長率**（素の成長率＋兵種ボーナス、階級フィルタと並び替え付き） | `data/characters.json` + `data/classes.json` |
 | `classes/index.html` → `/FE/classes/` | 60兵種。階級・成長ボーナス・移動力・使用可能技能・解放条件 | `data/classes.json` |
 | `skills/index.html` → `/FE/skills/` | 個人スキル・血印・ルーツ・ブレイズアーツ／スキル／タイプ・兵種＆マスタースキル | `data/skills.json` |
@@ -27,10 +27,12 @@ GitHub Pages が `…/characters/` を `characters/index.html` に解決しま�
 - `index.html` — ダッシュボード
 - `characters/` `classes/` `skills/` `items/` — 各一覧ページ（`index.html` を内包）
 - `characters/<名前>/index.html` — キャラクター詳細ページ（`tools/generate-character-pages.ps1` が生成）
+- `images/characters/` — キャラクター立ち絵（`tools/fetch-character-images.ps1` が取得）
 - `styles.css` - スタイルシート
 - `app.js` - データ読み込み・検索・並び替え・表示ロジック
 - `data/` - JSONデータファイル
 - `tools/build-from-game8.ps1` - データを再生成するスクリプト
+- `tools/fetch-character-images.ps1` - 立ち絵を取得するスクリプト
 - `tools/generate-character-pages.ps1` - キャラクター詳細ページを生成するスクリプト
 - `tools/serve.ps1` - ローカル確認用の簡易HTTPサーバー
 - `tools/MAPPINGS.md` - 元JSONの列（`col_1`…）と出力キーの対応表
@@ -51,7 +53,8 @@ powershell -ExecutionPolicy Bypass -File tools\build-from-game8.ps1
 # 最新を取り直す
 powershell -ExecutionPolicy Bypass -File tools\build-from-game8.ps1 -Download
 
-# データを更新したらキャラクター詳細ページも作り直す
+# データを更新したら立ち絵とキャラクター詳細ページも作り直す
+powershell -ExecutionPolicy Bypass -File tools\fetch-character-images.ps1
 powershell -ExecutionPolicy Bypass -File tools\generate-character-pages.ps1
 ```
 
@@ -61,6 +64,10 @@ powershell -ExecutionPolicy Bypass -File tools\generate-character-pages.ps1
 2. 成長率の合計（`col_29`）と9能力の和が一致するか検証する
 3. キャラクターが参照する個人スキル・血印・ブレイズ値がすべて `23030` に存在するか検証する
 4. キャラクターの登場兵種がすべて兵種テーブルに存在するか検証する
+5. 立ち絵を `images/characters/` に取得する（`fetch-character-images.ps1`）。
+   `characters.json` にはサイトルート相対のパス（`images/characters/<名前>.webp`）を書き込み、
+   `app.js` がスタイルシートの URL からサイトルートを導出して解決する。
+   ホットリンクはせずローカルに置くので、オフラインでも表示できる。
 
 検証に失敗すると警告が出ます。成長ボーナスなどの `+10` という表記は数値に変換されます。
 

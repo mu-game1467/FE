@@ -203,6 +203,16 @@ foreach ($r in $charRows) {
     if (Clean $r.col_59) { $c['voice_actor'] = (Clean $r.col_59) }
     if (Clean $r.col_30) { $c['favorites']   = (Clean $r.col_30) }
 
+    # ---- portrait ----
+    # Stored as a site-root-relative path so the JSON stays portable, and the
+    # file is fetched locally by tools\fetch-character-images.ps1 rather than
+    # hotlinked, so the pages render offline and never depend on their CDN.
+    if ((Clean $r.image_url) -and ($name -notmatch '[\\/:*?"<>|]')) {
+        $ext = 'webp'
+        if ((Clean $r.image_url) -match '\.(png|jpe?g|webp|gif)/') { $ext = $Matches[1].ToLower() }
+        $c['image'] = "images/characters/$name.$ext"
+    }
+
     # ---- blaze related fields (only the nine "blaze" units have them) ----
     if (Clean $r.col_5) { $c['blaze_type']  = (Clean $r.col_5) }
     if (Clean $r.col_6) { $c['blaze_skill'] = (Clean $r.col_6) }

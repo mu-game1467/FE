@@ -55,6 +55,25 @@ function esc(value) {
         .replace(/"/g, '&quot;');
 }
 
+/**
+ * Site root, read off the stylesheet's own URL (always <root>/styles.css).
+ * The data files store site-root-relative asset paths, but a page can sit one
+ * or two directories deep, so letting the browser resolve them against the
+ * document would 404 on the character detail pages.
+ */
+const SITE_ROOT = (() => {
+    const link = document.querySelector('link[rel="stylesheet"]');
+    const href = (link && link.href) || '';
+    const i = href.lastIndexOf('styles.css');
+    return i === -1 ? '' : href.slice(0, i);
+})();
+
+function assetUrl(path) {
+    if (!path) return '';
+    if (/^[a-z][a-z0-9+.-]*:/i.test(path) || path.charAt(0) === '/') return path;
+    return SITE_ROOT + path;
+}
+
 function get(type) { return PAGES[type] || { file: '', icon: '📄', label: '' }; }
 
 function currentType() {
@@ -188,6 +207,23 @@ function emptyState(message) {
 
 /* --------------------------------------------------------- characters -- */
 
+/**
+ * Portrait block. The images are ~466px squares and are always displayed well
+ * below that (128px in the list, 210px on the detail page), so they are scaled
+ * down and stay sharp. The box comes from CSS, so no width/height attributes
+ * are emitted and there is no layout shift. When a record carries no image the
+ * name's first character stands in, so a card keeps its shape.
+ */
+function characterFigure(item, extraClass) {
+    const cls = 'card-figure' + (extraClass ? ' ' + extraClass : '');
+    if (item.image) {
+        return `<div class="${cls}">` +
+            `<img src="${esc(assetUrl(item.image))}" alt="${esc(item.name)}" ` +
+            `loading="lazy" decoding="async"></div>`;
+    }
+    return `<div class="${cls} is-empty" aria-hidden="true">${esc((item.name || '?').charAt(0))}</div>`;
+}
+
 function renderCharacter(item) {
     const growth = item.growth_rates || {};
 
@@ -217,8 +253,11 @@ function renderCharacter(item) {
         <article class="card" data-id="${esc(item.id)}">
             <div class="card-content">
                 <header class="card-head">
-                    <h3 class="card-name"><a href="${encodeURIComponent(item.id)}/">${esc(item.name)}</a></h3>
-                    <div class="taglist">${badges.join('')}</div>
+                    ${characterFigure(item, 'card-portrait')}
+                    <div class="card-id">
+                        <h3 class="card-name"><a href="${encodeURIComponent(item.id)}/">${esc(item.name)}</a></h3>
+                        <div class="taglist">${badges.join('')}</div>
+                    </div>
                 </header>
 
                 <div class="card-block">
@@ -687,9 +726,12 @@ function renderCharacterDetail(character, classes, container) {
     container.innerHTML = `
         <div class="detail">
             <header class="detail-head">
-                <div>
-                    <h2 class="detail-name">${esc(character.name)}</h2>
-                    <div class="taglist">${badges.join('')}</div>
+                <div class="detail-id">
+                    ${characterFigure(character, 'detail-portrait')}
+                    <div>
+                        <h2 class="detail-name">${esc(character.name)}</h2>
+                        <div class="taglist">${badges.join('')}</div>
+                    </div>
                 </div>
                 <a class="backlink" href="../">← キャラクター一覧</a>
             </header>
