@@ -33,13 +33,15 @@ if (-not $OutRoot) { $OutRoot = Join-Path $repoRoot 'characters' }
 function U { param([string]$hex) -join (($hex -split '\s+') | Where-Object { $_ } | ForEach-Object { [char][Convert]::ToInt32($_, 16) }) }
 
 $titleSuffix = U '30C7 30FC 30BF 30D9 30FC 30B9'   # データベース
-$siteName    = U '30D5 30A1 30A4 30A2 30FC 30E0 30E8 30D5 30E9 30E0 20 4E07 7D2D 5343 7D05'  # ファイアーエムブレム 万紫千紅
+$siteName    = U '30D5 30A1 30A4 30A2 30FC 30A8 30E0 30D6 30EC 30E0 20 4E07 7D2B 5343 7D05'  # ファイアーエムブレム 万紫千紅
 $navHome     = U '30DB 30FC 30E0'                   # ホーム
 $labelCh     = U '30AD 30E3 30E9 30AF 30BF 30FC'   # キャラクター
 $labelClass  = U '30AF 30E9 30B9'                   # クラス
 $labelSkill  = U '30B9 30AD 30EB'                   # スキル
 $labelItem   = U '30A2 30A4 30C6 30E0'              # アイテム
-$back        = U '2190 0020' + $labelCh + U '4E00 89A7'  # ← キャラクター一覧
+# NOTE: the parentheses matter. In argument mode PowerShell would pass '+', $labelCh
+# and the second U() call as extra arguments to U, leaving $back as just the arrow.
+$back        = (U '2190 0020') + $labelCh + (U '4E00 89A7')  # ← キャラクター一覧
 
 # NB: ConvertFrom-Json returns the array itself, so do not wrap it in @()
 # (that would create a single element holding the whole array).
