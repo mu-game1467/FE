@@ -120,13 +120,17 @@ function tagList(values, className) {
         .join('')}</div>`;
 }
 
-function rows(pairs) {
+/**
+ * Key/value block. `raw` keeps pre-escaped markup (used where a value carries
+ * its own <strong> markup, e.g. skill name + effect).
+ */
+function rows(pairs, raw) {
     const cells = pairs
         .filter(([, value]) => value !== null && value !== undefined && value !== '')
         .map(([label, value]) => `
             <div class="kv">
                 <span class="kv-label">${esc(label)}</span>
-                <span class="kv-value">${esc(value)}</span>
+                <span class="kv-value">${raw ? value : esc(value)}</span>
             </div>`);
     return cells.length ? `<div class="kvs">${cells.join('')}</div>` : '';
 }
@@ -529,15 +533,14 @@ function classGrowthTable(character, classes) {
 
 function renderCharacterDetail(character, classes, container) {
     const growth = character.growth_rates || {};
-    const start = character.start || {};
 
     const badges = [];
     if (character.gender) badges.push(`<span class="tag">${esc(character.gender)}</span>`);
-    if (start.class) badges.push(`<span class="tag tag-class">${esc(start.class)}${start.level ? ' Lv' + esc(start.level) : ''}</span>`);
     if (character.blaze_type) badges.push(`<span class="tag tag-blaze">${esc(character.blaze_type)}</span>`);
     if (character.blaze_skill) badges.push(`<span class="tag tag-blaze">${esc(character.blaze_skill)}</span>`);
     if (character.blaze_arts) badges.push(`<span class="tag tag-blaze">${esc(character.blaze_arts)}</span>`);
 
+    // values already carry their own markup here, hence rows(own, true)
     const own = [];
     if (character.personal_skill) {
         own.push(['個人スキル', `<strong>${esc(character.personal_skill.name)}</strong>${character.personal_skill.effect ? `<br><span class="muted">${esc(character.personal_skill.effect)}</span>` : ''}`]);
@@ -546,7 +549,6 @@ function renderCharacterDetail(character, classes, container) {
         own.push(['血印', `<strong>${esc(seal.name)}</strong>${seal.effect ? `<br><span class="muted">${esc(seal.effect)}</span>` : ''}`]);
     });
     if (character.favorites) own.push(['好きなもの', esc(character.favorites)]);
-    if (character.voice_actor) own.push(['声優', esc(character.voice_actor)]);
 
     const recruit = character.recruit || {};
     const recruitRows = ROUTES.filter((r) => recruit[r.id]).map((r) => {
@@ -579,13 +581,7 @@ function renderCharacterDetail(character, classes, container) {
                 ${growthGrid(growth, 70)}
             </section>
 
-            ${own.length ? `<section class="panel"><h3>固有</h3>${rows(own)}</section>` : ''}
-
-            ${start.stats ? `
-            <section class="panel">
-                <h3>登場時ステータス <span class="muted">${esc(start.class || '')}${start.level ? ' Lv' + esc(start.level) : ''}</span></h3>
-                ${growthGrid(start.stats, 40)}
-            </section>` : ''}
+            ${own.length ? `<section class="panel"><h3>固有</h3>${rows(own, true)}</section>` : ''}
 
             ${(character.forte_skills || character.weak_skills) ? `
             <section class="panel">
