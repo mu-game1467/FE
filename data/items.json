@@ -1,0 +1,66 @@
+[
+    {
+        "id": "iron_sword",
+        "name": "鉄の剣",
+        "type": "剣",
+        "mt": 8,
+        "hit": 90,
+        "crit": 0,
+        "wt": 5,
+        "uses": 46,
+        "range": 1,
+        "description": "最も一般的な剣。扱いやすい。"
+    },
+    {
+        "id": "steel_sword",
+        "name": "鋼の剣",
+        "type": "剣",
+        "mt": 11,
+        "hit": 80,
+        "crit": 0,
+        "wt": 8,
+        "uses": 36,
+        "range": 1,
+        "description": "鉄の剣より重く強力。"
+    },
+    {
+        "id": "silver_sword",
+        "name": "銀の剣",
+        "type": "剣",
+        "mt": 13,
+        "hit": 80,
+        "crit": 5,
+        "wt": 7,
+        "uses": 20,
+        "range": 1,
+        "description": "高威力の貴重な剣。使用回数が少ない。"
+    },
+    {
+        "id": "vulnerary",
+        "name": "傷薬",
+        "type": "回復アイテム",
+        "effect": "HPを10回復",
+        "uses": 3,
+        "description": "戦闘後の回復に必須のアイテム。"
+    },
+    {
+        "id": "elixir",
+        "name": "エリクサー",
+        "type": "回復アイテム",
+        "effect": "HPを全回復",
+        "uses": 1,
+        "description": "全HPを回復する貴重な薬。"
+    },
+    {
+        "id": "fire_tome",
+        "name": "ファイア",
+        "type": "火魔法",
+        "mt": 6,
+        "hit": 90,
+        "crit": 0,
+        "wt": 4,
+        "uses": 40,
+        "range": "1-2",
+        "description": "基本の火魔法書。軽量で扱いやすい。"
+    }
+]

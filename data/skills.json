@@ -1,0 +1,66 @@
+[
+    {
+        "id": "hp_plus_5",
+        "name": "HP+5",
+        "type": "能力値上昇",
+        "effect": "最大HPが5上昇",
+        "class": "全クラス共通",
+        "description": "生存率を高める基本スキル。"
+    },
+    {
+        "id": "str_plus_2",
+        "name": "力+2",
+        "type": "能力値上昇",
+        "effect": "力が2上昇",
+        "class": "物理職",
+        "description": "物理攻撃の威力を底上げする。"
+    },
+    {
+        "id": "mag_plus_2",
+        "name": "魔力+2",
+        "type": "能力値上昇",
+        "effect": "魔力が2上昇",
+        "class": "魔法職",
+        "description": "魔法攻撃の威力を底上げする。"
+    },
+    {
+        "id": "vantage",
+        "name": "先制",
+        "type": "戦闘スキル",
+        "effect": "HP50%以下で敵より先に攻撃",
+        "class": "スナイパー/ソードマスター等",
+        "description": "ピンチ時に先手を取れる強力なスキル。"
+    },
+    {
+        "id": "wrath",
+        "name": "激昂",
+        "type": "戦闘スキル",
+        "effect": "HP50%以下で必殺率+50",
+        "class": "ウォーリア/バーサーカー等",
+        "description": "瀕死時に一発逆転を狙える。"
+    },
+    {
+        "id": "renewal",
+        "name": "再生",
+        "type": "回復スキル",
+        "effect": "ターン開始時にHP30%回復",
+        "class": "セージ/バトルモンク等",
+        "description": "持久戦に強い回復スキル。"
+    },
+    {
+        "id": "pavise",
+        "name": "大盾",
+        "type": "防御スキル",
+        "effect": "物理攻撃を確率で無効化(技×%)",
+        "class": "グレートナイト/ジェネラル等",
+        "description": "物理耐性を大幅に高める。"
+    },
+    {
+        "id": "aegis",
+        "name": "魔防盾",
+        "type": "防御スキル",
+        "effect": "魔法攻撃を確率で無効化(技×%)",
+        "class": "セージ/ダークナイト等",
+        "description": "魔法耐性を大幅に高める。"
+    }
+]

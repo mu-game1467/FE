@@ -1,0 +1,58 @@
+[
+    {
+        "id": "protagonist",
+        "name": "主人公",
+        "class": "ロード",
+        "hp": 28,
+        "str": 8,
+        "mag": 4,
+        "dex": 9,
+        "spd": 10,
+        "lck": 7,
+        "def": 6,
+        "res": 3,
+        "description": "万紫千紅の主人公。運命に導かれし者。"
+    },
+    {
+        "id": "heroine",
+        "name": "ヒロイン",
+        "class": "プリンセス",
+        "hp": 24,
+        "str": 4,
+        "mag": 10,
+        "dex": 8,
+        "spd": 9,
+        "lck": 12,
+        "def": 3,
+        "res": 8,
+        "description": "王国の姫君。光の力を宿す。"
+    },
+    {
+        "id": "knight",
+        "name": "騎士団長",
+        "class": "パラディン",
+        "hp": 32,
+        "str": 12,
+        "mag": 2,
+        "dex": 10,
+        "spd": 7,
+        "lck": 5,
+        "def": 11,
+        "res": 4,
+        "description": "主人公の護衛を務める忠義の騎士。"
+    },
+    {
+        "id": "mage",
+        "name": "賢者見習い",
+        "class": "メイジ",
+        "hp": 20,
+        "str": 3,
+        "mag": 12,
+        "dex": 7,
+        "spd": 8,
+        "lck": 8,
+        "def": 2,
+        "res": 9,
+        "description": "古代魔法を研究する若き魔道士。"
+    }
+]

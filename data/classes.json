@@ -1,0 +1,50 @@
+[
+    {
+        "id": "lord",
+        "name": "ロード",
+        "weapon": "剣",
+        "movement": 5,
+        "promotion": "マスターロード",
+        "description": "主人公専用クラス。剣の扱いに長ける。"
+    },
+    {
+        "id": "princess",
+        "name": "プリンセス",
+        "weapon": "杖/光魔法",
+        "movement": 5,
+        "promotion": "クイーン",
+        "description": "ヒロイン専用クラス。回復と光魔法を操る。"
+    },
+    {
+        "id": "paladin",
+        "name": "パラディン",
+        "weapon": "剣/槍/斧",
+        "movement": 7,
+        "promotion": "グレートナイト",
+        "description": "騎馬上級クラス。三種の武器を扱える。"
+    },
+    {
+        "id": "mage",
+        "name": "メイジ",
+        "weapon": "火/風/雷魔法",
+        "movement": 5,
+        "promotion": "セージ",
+        "description": "攻撃魔法を扱う基礎魔道士クラス。"
+    },
+    {
+        "id": "archer",
+        "name": "アーチャー",
+        "weapon": "弓",
+        "movement": 5,
+        "promotion": "スナイパー",
+        "description": "遠距離攻撃が得意な弓使い。"
+    },
+    {
+        "id": "fighter",
+        "name": "ファイター",
+        "weapon": "斧",
+        "movement": 5,
+        "promotion": "ウォーリア",
+        "description": "大斧を振るうパワーファイター。"
+    }
+]
