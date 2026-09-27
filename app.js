@@ -1178,23 +1178,35 @@ function classBenefitRows(cls, characters) {
             if (statValue(c.growth_rates, STATS[i].key) === null) { complete = false; break; }
         }
         if (!complete) return;
-        const merged = mergedGrowth(c, cls);
-        rows.push({ c, merged, diff: merged.total - c.growth_rates.total });
+        rows.push({ c, merged: mergedGrowth(c, cls) });
     });
     const byName = (a, b) => a.c.name.localeCompare(b.c.name, 'ja');
     rows.sort((a, b) => {
         if (classDetail.order === 'name') return byName(a, b);
-        if (classDetail.order === 'diff-desc') return b.diff - a.diff || b.merged.total - a.merged.total || byName(a, b);
-        if (classDetail.order === 'diff-asc') return a.diff - b.diff || a.merged.total - b.merged.total || byName(a, b);
         return b.merged.total - a.merged.total || byName(a, b);
     });
     return rows;
+}
+
+/** this class's growth bonus, summed. It is the same for every character, so
+ *  the per-row "difference" it used to show was a constant column. */
+function bonusTotal(cls) {
+    const bonus = (cls && cls.growth_bonus) || {};
+    return STATS.reduce((sum, s) => sum + (statValue(bonus, s.key) || 0), 0);
 }
 
 function classBenefitTable(cls, characters) {
     const rows = classBenefitRows(cls, characters);
     if (!rows.length) return '<p class="muted">対象のキャラクターがありません</p>';
     const best = rows[0].merged.total;
+
+    // rank by the resulting total, independent of the current sort order
+    const byTotal = rows.slice().sort((a, b) => b.merged.total - a.merged.total);
+    const rank = new Map();
+    byTotal.forEach((r, i) => {
+        if (!rank.has(r.merged.total)) rank.set(r.merged.total, i + 1);
+    });
+
     return `
         <div class="tablewrap">
             <table class="classtable">
@@ -1203,7 +1215,7 @@ function classBenefitTable(cls, characters) {
                         <th class="sticky">キャラクター</th>
                         <th class="num">素の合計</th>
                         <th class="num">この兵種</th>
-                        <th class="num">差</th>
+                        <th class="num">順位</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -1212,7 +1224,7 @@ function classBenefitTable(cls, characters) {
                         <th class="sticky">${characterAvatar(r.c)}<a href="${esc(assetUrl('characters/' + encodeURIComponent(r.c.id) + '/'))}">${esc(r.c.name)}</a></th>
                         <td class="num">${esc(r.c.growth_rates.total)}</td>
                         <td class="num"><strong>${esc(r.merged.total)}</strong></td>
-                        <td class="num ${r.diff > 0 ? 'up' : (r.diff < 0 ? 'down' : '')}">${r.diff > 0 ? '+' : ''}${esc(r.diff)}</td>
+                        <td class="num">${esc(rank.get(r.merged.total))}</td>
                     </tr>`).join('')}
                 </tbody>
             </table>
@@ -1257,14 +1269,12 @@ function renderClassDetail(cls, characters, container) {
 
             <section class="panel">
                 <h3>この兵種になった場合の成長率</h3>
-                <p class="muted">各キャラクターの素の成長率に、この兵種の成長ボーナスを加えた値です。</p>
+                <p class="muted">各キャラクターの素の成長率に、この兵種の成長ボーナス<strong>合計 +${esc(bonusTotal(cls))}</strong>（全キャラクター共通）を加えた値です。</p>
                 <div class="toolbar-inner">
                     <label class="control">
                         <span>並び替え</span>
                         <select id="class-order">
                             <option value="total-desc"${classDetail.order === 'total-desc' ? ' selected' : ''}>加算後の合計が高い順</option>
-                            <option value="diff-desc"${classDetail.order === 'diff-desc' ? ' selected' : ''}>増加幅が大きい順</option>
-                            <option value="diff-asc"${classDetail.order === 'diff-asc' ? ' selected' : ''}>増加幅が小さい順</option>
                             <option value="name"${classDetail.order === 'name' ? ' selected' : ''}>名前順</option>
                         </select>
                     </label>
