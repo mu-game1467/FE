@@ -615,6 +615,9 @@ function renderListInner() {
 
     const counter = document.getElementById('result-count');
     if (counter) counter.textContent = `${list.length} / ${state.data.length} 件`;
+    // the copy button only makes sense while a table is on screen
+    const copyButton = document.getElementById('copy-table');
+    if (copyButton) copyButton.hidden = !document.querySelector('#characters-list table');
     renderJump();
 }
 
@@ -967,6 +970,60 @@ const SORT_OPTIONS = {
     items: [{ value: 'name', label: '名前順' }]
 };
 
+/* --------------------------------------------------------------- tsv -- */
+
+/**
+ * The visible table as TSV, so it pastes straight into Excel or Sheets.
+ * Whitespace inside a cell is collapsed so it cannot break the column count,
+ * and the sort marker (▲ / ▼) is dropped so a header pastes as plain text.
+ */
+function tableToTsv(table) {
+    const lines = [];
+    table.querySelectorAll('tr').forEach((tr) => {
+        const cells = [];
+        tr.querySelectorAll('th, td').forEach((cell) => {
+            cells.push((cell.textContent || '')
+                .replace(/[\u25B2\u25BC\u25B6\u25C0]/g, '')
+                .replace(/\s+/g, ' ')
+                .trim());
+        });
+        if (cells.length) lines.push(cells.join('\t'));
+    });
+    return lines.join('\r\n');
+}
+
+async function copyTable(button) {
+    const table = document.querySelector('#characters-list table');
+    if (!table) return;
+    const text = tableToTsv(table);
+    const idle = button.getAttribute('data-idle') || button.textContent;
+    const say = (message, bad) => {
+        button.textContent = message;
+        button.classList.toggle('is-error', !!bad);
+        setTimeout(() => {
+            button.textContent = idle;
+            button.classList.remove('is-error');
+        }, 1800);
+    };
+    try {
+        await navigator.clipboard.writeText(text);
+        say('コピーしました');
+    } catch (error) {
+        // clipboard API needs a secure context / permission; fall back to a
+        // hidden textarea + execCommand, which still works over plain http
+        const area = document.createElement('textarea');
+        area.value = text;
+        area.setAttribute('readonly', '');
+        area.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+        document.body.appendChild(area);
+        area.select();
+        let ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+        document.body.removeChild(area);
+        say(ok ? 'コピーしました' : 'コピーできませんでした', !ok);
+    }
+}
+
 /* ---------------------------------------------------------- url state -- */
 
 const LIST_VIEWS = ['cards', 'table', 'names'];
@@ -1085,6 +1142,7 @@ function buildToolbar() {
                 </label>
             </span>` : ''}
             <span class="result-count" id="result-count"></span>
+            <button type="button" id="copy-table" class="copy-btn" data-idle="表をコピー" hidden>表をコピー</button>
         </div>`;
 
     if (needsDefault === false && state.sort === 'default') {
@@ -1129,6 +1187,9 @@ function buildToolbar() {
         const button = event.target.closest('button[data-sort]');
         if (button) applyGrowthSort(button.dataset.sort);
     });
+
+    const copyButton = host.querySelector('#copy-table');
+    if (copyButton) copyButton.addEventListener('click', () => copyTable(copyButton));
 }
 
 /* -------------------------------------------------------------- boot -- */

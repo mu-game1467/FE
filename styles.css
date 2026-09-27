@@ -205,6 +205,22 @@ body > footer {
     margin: -0.5rem 0 1.25rem;
 }
 
+.copy-btn {
+    font: inherit;
+    font-size: 0.85rem;
+    min-height: 36px;
+    padding: 0 0.7rem;
+    color: #5d4037;
+    background: #f5f0e8;
+    border: 1px solid #d3c3ac;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.copy-btn:hover { background: #efe0c9; color: #8b4513; }
+.copy-btn.is-error { background: #f6dcdc; border-color: #d9a3a3; color: #8b2f2f; }
+.copy-btn[hidden] { display: none; }
+
 #toolbar { margin-bottom: 0.5rem; }
 
 /* a-z jump strip */
