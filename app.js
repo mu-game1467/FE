@@ -43,7 +43,9 @@ const state = {
     // { min, max } the growth bars are drawn against, derived from the data
     scale: null,
     // gojūon row id used by the a-z jump row ('' = no filter)
-    initial: ''
+    initial: '',
+    // ids of the characters picked for the side-by-side comparison
+    compare: []
 };
 
 /* ------------------------------------------------------------ helpers -- */
@@ -325,6 +327,7 @@ function renderCharacter(item) {
                         <h3 class="card-name"><a href="${encodeURIComponent(item.id)}/">${esc(item.name)}</a></h3>
                         <div class="taglist">${badges.join('')}</div>
                     </div>
+                    <button type="button" class="cmp-btn${isCompared(item.id) ? ' is-on' : ''}" data-cmp="${esc(item.id)}" aria-pressed="${isCompared(item.id) ? 'true' : 'false'}">${isCompared(item.id) ? '選択中' : '比較'}</button>
                 </header>
 
                 <div class="card-block">
@@ -482,7 +485,162 @@ function renderNameGrowthTable(list) {
 }
 
 
-/* --------------------------------------------------- classes and lists -- */
+/* --------------------------------------------------- character compare -- */
+
+const COMPARE_MAX = 4;
+const COMPARE_KEY = 'fe.compare.v1';
+
+/** selection survives a reload; localStorage can throw in private mode */
+function loadCompare() {
+    try {
+        const raw = window.localStorage.getItem(COMPARE_KEY);
+        if (!raw) return;
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) {
+            state.compare = parsed.filter((id) => typeof id === 'string').slice(0, COMPARE_MAX);
+        }
+    } catch (error) { /* no storage: the selection just does not persist */ }
+}
+
+function saveCompare() {
+    try { window.localStorage.setItem(COMPARE_KEY, JSON.stringify(state.compare)); } catch (error) { /* ignore */ }
+}
+
+function compareItems() {
+    return state.compare
+        .map((id) => state.data.find((c) => c.id === id))
+        .filter(Boolean);
+}
+
+function isCompared(id) {
+    return state.compare.indexOf(id) !== -1;
+}
+
+/** returns false when the tray is already full, so the caller can say so */
+function toggleCompare(id) {
+    const at = state.compare.indexOf(id);
+    if (at !== -1) {
+        state.compare.splice(at, 1);
+        saveCompare();
+        renderList();
+        return true;
+    }
+    if (state.compare.length >= COMPARE_MAX) return false;
+    state.compare.push(id);
+    saveCompare();
+    renderList();
+    return true;
+}
+
+function compareCell(items, value, isBest) {
+    if (value === null || value === undefined || value === '') return '<td class="num is-blank">-</td>';
+    return `<td class="num${isBest ? ' is-best' : ''}">${esc(value)}</td>`;
+}
+
+function renderCompare() {
+    const items = compareItems();
+    if (!items.length) {
+        return `<div class="cmp-empty">
+            <p>カード右上の「比較」を押すと、ここに並びます。</p>
+            <p class="muted">一度に ${COMPARE_MAX} 人まで選べます。選択はこの端末に保存されます。</p>
+        </div>`;
+    }
+
+    const growthOf = (c) => c.growth_rates || {};
+    const best = {};
+    STATS.forEach((s) => {
+        let m = -Infinity;
+        items.forEach((c) => {
+            const v = statValue(growthOf(c), s.key);
+            if (v !== null && v > m) m = v;
+        });
+        best[s.key] = m;
+    });
+    let bestTotal = -Infinity;
+    items.forEach((c) => {
+        const v = statValue(growthOf(c), 'total');
+        if (v !== null && v > bestTotal) bestTotal = v;
+    });
+
+    const header = items.map((c) => `
+        <th class="cmp-head">
+            <a href="${encodeURIComponent(c.id)}/">
+                ${characterFigure(c, 'cmp-portrait')}
+                <span class="cmp-name">${esc(c.name)}</span>
+            </a>
+        </th>`).join('');
+
+    const statRows = STATS.map((s) => `
+        <tr>
+            <th class="sticky">${esc(s.label)}</th>
+            ${items.map((c) => {
+                const v = statValue(growthOf(c), s.key);
+                return compareCell(items, v, v !== null && v === best[s.key]);
+            }).join('')}
+        </tr>`).join('');
+
+    function textRow(label, pick) {
+        const cells = items.map((c) => {
+            const v = pick(c);
+            return `<td>${v ? esc(v) : '<span class="is-blank">-</span>'}</td>`;
+        }).join('');
+        return `<tr><th class="sticky">${esc(label)}</th>${cells}</tr>`;
+    }
+
+    return `
+        <div class="tablewrap cmp-wrap">
+            <table class="cmptable">
+                <thead><tr><th class="sticky">項目</th>${header}</tr></thead>
+                <tbody>
+                    ${statRows}
+                    <tr>
+                        <th class="sticky">合計</th>
+                        ${items.map((c) => {
+                            const v = statValue(growthOf(c), 'total');
+                            return compareCell(items, v, v !== null && v === bestTotal);
+                        }).join('')}
+                    </tr>
+                    ${textRow('性別', (c) => c.gender)}
+                    ${textRow('個人スキル', (c) => (c.personal_skill || {}).name)}
+                    ${textRow('血印', (c) => (c.blood_seals || []).map((b) => b.name).join(' / '))}
+                    ${textRow('得意', (c) => (c.forte_skills || []).join(' / '))}
+                    ${textRow('苦手', (c) => (c.weak_skills || []).join(' / '))}
+                    ${textRow('声優', (c) => c.voice_actor)}
+                </tbody>
+            </table>
+        </div>
+        <div class="cmp-actions">
+            <button type="button" class="copy-btn" id="cmp-clear">選択をすべて解除</button>
+        </div>`;
+}
+
+/* the tray that follows you down the page while picking characters */
+function renderCompareTray() {
+    const tray = document.getElementById('cmp-tray');
+    if (!tray) return;
+    const items = compareItems();
+    if (!items.length || state.view === 'compare') {
+        tray.hidden = true;
+        tray.innerHTML = '';
+        return;
+    }
+    tray.hidden = false;
+    tray.innerHTML = `
+        <div class="cmp-tray-inner">
+            <span class="cmp-tray-label">比較 <strong>${items.length}</strong>/${COMPARE_MAX}</span>
+            <div class="cmp-tray-items">
+                ${items.map((c) => `
+                    <button type="button" class="cmp-chip" data-cmp="${esc(c.id)}" title="${esc(c.name)} を外す">
+                        ${c.image ? `<img class="avatar" src="${esc(assetUrl(c.image))}" alt="">` : ''}
+                        <span>${esc(c.name)}</span>
+                        <span class="cmp-x" aria-hidden="true">×</span>
+                    </button>`).join('')}
+            </div>
+            <button type="button" class="copy-btn" id="cmp-go">比較する</button>
+        </div>`;
+}
+
+/* ------------------------------------------------------------ classes and lists -- */
 
 function renderClass(item) {
     const badges = [];
@@ -585,7 +743,11 @@ function renderListInner() {
     const container = listElement(state.type);
     if (!container) return;
 
-    const filtered = state.data.filter(matchesQuery).filter(matchesInitial);
+    const isCompare = state.type === 'characters' && state.view === 'compare';
+    // the comparison ignores the search and the jump strip: it is a fixed set
+    const filtered = isCompare
+        ? state.data
+        : state.data.filter(matchesQuery).filter(matchesInitial);
     const isTable = state.type === 'characters' && state.view === 'table';
     const isNameTable = state.type === 'characters' && state.view === 'names';
     const list = isTable
@@ -601,7 +763,10 @@ function renderListInner() {
         return;
     }
 
-    if (isTable) {
+    if (isCompare) {
+        container.classList.add('as-table');
+        container.innerHTML = renderCompare();
+    } else if (isTable) {
         container.classList.add('as-table');
         container.innerHTML = renderRecruitTable(list);
     } else if (isNameTable) {
@@ -618,7 +783,10 @@ function renderListInner() {
     // the copy button only makes sense while a table is on screen
     const copyButton = document.getElementById('copy-table');
     if (copyButton) copyButton.hidden = !document.querySelector('#characters-list table');
-    renderJump();
+    const jump = document.getElementById('jump');
+    if (jump) jump.hidden = isCompare;
+    if (!isCompare) renderJump();
+    renderCompareTray();
 }
 
 function sortData(list, mode) {
@@ -1177,7 +1345,7 @@ async function copyTable(button) {
 
 /* ---------------------------------------------------------- url state -- */
 
-const LIST_VIEWS = ['cards', 'table', 'names'];
+const LIST_VIEWS = ['cards', 'table', 'names', 'compare'];
 
 /**
  * Restore the view state from the query string, so a filtered or re-sorted
@@ -1200,6 +1368,9 @@ function readUrl() {
     if (order !== null) state.tableOrder = order;
     const initial = one('initial');
     if (initial !== null && KANA_ROWS.some((r) => r.id === initial)) state.initial = initial;
+    // the selection lives in localStorage; the query string is just a mirror
+    const cmp = one('cmp');
+    if (cmp !== null) state.compare = cmp.split(',').filter(Boolean).slice(0, COMPARE_MAX);
 }
 
 /** Mirror the state back into the query string. replaceState rather than
@@ -1213,6 +1384,7 @@ function syncUrl() {
     if (state.tableRoute !== 'kai') params.set('route', state.tableRoute);
     if (state.tableOrder !== 'both') params.set('order', state.tableOrder);
     if (state.initial) params.set('initial', state.initial);
+    if (state.compare.length) params.set('cmp', state.compare.join(','));
     const qs = params.toString();
     const url = window.location.pathname + (qs ? '?' + qs : '');
     if (url !== window.location.pathname + window.location.search) {
@@ -1257,6 +1429,24 @@ function buildToolbar() {
         });
     }
 
+    // sticky tray for the comparison picks
+    if (!document.getElementById('cmp-tray')) {
+        const tray = document.createElement('div');
+        tray.id = 'cmp-tray';
+        tray.hidden = true;
+        list.parentNode.insertBefore(tray, list);
+        tray.addEventListener('click', (event) => {
+            const chip = event.target.closest('.cmp-chip');
+            if (chip) { toggleCompare(chip.dataset.cmp); return; }
+            if (event.target.closest('#cmp-go')) {
+                state.view = 'compare';
+                const select = document.getElementById('view');
+                if (select) select.value = 'compare';
+                renderList();
+            }
+        });
+    }
+
     host.innerHTML = `
         <div class="toolbar-inner">
             <input id="search" class="search" type="search" placeholder="名前・効果・技能で検索" value="${esc(state.query)}">
@@ -1273,6 +1463,7 @@ function buildToolbar() {
                     <option value="cards"${state.view === 'cards' ? ' selected' : ''}>カード</option>
                     <option value="table"${state.view === 'table' ? ' selected' : ''}>加入条件の早見表</option>
                     <option value="names"${state.view === 'names' ? ' selected' : ''}>成長率一覧表</option>
+                    <option value="compare"${state.view === 'compare' ? ' selected' : ''}>比較</option>
                 </select>
             </label>
             <span class="control" id="table-controls" hidden>
@@ -1335,8 +1526,25 @@ function buildToolbar() {
     // Delegated on purpose: renderList() replaces the list's innerHTML, so a
     // listener bound to the header cells themselves would not survive a re-render.
     list.addEventListener('click', (event) => {
-        const button = event.target.closest('button[data-sort]');
-        if (button) applyGrowthSort(button.dataset.sort);
+        const sortButton = event.target.closest('button[data-sort]');
+        if (sortButton) { applyGrowthSort(sortButton.dataset.sort); return; }
+
+        const cmpButton = event.target.closest('button[data-cmp]');
+        if (cmpButton) {
+            // false means the tray was full: flash the button instead of
+            // silently ignoring the click
+            if (!toggleCompare(cmpButton.dataset.cmp)) {
+                cmpButton.classList.add('is-error');
+                setTimeout(() => cmpButton.classList.remove('is-error'), 1200);
+            }
+            return;
+        }
+
+        if (event.target.closest('#cmp-clear')) {
+            state.compare = [];
+            saveCompare();
+            renderList();
+        }
     });
 
     const copyButton = host.querySelector('#copy-table');
@@ -1415,8 +1623,10 @@ async function loadData() {
         if (!options.some((o) => o.value === state.sort)) state.sort = options[0].value;
     }
 
-    // the query string wins over the defaults, then gets validated so a
-    // hand-edited ?view= or ?sort= cannot leave the page in a broken state
+    // the query string wins over the stored defaults, then gets validated so a
+    // hand-edited ?view= or ?sort= cannot leave the page in a broken state.
+    // loadCompare first, so an explicit ?cmp= overrides the saved selection.
+    loadCompare();
     readUrl();
     validateState();
 
