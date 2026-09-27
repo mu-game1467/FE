@@ -627,12 +627,16 @@ table.mini td.num, table.hayakabe td.num, table.namegrowth td.num { text-align: 
     border-radius: 8px;
 }
 
-/* frozen header rows. table.mini is deliberately absent: it is only used for
-   the short in-card tables (加入条件) where a sticky header would be noise. */
+/* frozen header rows. table.mini is deliberately absent here: inside a card it
+   is only a few rows tall, and pinning it would just leave a header floating
+   over the next card. On a detail page the same table can be long, so the
+   panel variant is pinned instead. */
 table.hayakabe thead th,
 table.namegrowth thead th,
 table.classtable thead th,
 table.cmptable thead th { position: sticky; top: 0; z-index: 2; }
+
+.panel table.mini thead th { position: sticky; top: 0; z-index: 2; }
 
 /* z-order: name column (1) < header row (2) < header+name corner (3) < the
    pinned total column's header (4) */

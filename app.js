@@ -45,7 +45,9 @@ const state = {
     // gojūon row id used by the a-z jump row ('' = no filter)
     initial: '',
     // ids of the characters picked for the side-by-side comparison
-    compare: []
+    compare: [],
+    // search text per record, aligned with `data`; see buildHaystacks
+    haystack: null
 };
 
 /* ------------------------------------------------------------ helpers -- */
@@ -56,7 +58,8 @@ function esc(value) {
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
 }
 
 /**
@@ -106,9 +109,20 @@ function haystack(item) {
     return parts.join(' ').toLowerCase();
 }
 
-function matchesQuery(item) {
+/**
+ * Search text for every record, built once after load. Building it per
+ * keystroke meant re-walking every field of every record on each character
+ * typed; with 64 records that was fine, but it grows with the data set.
+ */
+function buildHaystacks(items) {
+    return (items || []).map((item) => haystack(item));
+}
+
+function matchesQuery(item, index) {
     if (!state.query) return true;
-    return haystack(item).includes(state.query);
+    const pre = state.haystack;
+    const text = pre ? pre[index] : null;
+    return (text === null || text === undefined ? haystack(item) : text).includes(state.query);
 }
 
 /**
@@ -1420,14 +1434,28 @@ function readUrl() {
     if (order !== null) state.tableOrder = order;
     const initial = one('initial');
     if (initial !== null && KANA_ROWS.some((r) => r.id === initial)) state.initial = initial;
-    // the selection lives in localStorage; the query string is just a mirror
+    // the selection lives in localStorage; the query string is just a mirror.
+    // Unknown ids are dropped so a stale link cannot show a broken comparison.
     const cmp = one('cmp');
-    if (cmp !== null) state.compare = cmp.split(',').filter(Boolean).slice(0, COMPARE_MAX);
+    if (cmp !== null && state.data.length) {
+        const known = new Set(state.data.map((c) => c.id));
+        state.compare = cmp.split(',').filter((id) => known.has(id)).slice(0, COMPARE_MAX);
+    }
 }
 
 /** Mirror the state back into the query string. replaceState rather than
- *  pushState: typing in the search box must not fill up the back button. */
+ *  pushState: typing in the search box must not fill up the back button.
+ *  Debounced because renderList() runs on every keystroke. */
+let urlTimer = null;
+
 function syncUrl() {
+    if (!state.type) return;
+    if (urlTimer) clearTimeout(urlTimer);
+    urlTimer = setTimeout(flushUrl, 120);
+}
+
+function flushUrl() {
+    urlTimer = null;
     if (!state.type) return;
     const params = new URLSearchParams();
     if (state.query) params.set('q', state.query);
@@ -1655,6 +1683,7 @@ async function loadData() {
     try {
         const data = await fetchJson(page);
         state.data = Array.isArray(data) ? data : [];
+        state.haystack = buildHaystacks(state.data);
         state.scale = rateScale(state.data);
     } catch (error) {
         console.error(`Failed to load ${page.file}`, error);
