@@ -317,7 +317,7 @@ function renderRecruitTable(list) {
                 <tbody>
                 ${list.map((item) => `
                     <tr>
-                        <th class="sticky">${esc(item.name)}</th>
+                        <th class="sticky"><a href="${encodeURIComponent(item.id)}/">${esc(item.name)}</a></th>
                         ${ROUTES.map((r) => {
                             const e = (item.recruit || {})[r.id];
                             const active = r.id === state.tableRoute ? ' class="is-active"' : '';
