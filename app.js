@@ -224,6 +224,15 @@ function characterFigure(item, extraClass) {
     return `<div class="${cls} is-empty" aria-hidden="true">${esc((item.name || '?').charAt(0))}</div>`;
 }
 
+/**
+ * Small portrait for a table's name cell. Decorative only (alt is empty)
+ * because the name sits right beside it.
+ */
+function characterAvatar(item) {
+    if (!item.image) return '';
+    return `<img class="avatar" src="${esc(assetUrl(item.image))}" alt="" loading="lazy" decoding="async">`;
+}
+
 function renderCharacter(item) {
     const growth = item.growth_rates || {};
 
@@ -340,6 +349,12 @@ function renderRecruitTable(list) {
 /* ------------------------------------------------- growth-rate table -- */
 
 /**
+ * Columns the growth table can sort by. 'total' is a derived column, so it
+ * lives here rather than in STATS (which drives the bars).
+ */
+const GROWTH_SORT_KEYS = new Set(['name', 'total'].concat(STATS.map((s) => s.key)));
+
+/**
  * Which column the current sort belongs to, as { key, dir }.
  * 'default' (data order) has no column, so no header is marked.
  * `state.sort` stays the single source of truth: the sort select and the
@@ -350,10 +365,10 @@ function growthSortState() {
     if (mode === 'name' || mode === 'name-desc') {
         return { key: 'name', dir: mode === 'name' ? 'asc' : 'desc' };
     }
-    if (mode.endsWith('-asc') && STAT_KEYS.has(mode.slice(0, -4))) {
+    if (mode.endsWith('-asc') && GROWTH_SORT_KEYS.has(mode.slice(0, -4))) {
         return { key: mode.slice(0, -4), dir: 'asc' };
     }
-    if (STAT_KEYS.has(mode)) return { key: mode, dir: 'desc' };
+    if (GROWTH_SORT_KEYS.has(mode)) return { key: mode, dir: 'desc' };
     return { key: null, dir: null };
 }
 
@@ -391,14 +406,16 @@ function renderNameGrowthTable(list) {
                     <tr>
                         ${growthHeadCell('name', '名前', 'sticky')}
                         ${STATS.map((s) => growthHeadCell(s.key, s.label, 'num')).join('')}
+                        ${growthHeadCell('total', '合計', 'num col-total')}
                     </tr>
                 </thead>
                 <tbody>
                 ${list.map((item) => {
                     const growth = item.growth_rates || {};
                     return `<tr>
-                        <th class="sticky"><a href="${encodeURIComponent(item.id)}/">${esc(item.name)}</a></th>
+                        <th class="sticky">${characterAvatar(item)}<a href="${encodeURIComponent(item.id)}/">${esc(item.name)}</a></th>
                         ${STATS.map((s) => `<td class="num">${esc(statValue(growth, s.key))}</td>`).join('')}
+                        <td class="num col-total">${esc(growth.total)}</td>
                     </tr>`;
                 }).join('')}
                 </tbody>
@@ -543,7 +560,8 @@ function sortData(list, mode) {
     switch (mode) {
         case 'name':      return copy.sort(byName);
         case 'name-desc': return copy.sort((a, b) => byName(b, a));
-        case 'total':     return copy.sort((a, b) => statTotal(b) - statTotal(a));
+        case 'total':     return copy.sort((a, b) => statTotal(b) - statTotal(a) || byName(a, b));
+        case 'total-asc': return copy.sort((a, b) => statTotal(a) - statTotal(b) || byName(a, b));
         case 'movement':  return copy.sort((a, b) => (b.movement || 0) - (a.movement || 0));
         case 'tier':      return copy.sort((a, b) => tierIndex(a.tier) - tierIndex(b.tier) || byName(a, b));
         case 'type':      return copy.sort((a, b) => String(a.type || '').localeCompare(String(b.type || ''), 'ja') || byName(a, b));
@@ -656,6 +674,13 @@ function classGrowthTable(character, classes) {
 
     const best = rows.reduce((acc, r) => Math.max(acc, r.growth.total), Number.NEGATIVE_INFINITY);
 
+    // best value per stat across the rows actually shown, so the highlight
+    // follows the tier filter instead of the whole table
+    const top = {};
+    STATS.forEach((s) => {
+        top[s.key] = rows.reduce((m, r) => Math.max(m, r.growth[s.key]), Number.NEGATIVE_INFINITY);
+    });
+
     return `
         <div class="tablewrap">
             <table class="classtable">
@@ -676,8 +701,12 @@ function classGrowthTable(character, classes) {
                         ${STATS.map((s) => {
                             const value = r.growth[s.key];
                             const origin = base[s.key] || 0;
-                            const cls = value > origin ? 'up' : (value < origin ? 'down' : '');
-                            return `<td class="num ${cls}">${esc(value)}</td>`;
+                            const d = value - origin;
+                            const cls = d > 0 ? 'up' : (d < 0 ? 'down' : '');
+                            // show the move from the bare value, and mark the best
+                            const delta = d === 0 ? '' : `<span class="delta">${d > 0 ? '+' : ''}${esc(d)}</span>`;
+                            const isTop = value === top[s.key] ? ' is-top' : '';
+                            return `<td class="num ${cls}${isTop}">${esc(value)}${delta}</td>`;
                         }).join('')}
                         <td class="num"><strong>${esc(r.growth.total)}</strong></td>
                         <td class="num ${r.diff > 0 ? 'up' : (r.diff < 0 ? 'down' : '')}">${r.diff > 0 ? '+' : ''}${esc(r.diff)}</td>
@@ -842,6 +871,7 @@ const SORT_OPTIONS = {
         { value: 'name', label: '名前（昇順）' },
         { value: 'name-desc', label: '名前（降順）' },
         { value: 'total', label: '成長合計が高い順' },
+        { value: 'total-asc', label: '成長合計が低い順' },
         { value: 'hp', label: 'HP が高い順' },
         { value: 'str', label: '力 が高い順' },
         { value: 'mag', label: '魔力 が高い順' },
@@ -1037,6 +1067,45 @@ async function loadData() {
 
     buildToolbar();
     renderList();
+    loadMeta();
+}
+
+/**
+ * Footer slot for the data-freshness line. Created in JS rather than added to
+ * every page so the five hand-written pages stay one-liners.
+ */
+function metaHost() {
+    const footer = document.querySelector('body > footer');
+    if (!footer) return null;
+    let host = document.getElementById('site-meta');
+    if (!host) {
+        host = document.createElement('div');
+        host.id = 'site-meta';
+        footer.appendChild(host);
+    }
+    return host;
+}
+
+async function loadMeta() {
+    const host = metaHost();
+    if (!host) return;
+    try {
+        const response = await fetch(assetUrl('data/meta.json'));
+        if (!response.ok) return;
+        const meta = await response.json();
+        if (!meta || !meta.generated_at) return;
+        const when = new Date(meta.generated_at);
+        if (isNaN(when.getTime())) return;
+        const stamp = `${when.getFullYear()}/${when.getMonth() + 1}/${when.getDate()}`;
+        const counts = meta.counts || {};
+        const bits = [`データ更新: <time datetime="${esc(meta.generated_at)}">${stamp}</time>`];
+        if (counts.characters) bits.push(`キャラクター ${counts.characters}`);
+        if (counts.classes) bits.push(`兵種 ${counts.classes}`);
+        if (counts.skills) bits.push(`スキル ${counts.skills}`);
+        host.innerHTML = `<p class="meta-line">${bits.join(' ｜ ')}</p>`;
+    } catch (error) {
+        // no meta.json (or offline): the footer just stays as it was
+    }
 }
 
 document.addEventListener('DOMContentLoaded', loadData);

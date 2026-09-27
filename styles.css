@@ -514,12 +514,37 @@ table.hayakabe .sticky,
 table.namegrowth .sticky { background: #f4ece1; white-space: nowrap; }
 
 /* the name column goes to the character page, the same as a card title */
-table.hayakabe .sticky a {
+table.hayakabe .sticky a,
+table.namegrowth .sticky a,
+table.classtable .sticky a {
     color: inherit;
     text-decoration: none;
     font-weight: 600;
 }
-table.hayakabe .sticky a:hover { color: #a0522d; text-decoration: underline; }
+table.hayakabe .sticky a:hover,
+table.namegrowth .sticky a:hover,
+table.classtable .sticky a:hover { color: #a0522d; text-decoration: underline; }
+
+/* small portrait inside a table's name cell */
+.avatar {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    object-fit: cover;
+    vertical-align: -6px;
+    margin-right: 0.4rem;
+    background: #e3d7c5;
+}
+
+/* the derived total column is the headline number, so it is set apart */
+.col-total {
+    font-weight: 700;
+    color: #5d4037;
+    background: #faf3e8;
+    position: sticky;
+    right: 0;
+}
+thead th.col-total { background: #efe0c9; color: #8b4513; z-index: 4; }
 table.hayakabe tbody tr:hover td, table.hayakabe tbody tr:hover th { background: #fdf3e7; }
 table.hayakabe .is-active { background: #fdf3e7; box-shadow: inset 1px 0 0 #d9b98c, inset -1px 0 0 #d9b98c; }
 table.hayakabe thead th.is-active { background: #f6e7d8; color: #8b4513; }
@@ -638,8 +663,23 @@ table.classtable thead th.sticky { z-index: 2; background: #f5f0e8; }
 table.classtable td.num { text-align: center; }
 table.classtable td.up { color: #2e7d32; font-weight: 600; }
 table.classtable td.down { color: #b23b3b; }
+table.classtable td.is-top { box-shadow: inset 0 0 0 2px #e0c48c; border-radius: 3px; }
+
+/* how far a stat moved from the character's bare value */
+.classtable .delta {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    line-height: 1.1;
+}
 table.classtable tr.is-best .sticky { background: #fdf3e7; }
 table.classtable tr.is-best td.num strong { color: #8b4513; }
+
+body > footer .meta-line {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
 
 .page-note a { color: #8b4513; text-decoration: none; }
 .page-note a:hover { text-decoration: underline; }

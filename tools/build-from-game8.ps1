@@ -455,5 +455,18 @@ if (-not (Test-Path $OutDir)) { New-Item -ItemType Directory -Path $OutDir | Out
 Write-Json $characters (Join-Path $OutDir 'characters.json')
 Write-Json $classes   (Join-Path $OutDir 'classes.json')
 Write-Json $skills    (Join-Path $OutDir 'skills.json')
+
+# A tiny side-car so the pages can say how fresh the data is. Kept out of the
+# three data files because those are plain arrays their consumers iterate.
+$meta = [ordered]@{
+    generated_at = (Get-Date).ToUniversalTime().ToString('yyyy-MM-ddTHH:mm:ssZ')
+    counts       = [ordered]@{
+        characters = $characters.Count
+        classes    = $classes.Count
+        skills     = $skills.Count
+    }
+    source_url = $SourceUrl
+}
+Write-Json $meta (Join-Path $OutDir 'meta.json')
 Write-Host "Done."
 
