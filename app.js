@@ -438,7 +438,7 @@ function growthHeadCell(key, label, extraClass) {
     const current = growthSortState();
     const active = current.key === key;
     const cls = ['sortable', extraClass || ''];
-    if (active) cls.push('is-active', current.dir);
+    if (active) cls.push('is-active');
     const mark = active ? (current.dir === 'asc' ? ' ▲' : ' ▼') : '';
     const aria = active ? (current.dir === 'asc' ? 'ascending' : 'descending') : 'none';
     return `<th class="${cls.join(' ').trim()}" aria-sort="${aria}">` +
@@ -461,7 +461,7 @@ function applyGrowthSort(key) {
 /* one row per unit: name plus the nine growth rates, frozen header */
 function renderNameGrowthTable(list) {
     return `
-        <div class="tablewrap namewrap">
+        <div class="tablewrap">
             <table class="namegrowth">
                 <thead>
                     <tr>
@@ -532,7 +532,7 @@ function toggleCompare(id) {
     return true;
 }
 
-function compareCell(items, value, isBest) {
+function compareCell(value, isBest) {
     if (value === null || value === undefined || value === '') return '<td class="num is-blank">-</td>';
     return `<td class="num${isBest ? ' is-best' : ''}">${esc(value)}</td>`;
 }
@@ -575,7 +575,7 @@ function renderCompare() {
             <th class="sticky">${esc(s.label)}</th>
             ${items.map((c) => {
                 const v = statValue(growthOf(c), s.key);
-                return compareCell(items, v, v !== null && v === best[s.key]);
+                return compareCell(v, v !== null && v === best[s.key]);
             }).join('')}
         </tr>`).join('');
 
@@ -588,7 +588,7 @@ function renderCompare() {
     }
 
     return `
-        <div class="tablewrap cmp-wrap">
+        <div class="tablewrap">
             <table class="cmptable">
                 <thead><tr><th class="sticky">項目</th>${header}</tr></thead>
                 <tbody>
@@ -597,7 +597,7 @@ function renderCompare() {
                         <th class="sticky">合計</th>
                         ${items.map((c) => {
                             const v = statValue(growthOf(c), 'total');
-                            return compareCell(items, v, v !== null && v === bestTotal);
+                            return compareCell(v, v !== null && v === bestTotal);
                         }).join('')}
                     </tr>
                     ${textRow('性別', (c) => c.gender)}
@@ -832,6 +832,12 @@ function renderListInner() {
     const jump = document.getElementById('jump');
     if (jump) jump.hidden = isCompare;
     if (!isCompare) renderJump();
+    // the comparison is a fixed set, so the filters that would narrow the list
+    // are hidden rather than left visible doing nothing
+    const search = document.getElementById('search');
+    if (search) search.hidden = isCompare;
+    const sortControl = document.getElementById('sort-control');
+    if (sortControl) sortControl.hidden = isCompare;
     renderCompareTray();
 }
 
@@ -1430,7 +1436,7 @@ function syncUrl() {
     if (state.tableRoute !== 'kai') params.set('route', state.tableRoute);
     if (state.tableOrder !== 'both') params.set('order', state.tableOrder);
     if (state.initial) params.set('initial', state.initial);
-    if (state.compare.length) params.set('cmp', state.compare.join(','));
+    if (state.type === 'characters' && state.compare.length) params.set('cmp', state.compare.join(','));
     const qs = params.toString();
     const url = window.location.pathname + (qs ? '?' + qs : '');
     if (url !== window.location.pathname + window.location.search) {
@@ -1496,14 +1502,14 @@ function buildToolbar() {
     host.innerHTML = `
         <div class="toolbar-inner">
             <input id="search" class="search" type="search" placeholder="名前・効果・技能で検索" value="${esc(state.query)}">
-            <label class="control">
+            <label class="control" id="sort-control">
                 <span>並び替え</span>
                 <select id="sort">
                     ${options.map((o) => `<option value="${esc(o.value)}"${o.value === state.sort ? ' selected' : ''}>${esc(o.label)}</option>`).join('')}
                 </select>
             </label>
             ${state.type === 'characters' ? `
-            <label class="control">
+            <label class="control" id="view-control">
                 <span>表示</span>
                 <select id="view">
                     <option value="cards"${state.view === 'cards' ? ' selected' : ''}>カード</option>

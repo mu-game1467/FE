@@ -17,6 +17,7 @@ body > header {
     padding: 2rem;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;   /* anchors the theme switch in the corner */
 }
 
 body > header h1 {
@@ -71,7 +72,8 @@ section h2 {
 
 .data-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    /* the column width lives in the .data-grid rule further down (340px);
+       declaring it here too would just be overridden and mislead */
     gap: 1.5rem;
 }
 
@@ -109,20 +111,6 @@ section h2 {
     font-weight: 700;
     color: #5d4037;
     margin-bottom: 0.5rem;
-}
-
-.card-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    color: #6d4c41;
-}
-
-.stat {
-    background: #f5f0e8;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
 }
 
 body > footer {
@@ -485,7 +473,7 @@ body > footer {
 
 .kv-value { flex: 1; color: #4a4a4a; word-break: break-word; }
 
-.kvs + .kvs, .kvs + .taglist, .card-block + .kvs, .kvs + .source { margin-top: 0.75rem; }
+.kvs + .kvs, .kvs + .taglist, .card-block + .kvs { margin-top: 0.75rem; }
 
 .muted { color: #6f5b3c; font-size: 0.82rem; }
 .desc { margin: 0.5rem 0 0.75rem; }
@@ -654,7 +642,6 @@ table.cmptable .sticky { z-index: 1; }
 table.hayakabe thead th.sticky,
 table.classtable thead th.sticky,
 table.cmptable thead th.sticky { left: 0; z-index: 3; }
-.col-total { z-index: 1; }
 thead th.col-total { background: #efe0c9; color: #8b4513; z-index: 4; }
 
 table.hayakabe { min-width: 720px; }
@@ -692,6 +679,7 @@ table.classtable .sticky a:hover { color: #a0522d; text-decoration: underline; }
     background: #faf3e8;
     position: sticky;
     right: 0;
+    z-index: 1;
 }
 table.hayakabe tbody tr:hover td, table.hayakabe tbody tr:hover th { background: #fdf3e7; }
 table.hayakabe .is-active { background: #fdf3e7; box-shadow: inset 1px 0 0 #d9b98c, inset -1px 0 0 #d9b98c; }
@@ -825,7 +813,6 @@ body > footer .meta-line {
 }
 
 /* theme switch, injected into the banner by app.js */
-body > header { position: relative; }
 .theme-toggle {
     position: absolute;
     top: 0.6rem;
@@ -958,14 +945,12 @@ html[data-theme="dark"] .search:focus { outline-color: #c98b4e; }
 html[data-theme="dark"] .control,
 html[data-theme="dark"] #table-controls label,
 html[data-theme="dark"] .page-note,
-html[data-theme="dark"] .dashboard-card p,
-html[data-theme="dark"] .card-stats { color: #bcae9c; }
+html[data-theme="dark"] .dashboard-card p { color: #bcae9c; }
 html[data-theme="dark"] .dashboard-card h2 { color: #e0a869; }
 html[data-theme="dark"] .skill-tag { color: #7fc98a; }
 html[data-theme="dark"] .skill-tag.weak { color: #e79a9a; }
 html[data-theme="dark"] #table-controls { border-left-color: #463c32; }
 html[data-theme="dark"] .search::placeholder { color: #8b8074; }
-html[data-theme="dark"] .stat { background: #332c25; }
 html[data-theme="dark"] .card.empty .muted { color: #bcae9c; }
 
 .page-note a { color: #8b4513; text-decoration: none; }
