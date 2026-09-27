@@ -640,6 +640,53 @@ function renderCompareTray() {
         </div>`;
 }
 
+/* -------------------------------------------------------------- theme -- */
+
+const THEME_KEY = 'fe.theme';
+
+/** 'dark' | 'light' | '' (empty = follow the OS) */
+function storedTheme() {
+    try { return window.localStorage.getItem(THEME_KEY) || ''; } catch (error) { return ''; }
+}
+
+function effectiveTheme() {
+    const saved = storedTheme();
+    if (saved === 'dark' || saved === 'light') return saved;
+    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+}
+
+function applyTheme(theme) {
+    // '' means "follow the OS", which still has to resolve to a concrete value
+    // because the dark rules are keyed on [data-theme="dark"]
+    const resolved = (theme === 'dark' || theme === 'light') ? theme : effectiveTheme();
+    document.documentElement.setAttribute('data-theme', resolved);
+    const button = document.getElementById('theme-toggle');
+    if (button) {
+        const dark = resolved === 'dark';
+        button.textContent = dark ? '☀' : '☾';
+        button.setAttribute('aria-label', dark ? 'ライトモードにする' : 'ダークモードにする');
+        button.title = button.getAttribute('aria-label');
+    }
+}
+
+function toggleTheme() {
+    const next = effectiveTheme() === 'dark' ? 'light' : 'dark';
+    try { window.localStorage.setItem(THEME_KEY, next); } catch (error) { /* ignore */ }
+    applyTheme(next);
+}
+
+/** the switch lives in the banner, created here so no page needs editing */
+function mountThemeToggle() {
+    const header = document.querySelector('body > header');
+    if (!header || document.getElementById('theme-toggle')) return;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.id = 'theme-toggle';
+    button.className = 'theme-toggle';
+    button.addEventListener('click', toggleTheme);
+    header.appendChild(button);
+}
+
 /* ------------------------------------------------------------ classes and lists -- */
 
 function renderClass(item) {
@@ -1672,6 +1719,18 @@ async function loadMeta() {
         // no meta.json (or offline): the footer just stays as it was
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    mountThemeToggle();
+    applyTheme('');   // no stored choice yet: start from the OS preference
+    if (window.matchMedia) {
+        const mq = window.matchMedia('(prefers-color-scheme: dark)');
+        // only follow the OS while the visitor has not chosen explicitly
+        const onChange = () => { if (!storedTheme()) applyTheme(''); };
+        if (mq.addEventListener) mq.addEventListener('change', onChange);
+        else if (mq.addListener) mq.addListener(onChange);
+    }
+});
 
 document.addEventListener('DOMContentLoaded', loadData);
 
