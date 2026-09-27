@@ -495,7 +495,7 @@ function renderClass(item) {
         <article class="card" data-id="${esc(item.id)}">
             <div class="card-content">
                 <header class="card-head">
-                    <h3 class="card-name">${esc(item.name)}</h3>
+                    <h3 class="card-name"><a href="${encodeURIComponent(item.id)}/">${esc(item.name)}</a></h3>
                     <div class="taglist">${badges.join('')}</div>
                 </header>
 
@@ -763,7 +763,7 @@ function classGrowthTable(character, classes) {
                 <tbody>
                 ${rows.map((r) => `
                     <tr${r.growth.total === best ? ' class="is-best"' : ''}>
-                        <th class="sticky">${esc(r.cls.name)}</th>
+                        <th class="sticky"><a href="../classes/${encodeURIComponent(r.cls.id)}/">${esc(r.cls.name)}</a></th>
                         <td class="muted">${esc(r.cls.tier || '')}</td>
                         ${STATS.map((s) => {
                             const value = r.growth[s.key];
@@ -921,6 +921,157 @@ async function loadDetailPage(id) {
         container.innerHTML = `
             <div class="card empty">
                 <div class="card-image">👤</div>
+                <div class="card-content">
+                    <h3 class="card-name">データを読み込めませんでした</h3>
+                    <p class="muted">サーバー経由でアクセスしてください</p>
+                </div>
+            </div>`;
+    }
+}
+
+/* ------------------------------------------------------ class detail page -- */
+
+const classDetail = { order: 'total-desc' };
+
+/** characters that can take this class, with the bonus already added in */
+function classBenefitRows(cls, characters) {
+    const rows = [];
+    characters.forEach((c) => {
+        if (!c.growth_rates) return;
+        // only characters with a full set of bare rates can be merged
+        let complete = true;
+        for (let i = 0; i < STATS.length; i++) {
+            if (statValue(c.growth_rates, STATS[i].key) === null) { complete = false; break; }
+        }
+        if (!complete) return;
+        const merged = mergedGrowth(c, cls);
+        rows.push({ c, merged, diff: merged.total - c.growth_rates.total });
+    });
+    const byName = (a, b) => a.c.name.localeCompare(b.c.name, 'ja');
+    rows.sort((a, b) => {
+        if (classDetail.order === 'name') return byName(a, b);
+        if (classDetail.order === 'diff-desc') return b.diff - a.diff || b.merged.total - a.merged.total || byName(a, b);
+        if (classDetail.order === 'diff-asc') return a.diff - b.diff || a.merged.total - b.merged.total || byName(a, b);
+        return b.merged.total - a.merged.total || byName(a, b);
+    });
+    return rows;
+}
+
+function classBenefitTable(cls, characters) {
+    const rows = classBenefitRows(cls, characters);
+    if (!rows.length) return '<p class="muted">対象のキャラクターがありません</p>';
+    const best = rows[0].merged.total;
+    return `
+        <div class="tablewrap">
+            <table class="classtable">
+                <thead>
+                    <tr>
+                        <th class="sticky">キャラクター</th>
+                        <th class="num">素の合計</th>
+                        <th class="num">この兵種</th>
+                        <th class="num">差</th>
+                    </tr>
+                </thead>
+                <tbody>
+                ${rows.map((r) => `
+                    <tr${r.merged.total === best ? ' class="is-best"' : ''}>
+                        <th class="sticky">${characterAvatar(r.c)}<a href="../characters/${encodeURIComponent(r.c.id)}/">${esc(r.c.name)}</a></th>
+                        <td class="num">${esc(r.c.growth_rates.total)}</td>
+                        <td class="num"><strong>${esc(r.merged.total)}</strong></td>
+                        <td class="num ${r.diff > 0 ? 'up' : (r.diff < 0 ? 'down' : '')}">${r.diff > 0 ? '+' : ''}${esc(r.diff)}</td>
+                    </tr>`).join('')}
+                </tbody>
+            </table>
+        </div>`;
+}
+
+function renderClassDetail(cls, characters, container) {
+    const badges = [];
+    if (cls.tier) badges.push(`<span class="tag tag-class">${esc(cls.tier)}</span>`);
+    if (cls.movement !== undefined) badges.push(`<span class="tag">移動力 ${esc(cls.movement)}</span>`);
+    if (cls.move_type) badges.push(`<span class="tag">${esc(cls.move_type)}</span>`);
+    if (cls.tp !== undefined) badges.push(`<span class="tag">TP ${esc(cls.tp)}</span>`);
+
+    const info = rows([
+        ['兵種スキル', cls.class_skill],
+        ['マスタースキル', cls.master_skill],
+        ['熟練度ボーナス', cls.weapon_exp_bonus],
+        ['必要技能', cls.required_skills],
+        ['技能上限', cls.skill_caps],
+        ['解放条件', [cls.unlock_item, cls.unlock_note].filter(Boolean).join(' / ')]
+    ]);
+
+    container.innerHTML = `
+        <div class="detail">
+            <header class="detail-head">
+                <div>
+                    <h2 class="detail-name">${esc(cls.name)}</h2>
+                    <div class="taglist">${badges.join('')}</div>
+                </div>
+                <a class="backlink" href="../">← クラス一覧</a>
+            </header>
+
+            <section class="panel">
+                <h3>成長ボーナス</h3>
+                <p class="muted">素の成長率に加算される値です。負の値は 0 の左側、赤いバーで描いています。</p>
+                ${growthGrid(cls.growth_bonus, state.scale)}
+            </section>
+
+            ${cls.description ? `<section class="panel"><h3>説明</h3><p class="effect">${esc(cls.description)}</p></section>` : ''}
+            ${info ? `<section class="panel"><h3>条件</h3>${info}</section>` : ''}
+            ${cls.usable_skills ? `<section class="panel"><h3>使用可能技能</h3>${tagList(cls.usable_skills)}</section>` : ''}
+
+            <section class="panel">
+                <h3>この兵種になった場合の成長率</h3>
+                <p class="muted">各キャラクターの素の成長率に、この兵種の成長ボーナスを加えた値です。</p>
+                <div class="toolbar-inner">
+                    <label class="control">
+                        <span>並び替え</span>
+                        <select id="class-order">
+                            <option value="total-desc"${classDetail.order === 'total-desc' ? ' selected' : ''}>加算後の合計が高い順</option>
+                            <option value="diff-desc"${classDetail.order === 'diff-desc' ? ' selected' : ''}>増加幅が大きい順</option>
+                            <option value="diff-asc"${classDetail.order === 'diff-asc' ? ' selected' : ''}>増加幅が小さい順</option>
+                            <option value="name"${classDetail.order === 'name' ? ' selected' : ''}>名前順</option>
+                        </select>
+                    </label>
+                </div>
+                <div id="class-benefits">${classBenefitTable(cls, characters)}</div>
+            </section>
+        </div>`;
+
+    const orderSelect = container.querySelector('#class-order');
+    if (orderSelect) {
+        orderSelect.addEventListener('change', (event) => {
+            classDetail.order = event.target.value;
+            const host = container.querySelector('#class-benefits');
+            if (host) host.innerHTML = classBenefitTable(cls, characters);
+        });
+    }
+}
+
+async function loadClassDetailPage(id) {
+    const container = document.getElementById('class-detail');
+    if (!container) return;
+
+    try {
+        const [classes, characters] = await Promise.all([
+            fetchJson({ file: 'data/classes.json' }),
+            fetchJson({ file: 'data/characters.json' })
+        ]);
+        state.scale = rateScale(classes);
+        const cls = classes.find((c) => c.id === id || c.name === id);
+        if (!cls) {
+            container.innerHTML = emptyState('兵種が見つかりません');
+            return;
+        }
+        document.title = `${cls.name} - クラス`;
+        renderClassDetail(cls, characters, container);
+        loadMeta();
+    } catch (error) {
+        console.error('Failed to load the class detail page', error);
+        container.innerHTML = `
+            <div class="card empty">
+                <div class="card-image">⚔️</div>
                 <div class="card-content">
                     <h3 class="card-name">データを読み込めませんでした</h3>
                     <p class="muted">サーバー経由でアクセスしてください</p>
@@ -1222,10 +1373,15 @@ async function fetchJson(page) {
 }
 
 async function loadData() {
-    // per character pages carry their name in <body data-character="...">
-    const detailId = document.body && document.body.dataset ? document.body.dataset.character : null;
-    if (detailId) {
-        loadDetailPage(detailId);
+    // per detail pages carry their name in <body data-character="..."> or
+    // <body data-class="...">
+    const data = document.body && document.body.dataset ? document.body.dataset : null;
+    if (data && data.character) {
+        loadDetailPage(data.character);
+        return;
+    }
+    if (data && data.class) {
+        loadClassDetailPage(data.class);
         return;
     }
 
