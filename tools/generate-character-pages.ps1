@@ -36,7 +36,7 @@ $titleSuffix = U '30C7 30FC 30BF 30D9 30FC 30B9'   # データベース
 $siteName    = U '30D5 30A1 30A4 30A2 30FC 30A8 30E0 30D6 30EC 30E0 20 4E07 7D2B 5343 7D05'  # ファイアーエムブレム 万紫千紅
 $navHome     = U '30DB 30FC 30E0'                   # ホーム
 $labelCh     = U '30AD 30E3 30E9 30AF 30BF 30FC'   # キャラクター
-$labelClass  = U '30AF 30E9 30B9'                   # クラス
+$labelClass  = U '5175 7A2E'                    # 兵種
 $labelSkill  = U '30B9 30AD 30EB'                   # スキル
 $labelItem   = U '30A2 30A4 30C6 30E0'              # アイテム
 # NOTE: the parentheses matter. In argument mode PowerShell would pass '+', $labelCh

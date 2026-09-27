@@ -27,7 +27,7 @@ const TIER_ORDER = ['基本職', '初級職', '中級職', '上級職', '最上�
 
 const PAGES = {
     characters: { file: 'data/characters.json', icon: '👤', label: 'キャラクター' },
-    classes:    { file: 'data/classes.json',    icon: '⚔️', label: 'クラス' },
+    classes:    { file: 'data/classes.json',    icon: '⚔️', label: '兵種' },
     skills:     { file: 'data/skills.json',     icon: '✨', label: 'スキル' },
     items:      { file: 'data/items.json',      icon: '📦', label: 'アイテム' }
 };
@@ -997,7 +997,7 @@ function classGrowthTable(character, classes) {
                 <tbody>
                 ${rows.map((r) => `
                     <tr${r.growth.total === best ? ' class="is-best"' : ''}>
-                        <th class="sticky"><a href="../classes/${encodeURIComponent(r.cls.id)}/">${esc(r.cls.name)}</a></th>
+                        <th class="sticky"><a href="${esc(assetUrl('classes/' + encodeURIComponent(r.cls.id) + '/'))}">${esc(r.cls.name)}</a></th>
                         <td class="muted">${esc(r.cls.tier || '')}</td>
                         ${STATS.map((s) => {
                             const value = r.growth[s.key];
@@ -1209,7 +1209,7 @@ function classBenefitTable(cls, characters) {
                 <tbody>
                 ${rows.map((r) => `
                     <tr${r.merged.total === best ? ' class="is-best"' : ''}>
-                        <th class="sticky">${characterAvatar(r.c)}<a href="../characters/${encodeURIComponent(r.c.id)}/">${esc(r.c.name)}</a></th>
+                        <th class="sticky">${characterAvatar(r.c)}<a href="${esc(assetUrl('characters/' + encodeURIComponent(r.c.id) + '/'))}">${esc(r.c.name)}</a></th>
                         <td class="num">${esc(r.c.growth_rates.total)}</td>
                         <td class="num"><strong>${esc(r.merged.total)}</strong></td>
                         <td class="num ${r.diff > 0 ? 'up' : (r.diff < 0 ? 'down' : '')}">${r.diff > 0 ? '+' : ''}${esc(r.diff)}</td>
@@ -1242,7 +1242,7 @@ function renderClassDetail(cls, characters, container) {
                     <h2 class="detail-name">${esc(cls.name)}</h2>
                     <div class="taglist">${badges.join('')}</div>
                 </div>
-                <a class="backlink" href="../">← クラス一覧</a>
+                <a class="backlink" href="../">← 兵種一覧</a>
             </header>
 
             <section class="panel">
@@ -1298,7 +1298,7 @@ async function loadClassDetailPage(id) {
             container.innerHTML = emptyState('兵種が見つかりません');
             return;
         }
-        document.title = `${cls.name} - クラス`;
+        document.title = `${cls.name} - 兵種`;
         renderClassDetail(cls, characters, container);
         loadMeta();
     } catch (error) {
