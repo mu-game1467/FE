@@ -625,12 +625,37 @@ table.mini thead th, table.hayakabe thead th, table.namegrowth thead th {
 
 table.mini td.num, table.hayakabe td.num, table.namegrowth td.num { text-align: center; }
 
+/* Every table in here scrolls inside the box, and its header row is frozen.
+   The max-height is load-bearing: overflow alone makes the wrapper a scroll
+   container, but without a height limit it never scrolls vertically, so a
+   sticky thead would have nothing to stick to and would scroll away with the
+   page. 72vh keeps a useful amount of rows on screen. */
 .tablewrap {
     overflow-x: auto;
+    overflow-y: auto;
+    max-height: 72vh;
     background: #fff;
     border: 1px solid #d9c9b4;
     border-radius: 8px;
 }
+
+/* frozen header rows. table.mini is deliberately absent: it is only used for
+   the short in-card tables (加入条件) where a sticky header would be noise. */
+table.hayakabe thead th,
+table.namegrowth thead th,
+table.classtable thead th,
+table.cmptable thead th { position: sticky; top: 0; z-index: 2; }
+
+/* z-order: name column (1) < header row (2) < header+name corner (3) < the
+   pinned total column's header (4) */
+table.hayakabe .sticky,
+table.classtable .sticky,
+table.cmptable .sticky { z-index: 1; }
+table.hayakabe thead th.sticky,
+table.classtable thead th.sticky,
+table.cmptable thead th.sticky { left: 0; z-index: 3; }
+.col-total { z-index: 1; }
+thead th.col-total { background: #efe0c9; color: #8b4513; z-index: 4; }
 
 table.hayakabe { min-width: 720px; }
 table.hayakabe td.na { color: #bcae9e; text-align: center; }
@@ -668,17 +693,11 @@ table.classtable .sticky a:hover { color: #a0522d; text-decoration: underline; }
     position: sticky;
     right: 0;
 }
-thead th.col-total { background: #efe0c9; color: #8b4513; z-index: 4; }
 table.hayakabe tbody tr:hover td, table.hayakabe tbody tr:hover th { background: #fdf3e7; }
 table.hayakabe .is-active { background: #fdf3e7; box-shadow: inset 1px 0 0 #d9b98c, inset -1px 0 0 #d9b98c; }
 table.hayakabe thead th.is-active { background: #f6e7d8; color: #8b4513; }
 
-/* Ten columns: keep them readable, pin the name on the left and freeze the
-   header row. .tablewrap already sets overflow-x, and an overflow other than
-   `visible` turns the wrapper into a scroll container on both axes - which is
-   exactly what position:sticky needs in order to stick to it. The max-height
-   is what gives it a scrollport at all, so the header has something to stick to. */
-.namewrap { max-height: 72vh; overflow: auto; }
+/* the growth table pins the name column on the left as well */
 table.namegrowth { min-width: 660px; }
 table.namegrowth .sticky { position: sticky; left: 0; z-index: 1; }
 table.namegrowth thead th { position: sticky; top: 0; z-index: 2; }
@@ -1017,7 +1036,7 @@ html[data-theme="dark"] .card.empty .muted { color: #bcae9c; }
     table.namegrowth thead th,
     table.namegrowth tbody th,
     table.namegrowth tbody td { font-size: 0.85rem; padding: 0.2rem; }
-    .namewrap { max-height: 68vh; -webkit-overflow-scrolling: touch; }
+    .tablewrap { -webkit-overflow-scrolling: touch; }
     table.mini, table.hayakabe { font-size: 0.85rem; }
     table.classtable { font-size: 0.8rem; }
     table.namegrowth th button { min-height: 44px; }

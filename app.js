@@ -605,7 +605,6 @@ function renderCompare() {
                     ${textRow('血印', (c) => (c.blood_seals || []).map((b) => b.name).join(' / '))}
                     ${textRow('得意', (c) => (c.forte_skills || []).join(' / '))}
                     ${textRow('苦手', (c) => (c.weak_skills || []).join(' / '))}
-                    ${textRow('声優', (c) => c.voice_actor)}
                 </tbody>
             </table>
         </div>
