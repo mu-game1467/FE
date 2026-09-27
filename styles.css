@@ -205,7 +205,38 @@ body > footer {
     margin: -0.5rem 0 1.25rem;
 }
 
-#toolbar { margin-bottom: 1.5rem; }
+#toolbar { margin-bottom: 0.5rem; }
+
+/* a-z jump strip */
+#jump { margin-bottom: 1rem; }
+.jump-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    background: #fff;
+    border: 1px solid #d9c9b4;
+    border-radius: 8px;
+    padding: 0.4rem 0.5rem;
+}
+.jump-btn {
+    font: inherit;
+    font-size: 0.85rem;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0 0.45rem;
+    color: #5d4037;
+    background: #f5f0e8;
+    border: 1px solid #d3c3ac;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.jump-btn:hover { background: #efe0c9; color: #8b4513; }
+.jump-btn.is-active {
+    background: #8b4513;
+    border-color: #8b4513;
+    color: #fff8e7;
+    font-weight: 700;
+}
 
 .toolbar-inner {
     display: flex;

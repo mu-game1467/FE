@@ -41,7 +41,9 @@ const state = {
     tableRoute: 'kai',
     tableOrder: 'both',
     // { min, max } the growth bars are drawn against, derived from the data
-    scale: null
+    scale: null,
+    // gojūon row id used by the a-z jump row ('' = no filter)
+    initial: ''
 };
 
 /* ------------------------------------------------------------ helpers -- */
@@ -105,6 +107,62 @@ function haystack(item) {
 function matchesQuery(item) {
     if (!state.query) return true;
     return haystack(item).includes(state.query);
+}
+
+/**
+ * Gojūon rows for the jump strip. Almost every name in this game starts with
+ * katakana, so the first character is folded to hiragana and matched against
+ * the row's kana; anything else lands in 'other'. The voiced and semi-voiced
+ * forms have to be listed explicitly - without them ジ, ダ, ベ and friends
+ * would fall through to 'other' and the row counts would be badly wrong.
+ */
+const KANA_ROWS = [
+    { id: 'a', label: 'あ', kana: 'あいうえお' },
+    { id: 'k', label: 'か', kana: 'かきくけこがぎぐげご' },
+    { id: 's', label: 'さ', kana: 'さしすせそざじずぜぞ' },
+    { id: 't', label: 'た', kana: 'たちつてとだぢづでど' },
+    { id: 'n', label: 'な', kana: 'なにぬねの' },
+    { id: 'h', label: 'は', kana: 'はひふへほばびぶべぼぱぴぷぺぽ' },
+    { id: 'm', label: 'ま', kana: 'まみむめも' },
+    { id: 'y', label: 'や', kana: 'やゆよ' },
+    { id: 'r', label: 'ら', kana: 'らりるれろ' },
+    { id: 'w', label: 'わ', kana: 'わをん' },
+    { id: 'other', label: '他', kana: '' }
+];
+
+function kanaRow(name) {
+    const ch = (name || '').charAt(0);
+    if (!ch) return 'other';
+    let code = ch.charCodeAt(0);
+    // katakana -> hiragana is a fixed 0x60 offset
+    if (code >= 0x30A1 && code <= 0x30F6) code -= 0x60;
+    const hira = String.fromCharCode(code);
+    for (let i = 0; i < KANA_ROWS.length; i++) {
+        if (KANA_ROWS[i].kana && KANA_ROWS[i].kana.indexOf(hira) !== -1) return KANA_ROWS[i].id;
+    }
+    return 'other';
+}
+
+function matchesInitial(item) {
+    if (!state.initial) return true;
+    return kanaRow(item.name) === state.initial;
+}
+
+/**
+ * A-z jump strip. Only rows that actually occur in the data are offered, so
+ * there are no dead buttons.
+ */
+function renderJump() {
+    const jump = document.getElementById('jump');
+    if (!jump) return;
+    const inUse = new Set(state.data.map((d) => kanaRow(d.name)));
+    jump.innerHTML = `
+        <div class="jump-inner" role="group" aria-label="あ行で絞り込む">
+            <button type="button" class="jump-btn${state.initial ? '' : ' is-active'}" data-initial="">すべて</button>
+            ${KANA_ROWS.filter((r) => inUse.has(r.id)).map((r) =>
+                `<button type="button" class="jump-btn${state.initial === r.id ? ' is-active' : ''}" data-initial="${esc(r.id)}">${esc(r.label)}</button>`
+            ).join('')}
+        </div>`;
 }
 
 function statValue(source, key) {
@@ -519,10 +577,15 @@ const RENDERERS = {
 };
 
 function renderList() {
+    renderListInner();
+    syncUrl();
+}
+
+function renderListInner() {
     const container = listElement(state.type);
     if (!container) return;
 
-    const filtered = state.data.filter(matchesQuery);
+    const filtered = state.data.filter(matchesQuery).filter(matchesInitial);
     const isTable = state.type === 'characters' && state.view === 'table';
     const isNameTable = state.type === 'characters' && state.view === 'names';
     const list = isTable
@@ -552,6 +615,7 @@ function renderList() {
 
     const counter = document.getElementById('result-count');
     if (counter) counter.textContent = `${list.length} / ${state.data.length} 件`;
+    renderJump();
 }
 
 function sortData(list, mode) {
@@ -903,6 +967,62 @@ const SORT_OPTIONS = {
     items: [{ value: 'name', label: '名前順' }]
 };
 
+/* ---------------------------------------------------------- url state -- */
+
+const LIST_VIEWS = ['cards', 'table', 'names'];
+
+/**
+ * Restore the view state from the query string, so a filtered or re-sorted
+ * view survives a reload and can be shared as a link. Unknown values are
+ * dropped rather than trusted, because the URL is user-editable.
+ */
+function readUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const one = (key) => { const v = params.get(key); return (v === null || v === '') ? null : v; };
+
+    const q = one('q');
+    if (q !== null) state.query = q.toLowerCase();
+    const sort = one('sort');
+    if (sort !== null) state.sort = sort;
+    const view = one('view');
+    if (view !== null && LIST_VIEWS.indexOf(view) !== -1) state.view = view;
+    const route = one('route');
+    if (route !== null && ROUTES.some((r) => r.id === route)) state.tableRoute = route;
+    const order = one('order');
+    if (order !== null) state.tableOrder = order;
+    const initial = one('initial');
+    if (initial !== null && KANA_ROWS.some((r) => r.id === initial)) state.initial = initial;
+}
+
+/** Mirror the state back into the query string. replaceState rather than
+ *  pushState: typing in the search box must not fill up the back button. */
+function syncUrl() {
+    if (!state.type) return;
+    const params = new URLSearchParams();
+    if (state.query) params.set('q', state.query);
+    if (state.sort && state.sort !== 'default') params.set('sort', state.sort);
+    if (state.view !== 'cards') params.set('view', state.view);
+    if (state.tableRoute !== 'kai') params.set('route', state.tableRoute);
+    if (state.tableOrder !== 'both') params.set('order', state.tableOrder);
+    if (state.initial) params.set('initial', state.initial);
+    const qs = params.toString();
+    const url = window.location.pathname + (qs ? '?' + qs : '');
+    if (url !== window.location.pathname + window.location.search) {
+        window.history.replaceState(null, '', url);
+    }
+}
+
+/** Drop state that does not apply to this page (e.g. view=names on /items/). */
+function validateState() {
+    const options = SORT_OPTIONS[state.type] || SORT_OPTIONS.items;
+    if (!options.some((o) => o.value === state.sort)) {
+        state.sort = options.some((o) => o.value === 'default') ? 'default' : options[0].value;
+    }
+    if (state.type !== 'characters' || LIST_VIEWS.indexOf(state.view) === -1) {
+        state.view = 'cards';
+    }
+}
+
 function buildToolbar() {
     const list = listElement(state.type);
     if (!list) return;
@@ -915,6 +1035,19 @@ function buildToolbar() {
 
     const options = SORT_OPTIONS[state.type] || SORT_OPTIONS.items;
     const needsDefault = options.some((o) => o.value === 'default');
+
+    // the a-z jump strip sits between the toolbar and the list
+    if (!document.getElementById('jump')) {
+        const jump = document.createElement('div');
+        jump.id = 'jump';
+        list.parentNode.insertBefore(jump, list);
+        jump.addEventListener('click', (event) => {
+            const button = event.target.closest('button[data-initial]');
+            if (!button) return;
+            state.initial = button.dataset.initial;
+            renderList();
+        });
+    }
 
     host.innerHTML = `
         <div class="toolbar-inner">
@@ -1064,6 +1197,11 @@ async function loadData() {
         const options = SORT_OPTIONS[state.type] || SORT_OPTIONS.items;
         if (!options.some((o) => o.value === state.sort)) state.sort = options[0].value;
     }
+
+    // the query string wins over the defaults, then gets validated so a
+    // hand-edited ?view= or ?sort= cannot leave the page in a broken state
+    readUrl();
+    validateState();
 
     buildToolbar();
     renderList();
