@@ -38,7 +38,7 @@ $navHome     = U '30DB 30FC 30E0'                                    # ホーム
 $labelCh     = U '30AD 30E3 30E9 30AF 30BF 30FC'                    # キャラクター
 $labelSkill  = U '30B9 30AD 30EB'                                    # スキル
 $labelItem   = U '30A2 30A4 30C6 30E0'                               # アイテム
-$labelEvent  = U '96A8 3057 30A4 30D9 30F3 30C8'                    # 隠しイベント
+$labelEvent  = U '96A0 3057 30A4 30D9 30F3 30C8'                    # 隠しイベント
 $back        = (U '2190 0020') + $titleSuffix + (U '4E00 89A7')      # ← 兵種一覧
 
 $classes = Get-Content $DataFile -Raw -Encoding UTF8 | ConvertFrom-Json
