@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>兵種 - FE万紫千紅 データベース</title>
+    <title>隠しイベント - FE万紫千紅 データベース</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -13,19 +13,19 @@
             <ul>
                 <li><a href="../index.html">ホーム</a></li>
                 <li><a href="../characters/">キャラクター</a></li>
-                <li><a href="../classes/" class="active">兵種</a></li>
+                <li><a href="../classes/">兵種</a></li>
                 <li><a href="../skills/">スキル</a></li>
                 <li><a href="../items/">アイテム</a></li>
-                <li><a href="../events/">隠しイベント</a></li>
+                <li><a href="../events/" class="active">隠しイベント</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section>
-            <h2>兵種</h2>
-            <p class="page-note">階級・成長ボーナス・移動力・使用可能技能・解放条件。</p>
+            <h2>隠しイベント</h2>
+            <div id="events-intro" class="page-note"></div>
             <div id="toolbar"></div>
-            <div id="classes-list" class="data-grid"></div>
+            <div id="events-list"></div>
         </section>
     </main>
     <footer>

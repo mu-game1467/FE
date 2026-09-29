@@ -3,7 +3,8 @@
   "counts":  {
     "characters":  64,
     "classes":  60,
-    "skills":  247
+    "skills":  247,
+    "events":  22
   },
   "source_url":  "https://assets.game8.jp/tools/script_template/fe_banshisenko_ikusei_sim.json"
 }

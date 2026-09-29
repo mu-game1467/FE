@@ -39,6 +39,7 @@ $labelCh     = U '30AD 30E3 30E9 30AF 30BF 30FC'   # キャラクター
 $labelClass  = U '5175 7A2E'                    # 兵種
 $labelSkill  = U '30B9 30AD 30EB'                   # スキル
 $labelItem   = U '30A2 30A4 30C6 30E0'              # アイテム
+$labelEvent  = U '96A8 3057 30A4 30D9 30F3 30C8'   # 隠しイベント
 # NOTE: the parentheses matter. In argument mode PowerShell would pass '+', $labelCh
 # and the second U() call as extra arguments to U, leaving $back as just the arrow.
 $back        = (U '2190 0020') + $labelCh + (U '4E00 89A7')  # ← キャラクター一覧
@@ -83,6 +84,7 @@ foreach ($c in $characters) {
                 <li><a href="../../classes/">$labelClass</a></li>
                 <li><a href="../../skills/">$labelSkill</a></li>
                 <li><a href="../../items/">$labelItem</a></li>
+                <li><a href="../../events/">$labelEvent</a></li>
             </ul>
         </nav>
     </header>

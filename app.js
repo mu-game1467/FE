@@ -29,7 +29,8 @@ const PAGES = {
     characters: { file: 'data/characters.json', icon: '👤', label: 'キャラクター' },
     classes:    { file: 'data/classes.json',    icon: '⚔️', label: '兵種' },
     skills:     { file: 'data/skills.json',     icon: '✨', label: 'スキル' },
-    items:      { file: 'data/items.json',      icon: '📦', label: 'アイテム' }
+    items:      { file: 'data/items.json',      icon: '📦', label: 'アイテム' },
+    events:     { file: 'data/events.json',     icon: '📜', label: '隠しイベント' }
 };
 
 const state = {
@@ -47,7 +48,9 @@ const state = {
     // ids of the characters picked for the side-by-side comparison
     compare: [],
     // search text per record, aligned with `data`; see buildHaystacks
-    haystack: null
+    haystack: null,
+    // hidden-event page: which route's sections to show ('all' = every route)
+    eventRoute: 'all'
 };
 
 /* ------------------------------------------------------------ helpers -- */
@@ -1326,6 +1329,200 @@ async function loadClassDetailPage(id) {
 
 const STAT_KEYS = new Set(STATS.map((s) => s.key));
 
+/* ------------------------------------------------------- hidden events -- */
+
+/** "2章" -> 2, so a chapter column can sort numerically instead of by text. */
+function chapterNumber(chapter) {
+    const m = /(\d+)/.exec(String(chapter || ''));
+    return m ? Number(m[1]) : Number.MAX_SAFE_INTEGER;
+}
+
+/**
+ * The events file is grouped by route rather than a flat list, so it gets its
+ * own renderer instead of the shared card/table views. The search box, the sort
+ * select and the result counter are the shared toolbar's, so they behave the
+ * same as on the other pages.
+ */
+function eventRows() {
+    const data = state.events || {};
+    const sections = data.sections || [];
+    const query = state.query;
+
+    const wanted = state.eventRoute === 'all'
+        ? sections
+        : sections.filter((s) => s.route === state.eventRoute);
+
+    const rows = [];
+    wanted.forEach((section, sectionIndex) => {
+        (section.events || []).forEach((event) => {
+            // a hidden event matches on its chapter, name and condition text
+            if (query) {
+                const hay = [event.chapter, event.name, event.condition]
+                    .filter(Boolean).join(' ').toLowerCase();
+                if (hay.indexOf(query) === -1) return;
+            }
+            rows.push({ event, section, sectionIndex });
+        });
+    });
+
+    if (state.sort === 'chapter') {
+        rows.sort((a, b) =>
+            a.sectionIndex - b.sectionIndex ||
+            chapterNumber(a.event.chapter) - chapterNumber(b.event.chapter) ||
+            a.event.name.localeCompare(b.event.name, 'ja'));
+    } else if (state.sort === 'name') {
+        rows.sort((a, b) =>
+            a.event.name.localeCompare(b.event.name, 'ja') ||
+            a.sectionIndex - b.sectionIndex);
+    }
+    // 'route' keeps the file order (by route, then chapter, then name)
+
+    return rows;
+}
+
+function renderEventList() {
+    const list = listElement('events');
+    if (!list) return;
+    const data = state.events || {};
+    const rows = eventRows();
+
+    const count = document.getElementById('result-count');
+    if (count) count.textContent = `${rows.length} 件`;
+
+    if (!rows.length) {
+        list.innerHTML = `<p class="muted">該当する隠しイベントがありません</p>`;
+        return;
+    }
+
+    // one table per route, in the order the rows are grouped, so a route filter
+    // or a search keeps the section headings
+    const groups = [];
+    rows.forEach((row) => {
+        let group = groups.find((g) => g.label === row.section.label);
+        if (!group) {
+            group = { label: row.section.label, rows: [] };
+            groups.push(group);
+        }
+        group.rows.push(row);
+    });
+
+    list.innerHTML = groups.map((group) => `
+        <div class="panel">
+            <h3>${esc(group.label)}</h3>
+            <div class="tablewrap">
+                <table class="classtable">
+                    <thead>
+                        <tr>
+                            <th class="sticky">章</th>
+                            <th>項目</th>
+                            <th>条件</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${group.rows.map((row) => `
+                            <tr>
+                                <th class="sticky">${esc(row.event.chapter)}</th>
+                                <td><strong>${esc(row.event.name)}</strong></td>
+                                <td class="muted">${esc(row.event.condition)}</td>
+                            </tr>`).join('')}
+                    </tbody>
+                </table>
+            </div>
+        </div>`).join('');
+
+    // the overview and the cautionary notes only frame the list once, above it
+    const intro = document.getElementById('events-intro');
+    if (intro) {
+        intro.innerHTML = `
+            ${data.overview ? `<p>${esc(data.overview)}</p>` : ''}
+            ${(data.notes || []).length ? `
+                <ul class="eventnotes">
+                    ${(data.notes || []).map((n) => `<li>${esc(n)}</li>`).join('')}
+                </ul>` : ''}`;
+    }
+}
+
+/** the events file is an object, not a flat array, so it gets its own toolbar */
+function buildEventToolbar() {
+    const list = listElement('events');
+    if (!list) return;
+    const host = document.getElementById('toolbar') || (() => {
+        const div = document.createElement('div');
+        div.id = 'toolbar';
+        list.parentNode.insertBefore(div, list);
+        return div;
+    })();
+
+    const options = SORT_OPTIONS.events;
+    if (!options.some((o) => o.value === state.sort)) state.sort = options[0].value;
+
+    const routeOptions = [{ id: 'all', label: 'すべてのルート' }].concat(ROUTES);
+
+    host.innerHTML = `
+        <div class="toolbar-inner">
+            <input id="search" class="search" type="search" placeholder="イベント名・条件で検索" value="${esc(state.query)}">
+            <label class="control" id="event-route-control">
+                <span>ルート</span>
+                <select id="event-route">
+                    ${routeOptions.map((r) => `<option value="${esc(r.id)}"${r.id === state.eventRoute ? ' selected' : ''}>${esc(r.label)}</option>`).join('')}
+                </select>
+            </label>
+            <label class="control">
+                <span>並び替え</span>
+                <select id="sort">
+                    ${options.map((o) => `<option value="${esc(o.value)}"${o.value === state.sort ? ' selected' : ''}>${esc(o.label)}</option>`).join('')}
+                </select>
+            </label>
+            <span class="result-count" id="result-count"></span>
+        </div>`;
+
+    const search = host.querySelector('#search');
+    search.addEventListener('input', (event) => {
+        state.query = event.target.value.trim().toLowerCase();
+        renderEventList();
+        syncUrl();
+    });
+    host.querySelector('#sort').addEventListener('change', (event) => {
+        state.sort = event.target.value;
+        renderEventList();
+        syncUrl();
+    });
+    host.querySelector('#event-route').addEventListener('change', (event) => {
+        state.eventRoute = event.target.value;
+        renderEventList();
+        syncUrl();
+    });
+}
+
+async function loadEventPage() {
+    const list = listElement('events');
+    if (!list) return;
+    try {
+        const data = await fetchJson({ file: 'data/events.json' });
+        state.events = data || {};
+    } catch (error) {
+        console.error('Failed to load data/events.json', error);
+        list.innerHTML = `
+            <div class="card empty">
+                <div class="card-image">📜</div>
+                <div class="card-content">
+                    <h3 class="card-name">データを読み込めませんでした</h3>
+                    <p class="muted">サーバー経由でアクセスしてください</p>
+                </div>
+            </div>`;
+        return;
+    }
+
+    // reuse the shared query-string reader, then keep only the keys that apply
+    readUrl();
+    if (state.eventRoute !== 'all' && !ROUTES.some((r) => r.id === state.eventRoute)) {
+        state.eventRoute = 'all';
+    }
+    buildEventToolbar();
+    renderEventList();
+    loadMeta();
+}
+
 
 const SORT_OPTIONS = {
     characters: [
@@ -1362,7 +1559,12 @@ const SORT_OPTIONS = {
         { value: 'type', label: '種別順' },
         { value: 'name', label: '名前順' }
     ],
-    items: [{ value: 'name', label: '名前順' }]
+    items: [{ value: 'name', label: '名前順' }],
+    events: [
+        { value: 'route', label: 'ルート順' },
+        { value: 'chapter', label: '章順' },
+        { value: 'name', label: '名前順' }
+    ]
 };
 
 /* --------------------------------------------------------------- tsv -- */
@@ -1444,6 +1646,8 @@ function readUrl() {
     if (order !== null) state.tableOrder = order;
     const initial = one('initial');
     if (initial !== null && KANA_ROWS.some((r) => r.id === initial)) state.initial = initial;
+    const eroute = one('eroute');
+    if (eroute !== null && ROUTES.some((r) => r.id === eroute)) state.eventRoute = eroute;
     // the selection lives in localStorage; the query string is just a mirror.
     // Unknown ids are dropped so a stale link cannot show a broken comparison.
     const cmp = one('cmp');
@@ -1469,11 +1673,14 @@ function flushUrl() {
     if (!state.type) return;
     const params = new URLSearchParams();
     if (state.query) params.set('q', state.query);
-    if (state.sort && state.sort !== 'default') params.set('sort', state.sort);
+    // 'route' is the events page's default order, so writing it would add noise
+    const isEvent = state.type === 'events';
+    if (!isEvent && state.sort && state.sort !== 'default') params.set('sort', state.sort);
     if (state.view !== 'cards') params.set('view', state.view);
     if (state.tableRoute !== 'kai') params.set('route', state.tableRoute);
     if (state.tableOrder !== 'both') params.set('order', state.tableOrder);
     if (state.initial) params.set('initial', state.initial);
+    if (isEvent && state.eventRoute !== 'all') params.set('eroute', state.eventRoute);
     if (state.type === 'characters' && state.compare.length) params.set('cmp', state.compare.join(','));
     const qs = params.toString();
     const url = window.location.pathname + (qs ? '?' + qs : '');
@@ -1686,6 +1893,13 @@ async function loadData() {
     state.type = currentType();
     if (!state.type) return;
 
+    // the hidden-event file is a route-grouped object, so it skips the shared
+    // array pipeline (loadData's generic path below) and renders on its own
+    if (state.type === 'events') {
+        loadEventPage();
+        return;
+    }
+
     const page = get(state.type);
     const container = listElement(state.type);
     if (!container) return;
@@ -1758,6 +1972,7 @@ async function loadMeta() {
         if (counts.characters) bits.push(`キャラクター ${counts.characters}`);
         if (counts.classes) bits.push(`兵種 ${counts.classes}`);
         if (counts.skills) bits.push(`スキル ${counts.skills}`);
+        if (counts.events) bits.push(`隠しイベント ${counts.events}`);
         host.innerHTML = `<p class="meta-line">${bits.join(' ｜ ')}</p>`;
     } catch (error) {
         // no meta.json (or offline): the footer just stays as it was

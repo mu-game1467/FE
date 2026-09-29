@@ -17,6 +17,7 @@
 | `classes/<名前>/index.html` → `/FE/classes/飛騎兵/` etc. | 兵種詳細。成長ボーナス・条件・使用可能技能、そして**その兵種になった場合に各キャラクターがどう成長するか**（素の合計／加算後／差、並び替え付き） | `data/classes.json` + `data/characters.json` |
 | `skills/index.html` → `/FE/skills/` | 個人スキル・血印・ルーツ・ブレイズアーツ／スキル／タイプ・兵種＆マスタースキル | `data/skills.json` |
 | `items/index.html` → `/FE/items/` | 消費アイテム・指南書など（手入力データ） | `data/items.json` |
+| `events/index.html` → `/FE/events/` | 隠しイベント22件。ルート（カイ／ディートリヒ／セオドラ／レダ）ごとに章・項目・発生条件の一覧。ルート絞り込み、イベント名・条件で検索、ルート順／章順／名前順で並び替え | `data/events.json` |
 
 各ページは1ディレクトリ下に置いてあり（`characters/index.html`）、
 GitHub Pages が `…/characters/` を `characters/index.html` に解決します。
@@ -26,7 +27,7 @@ GitHub Pages が `…/characters/` を `characters/index.html` に解決しま�
 ## 構成
 
 - `index.html` — ダッシュボード
-- `characters/` `classes/` `skills/` `items/` — 各一覧ページ（`index.html` を内包）
+- `characters/` `classes/` `skills/` `items/` `events/` — 各一覧ページ（`index.html` を内包）
 - `characters/<名前>/index.html` — キャラクター詳細ページ（`tools/generate-character-pages.ps1` が生成）
 - `classes/<名前>/index.html` — 兵種詳細ページ（`tools/generate-class-pages.ps1` が生成）
 - `images/characters/` — キャラクター立ち絵（`tools/fetch-character-images.ps1` が取得）
@@ -103,3 +104,6 @@ npx serve
   [ゲームエイト「ファイアーエムブレム 万紫千紅」](https://game8.jp/fe-banshisenko) が公開しているデータを加工したものです。
 - キャラクター名・声優名・効果文など短い事実情報のみを保持し、出典の解説文・記事本文・画像は含めていません。
 - `data/items.json` は手入力データです。
+- `data/events.json`（隠しイベント）も手入力データで、
+  [神攻略「ファイアーエムブレム 万紫千紅」隠しイベント](https://kamikouryaku.net/fe_banshisenkou/?%E9%9A%A0%E3%81%97%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88) の
+  ルート別一覧（章・項目・発生条件）を転記して登録したものです。
