@@ -517,6 +517,7 @@
     "id":  "天翼兵",
     "name":  "天翼兵",
     "tier":  "中級職",
+    "excluded_genders":  [ "男" ],
     "source_url":  "https://game8.jp/fe-banshisenko/816656",
     "growth_bonus":  {
       "hp":  10,
@@ -1266,6 +1267,7 @@
     "id":  "聖天翼兵",
     "name":  "聖天翼兵",
     "tier":  "最上級職",
+    "excluded_genders":  [ "男" ],
     "source_url":  "https://game8.jp/fe-banshisenko/816708",
     "growth_bonus":  {
       "hp":  15,

@@ -957,8 +957,8 @@ function mergedGrowth(character, cls) {
 function classGrowthRows(character, classes) {
     const base = character.growth_rates || {};
     const rows = classes
-        // a personal skill can forbid a whole movement type outright
-        .filter((cls) => !moveTypeBlocked(character, cls))
+        // a personal skill or the class' own gender rule can rule this pairing out
+        .filter((cls) => !classUnavailable(character, cls))
         .map((cls) => {
             const growth = mergedGrowth(character, cls);
             return { cls, growth, diff: growth.total - (base.total || 0) };
@@ -1056,11 +1056,17 @@ function skillGradeList(grades) {
 }
 
 /**
- * 移動タイプで「騎兵」「飛行」を含む兵種は、これらのキャラクターはなれない
- * (ゴライアスの「重量級の戦士」/ オルヘルの「堅牢堅固」)。move_type は
+ * このキャラクターになれない兵種か。
+ *
+ * 2つの理由がある。1つめは移動タイプ: ゴライアスの「重量級の戦士」と
+ * オルヘルの「堅牢堅固」は「騎兵、飛行の兵種になれない」。move_type は
  * "騎兵・重装" のように複合値になりうるので、部分一致で判定する。
+ * 2つめは性別: 天翼兵・聖天翼兵は男子になれない。
  */
-function moveTypeBlocked(character, cls) {
+function classUnavailable(character, cls) {
+    const genders = [].concat((cls && cls.excluded_genders) || []);
+    // 性別が未設定（救世主など）はどちらにも該当しないため、両方とも対象とする
+    if (genders.length && genders.includes(character && character.gender)) return true;
     const blocked = [].concat((character && character.blocked_move_types) || []);
     if (!blocked.length) return false;
     const type = String((cls && cls.move_type) || '');
@@ -1068,14 +1074,26 @@ function moveTypeBlocked(character, cls) {
 }
 
 /**
- * 移動タイプで「○○の兵種になれない」制約がある場合の注記。
- * おすすめ兵種・この兵種になった場合の成長率の両方から外れる。
+ * このキャラクターがなれない兵種の注記。2種類ある。
+ * 1つめは移動タイプ（個人スキルの効果）: ゴライアス / オルヘル
+ * 2つめは性別（兵種側の制約）: 男子は天翼兵・聖天翼兵になれない
+ * classes を渡すと性別で閉ざされている兵種名を列挙できる。
  */
-function blockedNote(character) {
+function blockedNote(character, classes) {
+    const parts = [];
     const blocked = [].concat((character && character.blocked_move_types) || []);
-    if (!blocked.length) return '';
-    const list = blocked.map((t) => esc(t)).join('・');
-    return `<p class="blocked-note">個人スキルの効果により、<strong>${list}</strong> の移動タイプを持つ兵種にはなれません（おすすめ兵種・この兵種になった場合の成長率から除外しています）。</p>`;
+    if (blocked.length) {
+        const list = blocked.map((t) => esc(t)).join('・');
+        parts.push(`個人スキルの効果により、<strong>${list}</strong> の移動タイプを持つ兵種にはなれません`);
+    }
+    if (character && character.gender) {
+        const names = (classes || [])
+            .filter((c) => [].concat(c.excluded_genders || []).includes(character.gender))
+            .map((c) => c.name);
+        if (names.length) parts.push(`<strong>${names.map((n) => esc(n)).join('・')}</strong> にはなれません`);
+    }
+    if (!parts.length) return '';
+    return `<p class="blocked-note">${parts.join('。')}（おすすめ兵種・この兵種になった場合の成長率から除外しています）。</p>`;
 }
 
 /**
@@ -1087,8 +1105,8 @@ function matchClass(character, cls) {
     // the generator can emit a bare string instead of a one-item list
     const forte = [].concat((character && character.forte_skills) || []);
     if (!forte.length) return null;
-    // a personal skill can forbid a whole movement type outright
-    if (moveTypeBlocked(character, cls)) return null;
+    // a personal skill or the class' own gender rule can rule this pairing out
+    if (classUnavailable(character, cls)) return null;
 
     const { choices, main } = classSkills(cls);
     // 主要技能 and 選択技能 both count as a match. The 選択技能 are
@@ -1403,7 +1421,7 @@ function renderCharacterDetail(character, classes, container) {
 
             <section class="panel">
                 <h3>おすすめ兵種</h3>
-                ${blockedNote(character)}
+                ${blockedNote(character, classes)}
                 <p class="muted">このキャラクターの得意技能を各兵種の主要技能・選択技能と突き合わせたものです。主要技能か選択技能のどちらかに一致していればおすすめになります（選択技能はどれか1つを満たせばよい）。まず、避けられない<strong>主要技能</strong>が苦手の兵種を最後にし、その中で一致している得意の上位のものほど上位になります（同じ階級の中では、一致した得意の個数 → 選択技能の苦手を含まない → 選択技能の等級が高い → 成長ボーナスが高い の順）。「一致した得意」はこの兵種が使える得意をすべて表示し、主要技能・選択技能の欄で、このキャラクターの得意と重なるものを濃く、苦手なら赤く表示しています。選択技能の苦手は別の選択技能を選べば避けられるため、順位では下位の判定として扱います。</p>
                 <div class="toolbar-inner">
                     <label class="control">
@@ -1418,7 +1436,7 @@ function renderCharacterDetail(character, classes, container) {
 
             <section class="panel">
                 <h3>このキャラクターが各兵種になった場合の成長率</h3>
-                ${blockedNote(character)}
+                ${blockedNote(character, classes)}
                 <p class="muted">素の成長率に各兵種の成長ボーナスを加えた値です。色付きの数値は素からの増減を示します。</p>
                 <div class="toolbar-inner">
                     <label class="control">
@@ -1509,8 +1527,8 @@ function classBenefitRows(cls, characters) {
     const rows = [];
     characters.forEach((c) => {
         if (!c.growth_rates) return;
-        // a personal skill can forbid a whole movement type outright
-        if (moveTypeBlocked(c, cls)) return;
+        // a personal skill or the class' own gender rule can rule this pairing out
+        if (classUnavailable(c, cls)) return;
         // only characters with a full set of bare rates can be merged
         let complete = true;
         for (let i = 0; i < STATS.length; i++) {
@@ -1594,6 +1612,11 @@ function renderClassDetail(cls, characters, container) {
     if (cls.movement !== undefined) badges.push(`<span class="tag">移動力 ${esc(cls.movement)}</span>`);
     if (cls.move_type) badges.push(`<span class="tag">${esc(cls.move_type)}</span>`);
     if (cls.tp !== undefined) badges.push(`<span class="tag">TP ${esc(cls.tp)}</span>`);
+    // 天翼兵・聖天翼兵は男子になれない
+    const genderLock = [].concat(cls.excluded_genders || []);
+    if (genderLock.length) {
+        badges.push(`<span class="tag tag-class">${genderLock.map((g) => esc(g)).join('・')} 不可</span>`);
+    }
 
     const info = rows([
         ['兵種スキル', cls.class_skill],
