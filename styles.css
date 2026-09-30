@@ -584,6 +584,9 @@ table.cmptable .is-blank { color: #b3a795; }
 .tag-class { background: #f6e7d8; border-color: #e0c3a1; color: #8b4513; }
 .tag-blaze { background: #ece7f6; border-color: #cfc2e6; color: #4b3a78; }
 
+/* the recommendation table's forte match, numbered by the character's priority */
+.tag-forte { background: #e8f2e4; border-color: #b4d3a4; color: #2e6b3f; font-weight: 600; }
+
 .skillline {
     display: flex;
     align-items: flex-start;
@@ -821,6 +824,28 @@ table.classtable td.is-top { box-shadow: inset 0 0 0 2px #e0c48c; border-radius:
 table.classtable tr.is-best .sticky { background: #fdf3e7; }
 table.classtable tr.is-best td.num strong { color: #8b4513; }
 
+/* ------------------------------------------- recommended classes table -- */
+/* Reuses .classtable, so only the tier divider and the two loose cells need
+   rules of their own. */
+table.recotable .rec-tier th {
+    background: #efe0c9;
+    color: #8b4513;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    position: sticky;
+    top: 2.1rem;   /* just under the frozen thead */
+    z-index: 1;
+}
+
+table.recotable .rec-tier th .muted {
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-left: 0.6rem;
+}
+
+table.recotable td p.muted { margin-top: 0.3rem; }
+table.recotable td .taglist { justify-content: flex-start; }
+
 body > footer .meta-line {
     font-size: 0.75rem;
     opacity: 0.9;
@@ -904,6 +929,8 @@ html[data-theme="dark"] .card-head { border-bottom-color: #4a4034; }
 html[data-theme="dark"] .tag { background: #332c25; border-color: #4d4237; color: #ded3c5; }
 html[data-theme="dark"] .tag-class { background: #453425; border-color: #6b5233; color: #ecc99b; }
 html[data-theme="dark"] .tag-blaze { background: #322c44; border-color: #4a4160; color: #cfc4e8; }
+html[data-theme="dark"] .tag-forte { background: #2b3a29; border-color: #4a6446; color: #9fd6a6; }
+html[data-theme="dark"] table.recotable .rec-tier th { background: #4a3d2b; color: #ecc99b; }
 html[data-theme="dark"] .statbar-track { background: #3a322a; }
 html[data-theme="dark"] .statbar-value { color: #c6b8a6; }
 html[data-theme="dark"] .statbar-track.is-split::before { background: #6d6357; }

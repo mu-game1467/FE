@@ -1021,6 +1021,142 @@ function classGrowthTable(character, classes) {
 }
 
 
+/* ------------------------------------------------- recommended classes -- */
+
+/** how far a class can push a skill, from its 技能上限 ("格闘術 A" -> A -> 4) */
+const CAP_RANK = { D: 1, C: 2, B: 3, A: 4, S: 5 };
+
+/** a class' 技能上限 as a skill -> rank lookup, so a pick can be scored on it */
+function classCaps(cls) {
+    const caps = new Map();
+    (cls.skill_caps || []).forEach((entry) => {
+        const parts = String(entry).trim().split(/\s+/);
+        if (parts.length < 2) return;
+        caps.set(parts.slice(0, -1).join(' '), parts[parts.length - 1].toUpperCase());
+    });
+    return caps;
+}
+
+/**
+ * Ranks a candidate against another.
+ *
+ * The order is deliberately lexicographic rather than a weighted sum: a single
+ * score would let "covers 得意2 and 得意3" outscore "covers 得意1", which is
+ * the opposite of what the page promises. So the highest forte a class covers
+ * decides first, and only then do the softer signals break the tie.
+ */
+function byRecommendation(a, b) {
+    if (a.hits[0].rank !== b.hits[0].rank) return a.hits[0].rank - b.hits[0].rank;
+    if (a.hits.length !== b.hits.length) return b.hits.length - a.hits.length;
+    // a class that trains a skill the character is bad at is the weaker pick
+    if (a.weak.length !== b.weak.length) return a.weak.length - b.weak.length;
+    if (a.cap !== b.cap) return b.cap - a.cap;
+    if (a.bonus !== b.bonus) return b.bonus - a.bonus;
+    return a.cls.name.localeCompare(b.cls.name, 'ja');
+}
+
+/** every class that can put one of the character's forte skills to work */
+function recommendedClasses(character, classes) {
+    // the generator can emit a bare string instead of a one-item list
+    const forte = [].concat((character && character.forte_skills) || []);
+    if (!forte.length) return [];
+
+    return classes.map((cls) => {
+        const usable = [].concat(cls.usable_skills || []);
+        // forte_skills is ordered best-first, so rank is the character's own
+        // priority for that skill and can be compared across characters
+        const hits = forte
+            .map((skill, rank) => ({ skill, rank }))
+            .filter((hit) => usable.indexOf(hit.skill) !== -1);
+        if (!hits.length) return null;
+        const caps = classCaps(cls);
+        return {
+            cls,
+            hits,
+            weak: [].concat((character && character.weak_skills) || [])
+                .filter((skill) => usable.indexOf(skill) !== -1),
+            cap: hits.reduce((best, hit) => Math.max(best, CAP_RANK[caps.get(hit.skill)] || 0), 0),
+            caps,
+            bonus: bonusTotal(cls)
+        };
+    }).filter(Boolean).sort(byRecommendation);
+}
+
+/** 0 = show every match in the tier, otherwise the top N */
+const REC_LIMIT_OPTIONS = [1, 3, 5, 0];
+const recommend = { limit: 3 };
+
+/** the picks for each tier, in TIER_ORDER, with at most `limit` of them */
+function recommendedGroups(character, classes) {
+    const ranked = recommendedClasses(character, classes);
+    if (!ranked.length) return [];
+
+    const tiers = TIER_ORDER.slice();
+    // never drop a tier the data grew since TIER_ORDER was written
+    ranked.forEach((r) => {
+        if (r.cls.tier && tiers.indexOf(r.cls.tier) === -1) tiers.push(r.cls.tier);
+    });
+
+    return tiers.map((tier) => {
+        const all = ranked.filter((r) => r.cls.tier === tier);
+        if (!all.length) return null;
+        const items = recommend.limit ? all.slice(0, recommend.limit) : all;
+        return { tier, total: all.length, items };
+    }).filter(Boolean);
+}
+
+/** the matched fortes, numbered by the character's own priority */
+function recForteTags(entry) {
+    return `<div class="taglist">${entry.hits.map((hit) =>
+        `<span class="tag tag-forte">得意${esc(hit.rank + 1)} ${esc(hit.skill)}</span>`).join('')}</div>`;
+}
+
+/** the cap the class puts on the matched fortes, e.g. "槍術 A" */
+function recCapText(entry) {
+    const text = entry.hits.map((hit) => {
+        const rank = entry.caps.get(hit.skill);
+        return rank ? `${hit.skill} ${rank}` : '';
+    }).filter(Boolean).join(' / ');
+    return text || '<span class="muted">—</span>';
+}
+
+function recommendTable(character, classes) {
+    const groups = recommendedGroups(character, classes);
+    if (!groups.length) {
+        return '<p class="muted">得意技能と重なる兵種がありません</p>';
+    }
+
+    return `
+        <div class="tablewrap">
+            <table class="classtable recotable">
+                <thead>
+                    <tr>
+                        <th class="sticky">兵種</th>
+                        <th>一致した得意</th>
+                        <th>技能上限</th>
+                        <th class="num">成長ボーナス</th>
+                    </tr>
+                </thead>
+                ${groups.map((g) => `
+                <tbody>
+                    <tr class="rec-tier">
+                        <th class="sticky" colspan="4">${esc(g.tier)}<span class="muted">${esc(g.total)}件中 ${esc(g.items.length)}件を表示</span></th>
+                    </tr>
+                    ${g.items.map((r) => `
+                    <tr>
+                        <th class="sticky"><a href="${esc(assetUrl('classes/' + encodeURIComponent(r.cls.id) + '/'))}">${esc(r.cls.name)}</a></th>
+                        <td>
+                            ${recForteTags(r)}
+                            ${r.weak.length ? `<p class="muted">苦手も含む: ${esc(r.weak.join(' / '))}</p>` : ''}
+                        </td>
+                        <td>${recCapText(r)}</td>
+                        <td class="num">${r.bonus > 0 ? '+' : ''}${esc(r.bonus)}</td>
+                    </tr>`).join('')}
+                </tbody>`).join('')}
+            </table>
+        </div>`;
+}
+
 function renderCharacterDetail(character, classes, container) {
     const growth = character.growth_rates || {};
 
@@ -1093,6 +1229,20 @@ function renderCharacterDetail(character, classes, container) {
             </section>` : ''}
 
             <section class="panel">
+                <h3>おすすめ兵種</h3>
+                <p class="muted">このキャラクターの得意技能と各兵種の使用可能技能を突き合わせたものです。上位の得意技能に一致している兵種ほど上位になります（同じ階級の中では、一致した得意の個数 → 苦手を含まない → 技能上限が高い → 成長ボーナスが高い の順）。</p>
+                <div class="toolbar-inner">
+                    <label class="control">
+                        <span>階級ごとの表示</span>
+                        <select id="rec-limit">
+                            ${REC_LIMIT_OPTIONS.map((n) => `<option value="${n}"${n === recommend.limit ? ' selected' : ''}>${n === 0 ? 'すべて' : `${n}件`}</option>`).join('')}
+                        </select>
+                    </label>
+                </div>
+                <div id="detail-reco">${recommendTable(character, classes)}</div>
+            </section>
+
+            <section class="panel">
                 <h3>このキャラクターが各兵種になった場合の成長率</h3>
                 <p class="muted">素の成長率に各兵種の成長ボーナスを加えた値です。色付きの数値は素からの増減を示します。</p>
                 <div class="toolbar-inner">
@@ -1119,7 +1269,16 @@ function renderCharacterDetail(character, classes, container) {
     const refresh = () => {
         const host = container.querySelector('#detail-classes');
         if (host) host.innerHTML = classGrowthTable(character, classes);
+        const reco = container.querySelector('#detail-reco');
+        if (reco) reco.innerHTML = recommendTable(character, classes);
     };
+    const recSelect = container.querySelector('#rec-limit');
+    if (recSelect) {
+        recSelect.addEventListener('change', (event) => {
+            recommend.limit = Number(event.target.value);
+            refresh();
+        });
+    }
     const tierSelect = container.querySelector('#detail-tier');
     if (tierSelect) {
         tierSelect.addEventListener('change', (event) => {
