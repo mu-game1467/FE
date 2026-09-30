@@ -1514,14 +1514,22 @@ function classBenefitTable(cls, characters) {
         if (!rank.has(r.merged.total)) rank.set(r.merged.total, i + 1);
     });
 
+    // best value per stat across the rows actually shown, so the highlight
+    // follows the sort order the reader is looking at
+    const top = {};
+    STATS.forEach((s) => {
+        top[s.key] = rows.reduce((m, r) => Math.max(m, r.merged[s.key]), Number.NEGATIVE_INFINITY);
+    });
+
     return `
         <div class="tablewrap">
             <table class="classtable">
                 <thead>
                     <tr>
                         <th class="sticky">キャラクター</th>
+                        ${STATS.map((s) => `<th class="num">${esc(s.label)}</th>`).join('')}
+                        <th class="num">合計</th>
                         <th class="num">素の合計</th>
-                        <th class="num">この兵種</th>
                         <th class="num">順位</th>
                     </tr>
                 </thead>
@@ -1529,8 +1537,18 @@ function classBenefitTable(cls, characters) {
                 ${rows.map((r) => `
                     <tr${r.merged.total === best ? ' class="is-best"' : ''}>
                         <th class="sticky">${characterAvatar(r.c)}<a href="${esc(assetUrl('characters/' + encodeURIComponent(r.c.id) + '/'))}">${esc(r.c.name)}</a></th>
-                        <td class="num">${esc(r.c.growth_rates.total)}</td>
+                        ${STATS.map((s) => {
+                            const value = r.merged[s.key];
+                            const origin = statValue(r.c.growth_rates, s.key) || 0;
+                            const d = value - origin;
+                            const cls = d > 0 ? 'up' : (d < 0 ? 'down' : '');
+                            const delta = d === 0 ? '' : `<span class="delta">${d > 0 ? '+' : ''}${esc(d)}</span>`;
+                            // the highest value in this stat's column
+                            const isTop = value === top[s.key] ? ' is-top' : '';
+                            return `<td class="num ${cls}${isTop}">${esc(value)}${delta}</td>`;
+                        }).join('')}
                         <td class="num"><strong>${esc(r.merged.total)}</strong></td>
+                        <td class="num">${esc(r.c.growth_rates.total)}</td>
                         <td class="num">${esc(rank.get(r.merged.total))}</td>
                     </tr>`).join('')}
                 </tbody>
@@ -1602,7 +1620,7 @@ function renderClassDetail(cls, characters, container) {
 
             <section class="panel">
                 <h3>この兵種になった場合の成長率</h3>
-                <p class="muted">各キャラクターの素の成長率に、この兵種の成長ボーナス<strong>合計 +${esc(bonusTotal(cls))}</strong>（全キャラクター共通）を加えた値です。</p>
+                <p class="muted">各キャラクターの素の成長率に、この兵種の成長ボーナス（全キャラクター共通 合計 +${esc(bonusTotal(cls))}）を加えた値です。ステータスごとに、そのステータスで<strong>最も高いキャラクター</strong>の枠で囲みで表示しています。素からの増減は数字の横に小さく表示します。</p>
                 <div class="toolbar-inner">
                     <label class="control">
                         <span>並び替え</span>
