@@ -1023,18 +1023,18 @@ function classGrowthTable(character, classes) {
 
 /* ------------------------------------------------- recommended classes -- */
 
-/** how far a class can push a skill, from its 技能上限 ("格闘術 A" -> A -> 4) */
-const CAP_RANK = { D: 1, C: 2, B: 3, A: 4, S: 5 };
+/** how demanding a class' 技能条件 is, from "馬術 E+" -> E+ -> 1 up to "剣術 S" -> 6 */
+const REQ_RANK = { 'E+': 1, D: 2, C: 3, B: 4, A: 5, S: 6 };
 
-/** a class' 技能上限 as a skill -> rank lookup, so a pick can be scored on it */
-function classCaps(cls) {
-    const caps = new Map();
-    (cls.skill_caps || []).forEach((entry) => {
+/** a class' 技能条件 as a skill -> grade lookup, so a pick can be scored on it */
+function classRequirements(cls) {
+    const reqs = new Map();
+    (cls.required_skills || []).forEach((entry) => {
         const parts = String(entry).trim().split(/\s+/);
         if (parts.length < 2) return;
-        caps.set(parts.slice(0, -1).join(' '), parts[parts.length - 1].toUpperCase());
+        reqs.set(parts.slice(0, -1).join(' '), parts[parts.length - 1].toUpperCase());
     });
-    return caps;
+    return reqs;
 }
 
 /**
@@ -1050,12 +1050,13 @@ function byRecommendation(a, b) {
     if (a.hits.length !== b.hits.length) return b.hits.length - a.hits.length;
     // a class that trains a skill the character is bad at is the weaker pick
     if (a.weak.length !== b.weak.length) return a.weak.length - b.weak.length;
-    if (a.cap !== b.cap) return b.cap - a.cap;
+    // a class built around a high requirement in the forte is the stronger fit
+    if (a.req !== b.req) return b.req - a.req;
     if (a.bonus !== b.bonus) return b.bonus - a.bonus;
     return a.cls.name.localeCompare(b.cls.name, 'ja');
 }
 
-/** every class that can put one of the character's forte skills to work */
+/** every class whose 技能条件 names one of the character's forte skills */
 function recommendedClasses(character, classes) {
     // the generator can emit a bare string instead of a one-item list
     const forte = [].concat((character && character.forte_skills) || []);
@@ -1069,14 +1070,14 @@ function recommendedClasses(character, classes) {
             .map((skill, rank) => ({ skill, rank }))
             .filter((hit) => usable.indexOf(hit.skill) !== -1);
         if (!hits.length) return null;
-        const caps = classCaps(cls);
+        const reqs = classRequirements(cls);
         return {
             cls,
             hits,
             weak: [].concat((character && character.weak_skills) || [])
                 .filter((skill) => usable.indexOf(skill) !== -1),
-            cap: hits.reduce((best, hit) => Math.max(best, CAP_RANK[caps.get(hit.skill)] || 0), 0),
-            caps,
+            req: hits.reduce((best, hit) => Math.max(best, REQ_RANK[reqs.get(hit.skill)] || 0), 0),
+            reqs,
             bonus: bonusTotal(cls)
         };
     }).filter(Boolean).sort(byRecommendation);
@@ -1111,11 +1112,11 @@ function recForteTags(entry) {
         `<span class="tag tag-forte">得意${esc(hit.rank + 1)} ${esc(hit.skill)}</span>`).join('')}</div>`;
 }
 
-/** the cap the class puts on the matched fortes, e.g. "槍術 A" */
-function recCapText(entry) {
+/** the 技能条件 the class puts on the matched fortes, e.g. "槍術 A" */
+function recReqText(entry) {
     const text = entry.hits.map((hit) => {
-        const rank = entry.caps.get(hit.skill);
-        return rank ? `${hit.skill} ${rank}` : '';
+        const grade = entry.reqs.get(hit.skill);
+        return grade ? `${hit.skill} ${grade}` : '';
     }).filter(Boolean).join(' / ');
     return text || '<span class="muted">—</span>';
 }
@@ -1133,7 +1134,7 @@ function recommendTable(character, classes) {
                     <tr>
                         <th class="sticky">兵種</th>
                         <th>一致した得意</th>
-                        <th>技能上限</th>
+                        <th>技能条件</th>
                         <th class="num">成長ボーナス</th>
                     </tr>
                 </thead>
@@ -1149,7 +1150,7 @@ function recommendTable(character, classes) {
                             ${recForteTags(r)}
                             ${r.weak.length ? `<p class="muted">苦手も含む: ${esc(r.weak.join(' / '))}</p>` : ''}
                         </td>
-                        <td>${recCapText(r)}</td>
+                        <td>${recReqText(r)}</td>
                         <td class="num">${r.bonus > 0 ? '+' : ''}${esc(r.bonus)}</td>
                     </tr>`).join('')}
                 </tbody>`).join('')}
@@ -1230,7 +1231,7 @@ function renderCharacterDetail(character, classes, container) {
 
             <section class="panel">
                 <h3>おすすめ兵種</h3>
-                <p class="muted">このキャラクターの得意技能と各兵種の使用可能技能を突き合わせたものです。上位の得意技能に一致している兵種ほど上位になります（同じ階級の中では、一致した得意の個数 → 苦手を含まない → 技能上限が高い → 成長ボーナスが高い の順）。</p>
+                <p class="muted">このキャラクターの得意技能を各兵種の技能条件・使用可能技能と突き合わせたものです。上位の得意技能に一致している兵種ほど上位になります（同じ階級の中では、一致した得意の個数 → 苦手を含まない → 技能条件が高い → 成長ボーナスが高い の順）。</p>
                 <div class="toolbar-inner">
                     <label class="control">
                         <span>階級ごとの表示</span>
