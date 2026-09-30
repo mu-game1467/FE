@@ -586,6 +586,8 @@ table.cmptable .is-blank { color: #b3a795; }
 
 /* the recommendation table's forte match, numbered by the character's priority */
 .tag-forte { background: #e8f2e4; border-color: #b4d3a4; color: #2e6b3f; font-weight: 600; }
+/* a forte the class can use but does not raise (not a 選択技能) */
+.tag-soft { background: #f2ede4; border-color: #d6cab8; color: #8a7a63; }
 
 .skillline {
     display: flex;
@@ -825,16 +827,25 @@ table.classtable tr.is-best .sticky { background: #fdf3e7; }
 table.classtable tr.is-best td.num strong { color: #8b4513; }
 
 /* ------------------------------------------- recommended classes table -- */
-/* Reuses .classtable, so only the tier divider and the two loose cells need
-   rules of their own. */
+/* Reuses .classtable, so only the stacking order and the two loose cells need
+   rules of their own.
+
+   .classtable gives the frozen thead and the pinned name column the SAME
+   z-index (1), so with the rows coming later in the DOM they paint OVER the
+   frozen header and clip the second line of the first visible cell. Ranking
+   them here - rows (1) < tier divider (2) < frozen thead (3/4) - is what keeps
+   that line visible while the table is scrolled. */
+table.recotable thead th { z-index: 3; }
+table.recotable thead th.sticky { z-index: 4; }
+
 table.recotable .rec-tier th {
     background: #efe0c9;
     color: #8b4513;
     font-size: 0.85rem;
     letter-spacing: 0.06em;
     position: sticky;
-    top: 2.1rem;   /* just under the frozen thead */
-    z-index: 1;
+    top: 2rem;   /* just under the frozen thead */
+    z-index: 2;
 }
 
 table.recotable .rec-tier th .muted {
@@ -930,6 +941,7 @@ html[data-theme="dark"] .tag { background: #332c25; border-color: #4d4237; color
 html[data-theme="dark"] .tag-class { background: #453425; border-color: #6b5233; color: #ecc99b; }
 html[data-theme="dark"] .tag-blaze { background: #322c44; border-color: #4a4160; color: #cfc4e8; }
 html[data-theme="dark"] .tag-forte { background: #2b3a29; border-color: #4a6446; color: #9fd6a6; }
+html[data-theme="dark"] .tag-soft { background: #2e2820; border-color: #4a4034; color: #b3a795; }
 html[data-theme="dark"] table.recotable .rec-tier th { background: #4a3d2b; color: #ecc99b; }
 html[data-theme="dark"] .statbar-track { background: #3a322a; }
 html[data-theme="dark"] .statbar-value { color: #c6b8a6; }

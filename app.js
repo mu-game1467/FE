@@ -1072,9 +1072,17 @@ function recommendedClasses(character, classes) {
             .map((skill, rank) => ({ skill, rank }))
             .filter((hit) => choices.has(hit.skill));
         if (!hits.length) return null;
+        // Fortes the class can use but does not raise: not part of the match,
+        // but worth showing. アレキサンドラ's 飛行術 on 天翼兵 (剣術 C / 槍術 C)
+        // lands here - the class can use it, yet 選択技能 does not cover it.
+        const usable = [].concat(cls.usable_skills || []);
+        const extra = forte
+            .map((skill, rank) => ({ skill, rank }))
+            .filter((hit) => !choices.has(hit.skill) && usable.indexOf(hit.skill) !== -1);
         return {
             cls,
             hits,
+            extra,
             weak: [].concat((character && character.weak_skills) || [])
                 .filter((skill) => choices.has(skill)),
             grade: hits.reduce((best, hit) => Math.max(best, CHOICE_RANK[choices.get(hit.skill)] || 0), 0),
@@ -1107,10 +1115,17 @@ function recommendedGroups(character, classes) {
     }).filter(Boolean);
 }
 
-/** the matched fortes, numbered by the character's own priority */
+/**
+ * The fortes the class lines up with, numbered by the character's own priority.
+ * 選択技能 matches are solid; ones the class merely can use are muted, so the
+ * two are never confused.
+ */
 function recForteTags(entry) {
-    return `<div class="taglist">${entry.hits.map((hit) =>
-        `<span class="tag tag-forte">得意${esc(hit.rank + 1)} ${esc(hit.skill)}</span>`).join('')}</div>`;
+    const solid = entry.hits.map((hit) =>
+        `<span class="tag tag-forte">得意${esc(hit.rank + 1)} ${esc(hit.skill)}</span>`);
+    const soft = entry.extra.map((hit) =>
+        `<span class="tag tag-soft">得意${esc(hit.rank + 1)} ${esc(hit.skill)}</span>`);
+    return `<div class="taglist">${solid.concat(soft).join('')}</div>`;
 }
 
 /** the 選択技能 the class offers on the matched fortes, e.g. "槍術 C" */
@@ -1232,7 +1247,7 @@ function renderCharacterDetail(character, classes, container) {
 
             <section class="panel">
                 <h3>おすすめ兵種</h3>
-                <p class="muted">このキャラクターの得意技能を各兵種の選択技能と突き合わせたものです。選択技能はどれか1つを満たせばよいので、上位の得意技能に一致している兵種ほど上位になります（同じ階級の中では、一致した得意の個数 → 苦手を含まない → 選択技能の等級が高い → 成長ボーナスが高い の順）。</p>
+                <p class="muted">このキャラクターの得意技能を各兵種の選択技能と突き合わせたものです。選択技能はどれか1つを満たせばよいので、上位の得意技能に一致している兵種ほど上位になります（同じ階級の中では、一致した得意の個数 → 苦手を含まない → 選択技能の等級が高い → 成長ボーナスが高い の順）。選択技能に一致した得意は濃く、使用可能技能に含まれるだけの得意は淡く表示しています。</p>
                 <div class="toolbar-inner">
                     <label class="control">
                         <span>階級ごとの表示</span>
