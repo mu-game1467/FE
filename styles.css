@@ -371,15 +371,27 @@ body > footer {
 .detail-portrait.is-empty { font-size: 3.5rem; }
 
 /* -------------------------------------------------------------- card -- */
+/* the card head becomes: portrait | (name over tags), with the compare
+   button pinned to the top right.
+   The button used to be a plain flex sibling, so a character with long blaze
+   badges (オルヘル: 絡繰 / 守護天使解放 / エリザベート) pushed the card-id
+   wide enough that the button wrapped onto a second line and the name ended up
+   sitting at a different height from the short-badge cards next to it. */
 .card-head {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
     gap: 0.5rem;
+    padding-right: 4.5rem;
     border-bottom: 2px solid #dfd2bf;
     padding-bottom: 0.5rem;
     margin-bottom: 0.75rem;
+}
+
+.card-head > .cmp-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .card-head .card-name { margin-bottom: 0; }
