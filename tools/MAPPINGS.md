@@ -34,6 +34,7 @@ DB 側の `col_20..col_28` が `45,45,40,45,45,35,35,40,40` で一致。
 | col_3 | `gender` | 性別 |
 | col_5 / col_6 / col_8 | `blaze_type` / `blaze_skill` / `blaze_arts` | ブレイズタイプ・スキル・制御（該当9名のみ。`col_7` は未同定のため不使用） |
 | col_10 | `personal_skill.name` | 個人スキル名 → 23030 から効果文を解決 |
+| col_10 | `blocked_move_types[]` | 個人スキルの効果文にある「○○の兵種になれない」制約。該当2名のみ（ゴライアス/オルヘル → `["騎兵","飛行"]`）。`data/classes.json` の `move_type` と部分一致で判定するため、`騎兵・重装` も対象になる |
 | col_11 | `blood_seals[]` | 血印名（`:` 区切り）→ 23030 から効果文を解決 |
 | col_12 / col_13 / col_14 | `forte_skills` / `usable_skills` / `weak_skills` | 得意 / 使用可能 / 苦手 技能 |
 | col_20–28 | `growth_rates.*` | 成長率（下記並び順） |

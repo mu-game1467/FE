@@ -956,10 +956,13 @@ function mergedGrowth(character, cls) {
 
 function classGrowthRows(character, classes) {
     const base = character.growth_rates || {};
-    const rows = classes.map((cls) => {
-        const growth = mergedGrowth(character, cls);
-        return { cls, growth, diff: growth.total - (base.total || 0) };
-    });
+    const rows = classes
+        // a personal skill can forbid a whole movement type outright
+        .filter((cls) => !moveTypeBlocked(character, cls))
+        .map((cls) => {
+            const growth = mergedGrowth(character, cls);
+            return { cls, growth, diff: growth.total - (base.total || 0) };
+        });
 
     const filtered = detail.tier === 'all' ? rows : rows.filter((r) => r.cls.tier === detail.tier);
     const byName = (a, b) => a.cls.name.localeCompare(b.cls.name, 'ja');
@@ -1053,6 +1056,29 @@ function skillGradeList(grades) {
 }
 
 /**
+ * 移動タイプで「騎兵」「飛行」を含む兵種は、これらのキャラクターはなれない
+ * (ゴライアスの「重量級の戦士」/ オルヘルの「堅牢堅固」)。move_type は
+ * "騎兵・重装" のように複合値になりうるので、部分一致で判定する。
+ */
+function moveTypeBlocked(character, cls) {
+    const blocked = [].concat((character && character.blocked_move_types) || []);
+    if (!blocked.length) return false;
+    const type = String((cls && cls.move_type) || '');
+    return blocked.some((t) => type.includes(t));
+}
+
+/**
+ * 移動タイプで「○○の兵種になれない」制約がある場合の注記。
+ * おすすめ兵種・この兵種になった場合の成長率の両方から外れる。
+ */
+function blockedNote(character) {
+    const blocked = [].concat((character && character.blocked_move_types) || []);
+    if (!blocked.length) return '';
+    const list = blocked.map((t) => esc(t)).join('・');
+    return `<p class="blocked-note">個人スキルの効果により、<strong>${list}</strong> の移動タイプを持つ兵種にはなれません（おすすめ兵種・この兵種になった場合の成長率から除外しています）。</p>`;
+}
+
+/**
  * Scores one character against one class, or null when they do not match.
  * Both the character page and the class page go through this, so the two
  * directions cannot drift apart.
@@ -1061,6 +1087,8 @@ function matchClass(character, cls) {
     // the generator can emit a bare string instead of a one-item list
     const forte = [].concat((character && character.forte_skills) || []);
     if (!forte.length) return null;
+    // a personal skill can forbid a whole movement type outright
+    if (moveTypeBlocked(character, cls)) return null;
 
     const { choices, main } = classSkills(cls);
     // 主要技能 and 選択技能 both count as a match. The 選択技能 are
@@ -1375,6 +1403,7 @@ function renderCharacterDetail(character, classes, container) {
 
             <section class="panel">
                 <h3>おすすめ兵種</h3>
+                ${blockedNote(character)}
                 <p class="muted">このキャラクターの得意技能を各兵種の主要技能・選択技能と突き合わせたものです。主要技能か選択技能のどちらかに一致していればおすすめになります（選択技能はどれか1つを満たせばよい）。まず、避けられない<strong>主要技能</strong>が苦手の兵種を最後にし、その中で一致している得意の上位のものほど上位になります（同じ階級の中では、一致した得意の個数 → 選択技能の苦手を含まない → 選択技能の等級が高い → 成長ボーナスが高い の順）。「一致した得意」はこの兵種が使える得意をすべて表示し、主要技能・選択技能の欄で、このキャラクターの得意と重なるものを濃く、苦手なら赤く表示しています。選択技能の苦手は別の選択技能を選べば避けられるため、順位では下位の判定として扱います。</p>
                 <div class="toolbar-inner">
                     <label class="control">
@@ -1389,6 +1418,7 @@ function renderCharacterDetail(character, classes, container) {
 
             <section class="panel">
                 <h3>このキャラクターが各兵種になった場合の成長率</h3>
+                ${blockedNote(character)}
                 <p class="muted">素の成長率に各兵種の成長ボーナスを加えた値です。色付きの数値は素からの増減を示します。</p>
                 <div class="toolbar-inner">
                     <label class="control">
@@ -1479,6 +1509,8 @@ function classBenefitRows(cls, characters) {
     const rows = [];
     characters.forEach((c) => {
         if (!c.growth_rates) return;
+        // a personal skill can forbid a whole movement type outright
+        if (moveTypeBlocked(c, cls)) return;
         // only characters with a full set of bare rates can be merged
         let complete = true;
         for (let i = 0; i < STATS.length; i++) {
