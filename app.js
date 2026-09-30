@@ -1082,6 +1082,8 @@ function matchClass(character, cls) {
 
     const rates = character.growth_rates || {};
     const linked = tagged.concat(alsoUsable);
+    const weak = [].concat(character.weak_skills || [])
+        .filter((skill) => primary.has(skill));
     return {
         character,
         cls,
@@ -1094,9 +1096,12 @@ function matchClass(character, cls) {
         forteSkills: new Set(linked.map((hit) => hit.skill)),
         // does the character also cover the 主要技能 the class demands?
         mainHit: main.size > 0 && tagged.some((hit) => main.has(hit.skill)),
-        // the class forces these to be trained, and the character is bad at them
-        weakSkills: new Set([].concat(character.weak_skills || [])
-            .filter((skill) => primary.has(skill))),
+        // 苦手 the class pushes onto the character. 主要技能 is unavoidable, so
+        // it hurts far more than a 苦手 that is only one of several 選択技能
+        // the player can simply not pick - see byRecommendation.
+        weakSkills: new Set(weak),
+        weakMain: new Set(weak.filter((skill) => main.has(skill))),
+        weakChoice: new Set(weak.filter((skill) => !main.has(skill))),
         grade: tagged.reduce((best, hit) => Math.max(best, SKILL_RANK[choices.get(hit.skill)] || 0), 0),
         bonus: bonusTotal(cls),
         growth: rates.total === undefined ? null : rates.total
@@ -1112,12 +1117,22 @@ function matchClass(character, cls) {
  * decides first, and only then do the softer signals break the tie. bonus is
  * constant across one class (class pages) and growth across one character
  * (character pages), so each only breaks ties where it can.
+ *
+ * A 苦手 in the 主要技能 outranks everything else. Unlike a 選択技能, it cannot
+ * be dodged: ハイエピタフ demands 黒魔術 D, and アレキサンドラ (黒魔術 is her
+ * 苦手) has to train it however the match came about. A 苦手 that is only one
+ * of several 選択技能 is a different matter - ドラゴンマスター offers 斧術 A /
+ * 槍術 A, so she can take 槍術 and never touch the 斧術. That one only breaks
+ * ties, which is why the "avoid 苦手" note sits below the forte signals rather
+ * than above them.
  */
 function byRecommendation(a, b) {
+    // forced to train a skill the character is bad at: the weakest pick
+    if (a.weakMain.size !== b.weakMain.size) return a.weakMain.size - b.weakMain.size;
     if (a.hits[0].rank !== b.hits[0].rank) return a.hits[0].rank - b.hits[0].rank;
     if (a.hits.length !== b.hits.length) return b.hits.length - a.hits.length;
-    // a class that trains a skill the character is bad at is the weaker pick
-    if (a.weakSkills.size !== b.weakSkills.size) return a.weakSkills.size - b.weakSkills.size;
+    // avoidable 苦手: only worth avoiding once the forte signals are level
+    if (a.weakChoice.size !== b.weakChoice.size) return a.weakChoice.size - b.weakChoice.size;
     // a class that can push the matched forte further is the stronger fit
     if (a.grade !== b.grade) return b.grade - a.grade;
     if (a.mainHit !== b.mainHit) return a.mainHit ? -1 : 1;
@@ -1191,10 +1206,21 @@ function recSkillTags(grades, entry) {
     return `<div class="taglist">${tags.join('')}</div>`;
 }
 
-/** the 苦手 skills this class forces, as a sentence under the forte list */
+/**
+ * The 苦手 skills this class pushes onto the character. A 主要技能 苦手 is
+ * unavoidable, so it is called out as such; a 選択技能 one is only avoidable,
+ * and the player can already see which list it came from.
+ */
 function recWeakNote(entry) {
     if (!entry.weakSkills.size) return '';
-    return `<p class="muted">苦手も含む: ${esc([...entry.weakSkills].join(' / '))}</p>`;
+    const must = [...entry.weakMain];
+    const choice = [...entry.weakChoice];
+    if (must.length && choice.length) {
+        return `<p class="muted">苦手も含む: ${esc(must.join(' / '))}（主要技能・避けられない） / ${esc(choice.join(' / '))}（選択技能）</p>`;
+    }
+    const only = must.length ? must : choice;
+    const label = must.length ? '（主要技能・避けられない）' : '（選択技能）';
+    return `<p class="muted">苦手も含む: ${esc(only.join(' / '))}${label}</p>`;
 }
 
 function recommendTable(character, classes) {
@@ -1349,7 +1375,7 @@ function renderCharacterDetail(character, classes, container) {
 
             <section class="panel">
                 <h3>おすすめ兵種</h3>
-                <p class="muted">このキャラクターの得意技能を各兵種の主要技能・選択技能と突き合わせたものです。主要技能か選択技能のどちらかに一致していればおすすめになります（選択技能はどれか1つを満たせばよい）。一致している得意の上位のものほど上位になります（同じ階級の中では、一致した得意の個数 → 苦手を含まない → 選択技能の等級が高い → 成長ボーナスが高い の順）。「一致した得意」はこの兵種が使える得意をすべて表示し、主要技能・選択技能の欄で、このキャラクターの得意と重なるものを濃く、苦手なら赤く表示しています。</p>
+                <p class="muted">このキャラクターの得意技能を各兵種の主要技能・選択技能と突き合わせたものです。主要技能か選択技能のどちらかに一致していればおすすめになります（選択技能はどれか1つを満たせばよい）。まず、避けられない<strong>主要技能</strong>が苦手の兵種を最後にし、その中で一致している得意の上位のものほど上位になります（同じ階級の中では、一致した得意の個数 → 選択技能の苦手を含まない → 選択技能の等級が高い → 成長ボーナスが高い の順）。「一致した得意」はこの兵種が使える得意をすべて表示し、主要技能・選択技能の欄で、このキャラクターの得意と重なるものを濃く、苦手なら赤く表示しています。選択技能の苦手は別の選択技能を選べば避けられるため、順位では下位の判定として扱います。</p>
                 <div class="toolbar-inner">
                     <label class="control">
                         <span>階級ごとの表示</span>
@@ -1554,7 +1580,7 @@ function renderClassDetail(cls, characters, container) {
 
             <section class="panel">
                 <h3>おすすめキャラクター</h3>
-                <p class="muted">この兵種の主要技能・選択技能に一致するキャラクターです。キャラクター詳細のおすすめ兵種と同じ判定で、一致している得意の上位のものほど上位になります（同じ基準の中では、一致した得意の個数 → 苦手を含まない → 選択技能の等級が高い → 成長率が高い の順）。主要技能・選択技能の欄の上の説明どおり、得意と重なる技能は濃く、苦手なら赤く表示しています。</p>
+                <p class="muted">この兵種の主要技能・選択技能に一致するキャラクターです。キャラクター詳細のおすすめ兵種と同じ判定で、まず<strong>主要技能</strong>が苦手のキャラクターを最後にし、その中で一致している得意の上位のものほど上位になります（同じ基準の中では、一致した得意の個数 → 選択技能の苦手を含まない → 選択技能の等級が高い → 成長率が高い の順）。主要技能・選択技能の欄の上の説明どおり、得意と重なる技能は濃く、苦手なら赤く表示しています。</p>
                 <div class="toolbar-inner">
                     <label class="control">
                         <span>主要技能</span>
