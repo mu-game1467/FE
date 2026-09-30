@@ -586,6 +586,9 @@ table.cmptable .is-blank { color: #b3a795; }
 
 /* the recommendation table's forte match, numbered by the character's priority */
 .tag-forte { background: #e8f2e4; border-color: #b4d3a4; color: #2e6b3f; font-weight: 600; }
+/* a 主要技能 / 選択技能 the class forces but the character is 苦手 at.
+   Mirrors .skill-tag.weak so the two read as the same warning. */
+.tag-weak { background: #f8e6e6; border-color: #dda9a9; color: #a33; font-weight: 600; }
 
 .skillline {
     display: flex;
@@ -946,6 +949,7 @@ html[data-theme="dark"] .tag { background: #332c25; border-color: #4d4237; color
 html[data-theme="dark"] .tag-class { background: #453425; border-color: #6b5233; color: #ecc99b; }
 html[data-theme="dark"] .tag-blaze { background: #322c44; border-color: #4a4160; color: #cfc4e8; }
 html[data-theme="dark"] .tag-forte { background: #2b3a29; border-color: #4a6446; color: #9fd6a6; }
+html[data-theme="dark"] .tag-weak { background: #3d2626; border-color: #6b4040; color: #e79a9a; }
 html[data-theme="dark"] .rec-skill { color: #f0e7db; }
 html[data-theme="dark"] table.recotable .rec-tier th { background: #4a3d2b; color: #ecc99b; }
 html[data-theme="dark"] .statbar-track { background: #3a322a; }

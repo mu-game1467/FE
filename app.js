@@ -1094,8 +1094,9 @@ function matchClass(character, cls) {
         forteSkills: new Set(linked.map((hit) => hit.skill)),
         // does the character also cover the 主要技能 the class demands?
         mainHit: main.size > 0 && tagged.some((hit) => main.has(hit.skill)),
-        weak: [].concat(character.weak_skills || [])
-            .filter((skill) => primary.has(skill)),
+        // the class forces these to be trained, and the character is bad at them
+        weakSkills: new Set([].concat(character.weak_skills || [])
+            .filter((skill) => primary.has(skill))),
         grade: tagged.reduce((best, hit) => Math.max(best, SKILL_RANK[choices.get(hit.skill)] || 0), 0),
         bonus: bonusTotal(cls),
         growth: rates.total === undefined ? null : rates.total
@@ -1116,7 +1117,7 @@ function byRecommendation(a, b) {
     if (a.hits[0].rank !== b.hits[0].rank) return a.hits[0].rank - b.hits[0].rank;
     if (a.hits.length !== b.hits.length) return b.hits.length - a.hits.length;
     // a class that trains a skill the character is bad at is the weaker pick
-    if (a.weak.length !== b.weak.length) return a.weak.length - b.weak.length;
+    if (a.weakSkills.size !== b.weakSkills.size) return a.weakSkills.size - b.weakSkills.size;
     // a class that can push the matched forte further is the stronger fit
     if (a.grade !== b.grade) return b.grade - a.grade;
     if (a.mainHit !== b.mainHit) return a.mainHit ? -1 : 1;
@@ -1173,15 +1174,27 @@ function recForteTags(entry) {
         `<span class="tag tag-forte">得意${esc(hit.rank + 1)} ${esc(hit.skill)}</span>`).join('')}</div>`;
 }
 
-/** a class' skill list, with the ones the character is forte at picked out */
-function recSkillTags(grades, forteSkills) {
+/**
+ * A class' 主要技能 / 選択技能 list. Green where it matches a forte of the
+ * character, red where it forces a skill the character is 苦手 at, plain
+ * otherwise. 得意 and 苦手 never overlap in the data, so the two never clash.
+ */
+function recSkillTags(grades, entry) {
     if (!grades.size) return '<span class="muted">—</span>';
     const tags = [];
     grades.forEach((grade, skill) => {
-        const cls = forteSkills.has(skill) ? 'tag tag-forte' : 'tag';
+        let cls = 'tag';
+        if (entry.forteSkills.has(skill)) cls += ' tag-forte';
+        else if (entry.weakSkills.has(skill)) cls += ' tag-weak';
         tags.push(`<span class="${cls}">${esc(skill)} ${esc(grade)}</span>`);
     });
     return `<div class="taglist">${tags.join('')}</div>`;
+}
+
+/** the 苦手 skills this class forces, as a sentence under the forte list */
+function recWeakNote(entry) {
+    if (!entry.weakSkills.size) return '';
+    return `<p class="muted">苦手も含む: ${esc([...entry.weakSkills].join(' / '))}</p>`;
 }
 
 function recommendTable(character, classes) {
@@ -1212,10 +1225,10 @@ function recommendTable(character, classes) {
                         <th class="sticky"><a href="${esc(assetUrl('classes/' + encodeURIComponent(r.cls.id) + '/'))}">${esc(r.cls.name)}</a></th>
                         <td>
                             ${recForteTags(r)}
-                            ${r.weak.length ? `<p class="muted">苦手も含む: ${esc(r.weak.join(' / '))}</p>` : ''}
+                            ${recWeakNote(r)}
                         </td>
-                        <td>${recSkillTags(r.main, r.forteSkills)}</td>
-                        <td>${recSkillTags(r.choices, r.forteSkills)}</td>
+                        <td>${recSkillTags(r.main, r)}</td>
+                        <td>${recSkillTags(r.choices, r)}</td>
                         <td class="num">${r.bonus > 0 ? '+' : ''}${esc(r.bonus)}</td>
                     </tr>`).join('')}
                 </tbody>`).join('')}
@@ -1253,7 +1266,7 @@ function recommendCharacterTable(cls, characters) {
                         <td>
                             ${recForteTags(r)}
                             ${r.mainHit ? '<p class="muted">主要技能も得意</p>' : ''}
-                            ${r.weak.length ? `<p class="muted">苦手も含む: ${esc(r.weak.join(' / '))}</p>` : ''}
+                            ${recWeakNote(r)}
                         </td>
                         <td class="num">${esc(r.growth)}</td>
                         <td class="num"><strong>${esc(r.growth + r.bonus)}</strong></td>
@@ -1336,7 +1349,7 @@ function renderCharacterDetail(character, classes, container) {
 
             <section class="panel">
                 <h3>おすすめ兵種</h3>
-                <p class="muted">このキャラクターの得意技能を各兵種の主要技能・選択技能と突き合わせたものです。主要技能か選択技能のどちらかに一致していればおすすめになります（選択技能はどれか1つを満たせばよい）。一致している得意の上位のものほど上位になります（同じ階級の中では、一致した得意の個数 → 苦手を含まない → 選択技能の等級が高い → 成長ボーナスが高い の順）。「一致した得意」はこの兵種が使える得意をすべて表示し、主要技能・選択技能の欄でもこのキャラクターの得意と重なるものを濃くしています。</p>
+                <p class="muted">このキャラクターの得意技能を各兵種の主要技能・選択技能と突き合わせたものです。主要技能か選択技能のどちらかに一致していればおすすめになります（選択技能はどれか1つを満たせばよい）。一致している得意の上位のものほど上位になります（同じ階級の中では、一致した得意の個数 → 苦手を含まない → 選択技能の等級が高い → 成長ボーナスが高い の順）。「一致した得意」はこの兵種が使える得意をすべて表示し、主要技能・選択技能の欄で、このキャラクターの得意と重なるものを濃く、苦手なら赤く表示しています。</p>
                 <div class="toolbar-inner">
                     <label class="control">
                         <span>階級ごとの表示</span>
@@ -1541,7 +1554,7 @@ function renderClassDetail(cls, characters, container) {
 
             <section class="panel">
                 <h3>おすすめキャラクター</h3>
-                <p class="muted">この兵種の主要技能・選択技能に一致するキャラクターです。キャラクター詳細のおすすめ兵種と同じ判定で、一致している得意の上位のものほど上位になります（同じ基準の中では、一致した得意の個数 → 苦手を含まない → 選択技能の等級が高い → 成長率が高い の順）。</p>
+                <p class="muted">この兵種の主要技能・選択技能に一致するキャラクターです。キャラクター詳細のおすすめ兵種と同じ判定で、一致している得意の上位のものほど上位になります（同じ基準の中では、一致した得意の個数 → 苦手を含まない → 選択技能の等級が高い → 成長率が高い の順）。主要技能・選択技能の欄の上の説明どおり、得意と重なる技能は濃く、苦手なら赤く表示しています。</p>
                 <div class="toolbar-inner">
                     <label class="control">
                         <span>主要技能</span>
