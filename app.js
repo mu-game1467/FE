@@ -1023,18 +1023,18 @@ function classGrowthTable(character, classes) {
 
 /* ------------------------------------------------- recommended classes -- */
 
-/** how demanding a class' 技能条件 is, from "馬術 E+" -> E+ -> 1 up to "剣術 S" -> 6 */
-const REQ_RANK = { 'E+': 1, D: 2, C: 3, B: 4, A: 5, S: 6 };
+/** how far a class can raise a 選択技能, from "槍術 D" -> 1 up to "剣術 S" -> 5 */
+const CHOICE_RANK = { D: 1, C: 2, B: 3, A: 4, S: 5 };
 
-/** a class' 技能条件 as a skill -> grade lookup, so a pick can be scored on it */
-function classRequirements(cls) {
-    const reqs = new Map();
-    (cls.required_skills || []).forEach((entry) => {
+/** a class' 選択技能 as a skill -> grade lookup ("槍術 C" -> 槍術 -> C) */
+function classChoices(cls) {
+    const choices = new Map();
+    (cls.skill_caps || []).forEach((entry) => {
         const parts = String(entry).trim().split(/\s+/);
         if (parts.length < 2) return;
-        reqs.set(parts.slice(0, -1).join(' '), parts[parts.length - 1].toUpperCase());
+        choices.set(parts.slice(0, -1).join(' '), parts[parts.length - 1].toUpperCase());
     });
-    return reqs;
+    return choices;
 }
 
 /**
@@ -1050,34 +1050,35 @@ function byRecommendation(a, b) {
     if (a.hits.length !== b.hits.length) return b.hits.length - a.hits.length;
     // a class that trains a skill the character is bad at is the weaker pick
     if (a.weak.length !== b.weak.length) return a.weak.length - b.weak.length;
-    // a class built around a high requirement in the forte is the stronger fit
-    if (a.req !== b.req) return b.req - a.req;
+    // a class that can push the matched forte further is the stronger fit
+    if (a.grade !== b.grade) return b.grade - a.grade;
     if (a.bonus !== b.bonus) return b.bonus - a.bonus;
     return a.cls.name.localeCompare(b.cls.name, 'ja');
 }
 
-/** every class whose 技能条件 names one of the character's forte skills */
+/** every class whose 選択技能 covers one of the character's forte skills */
 function recommendedClasses(character, classes) {
     // the generator can emit a bare string instead of a one-item list
     const forte = [].concat((character && character.forte_skills) || []);
     if (!forte.length) return [];
 
     return classes.map((cls) => {
-        const usable = [].concat(cls.usable_skills || []);
-        // forte_skills is ordered best-first, so rank is the character's own
-        // priority for that skill and can be compared across characters
+        const choices = classChoices(cls);
+        // The class' 選択技能 are alternatives, not a checklist: covering any
+        // ONE of them is a match. 騎甲駝兵 (槍術 C / 斧術 C) therefore fits a
+        // 槍術 character and an 斧術 character equally, and the best (lowest)
+        // forte index of whichever ones hit is what decides the ranking.
         const hits = forte
             .map((skill, rank) => ({ skill, rank }))
-            .filter((hit) => usable.indexOf(hit.skill) !== -1);
+            .filter((hit) => choices.has(hit.skill));
         if (!hits.length) return null;
-        const reqs = classRequirements(cls);
         return {
             cls,
             hits,
             weak: [].concat((character && character.weak_skills) || [])
-                .filter((skill) => usable.indexOf(skill) !== -1),
-            req: hits.reduce((best, hit) => Math.max(best, REQ_RANK[reqs.get(hit.skill)] || 0), 0),
-            reqs,
+                .filter((skill) => choices.has(skill)),
+            grade: hits.reduce((best, hit) => Math.max(best, CHOICE_RANK[choices.get(hit.skill)] || 0), 0),
+            choices,
             bonus: bonusTotal(cls)
         };
     }).filter(Boolean).sort(byRecommendation);
@@ -1112,10 +1113,10 @@ function recForteTags(entry) {
         `<span class="tag tag-forte">得意${esc(hit.rank + 1)} ${esc(hit.skill)}</span>`).join('')}</div>`;
 }
 
-/** the 技能条件 the class puts on the matched fortes, e.g. "槍術 A" */
-function recReqText(entry) {
+/** the 選択技能 the class offers on the matched fortes, e.g. "槍術 C" */
+function recChoiceText(entry) {
     const text = entry.hits.map((hit) => {
-        const grade = entry.reqs.get(hit.skill);
+        const grade = entry.choices.get(hit.skill);
         return grade ? `${hit.skill} ${grade}` : '';
     }).filter(Boolean).join(' / ');
     return text || '<span class="muted">—</span>';
@@ -1134,7 +1135,7 @@ function recommendTable(character, classes) {
                     <tr>
                         <th class="sticky">兵種</th>
                         <th>一致した得意</th>
-                        <th>技能条件</th>
+                        <th>選択技能</th>
                         <th class="num">成長ボーナス</th>
                     </tr>
                 </thead>
@@ -1150,7 +1151,7 @@ function recommendTable(character, classes) {
                             ${recForteTags(r)}
                             ${r.weak.length ? `<p class="muted">苦手も含む: ${esc(r.weak.join(' / '))}</p>` : ''}
                         </td>
-                        <td>${recReqText(r)}</td>
+                        <td>${recChoiceText(r)}</td>
                         <td class="num">${r.bonus > 0 ? '+' : ''}${esc(r.bonus)}</td>
                     </tr>`).join('')}
                 </tbody>`).join('')}
@@ -1231,7 +1232,7 @@ function renderCharacterDetail(character, classes, container) {
 
             <section class="panel">
                 <h3>おすすめ兵種</h3>
-                <p class="muted">このキャラクターの得意技能を各兵種の技能条件・使用可能技能と突き合わせたものです。上位の得意技能に一致している兵種ほど上位になります（同じ階級の中では、一致した得意の個数 → 苦手を含まない → 技能条件が高い → 成長ボーナスが高い の順）。</p>
+                <p class="muted">このキャラクターの得意技能を各兵種の選択技能と突き合わせたものです。選択技能はどれか1つを満たせばよいので、上位の得意技能に一致している兵種ほど上位になります（同じ階級の中では、一致した得意の個数 → 苦手を含まない → 選択技能の等級が高い → 成長ボーナスが高い の順）。</p>
                 <div class="toolbar-inner">
                     <label class="control">
                         <span>階級ごとの表示</span>
