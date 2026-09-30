@@ -732,8 +732,8 @@ function renderClass(item) {
                     ['兵種スキル', item.class_skill],
                     ['マスタースキル', item.master_skill],
                     ['熟練度', item.weapon_exp_bonus],
-                    ['必要技能', item.required_skills],
-                    ['技能上限', item.skill_caps],
+                    ['主要技能', item.required_skills],
+                    ['選択技能', item.skill_caps],
                     ['解放条件', [item.unlock_item, item.unlock_note].filter(Boolean).join(' / ')]
                 ])}
 
@@ -1021,29 +1021,101 @@ function classGrowthTable(character, classes) {
 }
 
 
-/* ------------------------------------------------- recommended classes -- */
+/* --------------------------------------- recommendations (both sides) -- */
 
-/** how far a class can raise a 選択技能, from "槍術 D" -> 1 up to "剣術 S" -> 5 */
-const CHOICE_RANK = { D: 1, C: 2, B: 3, A: 4, S: 5 };
+/** how far a 選択技能 / 主要技能 goes, from "馬術 E+" -> 1 up to "剣術 S" -> 6 */
+const SKILL_RANK = { 'E+': 1, D: 2, C: 3, B: 4, A: 5, S: 6 };
 
-/** a class' 選択技能 as a skill -> grade lookup ("槍術 C" -> 槍術 -> C) */
-function classChoices(cls) {
-    const choices = new Map();
-    (cls.skill_caps || []).forEach((entry) => {
+/** splits "槍術 C" entries into a skill -> grade lookup */
+function skillGrades(entries) {
+    const grades = new Map();
+    (entries || []).forEach((entry) => {
         const parts = String(entry).trim().split(/\s+/);
         if (parts.length < 2) return;
-        choices.set(parts.slice(0, -1).join(' '), parts[parts.length - 1].toUpperCase());
+        grades.set(parts.slice(0, -1).join(' '), parts[parts.length - 1].toUpperCase());
     });
-    return choices;
+    return grades;
+}
+
+/** a class' 選択技能 (what it can raise) and 主要技能 (what it demands) */
+function classSkills(cls) {
+    return {
+        choices: skillGrades(cls.skill_caps),
+        main: skillGrades(cls.required_skills)
+    };
+}
+
+/** grades for the given skills as one string, e.g. "槍術 C / 斧術 C" */
+function skillGradeText(grades, skills) {
+    const text = (skills || []).map((s) => {
+        const g = grades.get(s);
+        return g ? `${s} ${g}` : '';
+    }).filter(Boolean);
+    return text.length ? text.join(' / ') : '<span class="muted">—</span>';
+}
+
+/** every grade of a lookup as plain "槍術 C" strings */
+function skillGradeList(grades) {
+    const out = [];
+    grades.forEach((g, s) => out.push(`${s} ${g}`));
+    return out;
 }
 
 /**
- * Ranks a candidate against another.
+ * Scores one character against one class, or null when they do not match.
+ * Both the character page and the class page go through this, so the two
+ * directions cannot drift apart.
+ */
+function matchClass(character, cls) {
+    // the generator can emit a bare string instead of a one-item list
+    const forte = [].concat((character && character.forte_skills) || []);
+    if (!forte.length) return null;
+
+    const { choices, main } = classSkills(cls);
+    // The 選択技能 are alternatives, not a checklist: covering any ONE of them
+    // is a match. 騎甲駝兵 (槍術 C / 斧術 C) therefore fits a 槍術 character and
+    // an 斧術 character equally, and the best (lowest) forte index of whichever
+    // ones hit is what decides the ranking.
+    const hits = forte
+        .map((skill, rank) => ({ skill, rank }))
+        .filter((hit) => choices.has(hit.skill));
+    if (!hits.length) return null;
+
+    // Fortes the class can use but does not raise: not part of the match, but
+    // worth showing. アレキサンドラ's 飛行術 on 天翼兵 (剣術 C / 槍術 C) lands
+    // here - the class can use it, yet 選択技能 does not cover it.
+    const usable = [].concat(cls.usable_skills || []);
+    const extra = forte
+        .map((skill, rank) => ({ skill, rank }))
+        .filter((hit) => !choices.has(hit.skill) && usable.indexOf(hit.skill) !== -1);
+
+    const rates = character.growth_rates || {};
+    return {
+        character,
+        cls,
+        hits,
+        extra,
+        choices,
+        main,
+        // does the character also cover the 主要技能 the class demands?
+        mainHit: main.size > 0 && hits.some((hit) => main.has(hit.skill)),
+        weak: [].concat(character.weak_skills || [])
+            .filter((skill) => choices.has(skill)),
+        grade: hits.reduce((best, hit) => Math.max(best, SKILL_RANK[choices.get(hit.skill)] || 0), 0),
+        bonus: bonusTotal(cls),
+        growth: rates.total === undefined ? null : rates.total
+    };
+}
+
+/**
+ * Ranks a match against another.
  *
  * The order is deliberately lexicographic rather than a weighted sum: a single
  * score would let "covers 得意2 and 得意3" outscore "covers 得意1", which is
- * the opposite of what the page promises. So the highest forte a class covers
- * decides first, and only then do the softer signals break the tie.
+ * the opposite of what the pages promise. So the highest forte a class covers
+ * decides first, and only then do the softer signals break the tie. bonus is
+ * constant across one class (class pages) and growth across one character
+ * (character pages), so each only breaks ties where it can.
  */
 function byRecommendation(a, b) {
     if (a.hits[0].rank !== b.hits[0].rank) return a.hits[0].rank - b.hits[0].rank;
@@ -1052,49 +1124,28 @@ function byRecommendation(a, b) {
     if (a.weak.length !== b.weak.length) return a.weak.length - b.weak.length;
     // a class that can push the matched forte further is the stronger fit
     if (a.grade !== b.grade) return b.grade - a.grade;
+    if (a.mainHit !== b.mainHit) return a.mainHit ? -1 : 1;
     if (a.bonus !== b.bonus) return b.bonus - a.bonus;
+    if (a.growth !== b.growth) return b.growth - a.growth;
     return a.cls.name.localeCompare(b.cls.name, 'ja');
 }
 
 /** every class whose 選択技能 covers one of the character's forte skills */
 function recommendedClasses(character, classes) {
-    // the generator can emit a bare string instead of a one-item list
-    const forte = [].concat((character && character.forte_skills) || []);
-    if (!forte.length) return [];
+    return classes.map((cls) => matchClass(character, cls)).filter(Boolean).sort(byRecommendation);
+}
 
-    return classes.map((cls) => {
-        const choices = classChoices(cls);
-        // The class' 選択技能 are alternatives, not a checklist: covering any
-        // ONE of them is a match. 騎甲駝兵 (槍術 C / 斧術 C) therefore fits a
-        // 槍術 character and an 斧術 character equally, and the best (lowest)
-        // forte index of whichever ones hit is what decides the ranking.
-        const hits = forte
-            .map((skill, rank) => ({ skill, rank }))
-            .filter((hit) => choices.has(hit.skill));
-        if (!hits.length) return null;
-        // Fortes the class can use but does not raise: not part of the match,
-        // but worth showing. アレキサンドラ's 飛行術 on 天翼兵 (剣術 C / 槍術 C)
-        // lands here - the class can use it, yet 選択技能 does not cover it.
-        const usable = [].concat(cls.usable_skills || []);
-        const extra = forte
-            .map((skill, rank) => ({ skill, rank }))
-            .filter((hit) => !choices.has(hit.skill) && usable.indexOf(hit.skill) !== -1);
-        return {
-            cls,
-            hits,
-            extra,
-            weak: [].concat((character && character.weak_skills) || [])
-                .filter((skill) => choices.has(skill)),
-            grade: hits.reduce((best, hit) => Math.max(best, CHOICE_RANK[choices.get(hit.skill)] || 0), 0),
-            choices,
-            bonus: bonusTotal(cls)
-        };
-    }).filter(Boolean).sort(byRecommendation);
+/** the same match read from the class side: which characters suit this class */
+function recommendedCharacters(cls, characters) {
+    return characters.map((c) => matchClass(c, cls)).filter(Boolean).sort(byRecommendation);
 }
 
 /** 0 = show every match in the tier, otherwise the top N */
 const REC_LIMIT_OPTIONS = [1, 3, 5, 0];
 const recommend = { limit: 3 };
+/** class pages list characters, which are far more numerous than tiers */
+const REC_CHAR_LIMIT_OPTIONS = [5, 10, 20, 0];
+const recommendClass = { limit: 10 };
 
 /** the picks for each tier, in TIER_ORDER, with at most `limit` of them */
 function recommendedGroups(character, classes) {
@@ -1130,11 +1181,23 @@ function recForteTags(entry) {
 
 /** the 選択技能 the class offers on the matched fortes, e.g. "槍術 C" */
 function recChoiceText(entry) {
-    const text = entry.hits.map((hit) => {
-        const grade = entry.choices.get(hit.skill);
-        return grade ? `${hit.skill} ${grade}` : '';
-    }).filter(Boolean).join(' / ');
-    return text || '<span class="muted">—</span>';
+    return skillGradeText(entry.choices, entry.hits.map((hit) => hit.skill));
+}
+
+/**
+ * The class' 主要技能, with the ones this character is strong at picked out.
+ * A 選択技能 match on a 主要技能 is the ideal case: the class both demands and
+ * trains that skill, so it gets the forte highlight.
+ */
+function recMainTags(entry) {
+    if (!entry.main.size) return '<span class="muted">—</span>';
+    const forte = new Set(entry.hits.concat(entry.extra).map((hit) => hit.skill));
+    const tags = [];
+    entry.main.forEach((grade, skill) => {
+        const cls = forte.has(skill) ? 'tag tag-forte' : 'tag';
+        tags.push(`<span class="${cls}">${esc(skill)} ${esc(grade)}</span>`);
+    });
+    return `<div class="taglist">${tags.join('')}</div>`;
 }
 
 function recommendTable(character, classes) {
@@ -1150,6 +1213,7 @@ function recommendTable(character, classes) {
                     <tr>
                         <th class="sticky">兵種</th>
                         <th>一致した得意</th>
+                        <th>主要技能</th>
                         <th>選択技能</th>
                         <th class="num">成長ボーナス</th>
                     </tr>
@@ -1157,7 +1221,7 @@ function recommendTable(character, classes) {
                 ${groups.map((g) => `
                 <tbody>
                     <tr class="rec-tier">
-                        <th class="sticky" colspan="4">${esc(g.tier)}<span class="muted">${esc(g.total)}件中 ${esc(g.items.length)}件を表示</span></th>
+                        <th class="sticky" colspan="5">${esc(g.tier)}<span class="muted">${esc(g.total)}件中 ${esc(g.items.length)}件を表示</span></th>
                     </tr>
                     ${g.items.map((r) => `
                     <tr>
@@ -1166,10 +1230,51 @@ function recommendTable(character, classes) {
                             ${recForteTags(r)}
                             ${r.weak.length ? `<p class="muted">苦手も含む: ${esc(r.weak.join(' / '))}</p>` : ''}
                         </td>
+                        <td>${recMainTags(r)}</td>
                         <td>${recChoiceText(r)}</td>
                         <td class="num">${r.bonus > 0 ? '+' : ''}${esc(r.bonus)}</td>
                     </tr>`).join('')}
                 </tbody>`).join('')}
+            </table>
+        </div>`;
+}
+
+/**
+ * The class-side mirror of recommendTable: the same matches, listed as
+ * characters. 主要技能 / 選択技能 belong to the class, so they go in the
+ * summary above the table rather than repeating on every row.
+ */
+function recommendCharacterTable(cls, characters) {
+    const ranked = recommendedCharacters(cls, characters);
+    if (!ranked.length) {
+        return '<p class="muted">選択技能が一致するキャラクターがありません</p>';
+    }
+    const items = recommendClass.limit ? ranked.slice(0, recommendClass.limit) : ranked;
+
+    return `
+        <div class="tablewrap">
+            <table class="classtable recotable">
+                <thead>
+                    <tr>
+                        <th class="sticky">キャラクター</th>
+                        <th>一致した得意</th>
+                        <th class="num">素の合計</th>
+                        <th class="num">この兵種</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${items.map((r) => `
+                    <tr>
+                        <th class="sticky">${characterAvatar(r.character)}<a href="${esc(assetUrl('characters/' + encodeURIComponent(r.character.id) + '/'))}">${esc(r.character.name)}</a></th>
+                        <td>
+                            ${recForteTags(r)}
+                            ${r.mainHit ? '<p class="muted">主要技能も得意</p>' : ''}
+                            ${r.weak.length ? `<p class="muted">苦手も含む: ${esc(r.weak.join(' / '))}</p>` : ''}
+                        </td>
+                        <td class="num">${esc(r.growth)}</td>
+                        <td class="num"><strong>${esc(r.growth + r.bonus)}</strong></td>
+                    </tr>`).join('')}
+                </tbody>
             </table>
         </div>`;
 }
@@ -1247,7 +1352,7 @@ function renderCharacterDetail(character, classes, container) {
 
             <section class="panel">
                 <h3>おすすめ兵種</h3>
-                <p class="muted">このキャラクターの得意技能を各兵種の選択技能と突き合わせたものです。選択技能はどれか1つを満たせばよいので、上位の得意技能に一致している兵種ほど上位になります（同じ階級の中では、一致した得意の個数 → 苦手を含まない → 選択技能の等級が高い → 成長ボーナスが高い の順）。選択技能に一致した得意は濃く、使用可能技能に含まれるだけの得意は淡く表示しています。</p>
+                <p class="muted">このキャラクターの得意技能を各兵種の選択技能と突き合わせたものです。選択技能はどれか1つを満たせばよいので、上位の得意技能に一致している兵種ほど上位になります（同じ階級の中では、一致した得意の個数 → 苦手を含まない → 選択技能の等級が高い → 成長ボーナスが高い の順）。選択技能に一致した得意は濃く、使用可能技能に含まれるだけの得意は淡く表示しています。主要技能の列でも、得意と重なるものは濃くしています。</p>
                 <div class="toolbar-inner">
                     <label class="control">
                         <span>階級ごとの表示</span>
@@ -1421,10 +1526,14 @@ function renderClassDetail(cls, characters, container) {
         ['兵種スキル', cls.class_skill],
         ['マスタースキル', cls.master_skill],
         ['熟練度ボーナス', cls.weapon_exp_bonus],
-        ['必要技能', cls.required_skills],
-        ['技能上限', cls.skill_caps],
+        ['主要技能', cls.required_skills],
+        ['選択技能', cls.skill_caps],
         ['解放条件', [cls.unlock_item, cls.unlock_note].filter(Boolean).join(' / ')]
     ]);
+
+    const skills = classSkills(cls);
+    const mainList = skillGradeList(skills.main);
+    const choiceList = skillGradeList(skills.choices);
 
     container.innerHTML = `
         <div class="detail">
@@ -1445,6 +1554,28 @@ function renderClassDetail(cls, characters, container) {
             ${cls.description ? `<section class="panel"><h3>説明</h3><p class="effect">${esc(cls.description)}</p></section>` : ''}
             ${info ? `<section class="panel"><h3>条件</h3>${info}</section>` : ''}
             ${cls.usable_skills ? `<section class="panel"><h3>使用可能技能</h3>${tagList(cls.usable_skills)}</section>` : ''}
+
+            <section class="panel">
+                <h3>おすすめキャラクター</h3>
+                <p class="muted">この兵種の選択技能に一致するキャラクターです。キャラクター詳細のおすすめ兵種と同じ判定で、上位の得意技能に一致しているほど上位になります（同じ基準の中では、一致した得意の個数 → 苦手を含まない → 選択技能の等級が高い → 成長率が高い の順）。</p>
+                <div class="toolbar-inner">
+                    <label class="control">
+                        <span>主要技能</span>
+                        <span class="rec-skill">${mainList.length ? esc(mainList.join(' / ')) : 'なし'}</span>
+                    </label>
+                    <label class="control">
+                        <span>選択技能</span>
+                        <span class="rec-skill">${choiceList.length ? esc(choiceList.join(' / ')) : 'なし'}</span>
+                    </label>
+                    <label class="control">
+                        <span>表示件数</span>
+                        <select id="class-reco-limit">
+                            ${REC_CHAR_LIMIT_OPTIONS.map((n) => `<option value="${n}"${n === recommendClass.limit ? ' selected' : ''}>${n === 0 ? 'すべて' : `${n}件`}</option>`).join('')}
+                        </select>
+                    </label>
+                </div>
+                <div id="class-reco">${recommendCharacterTable(cls, characters)}</div>
+            </section>
 
             <section class="panel">
                 <h3>この兵種になった場合の成長率</h3>
@@ -1468,6 +1599,14 @@ function renderClassDetail(cls, characters, container) {
             classDetail.order = event.target.value;
             const host = container.querySelector('#class-benefits');
             if (host) host.innerHTML = classBenefitTable(cls, characters);
+        });
+    }
+    const recoSelect = container.querySelector('#class-reco-limit');
+    if (recoSelect) {
+        recoSelect.addEventListener('change', (event) => {
+            recommendClass.limit = Number(event.target.value);
+            const host = container.querySelector('#class-reco');
+            if (host) host.innerHTML = recommendCharacterTable(cls, characters);
         });
     }
 }

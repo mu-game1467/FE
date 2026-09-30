@@ -857,6 +857,13 @@ table.recotable .rec-tier th .muted {
 table.recotable td p.muted { margin-top: 0.3rem; }
 table.recotable td .taglist { justify-content: flex-start; }
 
+/* the class' own 主要技能 / 選択技能, shown once above the character list */
+.rec-skill {
+    font-weight: 600;
+    color: #5d4037;
+    font-variant-numeric: tabular-nums;
+}
+
 body > footer .meta-line {
     font-size: 0.75rem;
     opacity: 0.9;
@@ -942,6 +949,7 @@ html[data-theme="dark"] .tag-class { background: #453425; border-color: #6b5233;
 html[data-theme="dark"] .tag-blaze { background: #322c44; border-color: #4a4160; color: #cfc4e8; }
 html[data-theme="dark"] .tag-forte { background: #2b3a29; border-color: #4a6446; color: #9fd6a6; }
 html[data-theme="dark"] .tag-soft { background: #2e2820; border-color: #4a4034; color: #b3a795; }
+html[data-theme="dark"] .rec-skill { color: #f0e7db; }
 html[data-theme="dark"] table.recotable .rec-tier th { background: #4a3d2b; color: #ecc99b; }
 html[data-theme="dark"] .statbar-track { background: #3a322a; }
 html[data-theme="dark"] .statbar-value { color: #c6b8a6; }
