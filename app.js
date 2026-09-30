@@ -1197,6 +1197,29 @@ function recommendedCharacters(cls, characters) {
     return characters.map((c) => matchClass(c, cls)).filter(Boolean).sort(byRecommendation);
 }
 
+/**
+ * 合計が最大と等しい行が何行あるか。同じ値を持つ兵種が複数あるため、
+ * 色だけが2行ぶん違うと「なぜこの2つだけ？」となるので、説明文に使う。
+ */
+function maxTotalRows(rows, key, field) {
+    if (!rows.length) return 0;
+    let best = Number.NEGATIVE_INFINITY;
+    rows.forEach((r) => {
+        const v = r[key] && r[key][field] !== undefined ? r[key][field] : Number.NEGATIVE_INFINITY;
+        if (v > best) best = v;
+    });
+    return rows.filter((r) => r[key] && r[key][field] === best).length;
+}
+
+/**
+ * 合計が最大の行が複数あるときの説明文。ザ・カラミティとジ・アプサラスは
+ * ボーナス合計が同じなので、どのキャラクター詳細でも同値1位が2行並ぶ。
+ */
+function bestTotalNote(count, unit) {
+    if (count > 1) return `合計が最大の${unit}が${count}つあるため、それらは同じ色になります。`;
+    return `合計が最大の${unit}を強調しています。`;
+}
+
 /** 0 = show every match in the tier, otherwise the top N */
 const REC_LIMIT_OPTIONS = [1, 3, 5, 0];
 const recommend = { limit: 3 };
@@ -1437,7 +1460,7 @@ function renderCharacterDetail(character, classes, container) {
             <section class="panel">
                 <h3>このキャラクターが各兵種になった場合の成長率</h3>
                 ${blockedNote(character, classes)}
-                <p class="muted">素の成長率に各兵種の成長ボーナスを加えた値です。色付きの数値は素からの増減を示します。</p>
+                <p class="muted">素の成長率に各兵種の成長ボーナスを加えた値です。色付きの数値は素からの増減を示します。${esc(bestTotalNote(maxTotalRows(classGrowthRows(character, classes), 'growth', 'total'), '兵種'))}</p>
                 <div class="toolbar-inner">
                     <label class="control">
                         <span>階級</span>
@@ -1675,7 +1698,7 @@ function renderClassDetail(cls, characters, container) {
 
             <section class="panel">
                 <h3>この兵種になった場合の成長率</h3>
-                <p class="muted">各キャラクターの素の成長率に、この兵種の成長ボーナス（全キャラクター共通 合計 +${esc(bonusTotal(cls))}）を加えた値です。ステータスごとに、そのステータスで<strong>最も高いキャラクター</strong>の枠で囲みで表示しています。素からの増減は数字の横に小さく表示します。</p>
+                <p class="muted">各キャラクターの素の成長率に、この兵種の成長ボーナス（全キャラクター共通 合計 +${esc(bonusTotal(cls))}）を加えた値です。ステータスごとに、そのステータスで<strong>最も高いキャラクター</strong>の枠で囲みで表示しています。素からの増減は数字の横に小さく表示します。${esc(bestTotalNote(maxTotalRows(classBenefitRows(cls, characters), 'merged', 'total'), 'キャラクター'))}</p>
                 <div class="toolbar-inner">
                     <label class="control">
                         <span>並び替え</span>
