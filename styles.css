@@ -597,7 +597,9 @@ table.cmptable .is-blank { color: #b3a795; }
 .tag-blaze { background: #ece7f6; border-color: #cfc2e6; color: #4b3a78; }
 
 /* ---- skill affinity matrix (characters page, view=matrix) ------------- */
-table.affinity thead th { position: sticky; top: 0; z-index: 2; }
+/* borders and the opaque sticky header come from the shared rules further
+   down; only the pinned name column and the vertical skill headings are
+   specific to this table. */
 table.affinity thead th.sticky { left: 0; z-index: 3; }
 table.affinity .sticky {
     background: #f4ece1;
@@ -639,7 +641,8 @@ td.matrix.is-both    { background: #efe6d8; color: #7a5c2e; font-weight: 700; }
 .legend-item.is-weak   { background: #f8e6e6; border-color: #dda9a9; color: #a33; }
 
 /* ---- recruit schedule (characters page, view=schedule) --------------- */
-table.schedule thead th { position: sticky; top: 0; z-index: 2; }
+/* the shared rules above already give .schedule its borders and an opaque
+   sticky header; only the pinned name column is specific to it. */
 table.schedule thead th.sticky { left: 0; z-index: 3; }
 table.schedule .sticky {
     background: #f4ece1;
@@ -710,14 +713,20 @@ table.mini, table.hayakabe, table.namegrowth {
 }
 
 table.mini th, table.mini td, table.hayakabe th, table.hayakabe td,
-table.namegrowth th, table.namegrowth td {
+table.namegrowth th, table.namegrowth td,
+table.affinity th, table.affinity td,
+table.schedule th, table.schedule td {
     border: 1px solid #d3c3ac;
     padding: 0.3rem 0.4rem;
     text-align: left;
     vertical-align: top;
 }
 
-table.mini thead th, table.hayakabe thead th, table.namegrowth thead th {
+/* An opaque header is load-bearing, not decoration: the header row is sticky
+   inside .tablewrap, and a transparent one lets the scrolled rows show
+   through it. Keep .affinity / .schedule in this rule for that reason. */
+table.mini thead th, table.hayakabe thead th, table.namegrowth thead th,
+table.affinity thead th, table.schedule thead th {
     background: #f5f0e8;
     color: #5d4037;
     font-weight: 600;
@@ -746,6 +755,8 @@ table.mini td.num, table.hayakabe td.num, table.namegrowth td.num { text-align: 
    panel variant is pinned instead. */
 table.hayakabe thead th,
 table.namegrowth thead th,
+table.affinity thead th,
+table.schedule thead th,
 table.classtable thead th,
 table.cmptable thead th { position: sticky; top: 0; z-index: 2; }
 
@@ -1049,8 +1060,8 @@ html[data-theme="dark"] .tag-class { background: #453425; border-color: #6b5233;
 html[data-theme="dark"] .tag-blaze { background: #322c44; border-color: #4a4160; color: #cfc4e8; }
 html[data-theme="dark"] .tag-forte { background: #2b3a29; border-color: #4a6446; color: #9fd6a6; }
 html[data-theme="dark"] .tag-weak { background: #3d2626; border-color: #6b4040; color: #e79a9a; }
-html[data-theme="dark"] table.affinity th.num,
-html[data-theme="dark"] table.schedule th.num { background: #3a3128; color: #ded3c5; }
+/* the affinity header uses the shared opaque header colour; only the pinned
+   name column differs slightly so the corner reads as a corner */
 html[data-theme="dark"] table.affinity .sticky,
 html[data-theme="dark"] table.schedule .sticky { background: #3a3128; }
 html[data-theme="dark"] table.affinity .sticky a,
@@ -1078,6 +1089,10 @@ html[data-theme="dark"] table.hayakabe th,
 html[data-theme="dark"] table.hayakabe td,
 html[data-theme="dark"] table.namegrowth th,
 html[data-theme="dark"] table.namegrowth td,
+html[data-theme="dark"] table.affinity th,
+html[data-theme="dark"] table.affinity td,
+html[data-theme="dark"] table.schedule th,
+html[data-theme="dark"] table.schedule td,
 html[data-theme="dark"] table.classtable th,
 html[data-theme="dark"] table.classtable td,
 html[data-theme="dark"] table.cmptable th,
@@ -1086,6 +1101,8 @@ html[data-theme="dark"] table.cmptable td { border-color: #4a4034; }
 html[data-theme="dark"] table.mini thead th,
 html[data-theme="dark"] table.hayakabe thead th,
 html[data-theme="dark"] table.namegrowth thead th,
+html[data-theme="dark"] table.affinity thead th,
+html[data-theme="dark"] table.schedule thead th,
 html[data-theme="dark"] table.classtable thead th,
 html[data-theme="dark"] table.cmptable thead th { background: #332c25; color: #e0a869; }
 
