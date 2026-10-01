@@ -1927,15 +1927,17 @@ function renderRecruitSchedule(characters) {
             if (e) rows.push(e);
         });
         if (!rows.length) return;
-        // 章の早い順 -> 支援Lv の低い順 -> 名声Lv の低い順 -> 名前順
+        // 章の早い順 -> 名声Lv の低い順 -> 支援Lv の低い順 -> 名前順。
+        // 名声と支援を入れ替えても並びは変わらないが、加入条件の表示が
+        // 「支援x / 名声y」の順なので、その読み順に揃える。
         rows.sort((a, b) => {
             if (a.order !== b.order) return a.order - b.order;
-            const as = a.support === undefined ? -1 : a.support;
-            const bs = b.support === undefined ? -1 : b.support;
-            if (as !== bs) return as - bs;
             const af = a.fame === undefined ? -1 : a.fame;
             const bf = b.fame === undefined ? -1 : b.fame;
             if (af !== bf) return af - bf;
+            const as = a.support === undefined ? -1 : a.support;
+            const bs = b.support === undefined ? -1 : b.support;
+            if (as !== bs) return as - bs;
             return a.character.name.localeCompare(b.character.name, 'ja');
         });
 
@@ -1968,7 +1970,7 @@ function renderRecruitSchedule(characters) {
 
     return `
         <p class="muted">
-            支援Lv / 名声Lv は「その値に達すれば参加できる」しきい値です。先に条件を満たしておけば、掲載の章より前からでも参加できます。
+            参加条件は「その値に達すれば参加できる」しきい値です。先に条件を満たしておけば、掲載の章より前からでも参加できます。並び順は章、名声Lv、支援Lv の低い順です。
         </p>
         ${out.join('')}`;
 }
