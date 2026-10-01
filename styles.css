@@ -596,6 +596,78 @@ table.cmptable .is-blank { color: #b3a795; }
 .tag-class { background: #f6e7d8; border-color: #e0c3a1; color: #8b4513; }
 .tag-blaze { background: #ece7f6; border-color: #cfc2e6; color: #4b3a78; }
 
+/* ---- skill affinity matrix (characters page, view=matrix) ------------- */
+table.affinity thead th { position: sticky; top: 0; z-index: 2; }
+table.affinity thead th.sticky { left: 0; z-index: 3; }
+table.affinity .sticky {
+    background: #f4ece1;
+    white-space: nowrap;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+}
+table.affinity .sticky a { color: #8b4513; }
+table.affinity th.num {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    height: 96px;
+    padding: 0.4rem 0.2rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+}
+/* one cell per skill: 得意 / 使用可能 / 苦手 */
+td.matrix {
+    font-size: 0.78rem;
+    text-align: center;
+    padding: 0.25rem 0.3rem;
+    white-space: nowrap;
+}
+td.matrix.is-forte   { background: #e8f2e4; color: #2e6b3f; font-weight: 700; }
+td.matrix.is-usable  { background: #f4efe7; color: #8a7a66; }
+td.matrix.is-weak    { background: #f8e6e6; color: #a33; font-weight: 700; }
+td.matrix.is-both    { background: #efe6d8; color: #7a5c2e; font-weight: 700; }
+.matrix-legend { margin-top: 0.6rem; font-size: 0.85rem; }
+.legend-item {
+    display: inline-block;
+    padding: 0.1rem 0.4rem;
+    margin-right: 0.3rem;
+    border-radius: 4px;
+    border: 1px solid #d9c9b4;
+}
+.legend-item.is-forte  { background: #e8f2e4; border-color: #b4d3a4; color: #2e6b3f; }
+.legend-item.is-usable { background: #f4efe7; border-color: #d9c9b4; color: #8a7a66; }
+.legend-item.is-weak   { background: #f8e6e6; border-color: #dda9a9; color: #a33; }
+
+/* ---- recruit schedule (characters page, view=schedule) --------------- */
+table.schedule thead th { position: sticky; top: 0; z-index: 2; }
+table.schedule thead th.sticky { left: 0; z-index: 3; }
+table.schedule .sticky {
+    background: #f4ece1;
+    white-space: nowrap;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+}
+table.schedule .sticky a { color: #8b4513; }
+table.schedule td.num { text-align: center; white-space: nowrap; }
+
+/* ---- back links ------------------------------------------------------ */
+a.tag-owner {
+    text-decoration: none;
+    background: #eef2f7;
+    border-color: #c3d2e4;
+    color: #2c4f7c;
+}
+a.tag-owner:hover { background: #dfe8f3; }
+a.skill-ref {
+    font-weight: 600;
+    color: #8b4513;
+    text-decoration: none;
+    border-bottom: 1px dotted #c9a887;
+}
+a.skill-ref:hover { border-bottom-style: solid; }
+.blaze-note { font-size: 0.85rem; margin-top: 0.3rem; }
+
 /* the recommendation table's forte match, numbered by the character's priority */
 .tag-forte { background: #e8f2e4; border-color: #b4d3a4; color: #2e6b3f; font-weight: 600; }
 /* a 主要技能 / 選択技能 the class forces but the character is 苦手 at.
@@ -977,6 +1049,23 @@ html[data-theme="dark"] .tag-class { background: #453425; border-color: #6b5233;
 html[data-theme="dark"] .tag-blaze { background: #322c44; border-color: #4a4160; color: #cfc4e8; }
 html[data-theme="dark"] .tag-forte { background: #2b3a29; border-color: #4a6446; color: #9fd6a6; }
 html[data-theme="dark"] .tag-weak { background: #3d2626; border-color: #6b4040; color: #e79a9a; }
+html[data-theme="dark"] table.affinity th.num,
+html[data-theme="dark"] table.schedule th.num { background: #3a3128; color: #ded3c5; }
+html[data-theme="dark"] table.affinity .sticky,
+html[data-theme="dark"] table.schedule .sticky { background: #3a3128; }
+html[data-theme="dark"] table.affinity .sticky a,
+html[data-theme="dark"] table.schedule .sticky a { color: #ecc99b; }
+html[data-theme="dark"] td.matrix.is-forte  { background: #2b3a29; color: #9fd6a6; }
+html[data-theme="dark"] td.matrix.is-usable { background: #2e2822; color: #a89a88; }
+html[data-theme="dark"] td.matrix.is-weak   { background: #3d2626; color: #e79a9a; }
+html[data-theme="dark"] td.matrix.is-both   { background: #3a3222; color: #ddc188; }
+html[data-theme="dark"] .legend-item { background: #2e2822; border-color: #4d4237; color: #c6b8a6; }
+html[data-theme="dark"] .legend-item.is-forte  { background: #2b3a29; border-color: #4a6446; color: #9fd6a6; }
+html[data-theme="dark"] .legend-item.is-usable { background: #2e2822; border-color: #4d4237; color: #a89a88; }
+html[data-theme="dark"] .legend-item.is-weak   { background: #3d2626; border-color: #6b4040; color: #e79a9a; }
+html[data-theme="dark"] a.tag-owner { background: #25303d; border-color: #3c4c63; color: #a8c6ea; }
+html[data-theme="dark"] a.tag-owner:hover { background: #2e3d4e; }
+html[data-theme="dark"] a.skill-ref { color: #ecc99b; border-bottom-color: #6b5233; }
 html[data-theme="dark"] .rec-skill { color: #f0e7db; }
 html[data-theme="dark"] table.recotable .rec-tier th { background: #4a3d2b; color: #ecc99b; }
 html[data-theme="dark"] .statbar-track { background: #3a322a; }

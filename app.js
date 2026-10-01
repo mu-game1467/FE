@@ -50,7 +50,10 @@ const state = {
     // search text per record, aligned with `data`; see buildHaystacks
     haystack: null,
     // hidden-event page: which route's sections to show ('all' = every route)
-    eventRoute: 'all'
+    eventRoute: 'all',
+    // characters, kept loaded on every list page so the skills renderer can link
+    // each holder back to their character page
+    characters: null
 };
 
 /* ------------------------------------------------------------ helpers -- */
@@ -746,7 +749,7 @@ function renderClass(item) {
         </article>`;
 }
 
-function renderSkill(item) {
+function renderSkill(item, characters) {
     const extras = rows([
         ['習得', item.obtain],
         ['威力', item.power],
@@ -765,11 +768,8 @@ function renderSkill(item) {
                 </header>
                 ${item.effect ? `<p class="effect">${esc(item.effect)}</p>` : ''}
                 ${extras}
-                ${item.owners && item.owners.length ? `
-                    <div class="card-block">
-                        <h4>保有者</h4>
-                        ${tagList(item.owners)}
-                    </div>` : ''}
+                ${blazeValueNote(item)}
+                ${ownerLinks(item.owners, characters)}
             </div>
         </article>`;
 }
@@ -835,10 +835,18 @@ function renderListInner() {
     } else if (isNameTable) {
         container.classList.add('as-table');
         container.innerHTML = renderNameGrowthTable(list);
+    } else if (state.view === 'matrix') {
+        container.classList.add('as-table');
+        container.innerHTML = renderAffinityMatrix(list);
+    } else if (state.view === 'schedule') {
+        container.classList.add('as-table');
+        container.innerHTML = renderRecruitSchedule(state.data);
     } else {
         container.classList.remove('as-table');
         const render = RENDERERS[state.type] || renderItem;
-        container.innerHTML = list.map(render).join('');
+        // the skills renderer links each holder back to their character page, so
+        // it needs the character list; the others just ignore the extra argument
+        container.innerHTML = list.map((item) => render(item, state.characters)).join('');
     }
 
     const counter = document.getElementById('result-count');
@@ -1383,10 +1391,10 @@ function renderCharacterDetail(character, classes, container) {
     // values already carry their own markup here, hence rows(own, true)
     const own = [];
     if (character.personal_skill) {
-        own.push(['個人スキル', `<strong>${esc(character.personal_skill.name)}</strong>${character.personal_skill.effect ? `<br><span class="muted">${esc(character.personal_skill.effect)}</span>` : ''}`]);
+        own.push(['個人スキル', `${skillRefLink(character.personal_skill.name)}${character.personal_skill.effect ? `<br><span class="muted">${esc(character.personal_skill.effect)}</span>` : ''}`]);
     }
     (character.blood_seals || []).forEach((seal) => {
-        own.push(['血印', `<strong>${esc(seal.name)}</strong>${seal.effect ? `<br><span class="muted">${esc(seal.effect)}</span>` : ''}`]);
+        own.push(['血印', `${skillRefLink(seal.name)}${seal.effect ? `<br><span class="muted">${esc(seal.effect)}</span>` : ''}`]);
     });
     if (character.favorites) own.push(['好きなもの', esc(character.favorites)]);
 
@@ -1763,6 +1771,273 @@ async function loadClassDetailPage(id) {
 
 const STAT_KEYS = new Set(STATS.map((s) => s.key));
 
+/* ----------------------------------------------- skill affinity matrix -- */
+
+/**
+ * キャラクター x 技能のマトリクス。得意=緑 / 使用可能=灰 / 苦手=赤 で
+ * 一目で相性が見える。技能を軸に「どのキャラが得意か」を逆引きできる。
+ * characters 一覧の view として表示する。
+ *
+*/
+
+/** そのキャラが持つ技能（得意・使用可能・苦手の和集合） */
+function allSkillsOf(character) {
+    const set = new Set();
+    [].concat(character.forte_skills || [], character.usable_skills || [], character.weak_skills || []).forEach((s) => set.add(s));
+    return set;
+}
+
+/** データに出現する全技能。登場数の多い順に、同じ数なら名前順で安定排序。 */
+function allSkillNames(characters) {
+    const counts = new Map();
+    (characters || []).forEach((c) => {
+        allSkillsOf(c).forEach((skill) => counts.set(skill, (counts.get(skill) || 0) + 1));
+    });
+    return Array.from(counts.keys()).sort((a, b) => {
+        const d = (counts.get(b) || 0) - (counts.get(a) || 0);
+        return d !== 0 ? d : a.localeCompare(b, 'ja');
+    });
+}
+
+/** 1 セルの値と色区分: 'forte' | 'usable' | 'weak' | null(得意でも苦手でもなく該当なし) */
+function affinityOf(character, skill) {
+    const forte = (character.forte_skills || []).indexOf(skill) !== -1;
+    const weak = (character.weak_skills || []).indexOf(skill) !== -1;
+    if (forte && weak) return 'both';              // 両方 있는（データ上稀）
+    if (forte) return 'forte';
+    if (weak) return 'weak';
+    const usable = (character.usable_skills || []).indexOf(skill) !== -1;
+    return usable ? 'usable' : null;
+}
+
+function affinityGlyph(affinity) {
+    if (affinity === 'forte') return '得意';
+    if (affinity === 'weak') return '苦手';
+    if (affinity === 'both') return '得意/苦手';
+    if (affinity === 'usable') return '可';
+    return '';
+}
+
+/** 技能マトリクスの表。行=キャラクター、列=技能。セルは得意/可/苦手。 */
+function renderAffinityMatrix(list) {
+    if (!list.length) return emptyState('キャラクターが見つかりません');
+    // The columns come from every character, not from the filtered rows, so the
+    // header keeps a stable set of skills while the reader searches or sorts.
+    // Filtering decides the rows; a column that vanished with the row would make
+    // the table reflow on every keystroke.
+    const skills = allSkillNames(state.data);
+    if (!skills.length) return '<p class="muted">技能データがありません</p>';
+
+    const head = `
+        <thead>
+            <tr>
+                <th class="sticky">キャラ</th>
+                ${skills.map((s) => `<th class="num" title="${esc(s)}">${esc(s)}</th>`).join('')}
+            </tr>
+        </thead>`;
+
+    const body = list.map((c) => `
+        <tr>
+            <th class="sticky">${characterAvatar(c)}<a href="${encodeURIComponent(c.id)}/">${esc(c.name)}</a></th>
+            ${skills.map((skill) => {
+                const aff = affinityOf(c, skill);
+                const cls = aff ? ' is-' + aff : '';
+                const label = affinityGlyph(aff);
+                return `<td class="num matrix${cls}" title="${esc(c.name)} ${esc(skill)}">${esc(label)}</td>`;
+            }).join('')}
+        </tr>`).join('');
+
+    return `
+        <div class="tablewrap">
+            <table class="affinity">
+                ${head}
+                <tbody>${body}</tbody>
+            </table>
+        </div>
+        <p class="muted matrix-legend">
+            <span class="legend-item is-forte">得意</span>得意の技能。
+            <span class="legend-item is-usable">可</span>使用可能。
+            <span class="legend-item is-weak">苦手</span>苦手の技能。
+            選択中の検索・あ行ジャンプ・並び替えがそのまま反映されます。
+        </p>`;
+}
+
+/* ------------------------------------------- recruit schedule (by route) -- */
+
+/**
+ * ルートごとに「その章で誰が参加できる」を時系列に並べる表。
+ * 加入条件（支援Lv / 名声Lv）はしきい値なので、章と併せて読むと
+ * 「そのルートで何を育成すれば、誰を参加させられるか」が分かる。
+ * data/characters.json の recruit のみを使うので、推測は入らない。
+ */
+
+/** 参加できるキャラクターがいるルートのみ（全員対象外のルートは落とす）。 */
+function activeRoutes(characters) {
+    return ROUTES.filter((r) =>
+        (characters || []).some((c) => {
+            const e = (c.recruit || {})[r.id];
+            return e && e.method !== '対象外';
+        })
+    );
+}
+
+/** 章の並び順。"3章" と "2区分" はどちらも数値 3 / 2 に取る。 */
+function stageOrder(stage) {
+    return chapterNumber(stage);
+}
+
+/** そのキャラクターのそのルートでの参加条件。対象外・情報なしは null。 */
+function scheduleEntry(character, routeId) {
+    const e = (character.recruit || {})[routeId];
+    if (!e || e.method === '対象外' || !e.stage) return null;
+    return {
+        character,
+        routeId,
+        method: e.method || '',
+        part: e.part || '',
+        stage: e.stage,
+        order: stageOrder(e.stage),
+        place: e.place || '',
+        support: e.support_level,
+        fame: e.fame_level,
+        note: e.condition || e.note || ''
+    };
+}
+
+function scheduleCell(entry) {
+    if (entry.support === undefined && entry.fame === undefined) {
+        return `<span class="cell-main">${esc(entry.method)}</span><span class="cell-sub">${esc([entry.part, entry.place].filter(Boolean).join(' '))}</span>`;
+    }
+    const parts = [];
+    if (entry.support !== undefined) parts.push('支援' + esc(entry.support));
+    if (entry.fame !== undefined) parts.push('名声' + esc(entry.fame));
+    return `<span class="cell-main">${parts.join(' / ')}</span><span class="cell-sub">${esc(entry.place)}</span>`;
+}
+
+/** ルートごとにグルーピングした参加表。 */
+function renderRecruitSchedule(characters) {
+    const routes = activeRoutes(characters);
+    if (!routes.length) return emptyState('参加条件がありません');
+
+    const out = [];
+    routes.forEach((route) => {
+        const rows = [];
+        (characters || []).forEach((c) => {
+            const e = scheduleEntry(c, route.id);
+            if (e) rows.push(e);
+        });
+        if (!rows.length) return;
+        // 章の早い順 -> 支援Lv の低い順 -> 名声Lv の低い順 -> 名前順
+        rows.sort((a, b) => {
+            if (a.order !== b.order) return a.order - b.order;
+            const as = a.support === undefined ? -1 : a.support;
+            const bs = b.support === undefined ? -1 : b.support;
+            if (as !== bs) return as - bs;
+            const af = a.fame === undefined ? -1 : a.fame;
+            const bf = b.fame === undefined ? -1 : b.fame;
+            if (af !== bf) return af - bf;
+            return a.character.name.localeCompare(b.character.name, 'ja');
+        });
+
+        out.push(`
+            <section class="panel">
+                <h3>${esc(route.label)} <span class="muted">${rows.length}人</span></h3>
+                <div class="tablewrap">
+                    <table class="schedule">
+                        <thead>
+                            <tr>
+                                <th class="sticky">キャラ</th>
+                                <th class="num">章</th>
+                                <th>加入条件</th>
+                                <th>備考</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${rows.map((e) => `
+                                <tr>
+                                    <th class="sticky">${characterAvatar(e.character)}<a href="${assetUrl('characters/' + encodeURIComponent(e.character.id) + '/')}">${esc(e.character.name)}</a></th>
+                                    <td class="num">${esc(e.stage)}</td>
+                                    <td>${scheduleCell(e)}</td>
+                                    <td class="muted">${esc(e.note)}</td>
+                                </tr>`).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </section>`);
+    });
+
+    return `
+        <p class="muted">
+            支援Lv / 名声Lv は「その値に達すれば参加できる」しきい値です。先に条件を満たしておけば、掲載の章より前からでも参加できます。
+        </p>
+        ${out.join('')}`;
+}
+
+/* ------------------------------------------------------------ back links -- */
+
+/**
+ * スキルの「保有者」をキャラ詳細へ、キャラ詳細の個人スキル・血印を
+ * スキル一覧へ互相リンクさせる。データは追加せず、動線だけを繋ぐ。
+ */
+
+/** owners の値からキャラクターの id に解決できたものだけを返す。 */
+function resolveOwners(owners, characters) {
+    if (!owners || !owners.length) return [];
+    const known = new Map((characters || []).map((c) => [c.name, c]));
+    return owners.map((name) => ({ name, character: known.get(name) || null }));
+}
+
+/** スキルの保有者。キャラクターが見つかったものはリンクにする。 */
+function ownerLinks(owners, characters) {
+    const resolved = resolveOwners(owners, characters);
+    if (!resolved.length) return '';
+    return `
+        <div class="card-block">
+            <h4>保有者</h4>
+            <div class="taglist">
+                ${resolved.map((o) => (o.character
+                    ? `<a class="tag tag-owner" href="${assetUrl('characters/' + encodeURIComponent(o.character.id) + '/')}">${esc(o.name)}</a>`
+                    : `<span class="tag">${esc(o.name)}</span>`
+                )).join('')}
+            </div>
+        </div>`;
+}
+
+/** スキルの詳細ページ用のリンク付き保有者（characters が要る場面で使う）。 */
+function skillOwnerLinks(owners, characters) {
+    return ownerLinks(owners, characters);
+}
+
+/** キャラクター詳細の個人スキル・血印名を、スキル一覧の検索文字列に繋ぐ。 */
+function skillRefLink(name) {
+    if (!name) return '';
+    const q = encodeURIComponent(name);
+    return `<a class="skill-ref" href="${assetUrl('skills/')}?q=${q}">${esc(name)}</a>`;
+}
+
+/* ------------------------------------------------- blaze arts (no values) -- */
+
+/**
+ * Blaze arts numeric fields (obtain / power / range / hit / critical / stat_bonus)
+ * are already read from col_11..col_16 by tools/build-from-game8.ps1, but
+ * data/skills.json contains none of those keys at all. The upstream JSON has no
+ * values in those columns, so the columns render empty on purpose rather than
+ * because a mapping is missing. If the data ever gains them, they show up here
+ * with no further change.
+ */
+
+function hasBlazeValues(skill) {
+    return ['obtain', 'power', 'range', 'hit', 'critical', 'stat_bonus']
+        .some((k) => skill[k] !== undefined && skill[k] !== null && skill[k] !== '');
+}
+
+/** Says why a blaze arts card has no numbers, instead of leaving a blank. */
+function blazeValueNote(item) {
+    if (!item || item.type !== 'ブレイズアーツ') return '';
+    if (hasBlazeValues(item)) return '';
+    return '<p class="muted blaze-note">' + '威力・射程・命中などの数値は Game8 のデータに載っていないため、表示できません。' + '</p>';
+}
+
 /* ------------------------------------------------------- hidden events -- */
 
 /** "2章" -> 2, so a chapter column can sort numerically instead of by text. */
@@ -2057,7 +2332,7 @@ async function copyTable(button) {
 
 /* ---------------------------------------------------------- url state -- */
 
-const LIST_VIEWS = ['cards', 'table', 'names', 'compare'];
+const LIST_VIEWS = ['cards', 'table', 'names', 'compare', 'matrix', 'schedule'];
 
 /**
  * Restore the view state from the query string, so a filtered or re-sorted
@@ -2123,13 +2398,16 @@ function flushUrl() {
     }
 }
 
+/** Views that are only reachable from the characters page. */
+const CHARACTER_VIEWS = ['table', 'names', 'compare', 'matrix', 'schedule'];
+
 /** Drop state that does not apply to this page (e.g. view=names on /items/). */
 function validateState() {
     const options = SORT_OPTIONS[state.type] || SORT_OPTIONS.items;
     if (!options.some((o) => o.value === state.sort)) {
         state.sort = options.some((o) => o.value === 'default') ? 'default' : options[0].value;
     }
-    if (state.type !== 'characters' || LIST_VIEWS.indexOf(state.view) === -1) {
+    if (state.type !== 'characters' || CHARACTER_VIEWS.indexOf(state.view) === -1) {
         state.view = 'cards';
     }
 }
@@ -2195,6 +2473,8 @@ function buildToolbar() {
                     <option value="table"${state.view === 'table' ? ' selected' : ''}>加入条件の早見表</option>
                     <option value="names"${state.view === 'names' ? ' selected' : ''}>成長率一覧表</option>
                     <option value="compare"${state.view === 'compare' ? ' selected' : ''}>比較</option>
+                    <option value="matrix"${state.view === 'matrix' ? ' selected' : ''}>技相性マトリクス</option>
+                    <option value="schedule"${state.view === 'schedule' ? ' selected' : ''}>参加スケジュール</option>
                 </select>
             </label>
             <span class="control" id="table-controls" hidden>
@@ -2355,6 +2635,21 @@ async function loadData() {
                 </div>
             </div>`;
         return;
+    }
+
+    // The skills page links each holder to their character page, so it needs the
+    // character names too. A failure here only costs the links, never the page,
+    // so it is not allowed to reject the skills themselves.
+    if (state.type !== 'characters') {
+        try {
+            const people = await fetchJson(get('characters'));
+            state.characters = Array.isArray(people) ? people : [];
+        } catch (error) {
+            console.warn('characters.json not loaded; holder links disabled', error);
+            state.characters = [];
+        }
+    } else {
+        state.characters = state.data;
     }
 
     if (state.data.length) {
