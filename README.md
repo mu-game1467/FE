@@ -89,6 +89,18 @@ python -m http.server 8000
 npx serve
 ```
 
+## 文字化け・他言語の混入の確認
+
+日本語の文章やコメントを生成していると、中国語・韓国語などが紛れ込むことがあります。
+コミット前に次を走らせると、リポジトリ全体を走査して検出します（読み取りのみ。検出しても
+自動で直さず、該当行を自分で修正します）。
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools\scan-stray-characters.ps1
+```
+
+出力例: `Scanned 152 files, 0 with stray characters`。1 件でも検出されると終了コードが 1 になります。
+
 ## GitHub Pages での公開
 
 1. リポジトリの Settings → Pages

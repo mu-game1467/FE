@@ -1803,7 +1803,7 @@ function allSkillNames(characters) {
 function affinityOf(character, skill) {
     const forte = (character.forte_skills || []).indexOf(skill) !== -1;
     const weak = (character.weak_skills || []).indexOf(skill) !== -1;
-    if (forte && weak) return 'both';              // 両方 있는（データ上稀）
+    if (forte && weak) return 'both';              // 両方ある（データ上稀）
     if (forte) return 'forte';
     if (weak) return 'weak';
     const usable = (character.usable_skills || []).indexOf(skill) !== -1;
