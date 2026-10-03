@@ -28,7 +28,7 @@ GitHub Pages が `…/characters/` を `characters/index.html` に解決しま�
 ## 構成
 
 - `index.html` — ダッシュボード
-- `characters/` `classes/` `skills/` `items/` `events/` — 各一覧ページ（`index.html` を内包）
+- `characters/` `classes/` `skills/` `items/` `gear/` `events/` — 各一覧ページ（`index.html` を内包）
 - `characters/<名前>/index.html` — キャラクター詳細ページ（`tools/generate-character-pages.ps1` が生成）
 - `classes/<名前>/index.html` — 兵種詳細ページ（`tools/generate-class-pages.ps1` が生成）
 - `images/characters/` — キャラクター立ち絵（`tools/fetch-character-images.ps1` が取得）

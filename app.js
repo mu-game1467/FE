@@ -30,6 +30,7 @@ const PAGES = {
     classes:    { file: 'data/classes.json',    icon: '⚔️', label: '兵種' },
     skills:     { file: 'data/skills.json',     icon: '✨', label: 'スキル' },
     items:      { file: 'data/items.json',      icon: '📦', label: 'アイテム' },
+    gear:       { file: 'data/gear.json',       icon: '🛡️', label: '装備品' },
     events:     { file: 'data/events.json',     icon: '📜', label: '隠しイベント' }
 };
 
@@ -790,11 +791,47 @@ function renderItem(item) {
         </article>`;
 }
 
+/** Equipment: the stat block is shown as labelled numbers, not raw keys. */
+const GEAR_STAT_LABELS = [
+    { key: 'weight', label: '重さ' },
+    { key: 'def', label: '守備' },
+    { key: 'mag', label: '魔力' },
+    { key: 'res', label: '魔防' },
+    { key: 'hit', label: '命中' },
+    { key: 'avoid', label: '回避' },
+    { key: 'curse', label: '怨呪' }
+];
+
+function renderGear(item) {
+    const stats = item.stats || {};
+    const tags = [];
+    if (item.kind) tags.push(`<span class="tag">${esc(item.kind)}</span>`);
+    if (item.rarity) tags.push(`<span class="tag tag-class">${esc(item.rarity)}</span>`);
+
+    const numbers = GEAR_STAT_LABELS
+        .filter((s) => typeof stats[s.key] === 'number')
+        .map((s) => `<div class="kv"><span class="kv-label">${esc(s.label)}</span><span class="kv-value">${stats[s.key] > 0 ? '+' : ''}${esc(stats[s.key])}</span></div>`)
+        .join('');
+
+    return `
+        <article class="card" data-id="${esc(item.name)}">
+            <div class="card-content">
+                <header class="card-head">
+                    <h3 class="card-name">${esc(item.name)}</h3>
+                    <div class="taglist">${tags.join('')}</div>
+                </header>
+                ${numbers ? `<div class="card-block"><h4>数値</h4><div class="kvs">${numbers}</div></div>` : ''}
+                ${item.effect ? `<p class="effect">${esc(item.effect)}</p>` : ''}
+            </div>
+        </article>`;
+}
+
 const RENDERERS = {
     characters: renderCharacter,
     classes: renderClass,
     skills: renderSkill,
-    items: renderItem
+    items: renderItem,
+    gear: renderGear
 };
 
 function renderList() {
@@ -891,8 +928,11 @@ function sortData(list, mode) {
     }
 }
 
-/** effective value of one stat: character growth plus class growth bonus */
+/** effective value of one stat: character growth plus class growth bonus.
+ *  Equipment keeps its numbers under `stats`, so read from there first. */
 function statOf(item, key) {
+    const gear = (item && item.stats) || null;
+    if (gear && typeof gear[key] === 'number') return gear[key];
     return ((item.growth_rates || {})[key] || 0) + ((item.growth_bonus || {})[key] || 0);
 }
 
@@ -2271,6 +2311,15 @@ const SORT_OPTIONS = {
         { value: 'name', label: '名前順' }
     ],
     items: [{ value: 'name', label: '名前順' }],
+    gear: [
+        { value: 'name', label: '名前順' },
+        { value: 'weight', label: '重さが重い順' },
+        { value: 'def', label: '守備が高い順' },
+        { value: 'mag', label: '魔力が高い順' },
+        { value: 'res', label: '魔防が高い順' },
+        { value: 'hit', label: '命中が高い順' },
+        { value: 'avoid', label: '回避が高い順' }
+    ],
     events: [
         { value: 'route', label: 'ルート順' },
         { value: 'chapter', label: '章順' },
