@@ -18,6 +18,7 @@
 | `skills/index.html` → `/FE/skills/` | 個人スキル・血印・ルーツ・ブレイズアーツ／スキル／タイプ・兵種＆マスタースキル。保有者はキャラクター詳細へリンク。ブレイズアーツの威力・射程・命中などは Game8 のデータに数値列が無いため空欄で、その旨を明示 | `data/skills.json` |
 | `items/index.html` → `/FE/items/` | 消費アイテム・指南書など（手入力データ） | `data/items.json` |
 | `events/index.html` → `/FE/events/` | 隠しイベント22件。ルート（カイ／ディートリヒ／セオドラ／レダ）ごとに章・項目・発生条件の一覧。ルート絞り込み、イベント名・条件で検索、ルート順／章順／名前順で並び替え | `data/events.json` |
+| `gear/index.html` → `/FE/gear/` | 装備品23件（盾・杖・仮面・アクセ）。重さ・守備・魔力・魔防・命中・回避・怨呪を数値で持ち、種類（通常／呪宝）と効果文を併記。数値で並び替え | `data/gear.json` |
 
 各ページは1ディレクトリ下に置いてあり（`characters/index.html`）、
 GitHub Pages が `…/characters/` を `characters/index.html` に解決します。

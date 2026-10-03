@@ -1,0 +1,1175 @@
+[
+  {
+    "route":  "kai",
+    "name":  "グザラン",
+    "support_level":  1,
+    "fame_level":  2
+  },
+  {
+    "route":  "kai",
+    "name":  "ヨーカイ",
+    "support_level":  2,
+    "fame_level":  3,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low"
+  },
+  {
+    "route":  "kai",
+    "name":  "ノクチュラ",
+    "support_level":  1,
+    "fame_level":  4
+  },
+  {
+    "route":  "kai",
+    "name":  "ミカエラ",
+    "support_level":  3,
+    "fame_level":  5,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "kai",
+    "name":  "マジーデ",
+    "support_level":  2,
+    "fame_level":  5,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low"
+  },
+  {
+    "route":  "kai",
+    "name":  "ハルヴィン",
+    "support_level":  3,
+    "fame_level":  5,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "kai",
+    "name":  "ヌッツォ",
+    "support_level":  2,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "kai",
+    "name":  "ニネ",
+    "support_level":  3,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "kai",
+    "name":  "ナジャ",
+    "support_level":  3,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "kai",
+    "name":  "ヌディーヌ",
+    "support_level":  1,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "kai",
+    "name":  "セテス",
+    "support_level":  3,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "kai",
+    "name":  "エスメラルダ",
+    "support_level":  2,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "kai",
+    "name":  "アレキサンドラ",
+    "support_level":  2,
+    "fame_level":  7
+  },
+  {
+    "route":  "kai",
+    "name":  "ゴライアス",
+    "support_level":  3,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "kai",
+    "name":  "ダイトウ",
+    "support_level":  3,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "kai",
+    "name":  "ロレッタ",
+    "support_level":  3,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "kai",
+    "name":  "キロイカ",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "kai",
+    "name":  "イニオニ",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "kai",
+    "name":  "ジャスミン",
+    "support_level":  1,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "kai",
+    "name":  "リリアン",
+    "support_level":  2,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "kai",
+    "name":  "ライサンダー",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "kai",
+    "name":  "オリンピア",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "super"
+  },
+  {
+    "route":  "kai",
+    "name":  "シモン",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low"
+  },
+  {
+    "route":  "kai",
+    "name":  "ザーコネ",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low"
+  },
+  {
+    "route":  "kai",
+    "name":  "フィアナ",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "kai",
+    "name":  "ムウ",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "kai",
+    "name":  "ベンディッツ",
+    "support_level":  3,
+    "fame_level":  9
+  },
+  {
+    "route":  "kai",
+    "name":  "シロッコ",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "super"
+  },
+  {
+    "route":  "kai",
+    "name":  "ルルディヤー",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "kai",
+    "name":  "ソフィア",
+    "support_level":  3,
+    "fame_level":  9
+  },
+  {
+    "route":  "kai",
+    "name":  "ペペ",
+    "support_level":  1,
+    "fame_level":  9,
+    "note":  "ベルトラン外伝をクリア"
+  },
+  {
+    "route":  "kai",
+    "name":  "イオ",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "kai",
+    "name":  "ディエゴ",
+    "support_level":  3,
+    "fame_level":  10,
+    "note":  "オルヘル外伝をクリア"
+  },
+  {
+    "route":  "kai",
+    "name":  "カターニャ",
+    "support_level":  3,
+    "fame_level":  10
+  },
+  {
+    "route":  "kai",
+    "name":  "ウーシュラ",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low",
+    "note":  "タリムーン外伝をクリア"
+  },
+  {
+    "route":  "kai",
+    "name":  "ダンテ",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "kai",
+    "name":  "ジェスター",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "super"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ヨーカイ",
+    "support_level":  1,
+    "fame_level":  2
+  },
+  {
+    "route":  "dietrich",
+    "name":  "イオ",
+    "support_level":  2,
+    "fame_level":  3,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "キロイカ",
+    "support_level":  1,
+    "fame_level":  4,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ヌディーヌ",
+    "support_level":  2,
+    "fame_level":  5,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ウルタンド",
+    "support_level":  3,
+    "fame_level":  5,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ゴライアス",
+    "support_level":  3,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ノクチュラ",
+    "support_level":  1,
+    "fame_level":  6
+  },
+  {
+    "route":  "dietrich",
+    "name":  "オリンピア",
+    "support_level":  3,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "super"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ジェスター",
+    "support_level":  3,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "super"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ライサンダー",
+    "support_level":  3,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ムウ",
+    "support_level":  3,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "フィアナ",
+    "support_level":  3,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ザーコネ",
+    "support_level":  3,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "シモン",
+    "support_level":  3,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ベンディッツ",
+    "support_level":  2,
+    "fame_level":  7
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ウーシュラ",
+    "support_level":  3,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low",
+    "note":  "タリムーン外伝をクリア"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "イニオニ",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ニネ",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "グザラン",
+    "support_level":  3,
+    "fame_level":  8
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ダンテ",
+    "support_level":  2,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "カターニャ",
+    "support_level":  1,
+    "fame_level":  8
+  },
+  {
+    "route":  "dietrich",
+    "name":  "アレキサンドラ",
+    "support_level":  3,
+    "fame_level":  8
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ペペ",
+    "support_level":  3,
+    "fame_level":  8,
+    "note":  "ベルトラン外伝をクリア"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "バッカニア",
+    "support_level":  3,
+    "fame_level":  8,
+    "note":  "レダ外伝をクリア"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "リリアン",
+    "support_level":  2,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "マジーデ",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ピーテル",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "シロッコ",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "super"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ティアラ",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid",
+    "note":  "カイ外伝をクリア"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ディエゴ",
+    "support_level":  3,
+    "fame_level":  9,
+    "note":  "オルヘル外伝をクリア"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ソフィア",
+    "support_level":  3,
+    "fame_level":  9
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ロレッタ",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ルルディヤー",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ハルヴィン",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ジャスミン",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ヌッツォ",
+    "support_level":  1,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ゲイツ",
+    "support_level":  3,
+    "fame_level":  10,
+    "note":  "ベルトラン外伝をクリア。本戦を敗退（12章以降）"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "サラン",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low",
+    "note":  "アナトリア外伝をクリア"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ナジャ",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "dietrich",
+    "name":  "ダイトウ",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ソフィア",
+    "support_level":  1,
+    "fame_level":  2
+  },
+  {
+    "route":  "theodora",
+    "name":  "ノクチュラ",
+    "support_level":  1,
+    "fame_level":  3
+  },
+  {
+    "route":  "theodora",
+    "name":  "ザーコネ",
+    "support_level":  1,
+    "fame_level":  4,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ヌディーヌ",
+    "support_level":  3,
+    "fame_level":  5,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ダイトウ",
+    "support_level":  2,
+    "fame_level":  5,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ロレッタ",
+    "support_level":  3,
+    "fame_level":  5,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "theodora",
+    "name":  "シロッコ",
+    "support_level":  1,
+    "fame_level":  5,
+    "negotiation":  true,
+    "negotiation_difficulty":  "super"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ナジャ",
+    "support_level":  2,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ニネ",
+    "support_level":  3,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "theodora",
+    "name":  "アレキサンドラ",
+    "support_level":  1,
+    "fame_level":  6
+  },
+  {
+    "route":  "theodora",
+    "name":  "セテス",
+    "support_level":  3,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ダンテ",
+    "support_level":  3,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ウルタンド",
+    "support_level":  3,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ヌッツォ",
+    "support_level":  1,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ルルディヤー",
+    "support_level":  3,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ペペ",
+    "support_level":  2,
+    "fame_level":  7,
+    "note":  "ベルトラン外伝をクリア"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ハルヴィン",
+    "support_level":  3,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "theodora",
+    "name":  "シモン",
+    "support_level":  3,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ピーテル",
+    "support_level":  3,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "theodora",
+    "name":  "カターニャ",
+    "support_level":  3,
+    "fame_level":  7
+  },
+  {
+    "route":  "theodora",
+    "name":  "バッカニア",
+    "support_level":  3,
+    "fame_level":  8,
+    "note":  "レダ外伝をクリア"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ミカエラ",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ディエゴ",
+    "support_level":  2,
+    "fame_level":  8,
+    "note":  "オルヘル外伝をクリア"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ベンディッツ",
+    "support_level":  1,
+    "fame_level":  8
+  },
+  {
+    "route":  "theodora",
+    "name":  "グザラン",
+    "support_level":  3,
+    "fame_level":  8
+  },
+  {
+    "route":  "theodora",
+    "name":  "マジーデ",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ジャスミン",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "theodora",
+    "name":  "イニオニ",
+    "support_level":  1,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ヨーカイ",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ウーシュラ",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low",
+    "note":  "タリムーン外伝をクリア"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ジェスター",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "super"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ムウ",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "theodora",
+    "name":  "オリンピア",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "super"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ゴライアス",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "theodora",
+    "name":  "フィアナ",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "theodora",
+    "name":  "エスメラルダ",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "theodora",
+    "name":  "イオ",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "theodora",
+    "name":  "キロイカ",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "theodora",
+    "name":  "ティアラ",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid",
+    "note":  "カイ外伝をクリア"
+  },
+  {
+    "route":  "reda",
+    "name":  "カターニャ",
+    "support_level":  1,
+    "fame_level":  2
+  },
+  {
+    "route":  "reda",
+    "name":  "グザラン",
+    "support_level":  1,
+    "fame_level":  3
+  },
+  {
+    "route":  "reda",
+    "name":  "ジャスミン",
+    "support_level":  2,
+    "fame_level":  4,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "reda",
+    "name":  "キロイカ",
+    "support_level":  1,
+    "fame_level":  4,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "reda",
+    "name":  "ザーコネ",
+    "support_level":  2,
+    "fame_level":  5,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low"
+  },
+  {
+    "route":  "reda",
+    "name":  "フィアナ",
+    "support_level":  3,
+    "fame_level":  5,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "reda",
+    "name":  "ダイトウ",
+    "support_level":  2,
+    "fame_level":  5,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "reda",
+    "name":  "ロレッタ",
+    "support_level":  3,
+    "fame_level":  5,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "reda",
+    "name":  "イオ",
+    "support_level":  1,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "reda",
+    "name":  "エスメラルダ",
+    "support_level":  3,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "reda",
+    "name":  "ミカエラ",
+    "support_level":  3,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "reda",
+    "name":  "シモン",
+    "support_level":  3,
+    "fame_level":  6,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low"
+  },
+  {
+    "route":  "reda",
+    "name":  "イニオニ",
+    "support_level":  1,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "reda",
+    "name":  "ベンディッツ",
+    "support_level":  3,
+    "fame_level":  7
+  },
+  {
+    "route":  "reda",
+    "name":  "ライサンダー",
+    "support_level":  3,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "reda",
+    "name":  "ソフィア",
+    "support_level":  3,
+    "fame_level":  7
+  },
+  {
+    "route":  "reda",
+    "name":  "リリアン",
+    "support_level":  2,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "reda",
+    "name":  "ルルディヤー",
+    "support_level":  3,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "reda",
+    "name":  "ハルヴィン",
+    "support_level":  3,
+    "fame_level":  7,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "reda",
+    "name":  "ディエゴ",
+    "support_level":  3,
+    "fame_level":  8,
+    "note":  "オルヘル外伝をクリア"
+  },
+  {
+    "route":  "reda",
+    "name":  "ニネ",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "reda",
+    "name":  "ウルタンド",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "reda",
+    "name":  "ティアラ",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid",
+    "note":  "カイ外伝をクリア"
+  },
+  {
+    "route":  "reda",
+    "name":  "サラン",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low",
+    "note":  "アナトリア外伝をクリア"
+  },
+  {
+    "route":  "reda",
+    "name":  "ヨーカイ",
+    "support_level":  3,
+    "fame_level":  8,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low"
+  },
+  {
+    "route":  "reda",
+    "name":  "ノクチュラ",
+    "support_level":  3,
+    "fame_level":  8
+  },
+  {
+    "route":  "reda",
+    "name":  "ナジャ",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "reda",
+    "name":  "ファビオ",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low",
+    "note":  "ディートリヒ外伝をクリア。本戦を敗退（11月4日以降）"
+  },
+  {
+    "route":  "reda",
+    "name":  "マジーデ",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "low"
+  },
+  {
+    "route":  "reda",
+    "name":  "ヌッツォ",
+    "support_level":  3,
+    "fame_level":  9,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "reda",
+    "name":  "ヌディーヌ",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "mid"
+  },
+  {
+    "route":  "reda",
+    "name":  "アレキサンドラ",
+    "support_level":  3,
+    "fame_level":  10
+  },
+  {
+    "route":  "reda",
+    "name":  "ダンテ",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "reda",
+    "name":  "セテス",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "reda",
+    "name":  "ジェスター",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "super"
+  },
+  {
+    "route":  "reda",
+    "name":  "ゴライアス",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  },
+  {
+    "route":  "reda",
+    "name":  "ピーテル",
+    "support_level":  3,
+    "fame_level":  10,
+    "negotiation":  true,
+    "negotiation_difficulty":  "high"
+  }
+]

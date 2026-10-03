@@ -1,0 +1,223 @@
+[
+  {
+    "name":  "木製の盾",
+    "kind":  "盾",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  2,
+      "def":  1
+    },
+    "effect":  ""
+  },
+  {
+    "name":  "青銅の盾",
+    "kind":  "盾",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  3,
+      "def":  2
+    },
+    "effect":  ""
+  },
+  {
+    "name":  "鉄の盾",
+    "kind":  "盾",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  4,
+      "def":  3
+    },
+    "effect":  ""
+  },
+  {
+    "name":  "銀の盾",
+    "kind":  "盾",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  4,
+      "def":  5
+    },
+    "effect":  ""
+  },
+  {
+    "name":  "魔封じの盾",
+    "kind":  "盾",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  4,
+      "def":  1,
+      "res":  5
+    },
+    "effect":  ""
+  },
+  {
+    "name":  "苦悶の盾",
+    "kind":  "盾",
+    "rarity":  "呪宝",
+    "stats":  {
+      "curse":  1,
+      "weight":  8
+    },
+    "effect":  "冥界の昏き力を宿した盾。魔法攻撃された時、50%で発動。受けるダメージを半減する。"
+  },
+  {
+    "name":  "魔道の杖",
+    "kind":  "杖",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  3,
+      "mag":  3
+    },
+    "effect":  ""
+  },
+  {
+    "name":  "修道会の杖",
+    "kind":  "杖",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  3,
+      "mag":  1,
+      "res":  3
+    },
+    "effect":  ""
+  },
+  {
+    "name":  "癒しの杖",
+    "kind":  "杖",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  3
+    },
+    "effect":  "魔法で味方を回復する時、回復量+10"
+  },
+  {
+    "name":  "波乱の仮面",
+    "kind":  "仮面",
+    "rarity":  "呪宝",
+    "stats":  {
+      "curse":  1,
+      "weight":  3
+    },
+    "effect":  "冥界の昏き力を宿した仮面。攻撃時、敵が混乱状態なら、与えるダメージが1.5倍になる。"
+  },
+  {
+    "name":  "射手の指輪",
+    "kind":  "アクセ",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  3,
+      "hit":  5
+    },
+    "effect":  ""
+  },
+  {
+    "name":  "毒喰の宝珠",
+    "kind":  "アクセ",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  4
+    },
+    "effect":  "攻撃された時、敵が毒状態なら、受けるダメージを80%に抑える"
+  },
+  {
+    "name":  "毒狩の宝珠",
+    "kind":  "アクセ",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  15
+    },
+    "effect":  "攻撃時、敵が毒状態なら、与えるダメージが1.3倍になる"
+  },
+  {
+    "name":  "迅雷の宝珠",
+    "kind":  "アクセ",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  5
+    },
+    "effect":  "戦技での攻撃時、10%で発動。与えるダメージが1.5倍になる。"
+  },
+  {
+    "name":  "轟炎の宝珠",
+    "kind":  "アクセ",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  5
+    },
+    "effect":  "戦技での攻撃時、30%で発動。命中+20"
+  },
+  {
+    "name":  "翠嵐の宝珠",
+    "kind":  "アクセ",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  5
+    },
+    "effect":  "戦技での攻撃時、30%で発動。その戦闘中、回避+20"
+  },
+  {
+    "name":  "奇跡の宝珠",
+    "kind":  "アクセ",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  5
+    },
+    "effect":  "攻撃された時、3%で発動。受けるダメージを0にする。"
+  },
+  {
+    "name":  "斧殺しの護符",
+    "kind":  "アクセ",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  4
+    },
+    "effect":  "戦闘時、敵が斧なら、命中・回避+15"
+  },
+  {
+    "name":  "弓殺しの護符",
+    "kind":  "アクセ",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  4
+    },
+    "effect":  "戦闘時、敵が弓なら、命中・回避+15"
+  },
+  {
+    "name":  "海霊のお守り",
+    "kind":  "アクセ",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  3
+    },
+    "effect":  "隣接する敵の幸運-5"
+  },
+  {
+    "name":  "電子攪乱索",
+    "kind":  "アクセ",
+    "rarity":  "通常",
+    "stats":  {
+      "weight":  5
+    },
+    "effect":  "古代技術で造られた特殊合金製の綱。魔法攻撃の命中時、20%で発動。敵を混乱状態にする。"
+  },
+  {
+    "name":  "至福なる舌",
+    "kind":  "アクセ",
+    "rarity":  "呪宝",
+    "stats":  {
+      "curse":  1,
+      "weight":  8
+    },
+    "effect":  "冥界の昏き力を宿した舌。敵を倒した時、自分のHPを中回復する。"
+  },
+  {
+    "name":  "魔毒の骨鎖",
+    "kind":  "アクセ",
+    "rarity":  "呪宝",
+    "stats":  {
+      "curse":  1,
+      "weight":  8
+    },
+    "effect":  "冥界の昏き力を宿した鎖。魔法攻撃の命中時、50%で発動。敵を毒状態にする。"
+  }
+]
