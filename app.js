@@ -59,6 +59,9 @@ const state = {
 
 /* ------------------------------------------------------------ helpers -- */
 
+/** スカウト交渉の難易度。データ側のキーは low / mid / high / super */
+const NEGOTIATION_LABELS = { low: '低', mid: '中', high: '高', super: '超' };
+
 function esc(value) {
     if (value === null || value === undefined) return '';
     return String(value)
@@ -113,7 +116,21 @@ function haystack(item) {
         parts.push(String(value));
     };
     walk(item);
+    // 難易度のキーは英語なので、日本語のラベルも検索対象に含める
+    walkNegotiationLabels(item, parts);
     return parts.join(' ').toLowerCase();
+}
+
+/** レコード内の交渉難易度を検索用の文字列へ足す */
+function walkNegotiationLabels(value, parts) {
+    if (value === null || value === undefined) return;
+    if (Array.isArray(value)) { value.forEach((v) => walkNegotiationLabels(v, parts)); return; }
+    if (typeof value === 'object') {
+        Object.entries(value).forEach(([key, val]) => {
+            if (key === 'negotiation_difficulty' && val) parts.push(NEGOTIATION_LABELS[val] || val);
+            walkNegotiationLabels(val, parts);
+        });
+    }
 }
 
 /**
@@ -369,7 +386,7 @@ function renderCharacter(item) {
                 <div class="card-block">
                     <h4>加入条件</h4>
                     <table class="mini">
-                        <thead><tr><th>ルート</th><th>方式</th><th>支援</th><th>名声</th><th>その他</th></tr></thead>
+                        <thead><tr><th>ルート</th><th>方式</th><th>支援</th><th>名声</th><th>交渉</th><th>その他</th></tr></thead>
                         <tbody>
                         ${ROUTES.filter((r) => item.recruit[r.id]).map((r) => {
                             const e = item.recruit[r.id];
@@ -380,6 +397,7 @@ function renderCharacter(item) {
                                 <td>${esc(e.method || '')}</td>
                                 <td class="num">${e.support_level === undefined ? '' : esc(e.support_level)}</td>
                                 <td class="num">${e.fame_level === undefined ? '' : esc(e.fame_level)}</td>
+                                <td>${negotiationCell(e)}</td>
                                 <td class="muted">${esc(other)}</td>
                             </tr>`;
                         }).join('')}
@@ -1447,6 +1465,7 @@ function renderCharacterDetail(character, classes, container) {
             <td>${esc(e.method || '')}</td>
             <td class="num">${e.support_level === undefined ? '' : esc(e.support_level)}</td>
             <td class="num">${e.fame_level === undefined ? '' : esc(e.fame_level)}</td>
+            <td>${negotiationCell(e)}</td>
             <td class="muted">${esc(other)}</td>
         </tr>`;
     }).join('');
@@ -1485,7 +1504,7 @@ function renderCharacterDetail(character, classes, container) {
             <section class="panel">
                 <h3>加入条件</h3>
                 <table class="mini">
-                    <thead><tr><th>ルート</th><th>方式</th><th>支援</th><th>名声</th><th>その他</th></tr></thead>
+                    <thead><tr><th>ルート</th><th>方式</th><th>支援</th><th>名声</th><th>交渉</th><th>その他</th></tr></thead>
                     <tbody>${recruitRows}</tbody>
                 </table>
             </section>` : ''}
@@ -1807,6 +1826,14 @@ async function loadClassDetailPage(id) {
                 </div>
             </div>`;
     }
+}
+
+/** 1つのルートの交渉条件のセル。交渉が無ければ空文字 */
+function negotiationCell(entry) {
+    if (!entry || !entry.negotiation) return '';
+    const level = entry.negotiation_difficulty;
+    const label = level ? (NEGOTIATION_LABELS[level] || level) : '';
+    return `<span class="tag tag-nego">${label ? '交渉 ' + esc(label) : '交渉'}</span>`;
 }
 
 const STAT_KEYS = new Set(STATS.map((s) => s.key));

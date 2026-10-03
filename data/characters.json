@@ -125,7 +125,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -134,7 +136,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -143,7 +147,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  1,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "reda":  {
         "method":  "スカウト",
@@ -152,7 +158,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  1,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       }
     }
   },
@@ -219,7 +227,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  2,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -228,7 +238,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  1,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -237,7 +249,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  1,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "reda":  {
         "method":  "スカウト",
@@ -246,7 +260,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       }
     }
   },
@@ -315,7 +331,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  1,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -324,7 +342,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -333,7 +353,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "reda":  {
         "method":  "スカウト",
@@ -342,7 +364,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  2,
         "fame_level":  4,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       }
     }
   },
@@ -409,7 +433,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -418,7 +444,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  1,
         "fame_level":  4,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -427,7 +455,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "reda":  {
         "method":  "スカウト",
@@ -436,7 +466,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  1,
         "fame_level":  4,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       }
     }
   },
@@ -581,7 +613,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  2,
         "fame_level":  5,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -590,7 +624,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -599,7 +635,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low"
       },
       "reda":  {
         "method":  "スカウト",
@@ -608,7 +646,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low"
       }
     }
   },
@@ -677,7 +717,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -686,7 +728,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -695,7 +739,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  1,
         "fame_level":  4,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low"
       },
       "reda":  {
         "method":  "スカウト",
@@ -704,7 +750,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  2,
         "fame_level":  5,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low"
       }
     }
   },
@@ -773,7 +821,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  5,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -782,7 +832,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -791,7 +843,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "reda":  {
         "method":  "スカウト",
@@ -800,7 +854,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       }
     }
   },
@@ -875,7 +931,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -884,7 +942,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -893,7 +953,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "reda":  {
         "method":  "スカウト",
@@ -902,7 +964,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  5,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       }
     }
   },
@@ -971,7 +1035,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -980,7 +1046,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -989,7 +1057,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  2,
         "fame_level":  5,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "reda":  {
         "method":  "スカウト",
@@ -998,7 +1068,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  2,
         "fame_level":  5,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       }
     }
   },
@@ -1067,7 +1139,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -1076,7 +1150,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -1085,7 +1161,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "reda":  {
         "method":  "スカウト",
@@ -1094,7 +1172,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       }
     }
   },
@@ -1167,7 +1247,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -1176,7 +1258,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -1185,7 +1269,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "reda":  {
         "method":  "スカウト",
@@ -1194,7 +1280,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       }
     }
   },
@@ -1263,7 +1351,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度超）"
+        "condition":  "交渉あり（難易度超）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "super"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -1272,7 +1362,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度超）"
+        "condition":  "交渉あり（難易度超）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "super"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -1281,7 +1373,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度超）"
+        "condition":  "交渉あり（難易度超）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "super"
       },
       "reda":  {
         "method":  "スカウト",
@@ -1290,7 +1384,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度超）"
+        "condition":  "交渉あり（難易度超）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "super"
       }
     }
   },
@@ -1359,7 +1455,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -1368,7 +1466,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -1377,7 +1477,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  5,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "reda":  {
         "method":  "スカウト",
@@ -1386,7 +1488,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  5,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       }
     }
   },
@@ -1459,7 +1563,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "dietrich":  {
         "method":  "対象外"
@@ -1471,7 +1577,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "reda":  {
         "method":  "スカウト",
@@ -1480,7 +1588,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       }
     }
   },
@@ -1548,7 +1658,8 @@
         "stage":  "3章",
         "place":  "帝都ダグシオン",
         "support_level":  1,
-        "fame_level":  9
+        "fame_level":  9,
+        "note":  "ベルトラン外伝をクリア"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -1556,7 +1667,8 @@
         "stage":  "4章",
         "place":  "帝都ダグシオン",
         "support_level":  3,
-        "fame_level":  8
+        "fame_level":  8,
+        "note":  "ベルトラン外伝をクリア"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -1564,7 +1676,8 @@
         "stage":  "5章",
         "place":  "帝都ダグシオン",
         "support_level":  2,
-        "fame_level":  7
+        "fame_level":  7,
+        "note":  "ベルトラン外伝をクリア"
       },
       "reda":  {
         "method":  "対象外"
@@ -1820,7 +1933,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  2,
         "fame_level":  3,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -1837,7 +1952,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low"
       },
       "reda":  {
         "method":  "スカウト",
@@ -1846,7 +1963,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low"
       }
     }
   },
@@ -2321,7 +2440,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  1,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -2330,7 +2451,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  2,
         "fame_level":  5,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -2339,7 +2462,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  5,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "reda":  {
         "method":  "スカウト",
@@ -2348,7 +2473,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       }
     }
   },
@@ -2509,7 +2636,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -2518,7 +2647,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  2,
         "fame_level":  3,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -2527,7 +2658,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "reda":  {
         "method":  "スカウト",
@@ -2536,7 +2669,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  1,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       }
     }
   },
@@ -2697,7 +2832,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -2706,7 +2843,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -2715,7 +2854,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  2,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "reda":  {
         "method":  "スカウト",
@@ -2724,7 +2865,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       }
     }
   },
@@ -2796,7 +2939,10 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low",
+        "note":  "アナトリア外伝をクリア"
       },
       "theodora":  {
         "method":  "対象外"
@@ -2808,7 +2954,10 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low",
+        "note":  "アナトリア外伝をクリア"
       }
     }
   },
@@ -2963,7 +3112,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -2972,7 +3123,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -2981,7 +3134,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "reda":  {
         "method":  "スカウト",
@@ -2990,7 +3145,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       }
     }
   },
@@ -3058,7 +3215,8 @@
         "stage":  "3章",
         "place":  "帝都ダグシオン",
         "support_level":  3,
-        "fame_level":  10
+        "fame_level":  10,
+        "note":  "オルヘル外伝をクリア"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -3066,7 +3224,8 @@
         "stage":  "4章",
         "place":  "帝都ダグシオン",
         "support_level":  3,
-        "fame_level":  9
+        "fame_level":  9,
+        "note":  "オルヘル外伝をクリア"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -3074,7 +3233,8 @@
         "stage":  "5章",
         "place":  "帝都ダグシオン",
         "support_level":  2,
-        "fame_level":  8
+        "fame_level":  8,
+        "note":  "オルヘル外伝をクリア"
       },
       "reda":  {
         "method":  "スカウト",
@@ -3082,7 +3242,8 @@
         "stage":  "4章",
         "place":  "帝都ダグシオン",
         "support_level":  3,
-        "fame_level":  8
+        "fame_level":  8,
+        "note":  "オルヘル外伝をクリア"
       }
     }
   },
@@ -3246,7 +3407,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -3255,7 +3418,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -3264,7 +3429,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low"
       },
       "reda":  {
         "method":  "スカウト",
@@ -3273,7 +3440,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low"
       }
     }
   },
@@ -3340,7 +3509,10 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low",
+        "note":  "タリムーン外伝をクリア"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -3349,7 +3521,10 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low",
+        "note":  "タリムーン外伝をクリア"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -3358,7 +3533,10 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low",
+        "note":  "タリムーン外伝をクリア"
       },
       "reda":  {
         "method":  "対象外"
@@ -3516,7 +3694,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -3525,7 +3705,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  2,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -3534,7 +3716,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "reda":  {
         "method":  "スカウト",
@@ -3543,7 +3727,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       }
     }
   },
@@ -3614,7 +3800,8 @@
         "stage":  "4章",
         "place":  "帝都ダグシオン",
         "support_level":  3,
-        "fame_level":  10
+        "fame_level":  10,
+        "note":  "ベルトラン外伝をクリア。本戦を敗退（12章以降）"
       },
       "theodora":  {
         "method":  "対象外"
@@ -3768,7 +3955,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -3777,7 +3966,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -3786,7 +3977,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "reda":  {
         "method":  "ストーリー",
@@ -3861,7 +4054,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度超）"
+        "condition":  "交渉あり（難易度超）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "super"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -3870,7 +4065,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度超）"
+        "condition":  "交渉あり（難易度超）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "super"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -3879,7 +4076,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度超）"
+        "condition":  "交渉あり（難易度超）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "super"
       },
       "reda":  {
         "method":  "ストーリー",
@@ -3954,7 +4153,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度超）"
+        "condition":  "交渉あり（難易度超）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "super"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -3963,7 +4164,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度超）"
+        "condition":  "交渉あり（難易度超）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "super"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -3972,7 +4175,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  1,
         "fame_level":  5,
-        "condition":  "交渉あり（難易度超）"
+        "condition":  "交渉あり（難易度超）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "super"
       },
       "reda":  {
         "method":  "ストーリー",
@@ -4049,7 +4254,8 @@
         "stage":  "5章",
         "place":  "帝都ダグシオン",
         "support_level":  3,
-        "fame_level":  8
+        "fame_level":  8,
+        "note":  "レダ外伝をクリア"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -4057,7 +4263,8 @@
         "stage":  "5章",
         "place":  "帝都ダグシオン",
         "support_level":  3,
-        "fame_level":  8
+        "fame_level":  8,
+        "note":  "レダ外伝をクリア"
       },
       "reda":  {
         "method":  "ストーリー",
@@ -4132,7 +4339,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -4141,7 +4350,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "theodora":  {
         "method":  "ストーリー",
@@ -4156,7 +4367,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       }
     }
   },
@@ -4225,7 +4438,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  2,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "dietrich":  {
         "method":  "スカウト",
@@ -4234,7 +4449,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  2,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "theodora":  {
         "method":  "ストーリー",
@@ -4249,7 +4466,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  2,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       }
     }
   },
@@ -4468,7 +4687,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  5,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "dietrich":  {
         "method":  "ストーリー",
@@ -4483,7 +4704,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       },
       "reda":  {
         "method":  "スカウト",
@@ -4492,7 +4715,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid"
       }
     }
   },
@@ -4567,7 +4792,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  2,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "dietrich":  {
         "method":  "ストーリー",
@@ -4582,7 +4809,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "reda":  {
         "method":  "スカウト",
@@ -4591,7 +4820,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       }
     }
   },
@@ -4672,7 +4903,10 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度低）"
+        "condition":  "交渉あり（難易度低）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "low",
+        "note":  "ディートリヒ外伝をクリア。本戦を敗退（11月4日以降）"
       }
     }
   },
@@ -4747,7 +4981,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  5,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -4756,7 +4992,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  6,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "reda":  {
         "method":  "スカウト",
@@ -4765,7 +5003,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       }
     }
   },
@@ -4840,7 +5080,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -4849,7 +5091,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  7,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       },
       "reda":  {
         "method":  "スカウト",
@@ -4858,7 +5102,9 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度高）"
+        "condition":  "交渉あり（難易度高）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "high"
       }
     }
   },
@@ -4933,7 +5179,10 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  9,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid",
+        "note":  "カイ外伝をクリア"
       },
       "theodora":  {
         "method":  "スカウト",
@@ -4942,7 +5191,10 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  10,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid",
+        "note":  "カイ外伝をクリア"
       },
       "reda":  {
         "method":  "スカウト",
@@ -4951,7 +5203,10 @@
         "place":  "帝都ダグシオン",
         "support_level":  3,
         "fame_level":  8,
-        "condition":  "交渉あり（難易度中）"
+        "condition":  "交渉あり（難易度中）",
+        "negotiation":  true,
+        "negotiation_difficulty":  "mid",
+        "note":  "カイ外伝をクリア"
       }
     }
   },

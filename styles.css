@@ -673,6 +673,8 @@ a.skill-ref:hover { border-bottom-style: solid; }
 
 /* the recommendation table's forte match, numbered by the character's priority */
 .tag-forte { background: #e8f2e4; border-color: #b4d3a4; color: #2e6b3f; font-weight: 600; }
+/* スカウト交渉が必要なルートに付ける目印 */
+.tag-nego { background: #fdf0e4; border-color: #e0bd97; color: #8b5a20; font-weight: 600; }
 /* a 主要技能 / 選択技能 the class forces but the character is 苦手 at.
    Mirrors .skill-tag.weak so the two read as the same warning. */
 .tag-weak { background: #f8e6e6; border-color: #dda9a9; color: #a33; font-weight: 600; }
