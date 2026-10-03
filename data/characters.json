@@ -1140,7 +1140,10 @@
       "name":  "重量級の戦士",
       "effect":  "騎兵、飛行の兵種になれない、体格+5"
     },
-    "blocked_move_types":  [ "騎乗", "騎兵", "飛行" ],
+    "blocked_move_types":  [
+      "騎兵",
+      "飛行"
+    ],
     "start":  {
       "class":  "兵士",
       "level":  8,
@@ -3128,7 +3131,6 @@
       "name":  "堅牢堅固",
       "effect":  "守備+5、重装になる。騎兵、飛行の兵種になれない。"
     },
-    "blocked_move_types":  [ "騎乗", "騎兵", "飛行" ],
     "blood_seals":  [
       {
         "name":  "魂魄の天冠",
@@ -3138,6 +3140,10 @@
         "name":  "使徒の天冠",
         "effect":  "攻撃時、20%で発動、命中+20"
       }
+    ],
+    "blocked_move_types":  [
+      "騎兵",
+      "飛行"
     ],
     "start":  {
       "class":  "呪い師",

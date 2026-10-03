@@ -57,6 +57,29 @@ function Num([object]$v) {
     return $null
 }
 
+# Japanese literals are built from code points so this script stays ASCII only
+# (Windows PowerShell reads BOM-less .ps1 as ANSI and would corrupt them).
+function U { param([string]$hex) -join (($hex -split '\s+') | Where-Object { $_ } | ForEach-Object { [char][Convert]::ToInt32($_, 16) }) }
+
+$Female  = U '5973 6027'   # "jo sex" (women)
+$Male    = U '7537'        # "dan" (men, the value app.js compares against gender)
+$MaleSex = U '7537 6027'   # "dan sex" (men, as the lock text reads)
+$Only    = U '9650 5B9A'   # "limited to"
+$NA      = U '5BFE 8C61 5916'   # "not applicable"
+# A literal range: PowerShell would turn two code points into a single character,
+# which is not the character class a regex needs.
+# Kanji plus katakana, because a movement type such as 騎乗 is written in
+# katakana while the skill effect may use either script.
+$Kanbun  = '\u4e00-\u9fff\u30a0-\u30ff'
+$NoClassOf = U '306E 5175 7A2E 306B 306A 308C 306A 3044'   # "...cannot become a class"
+# The type list is written before the phrase and separated by ideographic
+# commas, so capture the whole run and let SplitList break it apart. The run is
+# matched lazily; a greedy match would swallow the comma and join two types.
+# The list of types sits right before the phrase, separated by ideographic
+# commas. Scan backwards from the phrase instead of guessing a list length: take
+# the two to four characters that precede it, then split on the comma.
+$NoClassPattern = '([\u4e00-\u9fff\u30a0-\u30ff]{2,4}?)[\u3001]?([\u4e00-\u9fff\u30a0-\u30ff]{2,4}?)?[\u3001]?' + $NoClassOf
+
 # id-safe slug (japanese kept as-is; these are only used as DOM ids)
 function Slug([string]$s) {
     $t = $s -replace '[^0-9A-Za-z\u3040-\u30ff\u4e00-\u9faf]+', '_'
@@ -145,6 +168,18 @@ $baseRows  = $groups['23049']   # starting class + level 1 stats
 
 function RowByTitle($rows, [string]$title) {
     return $rows | Where-Object { $_.title -eq $title } | Select-Object -First 1
+}
+
+# Every movement type any class actually uses, so a movement restriction read
+# off an effect text can be checked against this instead of trusted blindly.
+$knownMoveTypes = @{}
+foreach ($cl in $classRows) {
+    $mv = Clean $cl.col_33
+    if ($mv) {
+        foreach ($part in (SplitList $mv)) {
+            if (-not $knownMoveTypes.ContainsKey($part)) { $knownMoveTypes[$part] = $true }
+        }
+    }
 }
 
 # ------------------------------------------- skills / blood seals / roots -----
@@ -245,6 +280,32 @@ foreach ($r in $charRows) {
     }
     if ($seals.Count) { $c['blood_seals'] = $seals }
 
+    # Movement types this unit may never take, read off the effect text of the
+    # personal skill or a blood seal that forbids a class.
+    $blocked = New-Object System.Collections.Generic.List[string]
+    $effectTexts = @()
+    if ($c['personal_skill'] -and $c['personal_skill']['effect']) { $effectTexts += $c['personal_skill']['effect'] }
+    foreach ($s in $seals) { if ($s['effect']) { $effectTexts += $s['effect'] } }
+    foreach ($txt in $effectTexts) {
+        foreach ($mm in [regex]::Matches($txt, $NoClassPattern)) {
+            foreach ($grp in @($mm.Groups[1], $mm.Groups[2])) {
+                if (-not $grp.Success) { continue }
+                foreach ($mv in (SplitList $grp.Value)) {
+                    # keep only names some class actually uses; a loose match can
+                    # run into the surrounding sentence and invent a type
+                    if ($knownMoveTypes.ContainsKey($mv) -and -not $blocked.Contains($mv)) { $blocked.Add($mv) }
+                }
+            }
+        }
+    }
+    # The in-game mounted term covers both of ours, so list both spellings.
+    $Mounted = U '9A0E 4E57'
+    $Rider   = U '9A0E 5175'
+    if ($blocked.Contains($Mounted)) {
+        foreach ($alt in @($Mounted, $Rider)) { if (-not $blocked.Contains($alt)) { $blocked.Add($alt) } }
+    }
+    if ($blocked.Count) { $c['blocked_move_types'] = @($blocked) }
+
     # ---- status when the unit first appears (group 23049).
     #      Note: col_2 is the level the unit joins at (1 for the protagonists and
     #      chapter 1 recruits, 8 / 12 / 23 / 45 for later recruits).
@@ -310,6 +371,16 @@ foreach ($r in $classRows) {
         name = $name
         tier = (Clean $r.col_1)
     }
+    # col_2 carries a gender lock (e.g. a "women only" marker). Store it as the
+    # genders the class EXCLUDES, which is how app.js checks it; a unit with no
+    # gender, such as the saviour, is then excluded from neither side.
+    $lock = Clean $r.col_2
+    if ($lock) {
+        $excluded = New-Object System.Collections.Generic.List[string]
+        if ($lock -match ($Female + $Only)) { $excluded.Add($Male) }
+        if ($lock -match ($MaleSex + $Only)) { $excluded.Add([char]0x5973) }
+        if ($excluded.Count) { $c['excluded_genders'] = @($excluded) }
+    }
     if (Clean $r.url) { $c['source_url'] = (Clean $r.url) }
 
     # per stat growth bonus (col_3..col_11)
@@ -319,6 +390,17 @@ foreach ($r in $classRows) {
         if ($null -ne $v) { $g[$StatKeys[$i]] = $v }
     }
     if ($g.Count) { $c['growth_bonus'] = $g }
+
+    # per stat starting bonus (col_12..col_20). Separate from growth_bonus: the
+    # first is the growth rate the unit gains with, the second is added to the
+    # stats the unit starts with when it changes into this class. Game8's own
+    # expected-value tool reads both, and only this column set was missing here.
+    $sb = [ordered]@{}
+    for ($i = 0; $i -lt $StatKeys.Count; $i++) {
+        $v = Num $r.("col_" + (12 + $i))
+        if ($null -ne $v) { $sb[$StatKeys[$i]] = $v }
+    }
+    if ($sb.Count) { $c['stat_bonus'] = $sb }
 
     $mv = Num $r.col_34
     if ($null -ne $mv) { $c['movement'] = $mv }
@@ -467,6 +549,21 @@ $meta = [ordered]@{
     }
     source_url = $SourceUrl
 }
+
+# events.json is hand written, so this script never touches it, but meta.json
+# used to carry its count and the footer showed it. Carry it over from the file
+# that is already on disk so re-running the build does not drop the number.
+$eventsPath = Join-Path $OutDir 'events.json'
+if (Test-Path $eventsPath) {
+    try {
+        $ev = Get-Content $eventsPath -Raw -Encoding UTF8 | ConvertFrom-Json
+        $evCount = @($ev.sections | ForEach-Object { $_.events } | ForEach-Object { $_ }).Count
+        if ($evCount -gt 0) { $meta['counts']['events'] = $evCount }
+    } catch {
+        Write-Warning ("could not count data\events.json, its count is left out: " + $_.Exception.Message)
+    }
+}
+
 Write-Json $meta (Join-Path $OutDir 'meta.json')
 Write-Host "Done."
 
