@@ -48,6 +48,8 @@ $SOURCES = @(
         pages = @(
             [pscustomobject]@{ id = '80411827'; file = 'am-weapons.html' }
             [pscustomobject]@{ id = '80415292'; file = 'am-arts.html'    }
+            [pscustomobject]@{ id = '80415379'; file = 'am-magic-white.html' }
+            [pscustomobject]@{ id = '80415376'; file = 'am-magic-black.html' }
         )
     }
     [pscustomobject]@{

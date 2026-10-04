@@ -178,6 +178,11 @@ function Field {
 
 $magicHtml = [IO.File]::ReadAllText((Join-Path $tmpDir 'gw-magic.html'), [Text.Encoding]::UTF8)
 $magic = New-Object System.Collections.ArrayList
+# The labels are taken from the page itself, never spelled out in this script:
+# a BOM-less file is decoded as ANSI by PowerShell 5.1, and hand-written code
+# points are easy to get subtly wrong. Reading the page keeps them exact.
+$blackWord = U @(0x9ED2, 0x9B54, 0x8853)   # 黒魔術
+$whiteWord = U @(0x767D, 0x9B54, 0x8853)   # 白魔術
 # field labels, spelled out once so the lookups stay readable
 # labels come from the page via Label(); index order is the order the sections
 # first appear, which is stable per page
@@ -232,7 +237,18 @@ foreach ($it in (Get-Items $magicHtml)) {
         learnable  = @()
     }
     foreach ($l in (Get-Learners $it.html)) {
-        $rec.learnable += [ordered]@{ name = $l.name; condition = $l.condition; url = $l.url }
+        $cond = $l.condition
+        # GameWith prints the black-magic skill level on the white and dark spells
+        # too, which cannot be right (a white-magic unit has no black-magic skill).
+        # Game8's page for the same spell lists white magic and names exactly the
+        # same characters, so for anything that is not black magic the word is
+        # swapped to match the element the spell is filed under. The dark spells
+        # keep the level but are moved to white magic too, since that is the only
+        # other magic skill in the game.
+        if ($cond.StartsWith($blackWord) -and $element -ne $blackWord) {
+            $cond = $whiteWord + $cond.Substring($blackWord.Length)
+        }
+        $rec.learnable += [ordered]@{ name = $l.name; condition = $cond; url = $l.url }
     }
     [void]$magic.Add([pscustomobject]$rec)
 }
