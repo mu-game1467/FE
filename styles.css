@@ -797,6 +797,15 @@ table.mini td.num, table.hayakabe td.num, table.namegrowth td.num { text-align: 
     border-radius: 8px;
 }
 
+/* The hidden-event rows are short and there are only a few dozen of them, so a
+   scroll box only gets in the way: the page scrolls anyway. Keep the border so
+   the table still reads as a table. The height limit is what makes the thead
+   sticky, so dropping it means the header scrolls away with the page. */
+#events-list .tablewrap {
+    max-height: none;
+    overflow-y: visible;
+}
+
 /* frozen header rows. table.mini is deliberately absent here: inside a card it
    is only a few rows tall, and pinning it would just leave a header floating
    over the next card. On a detail page the same table can be long, so the

@@ -5,7 +5,6 @@
       "title": "大脱走",
       "location": "帝都ダグシオンの市街地",
       "windows": [
-        { "route": "kai", "chapter": "発生しない" },
         { "route": "dietrich", "chapter": "11章", "from": "1449/10/16(火)", "to": "1449/10/22(月)" },
         { "route": "theodora", "chapter": "12章", "from": "1449/10/16(火)", "to": "1449/10/22(月)" },
         { "route": "reda", "chapter": "11章", "from": "1449/10/16(火)", "to": "1449/10/22(月)" }
@@ -17,8 +16,6 @@
       "title": "封じられた過去",
       "location": "帝都ダグシオンの大闘技場前広場",
       "windows": [
-        { "route": "kai", "chapter": "発生しない" },
-        { "route": "dietrich", "chapter": "発生しない" },
         { "route": "theodora", "chapter": "12章", "from": "1449/10/16(火)", "to": "1449/10/21(日)" },
         { "route": "reda", "chapter": "11章", "from": "1449/10/16(火)", "to": "1449/10/29(月)" }
       ],
@@ -29,10 +26,7 @@
       "title": "勇士の像の行方",
       "location": "帝都ダグシオンの下参道付近",
       "windows": [
-        { "route": "kai", "chapter": "発生しない" },
-        { "route": "dietrich", "chapter": "9章", "from": "1449/9/3(月)", "to": "1449/9/8(土)" },
-        { "route": "theodora", "chapter": "発生しない" },
-        { "route": "reda", "chapter": "発生しない" }
+        { "route": "dietrich", "chapter": "9章", "from": "1449/9/3(月)", "to": "1449/9/8(土)" }
       ],
       "reward": { "material": "スレンドスピア×1", "gold": "20,000G", "fame": 150 }
     },
@@ -41,10 +35,8 @@
       "title": "陽動作戦",
       "location": "帝都ダグシオンのカーラ神殿前",
       "windows": [
-        { "route": "kai", "chapter": "発生しない" },
         { "route": "dietrich", "chapter": "9章", "from": "1449/9/2(日)", "to": "1449/9/8(土)" },
-        { "route": "theodora", "chapter": "10章", "from": "1449/9/2(日)", "to": "1449/9/8(土)" },
-        { "route": "reda", "chapter": "発生しない" }
+        { "route": "theodora", "chapter": "10章", "from": "1449/9/2(日)", "to": "1449/9/8(土)" }
       ],
       "reward": { "unlocks": ["バッカニア"], "material": "銀の盾×1", "gold": "20,000G", "fame": 150 }
     },
@@ -59,8 +51,7 @@
         { "route": "dietrich", "chapter": "9章", "from": "1449/9/17(月)", "to": "1449/9/19(水)" },
         { "route": "dietrich", "chapter": "10章〜11章", "from": "1449/10/1(月)", "to": "1449/10/10(水)" },
         { "route": "theodora", "chapter": "11章", "from": "1449/9/17(月)", "to": "1449/9/22(日)" },
-        { "route": "theodora", "chapter": "11章", "from": "1449/10/1(月)", "to": "1449/10/10(水)" },
-        { "route": "reda", "chapter": "発生しない" }
+        { "route": "theodora", "chapter": "11章", "from": "1449/10/1(月)", "to": "1449/10/10(水)" }
       ],
       "reward": { "unlocks": ["ウーシュラ"], "extra": "第3部1区分でタリムーン加入", "material": "清めの剣×1", "gold": "20,000G", "fame": 150 }
     },
@@ -71,8 +62,7 @@
       "windows": [
         { "route": "kai", "chapter": "10章", "from": "1449/9/24(月)", "to": "1449/10/5(金)" },
         { "route": "dietrich", "chapter": "10章〜11章", "from": "1449/9/29(土)", "to": "1449/10/5(金)" },
-        { "route": "theodora", "chapter": "11章", "from": "1449/9/24(月)", "to": "1449/10/5(金)" },
-        { "route": "reda", "chapter": "発生しない" }
+        { "route": "theodora", "chapter": "11章", "from": "1449/9/24(月)", "to": "1449/10/5(金)" }
       ],
       "reward": { "material": "オリハルコン×1", "gold": "20,000G", "fame": 150 }
     },
@@ -83,8 +73,7 @@
       "windows": [
         { "route": "kai", "chapter": "10章", "from": "1449/9/17(月)", "to": "1449/9/25(火)" },
         { "route": "dietrich", "chapter": "9章", "from": "1449/9/17(月)", "to": "1449/9/17(月)" },
-        { "route": "theodora", "chapter": "11章", "from": "1449/9/17(月)", "to": "1449/9/25(火)" },
-        { "route": "reda", "chapter": "発生しない" }
+        { "route": "theodora", "chapter": "11章", "from": "1449/9/17(月)", "to": "1449/9/25(火)" }
       ],
       "reward": { "unlocks": ["ゲイツ", "ペペ"], "extra": "第3部1区分でベルトラン加入", "material": "巨大な金塊×1", "gold": "20,000G", "fame": 150 }
     },
@@ -105,9 +94,7 @@
       "title": "抹消された者たちの女王",
       "location": "帝都ダグシオンの市街地の北東",
       "windows": [
-        { "route": "kai", "chapter": "発生しない" },
         { "route": "dietrich", "chapter": "11章", "from": "1449/10/5(金)", "to": "1449/10/14(日)" },
-        { "route": "theodora", "chapter": "発生しない" },
         { "route": "reda", "chapter": "10章", "from": "1449/10/5(金)", "to": "1449/10/14(日)" }
       ],
       "reward": { "unlocks": ["サラン"], "extra": "第3部2区分でアナトリア加入", "material": "電子攪乱索×1", "gold": "20,000G", "fame": 150, "bonus": "民が5人離脱：マジックアレイ、安寧の露／民が4人離脱：マジックアレイ／民が3人離脱：なし" }

@@ -2384,6 +2384,7 @@ function eventRows() {
  * 隠しイベントと外伝を1つの表にまとめるための行を作る。
  * 外伝はルートごとに章と期日が変わるので、ルートごとに1行へ展開する。
  * タリムーン外伝のように発生時期が2回あるものは、複数行になる。
+ * from の無いルートは「発生しない」ので、表示しない。
  */
 function gaidenRows() {
     const data = state.events || {};
@@ -2404,9 +2405,11 @@ function gaidenRows() {
             if (!hit(gaiden.name) && !hit(gaiden.title) && !hit(gaiden.location) &&
                 !inWindow && !inReward) return;
         }
-        const matched = state.eventRoute === 'all'
+        const matched = (state.eventRoute === 'all'
             ? windows
-            : windows.filter((w) => w.route === state.eventRoute);
+            : windows.filter((w) => w.route === state.eventRoute))
+            // 発生しないルートは表に出さない
+            .filter((w) => w.from);
         if (!matched.length) return;
         matched.forEach((w) => {
             rows.push({ gaiden, window: w, gaidenIndex, routeId: w.route });
@@ -2437,7 +2440,8 @@ function dateString(value) {
 function gaidenCells(row) {
     const g = row.gaiden;
     const w = row.window;
-    const period = w.from ? `${esc(w.from)}〜${esc(w.to)}` : '発生しない';
+    // 発生しないルートは行ごと出さないので、ここに来る window には必ず from がある
+    const period = `${esc(w.from)}〜${esc(w.to)}`;
 
     // 条件欄に、依頼場所と報酬をまとめて入れる
     const reward = g.reward || {};
