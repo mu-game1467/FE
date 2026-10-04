@@ -698,6 +698,33 @@ a.skill-ref:hover { border-bottom-style: solid; }
 @media (max-width: 640px) {
     .learners { columns: 1; }
 }
+
+/* キャラ詳細の「習得できる戦技・魔法」 */
+.learnable {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+}
+.learnable li {
+    display: grid;
+    grid-template-columns: minmax(6em, 1fr) minmax(4em, auto) auto;
+    gap: 0.5rem;
+    align-items: baseline;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    font-size: 0.95rem;
+}
+.learnable .muted { font-size: 0.85rem; }
+.learnable .rank {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #6d4c41;
+    white-space: nowrap;
+}
+@media (max-width: 640px) {
+    .learnable li { grid-template-columns: 1fr auto; }
+    .learnable .muted { display: none; }
+}
 /* a 主要技能 / 選択技能 the class forces but the character is 苦手 at.
    Mirrors .skill-tag.weak so the two read as the same warning. */
 .tag-weak { background: #f8e6e6; border-color: #dda9a9; color: #a33; font-weight: 600; }
@@ -1084,6 +1111,10 @@ html[data-theme="dark"] .tag { background: #332c25; border-color: #4d4237; color
 html[data-theme="dark"] .tag-class { background: #453425; border-color: #6b5233; color: #ecc99b; }
 html[data-theme="dark"] .tag-blaze { background: #322c44; border-color: #4a4160; color: #cfc4e8; }
 html[data-theme="dark"] .tag-forte { background: #2b3a29; border-color: #4a6446; color: #9fd6a6; }
+html[data-theme="dark"] .tag-nego { background: #3a2f20; border-color: #6b5636; color: #e0bb87; }
+html[data-theme="dark"] .tag-cursed { background: #302740; border-color: #55447a; color: #c5b0e6; }
+html[data-theme="dark"] .learnable li { border-bottom-color: rgba(255, 255, 255, 0.1); }
+html[data-theme="dark"] .learnable .rank { color: #d8c0a0; }
 html[data-theme="dark"] .tag-weak { background: #3d2626; border-color: #6b4040; color: #e79a9a; }
 /* the affinity header uses the shared opaque header colour; only the pinned
    name column differs slightly so the corner reads as a corner */

@@ -1569,8 +1569,73 @@ function recommendCharacterTable(cls, characters) {
         </div>`;
 }
 
-function renderCharacterDetail(character, classes, container) {
+/* ------------------------------------------------- learnable arts and magic -- */
+
+/**
+ * 1人のキャラが習得できる戦技・魔法を、元データごと抜き出す。
+ * learnable は「キャラ名 + 条件」の並びで、キャラ名と一致しない行
+ * （ヴァルキュリウムのような兵種の名）も混じるので、照合できない行は捨てる。
+ */
+function learnableOf(list, characterName) {
+    return (list || [])
+        .filter((entry) => Array.isArray(entry.learnable))
+        .map((entry) => {
+            const hit = entry.learnable.find((l) => l.name === characterName);
+            return hit ? { entry, condition: hit.condition || '' } : null;
+        })
+        .filter(Boolean);
+}
+
+/** 習得条件の並び順。Lv は低い順に、末尾に等级の数字だけを書いたものは最後に回す。 */
+const RANK_ORDER = ['初期', 'E', 'D', 'C', 'B', 'A', 'S', 'SS'];
+
+function rankIndex(condition) {
+    const m = String(condition || '').match(/([A-Z]+)([+-]?)$/);
+    if (!m) return RANK_ORDER.length + 1;
+    const base = RANK_ORDER.indexOf(m[1]);
+    if (base === -1) return RANK_ORDER.length + 1;
+    // "+" means the character learns it at that rank and above
+    return base - (m[2] === '+' ? 0.5 : 0);
+}
+
+/** 習得できる技・魔法の一覧。条件ごとにまとめ、詳細ページへリンクする。 */
+function learnablePanel(character, arts, magic) {
+    const sections = [];
+
+    const artRows = learnableOf(arts, character.name)
+        .sort((a, b) => rankIndex(a.condition) - rankIndex(b.condition) || a.entry.name.localeCompare(b.entry.name, 'ja'));
+    if (artRows.length) {
+        const items = artRows.map((r) => `<li>
+            <a href="${assetUrl('arts/?q=' + encodeURIComponent(r.entry.name))}">${esc(r.entry.name)}</a>
+            <span class="muted">${esc(r.entry.skill || '')}</span>
+            <span class="rank">${esc(r.condition)}</span>
+        </li>`).join('');
+        sections.push(`<h3>戦技（${artRows.length}）</h3><ul class="learnable">${items}</ul>`);
+    }
+
+    const magicRows = learnableOf(magic, character.name)
+        .sort((a, b) => rankIndex(a.condition) - rankIndex(b.condition) || a.entry.name.localeCompare(b.entry.name, 'ja'));
+    if (magicRows.length) {
+        const items = magicRows.map((r) => `<li>
+            <a href="${assetUrl('magic/?q=' + encodeURIComponent(r.entry.name))}">${esc(r.entry.name)}</a>
+            <span class="muted">${esc(r.entry.element || '')}</span>
+            <span class="rank">${esc(r.condition)}</span>
+        </li>`).join('');
+        sections.push(`<h3>魔法（${magicRows.length}）</h3><ul class="learnable">${items}</ul>`);
+    }
+
+    if (!sections.length) return '';
+    return `
+        <section class="panel">
+            ${sections.join('')}
+            <p class="muted">条件は習得に必要な技能Lv。兵種の名で書かれた項目は特定のキャラではないため、この欄には出していません。</p>
+        </section>`;
+}
+
+function renderCharacterDetail(character, classes, container, extra) {
     const growth = character.growth_rates || {};
+    const arts = (extra && extra.arts) || [];
+    const magic = (extra && extra.magic) || [];
 
     const badges = [];
     if (character.gender) badges.push(`<span class="tag">${esc(character.gender)}</span>`);
@@ -1630,8 +1695,9 @@ function renderCharacterDetail(character, classes, container) {
                 <h3>技能</h3>
                 ${character.forte_skills ? `<p class="skillline"><span class="skill-tag">得意</span>${tagList(character.forte_skills)}</p>` : ''}
                 ${character.weak_skills ? `<p class="skillline"><span class="skill-tag weak">苦手</span>${tagList(character.weak_skills)}</p>` : ''}
-                ${character.magic_ranks && character.magic_ranks.length ? `<p class="skillline"><span class="skill-tag">魔術</span>${tagList(character.magic_ranks)}</p><p class="muted">習得できる魔法のLv。同じLvが複数あるほど、そのLvで習得できる魔法が複数ある。</p>` : ''}
             </section>` : ''}
+
+            ${learnablePanel(character, arts, magic)}
 
             ${recruitRows ? `
             <section class="panel">
@@ -1716,9 +1782,12 @@ async function loadDetailPage(id) {
     if (!container) return;
 
     try {
-        const [characters, classes] = await Promise.all([
+        const [characters, classes, arts, magic] = await Promise.all([
             fetchJson({ file: 'data/characters.json' }),
-            fetchJson({ file: 'data/classes.json' })
+            fetchJson({ file: 'data/classes.json' }),
+            // the learnable lists are optional: an older cache without them still renders
+            fetchJson({ file: 'data/arts.json' }).catch(() => []),
+            fetchJson({ file: 'data/magic.json' }).catch(() => [])
         ]);
         state.scale = rateScale(characters);
         const character = characters.find((c) => c.id === id || c.name === id);
@@ -1727,7 +1796,10 @@ async function loadDetailPage(id) {
             return;
         }
         document.title = `${character.name} - FE万紫千紅 データベース`;
-        renderCharacterDetail(character, classes, container);
+        renderCharacterDetail(character, classes, container, {
+            arts: arts || [],
+            magic: magic || []
+        });
     } catch (error) {
         console.error('Failed to load the character detail page', error);
         container.innerHTML = `
