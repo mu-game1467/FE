@@ -1,0 +1,9877 @@
+[
+  
+    {
+    
+        "id":   "1",
+    
+        "name":   "旋風槍",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   4,
+    
+        "hit":   10,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベルトラン",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577593"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      },
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シモン",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577304"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌッツォ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577380"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ルルディヤー",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577289"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イニオニ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577379"
+                          
+      },
+      
+                          {
+        
+                              "name":   "クラプカ",
+        
+                              "condition":   "槍術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577935"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "2",
+    
+        "name":   "燕返し+",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "飛行有効",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "3",
+    
+        "name":   "剛撃",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   4,
+    
+        "hit":   10,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウルタンド",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577319"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌディーヌ",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577300"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゴライアス",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577291"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジャスミン",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577383"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "4",
+    
+        "name":   "守護突槍",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、防御力+3",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウルタンド",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577319"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イニオニ",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577379"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "5",
+    
+        "name":   "燕返し",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "飛行有効",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "6",
+    
+        "name":   "豪拳一撃",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   4,
+    
+        "hit":   10,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウルタンド",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577319"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "格闘術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トロイア",
+        
+                              "condition":   "格闘術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577532"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セテス",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577340"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "7",
+    
+        "name":   "曲射",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   4,
+    
+        "hit":   10,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "命中が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベルトラン",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577593"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヨーカイ",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577295"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ルルディヤー",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577289"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セテス",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577340"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "8",
+    
+        "name":   "急所射ち",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   4,
+    
+        "hit":   0,
+    
+        "crit":   5,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "必殺が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ナジャ",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577302"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イオ",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577299"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "9",
+    
+        "name":   "両断",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   4,
+    
+        "hit":   0,
+    
+        "crit":   10,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "必殺が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ソフィア",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577294"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "10",
+    
+        "name":   "守備の構え",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "-",
+    
+        "target":   "自分",
+    
+        "effect":   "【歩兵】自分の守備+3\n回避-10\n(次の自分のフェイズまで)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "重装術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "重装術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "重装術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "11",
+    
+        "name":   "クロスワイズ",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘後、技+2(+10が最大)\n(マップ終了まで)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "12",
+    
+        "name":   "秘伝・燕落とし+",
+    
+        "skill":   "剣術",
+    
+        "special":   true,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   20,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中時、敵が飛行なら敵の移動力-3\n(次の自分のフェイズまで)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "13",
+    
+        "name":   "入れ替え",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "【歩兵】隣接する味方と自分の位置を入れ替える\n(大型ユニットには使用できない)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "指揮術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヨーカイ",
+        
+                              "condition":   "指揮術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577295"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ハルヴィン",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577341"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "14",
+    
+        "name":   "攻勢指揮",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "-",
+    
+        "target":   "-",
+    
+        "effect":   "味方の力+2\n(次の自分のフェイズまで)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "指揮術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シモン",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577304"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "15",
+    
+        "name":   "防衛指揮",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "-",
+    
+        "target":   "-",
+    
+        "effect":   "味方の守備+2\n(次の自分のフェイズまで)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "指揮術D+",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダンテ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577305"
+                          
+      },
+      
+                          {
+        
+                              "name":   "クラプカ",
+        
+                              "condition":   "指揮術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577935"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "16",
+    
+        "name":   "集中投擲+",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   20,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "命中が高い\n(射程1~2の槍でのみ使用可能)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "17",
+    
+        "name":   "スパイク",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   4,
+    
+        "hit":   10,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セオドラ",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577323"
+                          
+      },
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウルタンド",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577319"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ソフィア",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577294"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ネイサン",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577895"
+                          
+      },
+      
+                          {
+        
+                              "name":   "クラプカ",
+        
+                              "condition":   "斧術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577935"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "18",
+    
+        "name":   "ハーフスパイク",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、回避+10",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "フィアナ",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577288"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ハルヴィン",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577341"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ロレッタ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577378"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "19",
+    
+        "name":   "奇襲の矢",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "敵のHPが最大なら30%で発動、攻撃力+5",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "弓術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ナジャ",
+        
+                              "condition":   "弓術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577302"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "20",
+    
+        "name":   "囲いの矢",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "命中させた時、その敵の移動力-3\n(次の自分のフェイズまで)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "弓術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "弓術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "弓術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "弓術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "21",
+    
+        "name":   "見極めの一撃",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   50,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "非常に命中が高い\nただし与えるダメージが半減する",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "22",
+    
+        "name":   "活殺一撃",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   4,
+    
+        "hit":   0,
+    
+        "crit":   5,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "必殺が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌッツォ",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577380"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "23",
+    
+        "name":   "情動の呪歌",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "-",
+    
+        "target":   "-",
+    
+        "effect":   "範囲にいる味方の力+2\n(次の自分のフェイズまで)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "24",
+    
+        "name":   "流風槍",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、回避+10",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "コウカ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577535"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダンテ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577305"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジェスター",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577290"
+                          
+      },
+      
+                          {
+        
+                              "name":   "フィアナ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577288"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "25",
+    
+        "name":   "血閃",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   20,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "必殺が非常に高い\n竜有効",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "26",
+    
+        "name":   "必殺剣",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   15,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "必殺が高い",
+    
+        "requires":   "キルソード",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "27",
+    
+        "name":   "必閃の一撃",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "攻撃時、(技÷2)%で発動\n攻撃力+5",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌッツォ",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577380"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キロイカ",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577287"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "28",
+    
+        "name":   "スマッシュ",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   4,
+    
+        "hit":   0,
+    
+        "crit":   5,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "必殺が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヨーカイ",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577295"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌッツォ",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577380"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "29",
+    
+        "name":   "秘伝・血牙",
+    
+        "skill":   "斧術",
+    
+        "special":   true,
+    
+        "cost":   null,
+    
+        "power":   2,
+    
+        "hit":   20,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "与えたダメージの半分HP回復する",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "30",
+    
+        "name":   "引き寄せ",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "【歩兵】隣接する味方と自分を1マス手前に移動させる\n(大型ユニットには使用できない)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "指揮術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ソフィア",
+        
+                              "condition":   "指揮術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577294"
+                          
+      },
+      
+                          {
+        
+                              "name":   "フィアナ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577288"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "31",
+    
+        "name":   "レイジアップ",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘後、力+1(+5が最大)\n(マップ終了まで)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌディーヌ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577300"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イオ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577299"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "32",
+    
+        "name":   "警戒射撃",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、回避+10",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キリーク",
+        
+                              "condition":   "弓術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577615"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "33",
+    
+        "name":   "離脱射撃",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘後、1マスまで移動できる",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "弓術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キロイカ",
+        
+                              "condition":   "弓術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577287"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "34",
+    
+        "name":   "金剛の一撃",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵を倒せば耐物+3\n(次の自分のフェイズまで)\n(追撃不可能)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "セオドラ",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577323"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌディーヌ",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577300"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジャスミン",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577383"
+                          
+      },
+      
+                          {
+        
+                              "name":   "クラプカ",
+        
+                              "condition":   "槍術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577935"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "35",
+    
+        "name":   "守護旋風",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、耐物+7",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "セオドラ",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577323"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イオ",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577299"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セテス",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577340"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジャスミン",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577383"
+                          
+      },
+      
+                          {
+        
+                              "name":   "クラプカ",
+        
+                              "condition":   "槍術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577935"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "36",
+    
+        "name":   "突き押し",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "少し威力が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ライサンダー",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577312"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シモン",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577304"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "37",
+    
+        "name":   "烈風槍",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   4,
+    
+        "hit":   0,
+    
+        "crit":   5,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "必殺が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウーシュラ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577307"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ナジャ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577302"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ハルヴィン",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577341"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キロイカ",
+        
+                              "condition":   "槍術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577287"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "38",
+    
+        "name":   "霞切り",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、回避+10",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "39",
+    
+        "name":   "鎧通し",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "重装有効",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ハルヴィン",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577341"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "40",
+    
+        "name":   "デストレッツァ",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵のHPが半分以下なら、攻撃力+5 必殺+10",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シモン",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577304"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イニオニ",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577379"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "41",
+    
+        "name":   "バックブロー",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘後、1マスまで移動できる",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "格闘術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "格闘術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "格闘術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "42",
+    
+        "name":   "バトルラッシュ",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   2,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵の攻撃より先に追撃できる",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "格闘術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "格闘術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "格闘術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トロイア",
+        
+                              "condition":   "格闘術A+",
+        
+                              "url":   "https://gamewith.jp/fefw/577532"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "格闘術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "格闘術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "格闘術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "43",
+    
+        "name":   "馬鹿力投げ",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   10,
+    
+        "hit":   -20,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "命中しづらいが、威力が非常に高い",
+    
+        "requires":   "シンザのモリ",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "44",
+    
+        "name":   "影眩みの矢",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、回避+10",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "弓術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "弓術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "45",
+    
+        "name":   "踊る",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "味方を再行動させる",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "46",
+    
+        "name":   "狙撃",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   30,
+    
+        "crit":   0,
+    
+        "range":   "3-5",
+    
+        "target":   "-",
+    
+        "effect":   "射程が長い (追撃不可能)",
+    
+        "requires":   "ロングボウ",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "47",
+    
+        "name":   "禍射",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   -50,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "命中させた時、敵を魔封状態・移動不能状態にする\n(追撃不可能)",
+    
+        "requires":   "アガゼの弓",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "48",
+    
+        "name":   "影詰め",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵が有利な地形にいるなら、その地形の影響を虫する",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "49",
+    
+        "name":   "フェイント",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   50,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘後、その敵の回避-20\n(1回戦闘すると元に戻る)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "格闘術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "格闘術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "50",
+    
+        "name":   "魔法指揮",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "味方の魔力・魔防+2(次の自分のフェイズまで)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      },
+      
+                          {
+        
+                              "name":   "コウカ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577535"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヨーカイ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577295"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ソフィア",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577294"
+                          
+      },
+      
+                          {
+        
+                              "name":   "フィアナ",
+        
+                              "condition":   "指揮術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577288"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "51",
+    
+        "name":   "用心一撃",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、回避+10",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダンテ",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577305"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ソフィア",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577294"
+                          
+      },
+      
+                          {
+        
+                              "name":   "フィアナ",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577288"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ハルヴィン",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577341"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "52",
+    
+        "name":   "二連投擲",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   -30,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "2回連続で攻撃する(射程1-2の槍でのみ使用可能)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "53",
+    
+        "name":   "ぶった斬り",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   8,
+    
+        "hit":   -30,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中しづらいが、威力が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キロイカ",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577287"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "54",
+    
+        "name":   "無我夢中",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   8,
+    
+        "hit":   -30,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中しづらいが、威力が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "55",
+    
+        "name":   "虎切り",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "騎兵有効",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "56",
+    
+        "name":   "烈火の一撃",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "攻撃時、（力+2）％で攻撃力+5",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "57",
+    
+        "name":   "ライオット",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "追撃時、攻撃力+5",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "58",
+    
+        "name":   "絶花",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   15,
+    
+        "hit":   20,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "攻撃時、技%で発動\n武器の耐久が減らなくなる",
+    
+        "requires":   "邪剣ヴェロキネ",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "59",
+    
+        "name":   "真月",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘後、自分のHPを中回復する",
+    
+        "requires":   "マハマドゥの槍",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "60",
+    
+        "name":   "滅騎",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   1,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵が騎兵なら、攻撃力+15",
+    
+        "requires":   "邪槍ハノーア",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "61",
+    
+        "name":   "粉砕の一撃",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "障害物を破壊できる",
+    
+        "requires":   "スマッシュアクス",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "62",
+    
+        "name":   "嵐歩",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   20,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵を倒せば、攻速+10\n(次の自分のフェイズまで)",
+    
+        "requires":   "邪斧ヴェルハイト",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "63",
+    
+        "name":   "兜割り",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "重装有効",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "セオドラ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577323"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "64",
+    
+        "name":   "クラッシュ",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   9,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中させた時5％で敵を混乱状態にする（追撃不可能）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "65",
+    
+        "name":   "暴爪",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "3回連続で攻撃する\n(1回のダメージは50%になる)",
+    
+        "requires":   "大熊の右鉤爪",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "66",
+    
+        "name":   "絆の光明",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   2,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1-2",
+    
+        "target":   "-",
+    
+        "effect":   "魔法攻撃として扱う\n攻撃時、隣接する味方1人につき、\n攻撃力+2",
+    
+        "requires":   "ブレイザブリク",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "67",
+    
+        "name":   "雷撃",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   8,
+    
+        "hit":   20,
+    
+        "crit":   0,
+    
+        "range":   "1-2",
+    
+        "target":   "-",
+    
+        "effect":   "刃から強力な雷を放つ\n魔法攻撃として扱う",
+    
+        "requires":   "サンダーソード",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "68",
+    
+        "name":   "瘴風",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1-2",
+    
+        "target":   "-",
+    
+        "effect":   "魔法攻撃として扱う\n命中させた時、敵を毒状態にする\n(追撃不可能)",
+    
+        "requires":   "羅刹女の徹扇",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "69",
+    
+        "name":   "黒轟",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   10,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵を倒せば、耐物+10\n(次の自分のフェイズまで)",
+    
+        "requires":   "邪槍ムーエン",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "70",
+    
+        "name":   "魔衝打ち",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   1,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "魔力をのせた一撃\n魔法攻撃として扱う",
+    
+        "requires":   "メイス",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "71",
+    
+        "name":   "魔裂",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   1,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "魔力をのせた一撃\n魔法攻撃として扱う",
+    
+        "requires":   "邪斧ガンドギャ",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "72",
+    
+        "name":   "過圧縮光弾",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   10,
+    
+        "hit":   20,
+    
+        "crit":   0,
+    
+        "range":   "1-2",
+    
+        "target":   "-",
+    
+        "effect":   "魔法攻撃として扱う",
+    
+        "requires":   "サラマンダー",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "73",
+    
+        "name":   "必殺槍",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   15,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "必殺が高い",
+    
+        "requires":   "グレイブ",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "74",
+    
+        "name":   "無塵",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   10,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "獣有効・竜有効",
+    
+        "requires":   "魔槍グラシーダ",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "75",
+    
+        "name":   "風縫い",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   2,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中させた時、10%で発動\n反撃されなくなる",
+    
+        "requires":   "ゲキ",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "76",
+    
+        "name":   "星光の瞬き",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   10,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1-2",
+    
+        "target":   "-",
+    
+        "effect":   "冥魔有効\n魔法攻撃として扱う\n(追撃不可能)",
+    
+        "requires":   "アウロラの星槍",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "77",
+    
+        "name":   "覇絶+",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   12,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵の「冥府の加護」を無効化してダメージ計算する",
+    
+        "requires":   "ザルモクシス",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "78",
+    
+        "name":   "必殺甲",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   20,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "必殺が高い",
+    
+        "requires":   "ジャマダハル",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "79",
+    
+        "name":   "螺旋射ち",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "攻撃時、(技÷2)%で発動、攻撃力+5",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "弓術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "弓術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベンディッツ",
+        
+                              "condition":   "弓術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577297"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "80",
+    
+        "name":   "精霊弓",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   8,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、耐魔+7",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "81",
+    
+        "name":   "技術指揮+",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "味方の技+3",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "82",
+    
+        "name":   "ジャックヒット",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   1,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "攻撃時、5％で発動、攻撃力+10",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "83",
+    
+        "name":   "心眼の一撃",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   30,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中が非常に高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "84",
+    
+        "name":   "流星",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "5回連続で攻撃する(1回のダメージは50%になる)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ソードマスター",
+        
+                              "condition":   "マスター",
+        
+                              "url":   "https://gamewith.jp/fefw/577914"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "85",
+    
+        "name":   "ハンタークロス",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   8,
+    
+        "hit":   20,
+    
+        "crit":   10,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "命中と必殺が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ボウナイト",
+        
+                              "condition":   "マスター",
+        
+                              "url":   "https://gamewith.jp/fefw/577912"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "86",
+    
+        "name":   "静心の呪歌",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1-2",
+    
+        "target":   "-",
+    
+        "effect":   "範囲にいる味方の間防+2 (次の自分のフェイズまで)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ヴァルキュリウム",
+        
+                              "condition":   "マスター",
+        
+                              "url":   "https://gamewith.jp/fefw/577911"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "87",
+    
+        "name":   "勇気の呪歌",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1-2",
+    
+        "target":   "-",
+    
+        "effect":   "範囲にいる味方の技・速さ+2(次の自分のフェイズまで)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "トルバドール",
+        
+                              "condition":   "マスター",
+        
+                              "url":   "https://gamewith.jp/fefw/577442"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "88",
+    
+        "name":   "戦鬼の一撃",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "与えるダメージが1.5倍になる",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "バトルマスター",
+        
+                              "condition":   "マスター",
+        
+                              "url":   "https://gamewith.jp/fefw/577601"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "89",
+    
+        "name":   "落影の刃",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   10,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵が有利な地形にいるなら、その地形の影響を無視する",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "シャドーシーカー",
+        
+                              "condition":   "マスター",
+        
+                              "url":   "https://gamewith.jp/fefw/577603"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "90",
+    
+        "name":   "スカイハンター",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "敵が飛行なら、命中+50",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "マスターアーチ",
+        
+                              "condition":   "マスター",
+        
+                              "url":   "https://gamewith.jp/fefw/577600"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "91",
+    
+        "name":   "騎士烈槍",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "その戦闘中、追撃されなくなる",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "オリハルディア",
+        
+                              "condition":   "マスター",
+        
+                              "url":   "https://gamewith.jp/fefw/577597"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "92",
+    
+        "name":   "ブロー＆ヒール",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘後、補助魔法を使用できる",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "バトルモンク",
+        
+                              "condition":   "マスター",
+        
+                              "url":   "https://gamewith.jp/fefw/577606"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "93",
+    
+        "name":   "奪運",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵を倒せば、幸運+2 (+10が最大)\n(マップ終了まで)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "94",
+    
+        "name":   "太陽",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "与えたダメージの半分HP回復する",
+    
+        "requires":   "ソレルの輝槍",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "95",
+    
+        "name":   "聖閃",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "敵を倒した時、自分のHPを中回復する",
+    
+        "requires":   "イデアの弓",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "96",
+    
+        "name":   "炎輪",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1-2",
+    
+        "target":   "-",
+    
+        "effect":   "敵の反撃より先に追撃できる\n魔法攻撃として扱う",
+    
+        "requires":   "風火輪",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "97",
+    
+        "name":   "覇蛇",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2-5",
+    
+        "target":   "-",
+    
+        "effect":   "射程が長い (追撃不可能)",
+    
+        "requires":   "妖槍ヴェンデッタ",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "98",
+    
+        "name":   "聖突槍",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   8,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘後、自分のHPを小回復する",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "99",
+    
+        "name":   "大剛撃",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   12,
+    
+        "hit":   10,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "威力と命中が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "剣術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キロイカ",
+        
+                              "condition":   "剣術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577287"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "100",
+    
+        "name":   "タイマン",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   -50,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "攻撃を命中させた時、敵を移動不能状態にする",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "格闘術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ナジャ",
+        
+                              "condition":   "格闘術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577302"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "格闘術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "101",
+    
+        "name":   "光輝の一撃",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵を倒せば、耐魔+7\n(次の自分のフェイズまで)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "槍術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セオドラ",
+        
+                              "condition":   "槍術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577323"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "槍術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "102",
+    
+        "name":   "凪呼び",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   1,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "敵を倒せば、回避+30\n(1回戦闘すると元に戻る)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "弓術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "103",
+    
+        "name":   "大一番槍",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "攻撃時、(力÷2)%で発動。攻撃力+5",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ウルタンド",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577319"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ライサンダー",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577312"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "104",
+    
+        "name":   "秘伝・不動貫槍",
+    
+        "skill":   "槍術",
+    
+        "special":   true,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "敵の攻速が自分より4以上大きければ、命中+20\n(射程1‐2の槍でのみ使用可能)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "105",
+    
+        "name":   "秘伝・燕落とし",
+    
+        "skill":   "剣術",
+    
+        "special":   true,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中時、敵が飛行なら敵の移動力-3\n(次の自分のフェイズまで)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "106",
+    
+        "name":   "秘伝・流水",
+    
+        "skill":   "剣術",
+    
+        "special":   true,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、回避+20\nさらに攻速に関係なく追撃する\n戦闘中、与えるダメージが半減する",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "107",
+    
+        "name":   "秘伝・巨撃割り",
+    
+        "skill":   "剣術",
+    
+        "special":   true,
+    
+        "cost":   null,
+    
+        "power":   2,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、敵が大型ユニットなら、自分が受けるダメージを半減する",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "108",
+    
+        "name":   "秘伝・必殺砕き",
+    
+        "skill":   "剣術",
+    
+        "special":   true,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、および戦闘後、自分の必避+20\n(次の自分のフェイズまで)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "109",
+    
+        "name":   "炎環",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   10,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "威力が高い、魔法攻撃として扱う",
+    
+        "requires":   "クレールの大鎚",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "110",
+    
+        "name":   "雷甲トロン",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   10,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1-2",
+    
+        "target":   "-",
+    
+        "effect":   "魔法攻撃として扱う",
+    
+        "requires":   "スミルノスの雷甲",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "111",
+    
+        "name":   "秘伝・遠雷",
+    
+        "skill":   "弓術",
+    
+        "special":   true,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   -20,
+    
+        "crit":   0,
+    
+        "range":   "3-5",
+    
+        "target":   "-",
+    
+        "effect":   "射程が長い\nただし消費耐久が非常に大きい\n(追撃不可能)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "112",
+    
+        "name":   "氷槍",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "魔法攻撃として扱う",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "槍術A+",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "113",
+    
+        "name":   "テンペスト",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   12,
+    
+        "hit":   20,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "威力と命中が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "槍術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "槍術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "槍術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "114",
+    
+        "name":   "流麗の一撃",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "攻撃時、（技÷2）％で発動\n武器の耐久が減らなくなる",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "槍術A+",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "115",
+    
+        "name":   "空割り",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   1,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、攻速+5",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "116",
+    
+        "name":   "風薙ぎ",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中させた時、20％で発動\n反撃されなくなる",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "剣術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "117",
+    
+        "name":   "秘伝・絶刃",
+    
+        "skill":   "剣術",
+    
+        "special":   true,
+    
+        "cost":   null,
+    
+        "power":   10,
+    
+        "hit":   0,
+    
+        "crit":   100,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "必殺が極めて高い\nただし命中率が10になる\n（追撃不可能）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "118",
+    
+        "name":   "流星+",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   20,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "5回連続で攻撃する\n（1回のダメージは50％になる）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "119",
+    
+        "name":   "雷斧",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "魔法攻撃として扱う",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "120",
+    
+        "name":   "マジックカット",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、耐魔+5",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "コウカ",
+        
+                              "condition":   "格闘術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577535"
+                          
+      },
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "格闘術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "格闘術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "121",
+    
+        "name":   "踏み込み烈風",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、攻速+3\n追撃時、攻撃力+7",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ベルトラン",
+        
+                              "condition":   "剣術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577593"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ナジャ",
+        
+                              "condition":   "剣術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577302"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "剣術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "122",
+    
+        "name":   "攻速指揮+",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "味方の速さ+3\n（次の自分のフェイズまで）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "指揮術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "123",
+    
+        "name":   "秘剣+",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   20,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "最低でも10ダメージを与える",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "124",
+    
+        "name":   "ミストリーパー",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   2,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、回避+10\n追撃時、必殺+10",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "125",
+    
+        "name":   "攻勢指揮+",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "味方の力+3\n（次の自分のフェイズまで）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "指揮術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "指揮術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "指揮術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "126",
+    
+        "name":   "ビートアップ",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘後、\n速さ+1（+10が最大）\n（マップ終了まで）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "格闘術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トロイア",
+        
+                              "condition":   "格闘術A+",
+        
+                              "url":   "https://gamewith.jp/fefw/577532"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "127",
+    
+        "name":   "集中投擲",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   20,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "命中が高い\n（射程1-2の槍でのみ使用可能）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "128",
+    
+        "name":   "大投擲",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   10,
+    
+        "hit":   10,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "威力と命中が高い\n（射程1-2の槍でのみ使用可能）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "槍術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "129",
+    
+        "name":   "疾風の一撃",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "攻撃時、（速さ÷2）％で発動\n攻撃力+5",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ナジャ",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577302"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ロレッタ",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577378"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "130",
+    
+        "name":   "一刀両断",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   12,
+    
+        "hit":   -50,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中しづらいが、\n消費耐久が少なく、威力が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "剣術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "131",
+    
+        "name":   "技術指揮",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "味方の技+2\n（次の自分のフェイズまで）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベンディッツ",
+        
+                              "condition":   "指揮術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577297"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "132",
+    
+        "name":   "烈炎の一撃",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "攻撃時、（力÷2）％で発動\n攻撃力+5",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "133",
+    
+        "name":   "双刃",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "2回連続で攻撃する\n（1回のダメージは80％になる）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "剣術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "剣術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "剣術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌッツォ",
+        
+                              "condition":   "剣術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577380"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "134",
+    
+        "name":   "速突き",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、攻速+3",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ルルディヤー",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577289"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "135",
+    
+        "name":   "スティンガー",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   -20,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中しづらいが、威力が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ハルヴィン",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577341"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キリーク",
+        
+                              "condition":   "槍術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577615"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "136",
+    
+        "name":   "ハイドショット",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "自分が有利な地形にいるなら、\n攻撃力+5　命中・必殺+10",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "弓術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌッツォ",
+        
+                              "condition":   "弓術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577380"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キロイカ",
+        
+                              "condition":   "弓術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577287"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "137",
+    
+        "name":   "命運指揮+",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "味方の幸運+3\n（次の自分のフェイズまで）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "138",
+    
+        "name":   "三段スパイク",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   -50,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "3回連続で攻撃する\n回避されるたび、命中+10",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "斧術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "139",
+    
+        "name":   "血風鉄火",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵を倒せば、防御力+10\n（1回戦闘すると元に戻る）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "斧術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "140",
+    
+        "name":   "流麗双射",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "2回連続で攻撃する\n（1回のダメージは70％になる）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "141",
+    
+        "name":   "防衛指揮+",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "味方の守備+3\n（次の自分のフェイズまで）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "指揮術B+",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "142",
+    
+        "name":   "魔盾の構え",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "-",
+    
+        "target":   "自分",
+    
+        "effect":   "【歩兵】自分の魔防+3\n回避-10\n（次の自分のフェイズまで）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "重装術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "重装術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヨーカイ",
+        
+                              "condition":   "重装術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577295"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "143",
+    
+        "name":   "脚射ち",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "命中させた時、敵の回避-20\n（1回戦闘すると元に戻る）\n（追撃不可能）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "弓術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "弓術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "144",
+    
+        "name":   "全力一射",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   12,
+    
+        "hit":   -30,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "命中しづらいが、威力が非常に高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "弓術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ハルヴィン",
+        
+                              "condition":   "弓術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577341"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "145",
+    
+        "name":   "戦刃の一撃",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘後、\n技+2（+10が最大）\n（マップ終了まで）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シモン",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577304"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "146",
+    
+        "name":   "ガードスパイク",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、耐物+10",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゴライアス",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577291"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジャスミン",
+        
+                              "condition":   "斧術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577383"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "147",
+    
+        "name":   "ブレイクアロー",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "攻撃時、50％で発動\n攻撃力+15",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "イニオニ",
+        
+                              "condition":   "弓術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577379"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "148",
+    
+        "name":   "セーフアタック",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "与えるダメージが半減する\n代わりに回避された時、\n反撃されなくなる （追撃不可能）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "149",
+    
+        "name":   "投撃",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   20,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "命中が高い\n（射程1-2の斧でのみ使用可能）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "150",
+    
+        "name":   "槍崩し",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵が槍なら、攻撃力+7",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セテス",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577340"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "151",
+    
+        "name":   "護身槍",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、必避+20",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "154",
+    
+        "name":   "鎧砕拳",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "重装有効",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "格闘術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "155",
+    
+        "name":   "陽炎",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵を倒せば、回避+20\n（次の自分のフェイズまで）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "剣術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "156",
+    
+        "name":   "活人拳",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   12,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵のHPが2以上なら、\nHPを1残す（追撃不可能）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "格闘術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "160",
+    
+        "name":   "剛腕投擲",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   10,
+    
+        "hit":   10,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "威力と命中が高い\n（射程1-2の斧でのみ使用可能）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "斧術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "161",
+    
+        "name":   "翔閃槍",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵の反撃より先に追撃できる",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "槍術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "槍術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "163",
+    
+        "name":   "聖撃",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵を倒せば、自分のHPを中回復する",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "165",
+    
+        "name":   "体当たり",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "【歩兵】隣接する味方を\n1マス奥に移動させる\n（大型ユニットには使用できない）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "指揮術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ロレッタ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577378"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イニオニ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577379"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "166",
+    
+        "name":   "大強弓",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   12,
+    
+        "hit":   10,
+    
+        "crit":   0,
+    
+        "range":   "2-3",
+    
+        "target":   "-",
+    
+        "effect":   "威力と命中が高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "弓術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イニオニ",
+        
+                              "condition":   "弓術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577379"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "169",
+    
+        "name":   "投げ魔斧",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   1,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "魔法攻撃として扱う\n（射程1-2の斧でのみ使用可能）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "斧術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "172",
+    
+        "name":   "ノナファイアーEX",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   -5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "-",
+    
+        "target":   "-",
+    
+        "effect":   "魔法で一帯を攻撃する\n与えるダメージが半減する",
+    
+        "requires":   "王家の宝剣",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "173",
+    
+        "name":   "バトルブロー",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   4,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "自分のHPが最大なら、\n攻撃力+3",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "格闘術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シモン",
+        
+                              "condition":   "格闘術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577304"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "174",
+    
+        "name":   "ハムシン",
+    
+        "skill":   "槍術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、敵の命中が\n20以下なら、敵の命中を0にする",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ロレッタ",
+        
+                              "condition":   "槍術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577378"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "175",
+    
+        "name":   "波紋斬り",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   -3,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "必ず命中する",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "剣術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "178",
+    
+        "name":   "秘剣",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "最低でも10ダメージを与える",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "179",
+    
+        "name":   "秘伝・破邪鉄拳",
+    
+        "skill":   "格闘術",
+    
+        "special":   true,
+    
+        "cost":   null,
+    
+        "power":   1,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中させた時、敵の「冥府の加護」を無効化する\n(1回戦闘すると元に戻る)",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "181",
+    
+        "name":   "魔刃",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "魔法攻撃として扱う",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "剣術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "182",
+    
+        "name":   "峰打ち",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵のHPが2以上なら、HPを1残す\n（追撃不可能）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "剣術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "183",
+    
+        "name":   "明鏡止水",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   40,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "命中が非常に高い",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "186",
+    
+        "name":   "攻速指揮",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "味方の速さ+2\n（次の自分のフェイズまで）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "指揮術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "193",
+    
+        "name":   "精霊拳",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   7,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "攻撃時、（魔防÷2）％で発動\n攻撃力+5",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "格闘術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "格闘術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "194",
+    
+        "name":   "攻勢指揮++",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "味方の力+5\n（次の自分のフェイズまで）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "指揮術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "195",
+    
+        "name":   "防衛指揮++",
+    
+        "skill":   "指揮術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "味方の守備+5\n（次の自分のフェイズまで）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "指揮術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "196",
+    
+        "name":   "クロスワイズ+",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   10,
+    
+        "crit":   5,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘後、\n技+2（+10が最大）\n（マップ終了まで）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "197",
+    
+        "name":   "スナイプ",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   5,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "敵のHPが半分以下なら、\n攻撃力+3　命中+10",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "弓術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "198",
+    
+        "name":   "カウンター",
+    
+        "skill":   "格闘術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   10,
+    
+        "hit":   20,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "自分が後攻になる\n戦闘時、回避+20",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "格闘術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "199",
+    
+        "name":   "ダークレイズ",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   8,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "戦闘時、敵の\n命中・回避・必殺-20",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "剣術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "200",
+    
+        "name":   "ダブルアタック",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   0,
+    
+        "hit":   -30,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "2回連続で攻撃する\n（1回のダメージは90％になる）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "斧術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "201",
+    
+        "name":   "瞬撃",
+    
+        "skill":   "斧術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   2,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "攻撃時と追撃時、\n（速さ÷2）％で発動\n攻撃力+5",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ベルトラン",
+        
+                              "condition":   "斧術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577593"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "202",
+    
+        "name":   "極一閃",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   2,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "攻撃時、（技÷2）％で発動\n攻撃力+8",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "203",
+    
+        "name":   "毒摘み",
+    
+        "skill":   "剣術",
+    
+        "special":   false,
+    
+        "cost":   null,
+    
+        "power":   2,
+    
+        "hit":   0,
+    
+        "crit":   0,
+    
+        "range":   "1",
+    
+        "target":   "-",
+    
+        "effect":   "敵が毒状態なら、\n与えたダメージの半分HP回復する",
+    
+        "requires":   "毒の剣",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  }
+
+]

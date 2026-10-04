@@ -675,6 +675,29 @@ a.skill-ref:hover { border-bottom-style: solid; }
 .tag-forte { background: #e8f2e4; border-color: #b4d3a4; color: #2e6b3f; font-weight: 600; }
 /* スカウト交渉が必要なルートに付ける目印 */
 .tag-nego { background: #fdf0e4; border-color: #e0bd97; color: #8b5a20; font-weight: 600; }
+/* 武器の呪宝と、戦技の特殊効果 */
+.tag-cursed { background: #efe6f4; border-color: #c0aed4; color: #5b3f7a; font-weight: 600; }
+
+/* 戦技・魔法の「習得できるキャラ」一覧 */
+.learners {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 1rem;
+}
+.learners li {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    padding: 0.1rem 0;
+    break-inside: avoid;
+}
+.learners .muted { font-size: 0.8rem; white-space: nowrap; }
+@media (max-width: 640px) {
+    .learners { columns: 1; }
+}
 /* a 主要技能 / 選択技能 the class forces but the character is 苦手 at.
    Mirrors .skill-tag.weak so the two read as the same warning. */
 .tag-weak { background: #f8e6e6; border-color: #dda9a9; color: #a33; font-weight: 600; }

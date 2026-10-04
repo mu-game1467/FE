@@ -19,6 +19,9 @@
 | `items/index.html` → `/FE/items/` | 消費アイテム・指南書など（手入力データ） | `data/items.json` |
 | `events/index.html` → `/FE/events/` | 隠しイベント22件。ルート（カイ／ディートリヒ／セオドラ／レダ）ごとに章・項目・発生条件の一覧。ルート絞り込み、イベント名・条件で検索、ルート順／章順／名前順で並び替え | `data/events.json` |
 | `gear/index.html` → `/FE/gear/` | 装備品23件（盾・杖・仮面・アクセ）。重さ・守備・魔力・魔防・命中・回避・怨呪を数値で持ち、種類（通常／呪宝）と効果文を併記。数値で並び替え | `data/gear.json` |
+| `weapons/index.html` → `/FE/weapons/` | 武器88件（剣術・槍術・斧術・弓術・格闘術）。通常と呪宝を分け、威力・命中・必殺・回避・重さ・射程・耐久値・買値・ショップ・特殊効果を持ち、名前／種別／呪宝／各数値で並び替え | `data/weapons.json` |
+| `arts/index.html` → `/FE/arts/` | 戦技181件（6系統）。消費・威力・命中・必殺・射程・対象と効果文、必要装備、習得できるキャラと条件。系統／各数値で並び替え | `data/arts.json` |
+| `magic/index.html` → `/FE/magic/` | 魔法45件（黒魔術・白魔術・闇魔術 × 攻撃・回復・補助）。威力・命中・必殺・回避・重さ・射程・回数と効果文、習得できるキャラと条件。系統／分類／各数値で並び替え | `data/magic.json` |
 
 各ページは1ディレクトリ下に置いてあり（`characters/index.html`）、
 GitHub Pages が `…/characters/` を `characters/index.html` に解決します。

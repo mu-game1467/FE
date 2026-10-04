@@ -1,0 +1,6787 @@
+[
+  
+    {
+    
+        "id":   "1",
+    
+        "name":   "ファイアー",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   3,
+    
+        "hit":   90,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   5,
+    
+        "range":   "1-2",
+    
+        "uses":   10,
+    
+        "effect":   "火球で攻撃する炎の初級魔法",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "黒魔術D+",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セオドラ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577323"
+                          
+      },
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウルタンド",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577319"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベルトラン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577593"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "黒魔術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セントリオン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577381"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゲイツ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577373"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ナジャ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577302"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イオ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577299"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ソフィア",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577294"
+                          
+      },
+      
+                          {
+        
+                              "name":   "マジーデ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577293"
+                          
+      },
+      
+                          {
+        
+                              "name":   "フィアナ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577288"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ハルヴィン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577341"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セテス",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577340"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ロレッタ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577378"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ネイサン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577895"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジャスミン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577383"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アスワン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577918"
+                          
+      },
+      
+                          {
+        
+                              "name":   "タホウニア",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577917"
+                          
+      },
+      
+                          {
+        
+                              "name":   "クラプカ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577935"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "2",
+    
+        "name":   "ライブ",
+    
+        "element":   "白魔術",
+    
+        "kind":   "回復魔術",
+    
+        "power":   10,
+    
+        "hit":   null,
+    
+        "crit":   null,
+    
+        "avoid":   0,
+    
+        "weight":   null,
+    
+        "range":   "1",
+    
+        "uses":   10,
+    
+        "effect":   "傷を少し癒す回復魔法\n味方のHPを回復する",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "黒魔術D+",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セオドラ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577323"
+                          
+      },
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウルタンド",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577319"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ライサンダー",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577312"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベルトラン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577593"
+                          
+      },
+      
+                          {
+        
+                              "name":   "タリムーン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577342"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "黒魔術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "黒魔術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セントリオン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577381"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トロイア",
+        
+                              "condition":   "黒魔術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577532"
+                          
+      },
+      
+                          {
+        
+                              "name":   "コウカ",
+        
+                              "condition":   "黒魔術C+",
+        
+                              "url":   "https://gamewith.jp/fefw/577535"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウーシュラ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577307"
+                          
+      },
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダンテ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577305"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シモン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577304"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヨーカイ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577295"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ソフィア",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577294"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゴライアス",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577291"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ルルディヤー",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577289"
+                          
+      },
+      
+                          {
+        
+                              "name":   "フィアナ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577288"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ハルヴィン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577341"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セテス",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577340"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ロレッタ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577378"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キリーク",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577615"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キロイカ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577287"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アスワン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577918"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "3",
+    
+        "name":   "ウィンド",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   3,
+    
+        "hit":   100,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   3,
+    
+        "range":   "1-2",
+    
+        "uses":   10,
+    
+        "effect":   "真空の刃で攻撃する風の初級魔法。\n飛行有効",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウルタンド",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577319"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ライサンダー",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577312"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウーシュラ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577307"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ディエゴ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577306"
+                          
+      },
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダンテ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577305"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ナジャ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577302"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌディーヌ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577300"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベンディッツ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577297"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヨーカイ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577295"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌッツォ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577380"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジェスター",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577290"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ルルディヤー",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577289"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セテス",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577340"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キリーク",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577615"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジャスミン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577383"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ペペ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577338"
+                          
+      },
+      
+                          {
+        
+                              "name":   "クラプカ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577935"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "4",
+    
+        "name":   "ドーラΔ",
+    
+        "element":   "闇魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   5,
+    
+        "hit":   80,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   5,
+    
+        "range":   "1-2",
+    
+        "uses":   10,
+    
+        "effect":   "凝縮した暗黒物質で敵を攻撃する",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "5",
+    
+        "name":   "リザイア",
+    
+        "element":   "白魔術",
+    
+        "kind":   "回復魔術",
+    
+        "power":   1,
+    
+        "hit":   80,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   8,
+    
+        "range":   "1-2",
+    
+        "uses":   8,
+    
+        "effect":   "対象の生命力を吸収する神聖魔法\n与えたダメージの半分HP回復する",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベルトラン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577593"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゲイツ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577373"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ディエゴ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577306"
+                          
+      },
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダンテ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577305"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ナジャ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577302"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヨーカイ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577295"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ソフィア",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577294"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌッツォ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577380"
+                          
+      },
+      
+                          {
+        
+                              "name":   "マジーデ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577293"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゴライアス",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577291"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ルルディヤー",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577289"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ネイサン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577895"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キリーク",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577615"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キロイカ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577287"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イニオニ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577379"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アスワン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577918"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "6",
+    
+        "name":   "エマージス",
+    
+        "element":   "白魔術",
+    
+        "kind":   "補助魔術",
+    
+        "power":   null,
+    
+        "hit":   null,
+    
+        "crit":   null,
+    
+        "avoid":   null,
+    
+        "weight":   null,
+    
+        "range":   "1-10",
+    
+        "uses":   1,
+    
+        "effect":   "致命的な一撃から守護する神聖魔法\n味方の必避+30\n(次の自分のフェイズまで)",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ウルタンド",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577319"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ライサンダー",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577312"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シモン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577304"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌディーヌ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577300"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キリーク",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577615"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "7",
+    
+        "name":   "スライムΒ",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   3,
+    
+        "hit":   70,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   15,
+    
+        "range":   "1-3",
+    
+        "uses":   5,
+    
+        "effect":   "疑似生命体の消化液を用いた攻撃",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "8",
+    
+        "name":   "サンダー",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   5,
+    
+        "hit":   76,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   7,
+    
+        "range":   "1-2",
+    
+        "uses":   8,
+    
+        "effect":   "局地的な落雷を起こす雷の初級魔法",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セオドラ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577323"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ライサンダー",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577312"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベルトラン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577593"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "黒魔術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セントリオン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577381"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トロイア",
+        
+                              "condition":   "黒魔術C+",
+        
+                              "url":   "https://gamewith.jp/fefw/577532"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダンテ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577305"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シモン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577304"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌディーヌ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577300"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イオ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577299"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヨーカイ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577295"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌッツォ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577380"
+                          
+      },
+      
+                          {
+        
+                              "name":   "マジーデ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577293"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゴライアス",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577291"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ルルディヤー",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577289"
+                          
+      },
+      
+                          {
+        
+                              "name":   "フィアナ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577288"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ロレッタ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577378"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ネイサン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577895"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キロイカ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577287"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イニオニ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577379"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アスワン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577918"
+                          
+      },
+      
+                          {
+        
+                              "name":   "タホウニア",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577917"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "9",
+    
+        "name":   "硝子の車輪",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   12,
+    
+        "hit":   90,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   7,
+    
+        "range":   "1-2",
+    
+        "uses":   7,
+    
+        "effect":   "超硬質な硝子の矢で敵を攻撃する\n敵の耐物でダメージ計算する\n飛行有効",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "コウカ",
+        
+                              "condition":   "Lv48",
+        
+                              "url":   "https://gamewith.jp/fefw/577535"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "10",
+    
+        "name":   "彷徨える壁",
+    
+        "element":   "白魔術",
+    
+        "kind":   "補助魔術",
+    
+        "power":   null,
+    
+        "hit":   null,
+    
+        "crit":   null,
+    
+        "avoid":   0,
+    
+        "weight":   null,
+    
+        "range":   "1-3",
+    
+        "uses":   5,
+    
+        "effect":   "任意の場所に壁を生み出す",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "コウカ",
+        
+                              "condition":   "Lv45",
+        
+                              "url":   "https://gamewith.jp/fefw/577535"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "黒魔術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ナジャ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577302"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "11",
+    
+        "name":   "エンジェル",
+    
+        "element":   "白魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   10,
+    
+        "hit":   75,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   10,
+    
+        "range":   "1-2",
+    
+        "uses":   3,
+    
+        "effect":   "清浄なる光で攻撃する神聖魔法\n冥魔有効",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セオドラ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577323"
+                          
+      },
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウルタンド",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577319"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "タリムーン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577342"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "黒魔術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゲイツ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577373"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イオ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577299"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ルルディヤー",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577289"
+                          
+      },
+      
+                          {
+        
+                              "name":   "フィアナ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577288"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ロレッタ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577378"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ペペ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577338"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アスワン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577918"
+                          
+      },
+      
+                          {
+        
+                              "name":   "クラプカ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577935"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "12",
+    
+        "name":   "ブリザー",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   4,
+    
+        "hit":   80,
+    
+        "crit":   5,
+    
+        "avoid":   0,
+    
+        "weight":   6,
+    
+        "range":   "1-2",
+    
+        "uses":   7,
+    
+        "effect":   "対象を氷結させる氷の初級魔法",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トロイア",
+        
+                              "condition":   "黒魔術C+",
+        
+                              "url":   "https://gamewith.jp/fefw/577532"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゲイツ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577373"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウーシュラ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577307"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ディエゴ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577306"
+                          
+      },
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シモン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577304"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベンディッツ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577297"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ソフィア",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577294"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゴライアス",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577291"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジェスター",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577290"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ハルヴィン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577341"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キリーク",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577615"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キロイカ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577287"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イニオニ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577379"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ペペ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577338"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "13",
+    
+        "name":   "デスΓ",
+    
+        "element":   "闇魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   15,
+    
+        "hit":   75,
+    
+        "crit":   20,
+    
+        "avoid":   0,
+    
+        "weight":   13,
+    
+        "range":   "1-2",
+    
+        "uses":   5,
+    
+        "effect":   "人工の死神が対象を死に誘う。\n必殺が高い",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "14",
+    
+        "name":   "レスト",
+    
+        "element":   "白魔術",
+    
+        "kind":   "回復魔術",
+    
+        "power":   null,
+    
+        "hit":   null,
+    
+        "crit":   null,
+    
+        "avoid":   0,
+    
+        "weight":   null,
+    
+        "range":   "1-3",
+    
+        "uses":   10,
+    
+        "effect":   "身体を正常な状態に戻す神聖魔法。\n味方の状態異常を解除する",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トロイア",
+        
+                              "condition":   "黒魔術A+",
+        
+                              "url":   "https://gamewith.jp/fefw/577532"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウーシュラ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577307"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イオ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577299"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベンディッツ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577297"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジェスター",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577290"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ハルヴィン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577341"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ロレッタ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577378"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ネイサン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577895"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "15",
+    
+        "name":   "ボルガノン",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   10,
+    
+        "hit":   85,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   8,
+    
+        "range":   "1-2",
+    
+        "uses":   10,
+    
+        "effect":   "付近を焼き尽くす炎の上級魔法",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セオドラ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577323"
+                          
+      },
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウルタンド",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577319"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベルトラン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577593"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "黒魔術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セントリオン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577381"
+                          
+      },
+      
+                          {
+        
+                              "name":   "コウカ",
+        
+                              "condition":   "黒魔術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577535"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゲイツ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577373"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ナジャ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577302"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イオ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577299"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ソフィア",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577294"
+                          
+      },
+      
+                          {
+        
+                              "name":   "マジーデ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577293"
+                          
+      },
+      
+                          {
+        
+                              "name":   "フィアナ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577288"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ハルヴィン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577341"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セテス",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577340"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ロレッタ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577378"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ネイサン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577895"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジャスミン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577383"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アスワン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577918"
+                          
+      },
+      
+                          {
+        
+                              "name":   "タホウニア",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577917"
+                          
+      },
+      
+                          {
+        
+                              "name":   "クラプカ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577935"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "16",
+    
+        "name":   "バンシーΘ",
+    
+        "element":   "闇魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   8,
+    
+        "hit":   50,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   23,
+    
+        "range":   "1-3",
+    
+        "uses":   2,
+    
+        "effect":   "命中させた時、敵を移動不能状態にする",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "17",
+    
+        "name":   "ダークスパイクΤ",
+    
+        "element":   "闇魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   20,
+    
+        "hit":   60,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   20,
+    
+        "range":   "1-2",
+    
+        "uses":   2,
+    
+        "effect":   "対騎兵に特化した性能を誇る魔法。\n騎兵特効",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "18",
+    
+        "name":   "ライア",
+    
+        "element":   "白魔術",
+    
+        "kind":   "回復魔術",
+    
+        "power":   3,
+    
+        "hit":   null,
+    
+        "crit":   null,
+    
+        "avoid":   0,
+    
+        "weight":   null,
+    
+        "range":   "1",
+    
+        "uses":   15,
+    
+        "effect":   "味方のHPを少し回復する\n稀に、回復量+100",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ライサンダー",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577312"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゲイツ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577373"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ディエゴ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577306"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ナジャ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577302"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌディーヌ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577300"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イオ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577299"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベンディッツ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577297"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌッツォ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577380"
+                          
+      },
+      
+                          {
+        
+                              "name":   "マジーデ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577293"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジェスター",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577290"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ネイサン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577895"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジャスミン",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577383"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イニオニ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577379"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ペペ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577338"
+                          
+      },
+      
+                          {
+        
+                              "name":   "タホウニア",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577917"
+                          
+      },
+      
+                          {
+        
+                              "name":   "クラプカ",
+        
+                              "condition":   "黒魔術D",
+        
+                              "url":   "https://gamewith.jp/fefw/577935"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "19",
+    
+        "name":   "リブロー",
+    
+        "element":   "白魔術",
+    
+        "kind":   "回復魔術",
+    
+        "power":   8,
+    
+        "hit":   null,
+    
+        "crit":   null,
+    
+        "avoid":   0,
+    
+        "weight":   null,
+    
+        "range":   "1-10",
+    
+        "uses":   5,
+    
+        "effect":   "遠くの味方のHPを回復する",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "セオドラ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577323"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "タリムーン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577342"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "黒魔術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トロイア",
+        
+                              "condition":   "黒魔術A+",
+        
+                              "url":   "https://gamewith.jp/fefw/577532"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベンディッツ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577297"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヨーカイ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577295"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ソフィア",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577294"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジェスター",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577290"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キリーク",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577615"
+                          
+      },
+      
+                          {
+        
+                              "name":   "タホウニア",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577917"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "20",
+    
+        "name":   "リカバー",
+    
+        "element":   "白魔術",
+    
+        "kind":   "回復魔術",
+    
+        "power":   30,
+    
+        "hit":   null,
+    
+        "crit":   null,
+    
+        "avoid":   0,
+    
+        "weight":   null,
+    
+        "range":   "1",
+    
+        "uses":   5,
+    
+        "effect":   "味方のHPを大きく回復する",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "タリムーン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577342"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "黒魔術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トロイア",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577532"
+                          
+      },
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダンテ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577305"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヨーカイ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577295"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ソフィア",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577294"
+                          
+      },
+      
+                          {
+        
+                              "name":   "フィアナ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577288"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ロレッタ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577378"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "21",
+    
+        "name":   "マジックシールド",
+    
+        "element":   "白魔術",
+    
+        "kind":   "補助魔術",
+    
+        "power":   null,
+    
+        "hit":   null,
+    
+        "crit":   null,
+    
+        "avoid":   0,
+    
+        "weight":   null,
+    
+        "range":   "1",
+    
+        "uses":   3,
+    
+        "effect":   "魔道の影響から味方を守る神聖魔法\n味方の魔防+10(次の自分のフェイズまで)",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ウルタンド",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577319"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+                          
+      },
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "コウカ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577535"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウーシュラ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577307"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イニオニ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577379"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "22",
+    
+        "name":   "オーラ",
+    
+        "element":   "白魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   22,
+    
+        "hit":   70,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   18,
+    
+        "range":   "1-2",
+    
+        "uses":   3,
+    
+        "effect":   "足元からの光で敵を焼き尽くす神聖魔法",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セオドラ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577323"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウルタンド",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577319"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヨーカイ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577295"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ソフィア",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577294"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アスワン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577918"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "23",
+    
+        "name":   "アロー",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   13,
+    
+        "hit":   100,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   12,
+    
+        "range":   "1-2",
+    
+        "uses":   3,
+    
+        "effect":   "鋭い威力の矢が敵を襲う魔法",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "24",
+    
+        "name":   "ワープ",
+    
+        "element":   "白魔術",
+    
+        "kind":   "補助魔術",
+    
+        "power":   null,
+    
+        "hit":   null,
+    
+        "crit":   null,
+    
+        "avoid":   0,
+    
+        "weight":   null,
+    
+        "range":   "1",
+    
+        "uses":   1,
+    
+        "effect":   "対象を離れた場所に移動させる魔法\n味方を周囲5マス以内のマスに移動させる",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "コウカ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577535"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "マジーデ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577293"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セテス",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577340"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ネイサン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577895"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "25",
+    
+        "name":   "サイレス",
+    
+        "element":   "白魔術",
+    
+        "kind":   "補助魔術",
+    
+        "power":   null,
+    
+        "hit":   60,
+    
+        "crit":   null,
+    
+        "avoid":   0,
+    
+        "weight":   null,
+    
+        "range":   "1-10",
+    
+        "uses":   2,
+    
+        "effect":   "魔道を封じる神聖魔法\n敵を魔封状態にする",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ディエゴ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577306"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌッツォ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577380"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "26",
+    
+        "name":   "トロン",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   20,
+    
+        "hit":   55,
+    
+        "crit":   5,
+    
+        "avoid":   0,
+    
+        "weight":   25,
+    
+        "range":   "1-3",
+    
+        "uses":   4,
+    
+        "effect":   "強力な電撃が敵を貫く雷の上級魔法",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カイ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577325"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セオドラ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577323"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "リリアン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577314"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ライサンダー",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577312"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベルトラン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577593"
+                          
+      },
+      
+                          {
+        
+                              "name":   "タリムーン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577342"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アナトリア",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577372"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セントリオン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577381"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トロイア",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577532"
+                          
+      },
+      
+                          {
+        
+                              "name":   "コウカ",
+        
+                              "condition":   "黒魔術A+",
+        
+                              "url":   "https://gamewith.jp/fefw/577535"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダンテ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577305"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シモン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577304"
+                          
+      },
+      
+                          {
+        
+                              "name":   "グザラン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577301"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌディーヌ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577300"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イオ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577299"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヨーカイ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577295"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌッツォ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577380"
+                          
+      },
+      
+                          {
+        
+                              "name":   "マジーデ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577293"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゴライアス",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577291"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ルルディヤー",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577289"
+                          
+      },
+      
+                          {
+        
+                              "name":   "フィアナ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577288"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ロレッタ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577378"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ネイサン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577895"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キロイカ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577287"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イニオニ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577379"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アスワン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577918"
+                          
+      },
+      
+                          {
+        
+                              "name":   "タホウニア",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577917"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "27",
+    
+        "name":   "リザーブ",
+    
+        "element":   "白魔術",
+    
+        "kind":   "回復魔術",
+    
+        "power":   20,
+    
+        "hit":   null,
+    
+        "crit":   null,
+    
+        "avoid":   0,
+    
+        "weight":   null,
+    
+        "range":   "1-5",
+    
+        "uses":   2,
+    
+        "effect":   "広域な味方の傷を癒す神聖魔法\n範囲にいる味方のHPを回復する",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "救世主",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577454"
+                          
+      },
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウーシュラ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577307"
+                          
+      },
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "28",
+    
+        "name":   "アイスブレード",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   12,
+    
+        "hit":   75,
+    
+        "crit":   5,
+    
+        "avoid":   0,
+    
+        "weight":   10,
+    
+        "range":   "1-2",
+    
+        "uses":   6,
+    
+        "effect":   "氷結の刃が敵を襲う氷の上級魔法",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "レダ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577322"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トロイア",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577532"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゲイツ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577373"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウーシュラ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577307"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ディエゴ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577306"
+                          
+      },
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シモン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577304"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ニネ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577303"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベンディッツ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577297"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ソフィア",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577294"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゴライアス",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577291"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジェスター",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577290"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ハルヴィン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577341"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キリーク",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577615"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キロイカ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577287"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イニオニ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577379"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ペペ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577338"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "29",
+    
+        "name":   "リジェネラ",
+    
+        "element":   "白魔術",
+    
+        "kind":   "回復魔術",
+    
+        "power":   null,
+    
+        "hit":   null,
+    
+        "crit":   null,
+    
+        "avoid":   0,
+    
+        "weight":   null,
+    
+        "range":   "1",
+    
+        "uses":   5,
+    
+        "effect":   "継続的に傷を回復し続ける神聖魔法\n味方のHPをフェイズ開始毎に小回復(5ターンで解除)",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベルトラン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577593"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セントリオン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577381"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イオ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577299"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゴライアス",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577291"
+                          
+      },
+      
+                          {
+        
+                              "name":   "フィアナ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577288"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セテス",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577340"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジャスミン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577383"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "30",
+    
+        "name":   "バサーク",
+    
+        "element":   "白魔術",
+    
+        "kind":   "補助魔術",
+    
+        "power":   null,
+    
+        "hit":   60,
+    
+        "crit":   null,
+    
+        "avoid":   0,
+    
+        "weight":   null,
+    
+        "range":   "1-10",
+    
+        "uses":   1,
+    
+        "effect":   "思考に影響を及ぼす神聖魔法\n敵を混乱状態にする",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベルトラン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577593"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ディエゴ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577306"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌッツォ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577380"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ルルディヤー",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577289"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ハルヴィン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577341"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キロイカ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577287"
+                          
+      },
+      
+                          {
+        
+                              "name":   "イニオニ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577379"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ペペ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577338"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "31",
+    
+        "name":   "アグネアの矢",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   25,
+    
+        "hit":   90,
+    
+        "crit":   5,
+    
+        "avoid":   0,
+    
+        "weight":   15,
+    
+        "range":   "1-2",
+    
+        "uses":   3,
+    
+        "effect":   "全てを浄化する炎の最上級魔法",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "32",
+    
+        "name":   "レスキュー",
+    
+        "element":   "白魔術",
+    
+        "kind":   "補助魔術",
+    
+        "power":   null,
+    
+        "hit":   null,
+    
+        "crit":   null,
+    
+        "avoid":   null,
+    
+        "weight":   null,
+    
+        "range":   "2-10",
+    
+        "uses":   1,
+    
+        "effect":   "遠距離の対象を移動させる魔法\n味方を自分の隣接マスに移動させる",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ライサンダー",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577312"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セントリオン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577381"
+                          
+      },
+      
+                          {
+        
+                              "name":   "コウカ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577535"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゲイツ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577373"
+                          
+      },
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌディーヌ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577300"
+                          
+      },
+      
+                          {
+        
+                              "name":   "フィアナ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577288"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ロレッタ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577378"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジャスミン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577383"
+                          
+      },
+      
+                          {
+        
+                              "name":   "タホウニア",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577917"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "33",
+    
+        "name":   "トーチ",
+    
+        "element":   "白魔術",
+    
+        "kind":   "補助魔術",
+    
+        "power":   null,
+    
+        "hit":   null,
+    
+        "crit":   null,
+    
+        "avoid":   0,
+    
+        "weight":   null,
+    
+        "range":   "-",
+    
+        "uses":   5,
+    
+        "effect":   "暗闇を光で照らす神聖魔法\n視界+3(次の自分のフェイズまで)",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "バッカニア",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577310"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シモン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577304"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ナジャ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577302"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キロイカ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577287"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ペペ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577338"
+                          
+      },
+      
+                          {
+        
+                              "name":   "クラプカ",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577935"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "34",
+    
+        "name":   "レスキア",
+    
+        "element":   "白魔術",
+    
+        "kind":   "補助魔術",
+    
+        "power":   null,
+    
+        "hit":   null,
+    
+        "crit":   null,
+    
+        "avoid":   null,
+    
+        "weight":   null,
+    
+        "range":   "2-3",
+    
+        "uses":   3,
+    
+        "effect":   "遠距離の対象を移動させる神聖魔法\n味方を自分の隣接マスに移動させる",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌディーヌ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577300"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ハルヴィン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577341"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セテス",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577340"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジャスミン",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577383"
+                          
+      },
+      
+                          {
+        
+                              "name":   "タホウニア",
+        
+                              "condition":   "黒魔術C",
+        
+                              "url":   "https://gamewith.jp/fefw/577917"
+                          
+      },
+      
+                          {
+        
+                              "name":   "クラプカ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577935"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "35",
+    
+        "name":   "フリーズ",
+    
+        "element":   "白魔術",
+    
+        "kind":   "補助魔術",
+    
+        "power":   null,
+    
+        "hit":   60,
+    
+        "crit":   null,
+    
+        "avoid":   0,
+    
+        "weight":   null,
+    
+        "range":   "1-20",
+    
+        "uses":   1,
+    
+        "effect":   "行動を制限する神聖魔法\n敵を移動不能にする",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダンテ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577305"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      },
+      
+                          {
+        
+                              "name":   "マジーデ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577293"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジェスター",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577290"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "36",
+    
+        "name":   "シェイバー",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   7,
+    
+        "hit":   95,
+    
+        "crit":   5,
+    
+        "avoid":   0,
+    
+        "weight":   8,
+    
+        "range":   "1-2",
+    
+        "uses":   8,
+    
+        "effect":   "空気の刃が襲いかかる風の上級魔法\n飛行有効",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ピーテル",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577320"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウルタンド",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577319"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ミカエラ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577316"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ボナパルテ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577315"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ライサンダー",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577312"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ウーシュラ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577307"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ディエゴ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577306"
+                          
+      },
+      
+                          {
+        
+                              "name":   "サラン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577339"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダンテ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577305"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ナジャ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577302"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌディーヌ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577300"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベンディッツ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577297"
+                          
+      },
+      
+                          {
+        
+                              "name":   "アレキサンドラ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577376"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヨーカイ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577295"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ヌッツォ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577380"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジェスター",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577290"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ルルディヤー",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577289"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セテス",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577340"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キリーク",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577615"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ジャスミン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577383"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ペペ",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577338"
+                          
+      },
+      
+                          {
+        
+                              "name":   "クラプカ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577935"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "37",
+    
+        "name":   "バリアー",
+    
+        "element":   "白魔術",
+    
+        "kind":   "補助魔術",
+    
+        "power":   null,
+    
+        "hit":   null,
+    
+        "crit":   null,
+    
+        "avoid":   0,
+    
+        "weight":   null,
+    
+        "range":   "-",
+    
+        "uses":   4,
+    
+        "effect":   "聖なる障壁が味方を守る神聖魔法\n味方が次の戦闘で受けるダメージを半減する",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "セオドラ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577323"
+                          
+      },
+      
+                          {
+        
+                              "name":   "エスメラルダ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577317"
+                          
+      },
+      
+                          {
+        
+                              "name":   "セントリオン",
+        
+                              "condition":   "黒魔術B",
+        
+                              "url":   "https://gamewith.jp/fefw/577381"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トロイア",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577532"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シモン",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577304"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ナジャ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577302"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベンディッツ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577297"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ノクチュラ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577296"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ゴライアス",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577291"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "38",
+    
+        "name":   "サンダーストーム",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   18,
+    
+        "hit":   50,
+    
+        "crit":   5,
+    
+        "avoid":   0,
+    
+        "weight":   30,
+    
+        "range":   "3-10",
+    
+        "uses":   1,
+    
+        "effect":   "雷撃の嵐で遠方を攻撃する高等魔法\n(追撃不可能)",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "コウカ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577535"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダンテ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577305"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "39",
+    
+        "name":   "フィンブルの夜",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   30,
+    
+        "hit":   80,
+    
+        "crit":   10,
+    
+        "avoid":   0,
+    
+        "weight":   28,
+    
+        "range":   "1-2",
+    
+        "uses":   1,
+    
+        "effect":   "永遠の冬をもたらす最上級魔法",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "40",
+    
+        "name":   "ルナΛ",
+    
+        "element":   "闇魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   1,
+    
+        "hit":   50,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   20,
+    
+        "range":   "1-2",
+    
+        "uses":   6,
+    
+        "effect":   "対象を内側から破壊する強力な攻撃\n敵の魔防を無視する",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "黒魔術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "41",
+    
+        "name":   "エクスカリバー",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   15,
+    
+        "hit":   100,
+    
+        "crit":   10,
+    
+        "avoid":   0,
+    
+        "weight":   10,
+    
+        "range":   "1-2",
+    
+        "uses":   6,
+    
+        "effect":   "巨大な風の刃で切り裂く高等魔法\n飛行有効",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ティアラ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577321"
+                          
+      },
+      
+                          {
+        
+                              "name":   "シロッコ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577311"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ムウ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577308"
+                          
+      },
+      
+                          {
+        
+                              "name":   "タリムーン",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577342"
+                          
+      },
+      
+                          {
+        
+                              "name":   "カターニャ",
+        
+                              "condition":   "黒魔術S",
+        
+                              "url":   "https://gamewith.jp/fefw/577298"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "42",
+    
+        "name":   "裁きの剣",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   6,
+    
+        "hit":   80,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   10,
+    
+        "range":   "1-2",
+    
+        "uses":   4,
+    
+        "effect":   "自律行動する巨剣で対象を攻撃する\n2カイ連続で攻撃する\n敵の耐物でダメージ計算する",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "43",
+    
+        "name":   "大地の顎",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   17,
+    
+        "hit":   90,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   25,
+    
+        "range":   "3-10",
+    
+        "uses":   2,
+    
+        "effect":   "巨大な顎が全てを噛み砕く\n敵の耐物でダメージ計算する",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "44",
+    
+        "name":   "スターライト",
+    
+        "element":   "白魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   13,
+    
+        "hit":   90,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   30,
+    
+        "range":   "1-3",
+    
+        "uses":   6,
+    
+        "effect":   "星の光が対象を薙ぎ払う神聖魔法\n冥魔有効",
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "オルヘル",
+        
+                              "condition":   "黒魔術初期",
+        
+                              "url":   "https://gamewith.jp/fefw/577374"
+                          
+      }
+                      
+    ]
+    
+  },
+  
+    {
+    
+        "id":   "45",
+    
+        "name":   "スウォームΖ",
+    
+        "element":   "黒魔術",
+    
+        "kind":   "攻撃魔術",
+    
+        "power":   4,
+    
+        "hit":   65,
+    
+        "crit":   0,
+    
+        "avoid":   0,
+    
+        "weight":   21,
+    
+        "range":   "1-2",
+    
+        "uses":   4,
+    
+        "effect":   "無数の微細機械による包囲攻撃\n命中させた時、敵の速さ-3(次の自分のフェイズまで)",
+    
+        "learnable":   [
+      
+
+                      
+    ]
+    
+  }
+
+]

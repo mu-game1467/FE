@@ -6,6 +6,52 @@
 
 再生成: `powershell -ExecutionPolicy Bypass -File tools\build-from-game8.ps1 -Download`
 
+## 取得元の一覧
+
+| 取得元 | 対象 | ツール |
+|--------|------|--------|
+| Game8 | キャラクター・兵種・加入条件・技能・血印 | `tools/build-from-game8.ps1` |
+| GameWith | 武器・戦技・魔法 | `tools/build-from-gamewith.ps1` |
+| AppMedia | 武器・戦技（GameWith の補完用） | `tools/fetch-pages.ps1` |
+| PegasusKnight | 装備・兵種・ユニット | `tools/fetch-pages.ps1` |
+
+HTML の取得は `tools\fetch-pages.ps1` が一括で行う。新しいサイトを足すときは
+その `$SOURCES` に1行追加し、抽出規則を `build-from-*.ps1` に足す。
+
+### PegasusKnight について
+
+<https://www.pegasusknight.com/wiki/fe18/>（PukiWiki）を登録済みだが、
+2026-10 時点で **装備・アイテム・武器・戦技・魔法のページが未作成**（`?cmd=edit&page=...` が返る）。
+ユニット一覧・成長率・加入・離脱・兵種一覧・評価・会話集のみ存在する。
+ページが追加されたら `tools\fetch-pages.ps1` の `$SOURCES` に id を入れて使う。
+
+## GameWith 由来のデータ（武器・戦技・魔法）
+
+元データ: <https://gamewith.jp/fefw/574424>（魔法）、`/573032`（戦技）、`/576859`（武器）
+
+各ページはカード一覧を `<li data-id="..." data-name="..." data-filter="...">` で持ち、
+`data-filter` の最初が系統、以降が系統内の分類を表す。カード内の項目名
+（`威力` `命中` など）は `<div text="...">`、見出し付きの小区画は `<div class="_label-N">` で得られる。
+
+| ファイル | 件数 | 主なキー |
+|----------|------|----------|
+| `weapons.json` | 88 | `kind` `cursed` `power` `hit` `crit` `curse_power` `weight` `avoid` `range` `required` `durability` `price` `shop` `effect` |
+| `arts.json` | 181 | `skill` `special` `cost` `power` `hit` `crit` `range` `target` `effect` `requires` `learnable` |
+| `magic.json` | 45 | `element` `kind` `power` `hit` `crit` `avoid` `weight` `range` `uses` `effect` `learnable` |
+
+系統はページ内の日本語表記をそのまま使う（`wp1`=剣術 … `wp8`=黒魔術）。
+武器の `kind` は戦技ページの `alt` 属性から取る。文字はページ由来なので
+コードポイントを手書きしない（誤字が出る）。
+
+### characters.json の magic_ranks
+
+`magic.json` の `learnable`（キャラ名＋条件）をキャラ単位でまとめたもの。
+1キャラが複数のLvで現れることがある（カイは 黒魔術D/C/B/A/S）。
+これは「そのLvで習得できる魔法がある」意味なので、**単一値ではなくリスト**で保持する。
+
+条件の値は GameWith 側が唯一の典拠。既存の `usable_skills` はLvを持たないため照合できない。
+既存の `characters.json` の他フィールドは一切変更していない。
+
 ## グループ（`db_data` の単位）
 
 | id | 内容 | 件数 |

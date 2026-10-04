@@ -31,6 +31,9 @@ const PAGES = {
     skills:     { file: 'data/skills.json',     icon: '✨', label: 'スキル' },
     items:      { file: 'data/items.json',      icon: '📦', label: 'アイテム' },
     gear:       { file: 'data/gear.json',       icon: '🛡️', label: '装備品' },
+    weapons:    { file: 'data/weapons.json',    icon: '🗡️', label: '武器' },
+    arts:       { file: 'data/arts.json',       icon: '💥', label: '戦技' },
+    magic:      { file: 'data/magic.json',      icon: '🔮', label: '魔法' },
     events:     { file: 'data/events.json',     icon: '📜', label: '隠しイベント' }
 };
 
@@ -844,12 +847,115 @@ function renderGear(item) {
         </article>`;
 }
 
+/**
+ * 武器・戦技・魔法は「名前・系統タグ・数値・効果文」で構成される。
+ * 数値はラベル付きの行にまとめ、系統タグで絞り込めるようにする。
+ */
+const COMBAT_STAT_LABELS = [
+    { key: 'power', label: '威力' },
+    { key: 'hit', label: '命中' },
+    { key: 'crit', label: '必殺' },
+    { key: 'avoid', label: '回避' },
+    { key: 'weight', label: '重さ' },
+    { key: 'range', label: '射程' },
+    { key: 'uses', label: '回数' },
+    { key: 'cost', label: '消費' },
+    { key: 'durability', label: '耐久値' },
+    { key: 'curse_power', label: '怨呪力' }
+];
+
+/** 数値項目を「ラベル: 値」の並びで表示する。値が無い項目は省く。 */
+function statRows(item) {
+    return COMBAT_STAT_LABELS
+        .filter((s) => item[s.key] !== undefined && item[s.key] !== null && item[s.key] !== '')
+        .map((s) => `<div class="kv"><span class="kv-label">${esc(s.label)}</span><span class="kv-value">${esc(item[s.key])}</span></div>`)
+        .join('');
+}
+
+/** 習得できるキャラの一覧。キャラ詳細へ相互リンクさせる。 */
+function learnerList(list) {
+    if (!list || !list.length) return '';
+    const rows = list.map((l) => {
+        const name = l.name
+            ? `<a href="${assetUrl('characters/' + encodeURIComponent(l.name) + '/')}">${esc(l.name)}</a>`
+            : '';
+        return `<li>${name}<span class="muted">${esc(l.condition || '')}</span></li>`;
+    }).join('');
+    return `<div class="card-block"><h4>習得できるキャラ（${list.length}）</h4><ul class="learners">${rows}</ul></div>`;
+}
+
+function renderWeapon(item) {
+    const tags = [];
+    if (item.kind) tags.push(`<span class="tag">${esc(item.kind)}</span>`);
+    if (item.cursed) tags.push('<span class="tag tag-cursed">呪宝</span>');
+    if (item.required) tags.push(`<span class="tag tag-weak">${esc(item.required)}</span>`);
+    const numbers = statRows(item);
+
+    return `
+        <article class="card" data-id="${esc(item.name)}">
+            <div class="card-content">
+                <header class="card-head">
+                    <h3 class="card-name">${esc(item.name)}</h3>
+                    <div class="taglist">${tags.join('')}</div>
+                </header>
+                ${numbers ? `<div class="card-block"><h4>数値</h4><div class="kvs">${numbers}</div></div>` : ''}
+                ${item.effect ? `<p class="effect">${esc(item.effect)}</p>` : ''}
+                ${item.price ? `<div class="card-block"><h4>買値</h4><p class="effect">${esc(item.price)}</p></div>` : ''}
+                ${item.shop ? `<div class="card-block"><h4>ショップ</h4><p class="muted">${esc(item.shop).replace(/\n/g, '<br>')}</p></div>` : ''}
+            </div>
+        </article>`;
+}
+
+function renderArt(item) {
+    const tags = [];
+    if (item.skill) tags.push(`<span class="tag">${esc(item.skill)}</span>`);
+    if (item.special) tags.push('<span class="tag tag-cursed">特殊効果</span>');
+    const numbers = statRows(item);
+
+    return `
+        <article class="card" data-id="${esc(item.name)}">
+            <div class="card-content">
+                <header class="card-head">
+                    <h3 class="card-name">${esc(item.name)}</h3>
+                    <div class="taglist">${tags.join('')}</div>
+                </header>
+                ${numbers ? `<div class="card-block"><h4>数値</h4><div class="kvs">${numbers}</div></div>` : ''}
+                ${item.effect ? `<p class="effect">${esc(item.effect)}</p>` : ''}
+                ${item.requires ? `<div class="card-block"><h4>必要装備</h4><p class="muted">${esc(item.requires)}</p></div>` : ''}
+                ${learnerList(item.learnable)}
+            </div>
+        </article>`;
+}
+
+function renderMagic(item) {
+    const tags = [];
+    if (item.element) tags.push(`<span class="tag">${esc(item.element)}</span>`);
+    if (item.kind) tags.push(`<span class="tag tag-class">${esc(item.kind)}</span>`);
+    const numbers = statRows(item);
+
+    return `
+        <article class="card" data-id="${esc(item.name)}">
+            <div class="card-content">
+                <header class="card-head">
+                    <h3 class="card-name">${esc(item.name)}</h3>
+                    <div class="taglist">${tags.join('')}</div>
+                </header>
+                ${numbers ? `<div class="card-block"><h4>数値</h4><div class="kvs">${numbers}</div></div>` : ''}
+                ${item.effect ? `<p class="effect">${esc(item.effect)}</p>` : ''}
+                ${learnerList(item.learnable)}
+            </div>
+        </article>`;
+}
+
 const RENDERERS = {
     characters: renderCharacter,
     classes: renderClass,
     skills: renderSkill,
     items: renderItem,
-    gear: renderGear
+    gear: renderGear,
+    weapons: renderWeapon,
+    arts: renderArt,
+    magic: renderMagic
 };
 
 function renderList() {
@@ -932,6 +1038,10 @@ function sortData(list, mode) {
         case 'movement':  return copy.sort((a, b) => (b.movement || 0) - (a.movement || 0));
         case 'tier':      return copy.sort((a, b) => tierIndex(a.tier) - tierIndex(b.tier) || byName(a, b));
         case 'type':      return copy.sort((a, b) => String(a.type || '').localeCompare(String(b.type || ''), 'ja') || byName(a, b));
+        case 'kind':      return copy.sort((a, b) => String(a.kind || '').localeCompare(String(b.kind || ''), 'ja') || byName(a, b));
+        case 'skill':     return copy.sort((a, b) => String(a.skill || '').localeCompare(String(b.skill || ''), 'ja') || byName(a, b));
+        case 'element':   return copy.sort((a, b) => String(a.element || '').localeCompare(String(b.element || ''), 'ja') || byName(a, b));
+        case 'curse':     return copy.sort((a, b) => (b.cursed ? 1 : 0) - (a.cursed ? 1 : 0) || byName(a, b));
         default:
             // 'hp', 'str', ... sort high-to-low; the '-asc' variants (used by the
             // growth table headers) sort the other way. Ties fall back to the name.
@@ -939,11 +1049,33 @@ function sortData(list, mode) {
                 const key = mode.slice(0, -4);
                 return copy.sort((a, b) => statOf(a, key) - statOf(b, key) || byName(a, b));
             }
+            if (COMBAT_STAT_KEYS.has(mode)) {
+                return copy.sort((a, b) => combatStat(b, mode) - combatStat(a, mode) || byName(a, b));
+            }
+            if (mode.endsWith('-asc') && COMBAT_STAT_KEYS.has(mode.slice(0, -4))) {
+                const key = mode.slice(0, -4);
+                return copy.sort((a, b) => combatStat(a, key) - combatStat(b, key) || byName(a, b));
+            }
             if (STAT_KEYS.has(mode)) {
                 return copy.sort((a, b) => statOf(b, mode) - statOf(a, mode) || byName(a, b));
             }
             return copy;
     }
+}
+
+/**
+ * One numeric value from a weapon / art / magic record. The source stores some
+ * values as text ("+12") and some as a range ("1-2"), so anything that is not a
+ * plain number is read as the low end of the range and treated as 0 otherwise.
+ */
+function combatStat(item, key) {
+    const raw = item ? item[key] : null;
+    if (typeof raw === 'number') return raw;
+    if (raw === null || raw === undefined) return 0;
+    const text = String(raw).trim();
+    const first = text.split('-')[0];
+    const n = Number(first);
+    return Number.isFinite(n) ? n : 0;
 }
 
 /** effective value of one stat: character growth plus class growth bonus.
@@ -1498,6 +1630,7 @@ function renderCharacterDetail(character, classes, container) {
                 <h3>技能</h3>
                 ${character.forte_skills ? `<p class="skillline"><span class="skill-tag">得意</span>${tagList(character.forte_skills)}</p>` : ''}
                 ${character.weak_skills ? `<p class="skillline"><span class="skill-tag weak">苦手</span>${tagList(character.weak_skills)}</p>` : ''}
+                ${character.magic_ranks && character.magic_ranks.length ? `<p class="skillline"><span class="skill-tag">魔術</span>${tagList(character.magic_ranks)}</p><p class="muted">習得できる魔法のLv。同じLvが複数あるほど、そのLvで習得できる魔法が複数ある。</p>` : ''}
             </section>` : ''}
 
             ${recruitRows ? `
@@ -1835,6 +1968,9 @@ function negotiationCell(entry) {
     const label = level ? (NEGOTIATION_LABELS[level] || level) : '';
     return `<span class="tag tag-nego">${label ? '交渉 ' + esc(label) : '交渉'}</span>`;
 }
+
+/** 武器・戦技・魔法で並び替えられる数値項目 */
+const COMBAT_STAT_KEYS = new Set(COMBAT_STAT_LABELS.map((s) => s.key));
 
 const STAT_KEYS = new Set(STATS.map((s) => s.key));
 
@@ -2351,6 +2487,35 @@ const SORT_OPTIONS = {
         { value: 'route', label: 'ルート順' },
         { value: 'chapter', label: '章順' },
         { value: 'name', label: '名前順' }
+    ],
+    weapons: [
+        { value: 'name', label: '名前順' },
+        { value: 'kind', label: '種別順' },
+        { value: 'curse', label: '呪宝を先に' },
+        { value: 'power', label: '威力が高い順' },
+        { value: 'hit', label: '命中が高い順' },
+        { value: 'crit', label: '必殺が高い順' },
+        { value: 'avoid', label: '回避が高い順' },
+        { value: 'weight', label: '重さが重い順' },
+        { value: 'weight-asc', label: '重さが軽い順' },
+        { value: 'durability', label: '耐久値が高い順' }
+    ],
+    arts: [
+        { value: 'name', label: '名前順' },
+        { value: 'skill', label: '系統順' },
+        { value: 'power', label: '威力が高い順' },
+        { value: 'hit', label: '命中が高い順' },
+        { value: 'crit', label: '必殺が高い順' },
+        { value: 'cost', label: '消費が少ない順' }
+    ],
+    magic: [
+        { value: 'name', label: '名前順' },
+        { value: 'element', label: '系統順' },
+        { value: 'kind', label: '分類順' },
+        { value: 'power', label: '威力が高い順' },
+        { value: 'hit', label: '命中が高い順' },
+        { value: 'crit', label: '必殺が高い順' },
+        { value: 'uses', label: '回数が多い順' }
     ]
 };
 

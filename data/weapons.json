@@ -1,0 +1,3523 @@
+[
+  
+    {
+    
+        "id":   "1",
+    
+        "name":   "木製の剣",
+    
+        "kind":   "剣術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "2",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "2",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "剣E",
+    
+        "durability":   "10",
+    
+        "price":   "300G",
+    
+        "shop":   "帝都ダグシオンの武器屋\nフィーナの漁村の武器屋\nカリアネイラの港の武器屋\nザスタの集落の武器屋 など",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578519"
+    
+  },
+  
+    {
+    
+        "id":   "2",
+    
+        "name":   "鉄の剣",
+    
+        "kind":   "剣術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "9",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "4",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "剣D",
+    
+        "durability":   "20",
+    
+        "price":   "1500G",
+    
+        "shop":   "帝都ダグシオンの武器屋\n王都グラン・アラゴンの武器屋\nカリアネイラの港の武器屋\n王都ブレストンの武器屋 など",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578518"
+    
+  },
+  
+    {
+    
+        "id":   "3",
+    
+        "name":   "キルソード",
+    
+        "kind":   "剣術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "11",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "6",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "剣C",
+    
+        "durability":   "40",
+    
+        "price":   "3000G",
+    
+        "shop":   "レギアの町の武器屋\n救世編：レギアの町の武器屋",
+    
+        "effect":   "戦技「必殺剣」が使える",
+    
+        "url":   "https://gamewith.jp/fefw/578517"
+    
+  },
+  
+    {
+    
+        "id":   "4",
+    
+        "name":   "邪剣ヴェロキネ",
+    
+        "kind":   "剣術",
+    
+        "cursed":   true,
+    
+        "in_shop":   false,
+    
+        "power":   "13",
+    
+        "hit":   "60",
+    
+        "crit":   "0",
+    
+        "curse_power":   "2",
+    
+        "weight":   "12",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "",
+    
+        "durability":   "30",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦技「絶花」が使える",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "5",
+    
+        "name":   "開かれし救世の剣",
+    
+        "kind":   "剣術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "6",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "5",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "剣E",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "隣接する味方の防御力+1",
+    
+        "url":   "https://gamewith.jp/fefw/578714"
+    
+  },
+  
+    {
+    
+        "id":   "6",
+    
+        "name":   "王家の宝剣",
+    
+        "kind":   "剣術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "5",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "4",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "剣E",
+    
+        "durability":   "10",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "ノナファイアーEXを使用可能",
+    
+        "url":   "https://gamewith.jp/fefw/578715"
+    
+  },
+  
+    {
+    
+        "id":   "7",
+    
+        "name":   "マハマドゥの槍",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "10",
+    
+        "hit":   "85",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "8",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "槍E",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦技「真月」が使える",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "8",
+    
+        "name":   "青銅の槍",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "5",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "7",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "槍E",
+    
+        "durability":   "15",
+    
+        "price":   "500G",
+    
+        "shop":   "帝都ダグシオンの武器屋\n領都カッシートの武器屋\nフィーナの漁村の武器屋\n王都メガエラの武器屋 など",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578516"
+    
+  },
+  
+    {
+    
+        "id":   "9",
+    
+        "name":   "鉄の槍",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "10",
+    
+        "hit":   "80",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "7",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "槍D",
+    
+        "durability":   "20",
+    
+        "price":   "1500G",
+    
+        "shop":   "帝都ダグシオンの武器屋\n領都カッシートの武器屋\n王都メガエラの武器屋\nパンドラの港町の武器屋 など",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/577834"
+    
+  },
+  
+    {
+    
+        "id":   "10",
+    
+        "name":   "手槍",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "3",
+    
+        "hit":   "80",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "8",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "槍D",
+    
+        "durability":   "20",
+    
+        "price":   "1500G",
+    
+        "shop":   "帝都ダグシオンの武器屋\n領都カッシートの武器屋\nパンドラの港町の武器屋\n救世編：帝都ダグシオンの武器屋 など",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578515"
+    
+  },
+  
+    {
+    
+        "id":   "11",
+    
+        "name":   "偃月刀",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "11",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "9",
+    
+        "avoid":   "10",
+    
+        "range":   "1",
+    
+        "required":   "",
+    
+        "durability":   "20",
+    
+        "price":   "4000G",
+    
+        "shop":   "ジーマの港の武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578514"
+    
+  },
+  
+    {
+    
+        "id":   "12",
+    
+        "name":   "邪槍ハノーア",
+    
+        "kind":   "槍術",
+    
+        "cursed":   true,
+    
+        "in_shop":   false,
+    
+        "power":   "12",
+    
+        "hit":   "80",
+    
+        "crit":   "0",
+    
+        "curse_power":   "1",
+    
+        "weight":   "7",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "槍A",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦技「滅騎」が使える",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "13",
+    
+        "name":   "氷の救世の槍",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "7",
+    
+        "hit":   "85",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "7",
+    
+        "avoid":   "10",
+    
+        "range":   "1",
+    
+        "required":   "槍E",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578713"
+    
+  },
+  
+    {
+    
+        "id":   "14",
+    
+        "name":   "青銅の斧",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "7",
+    
+        "hit":   "70",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "9",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "斧E",
+    
+        "durability":   "20",
+    
+        "price":   "500G",
+    
+        "shop":   "帝都ダグシオンの武器屋\n王都グラン・アラゴンの武器屋\n王都メガエラの武器屋\nライ・オーの港の武器屋 など",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/577857"
+    
+  },
+  
+    {
+    
+        "id":   "15",
+    
+        "name":   "鉄の斧",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "13",
+    
+        "hit":   "65",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "10",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "斧D",
+    
+        "durability":   "25",
+    
+        "price":   "1500G",
+    
+        "shop":   "帝都ダグシオンの武器屋\n王都グラン・アラゴンの武器屋\n王都メガエラの武器屋\nライ・オーの港の武器屋 など",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/577852"
+    
+  },
+  
+    {
+    
+        "id":   "16",
+    
+        "name":   "手斧",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "5",
+    
+        "hit":   "65",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "10",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "斧D",
+    
+        "durability":   "25",
+    
+        "price":   "1500G",
+    
+        "shop":   "帝都ダグシオンの武器屋\nトバリンの村の武器屋\nライ・オーの港の武器屋\nベネトナシュの村の武器屋 など",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578513"
+    
+  },
+  
+    {
+    
+        "id":   "17",
+    
+        "name":   "ショートアクス",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "9",
+    
+        "hit":   "60",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "12",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "斧C",
+    
+        "durability":   "25",
+    
+        "price":   "3000G",
+    
+        "shop":   "帝都ダグシオンの武器屋\nライ・オーの港の武器屋\nベネトナシュの村の武器屋\n救世編：帝都ダグシオンの武器屋 など",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578512"
+    
+  },
+  
+    {
+    
+        "id":   "18",
+    
+        "name":   "スマッシュアクス",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "14",
+    
+        "hit":   "65",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "10",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "斧C",
+    
+        "durability":   "25",
+    
+        "price":   "2400G",
+    
+        "shop":   "救世編：マオン城郭の武器屋\nマオン城郭の武器屋",
+    
+        "effect":   "戦技「粉砕の一撃」が使える",
+    
+        "url":   "https://gamewith.jp/fefw/578511"
+    
+  },
+  
+    {
+    
+        "id":   "19",
+    
+        "name":   "邪斧ヴェルハイト",
+    
+        "kind":   "斧術",
+    
+        "cursed":   true,
+    
+        "in_shop":   false,
+    
+        "power":   "13",
+    
+        "hit":   "95",
+    
+        "crit":   "0",
+    
+        "curse_power":   "1",
+    
+        "weight":   "5",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "斧A",
+    
+        "durability":   "25",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "20",
+    
+        "name":   "青銅の弓",
+    
+        "kind":   "弓術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "4",
+    
+        "hit":   "75",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "6",
+    
+        "avoid":   "0",
+    
+        "range":   "2",
+    
+        "required":   "弓E",
+    
+        "durability":   "15",
+    
+        "price":   "500G",
+    
+        "shop":   "帝都ダグシオンの武器屋\nリベイラ村の武器屋\nヤーマン村の武器屋\nオレンスの町の武器屋 など",
+    
+        "effect":   "飛行に特効効果がある",
+    
+        "url":   "https://gamewith.jp/fefw/578510"
+    
+  },
+  
+    {
+    
+        "id":   "21",
+    
+        "name":   "鉄の弓",
+    
+        "kind":   "弓術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "9",
+    
+        "hit":   "75",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "6",
+    
+        "avoid":   "0",
+    
+        "range":   "2",
+    
+        "required":   "弓D",
+    
+        "durability":   "20",
+    
+        "price":   "1500G",
+    
+        "shop":   "帝都ダグシオンの武器屋\nリベイラ村の武器屋\nオレンスの町の武器屋\n王都ブレストンの武器屋 など",
+    
+        "effect":   "飛行に特効効果がある",
+    
+        "url":   "https://gamewith.jp/fefw/577833"
+    
+  },
+  
+    {
+    
+        "id":   "22",
+    
+        "name":   "獣狩りの弓",
+    
+        "kind":   "弓術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "6",
+    
+        "hit":   "70",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "7",
+    
+        "avoid":   "0",
+    
+        "range":   "2",
+    
+        "required":   "弓D",
+    
+        "durability":   "20",
+    
+        "price":   "3000G",
+    
+        "shop":   "リベイラ村の武器屋",
+    
+        "effect":   "飛行に特効効果がある",
+    
+        "url":   "https://gamewith.jp/fefw/578509"
+    
+  },
+  
+    {
+    
+        "id":   "23",
+    
+        "name":   "毒の弓",
+    
+        "kind":   "弓術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "3",
+    
+        "hit":   "75",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "4",
+    
+        "avoid":   "0",
+    
+        "range":   "2",
+    
+        "required":   "弓D",
+    
+        "durability":   "20",
+    
+        "price":   "2800G",
+    
+        "shop":   "ヤーマン村の武器屋\nキラの村の武器屋\n救世編：ヤーマン村の武器屋\n救世編：キラの村の武器屋",
+    
+        "effect":   "飛行に特効効果がある",
+    
+        "url":   "https://gamewith.jp/fefw/578508"
+    
+  },
+  
+    {
+    
+        "id":   "24",
+    
+        "name":   "アガゼの弓",
+    
+        "kind":   "弓術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "10",
+    
+        "hit":   "65",
+    
+        "crit":   "0",
+    
+        "curse_power":   "2",
+    
+        "weight":   "10",
+    
+        "avoid":   "0",
+    
+        "range":   "2",
+    
+        "required":   "弓A",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦技「禍射」が使える\n飛行に特効効果がある",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "25",
+    
+        "name":   "鉄の籠手",
+    
+        "kind":   "格闘術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "8",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "3",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "格D",
+    
+        "durability":   "20",
+    
+        "price":   "1500G",
+    
+        "shop":   "帝都ダグシオンの武器屋\n王都ブレストンの武器屋\n城塞都市モンスの武器屋\n救世編：帝都ダグシオンの武器屋 など",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578507"
+    
+  },
+  
+    {
+    
+        "id":   "26",
+    
+        "name":   "反撃の籠手",
+    
+        "kind":   "格闘術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "11",
+    
+        "hit":   "70",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "4",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "格C",
+    
+        "durability":   "20",
+    
+        "price":   "3000G",
+    
+        "shop":   "城塞都市モンスの武器屋\n救世編：城塞都市モンスの武器屋",
+    
+        "effect":   "後攻での戦闘時、攻撃力+5",
+    
+        "url":   "https://gamewith.jp/fefw/578506"
+    
+  },
+  
+    {
+    
+        "id":   "27",
+    
+        "name":   "大熊の右鉤爪",
+    
+        "kind":   "格闘術",
+    
+        "cursed":   true,
+    
+        "in_shop":   false,
+    
+        "power":   "15",
+    
+        "hit":   "75",
+    
+        "crit":   "0",
+    
+        "curse_power":   "1",
+    
+        "weight":   "1",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "格B",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦技「暴爪」が使える",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "28",
+    
+        "name":   "ブレイザブリク",
+    
+        "kind":   "格闘術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "2",
+    
+        "hit":   "85",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "4",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "格E",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "魔法攻撃。支援値が上昇しやすい\n戦技「絆の光明」が使える",
+    
+        "url":   "https://gamewith.jp/fefw/578712"
+    
+  },
+  
+    {
+    
+        "id":   "29",
+    
+        "name":   "斬馬刀",
+    
+        "kind":   "剣術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "14",
+    
+        "hit":   "80",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "7",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "剣D",
+    
+        "durability":   "20",
+    
+        "price":   "3000G",
+    
+        "shop":   "フィーナの漁村の武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578505"
+    
+  },
+  
+    {
+    
+        "id":   "30",
+    
+        "name":   "サンダーソード",
+    
+        "kind":   "剣術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "12",
+    
+        "hit":   "70",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "8",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "剣C",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "魔法攻撃として扱う\n戦技「雷撃」が使える",
+    
+        "url":   "https://gamewith.jp/fefw/578276"
+    
+  },
+  
+    {
+    
+        "id":   "31",
+    
+        "name":   "疾風の剣",
+    
+        "kind":   "剣術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "8",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "2",
+    
+        "avoid":   "10",
+    
+        "range":   "1",
+    
+        "required":   "剣C",
+    
+        "durability":   "20",
+    
+        "price":   "4000G",
+    
+        "shop":   "ウィリー村の武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578504"
+    
+  },
+  
+    {
+    
+        "id":   "32",
+    
+        "name":   "清めの剣",
+    
+        "kind":   "剣術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "8",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "3",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "剣E",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦闘時、敵の「冥府の加護」を無効化する",
+    
+        "url":   "https://gamewith.jp/fefw/578467"
+    
+  },
+  
+    {
+    
+        "id":   "33",
+    
+        "name":   "羅刹女の徹扇",
+    
+        "kind":   "剣術",
+    
+        "cursed":   true,
+    
+        "in_shop":   false,
+    
+        "power":   "10",
+    
+        "hit":   "80",
+    
+        "crit":   "0",
+    
+        "curse_power":   "1",
+    
+        "weight":   "4",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "剣E",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "34",
+    
+        "name":   "ダ・ミナの槍",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "13",
+    
+        "hit":   "80",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "7",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "槍C",
+    
+        "durability":   "25",
+    
+        "price":   "4000G",
+    
+        "shop":   "王都メガエラの武器屋\n救世編：フィーナの漁村の武器屋\n黒煙の谷ダ・ミナの武器屋\nジーマの港の武器屋",
+    
+        "effect":   "戦技での攻撃時、命中+10",
+    
+        "url":   "https://gamewith.jp/fefw/578503"
+    
+  },
+  
+    {
+    
+        "id":   "35",
+    
+        "name":   "ナイトキラー",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "12",
+    
+        "hit":   "70",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "10",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "剣C",
+    
+        "durability":   "20",
+    
+        "price":   "3000G",
+    
+        "shop":   "王都メガエラの武器屋\n救世編：ザスタの集落の武器屋",
+    
+        "effect":   "騎馬に特効効果がある",
+    
+        "url":   "https://gamewith.jp/fefw/578502"
+    
+  },
+  
+    {
+    
+        "id":   "36",
+    
+        "name":   "邪槍ムーエン",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "22",
+    
+        "hit":   "45",
+    
+        "crit":   "0",
+    
+        "curse_power":   "2",
+    
+        "weight":   "20",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "槍A",
+    
+        "durability":   "30",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "37",
+    
+        "name":   "ダ・ミナの斧",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "16",
+    
+        "hit":   "65",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "10",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "斧C",
+    
+        "durability":   "30",
+    
+        "price":   "4000G",
+    
+        "shop":   "王都グラン・アラゴンの武器屋\n王都メガエラの武器屋\nライ・オーの港の武器屋\n救世編：王都グラン・アラゴンの武器屋 など",
+    
+        "effect":   "戦技での攻撃時、命中+10",
+    
+        "url":   "https://gamewith.jp/fefw/578501"
+    
+  },
+  
+    {
+    
+        "id":   "38",
+    
+        "name":   "シールドアクス",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "13",
+    
+        "hit":   "65",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "12",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "斧C",
+    
+        "durability":   "25",
+    
+        "price":   "3000G",
+    
+        "shop":   "王都メガエラの武器屋",
+    
+        "effect":   "後攻での戦闘時、耐物+3",
+    
+        "url":   "https://gamewith.jp/fefw/578500"
+    
+  },
+  
+    {
+    
+        "id":   "39",
+    
+        "name":   "ハンマー",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "14",
+    
+        "hit":   "60",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "20",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "斧D",
+    
+        "durability":   "30",
+    
+        "price":   "3000G",
+    
+        "shop":   "王都グラン・アラゴンの武器屋\n救世編：王都グラン・アラゴンの武器屋",
+    
+        "effect":   "重装に特効効果がある",
+    
+        "url":   "https://gamewith.jp/fefw/578499"
+    
+  },
+  
+    {
+    
+        "id":   "40",
+    
+        "name":   "メイス",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "3",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "5",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "斧E",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "41",
+    
+        "name":   "邪斧ガンドギャ",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "16",
+    
+        "hit":   "75",
+    
+        "crit":   "0",
+    
+        "curse_power":   "1",
+    
+        "weight":   "12",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "斧A",
+    
+        "durability":   "25",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦技「魔裂」が使える",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "42",
+    
+        "name":   "木製の籠手",
+    
+        "kind":   "格闘術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "2",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "1",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "格E",
+    
+        "durability":   "10",
+    
+        "price":   "300G",
+    
+        "shop":   "帝都ダグシオンの武器屋\nデモニクの村の武器屋\n救世編：帝都ダグシオンの武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578498"
+    
+  },
+  
+    {
+    
+        "id":   "43",
+    
+        "name":   "木製の槍",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "3",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "5",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "槍E",
+    
+        "durability":   "10",
+    
+        "price":   "300G",
+    
+        "shop":   "帝都ダグシオンの武器屋\nフィーナの漁村の武器屋\nアギーニョ村の武器屋\n救世編：帝都ダグシオンの武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578497"
+    
+  },
+  
+    {
+    
+        "id":   "44",
+    
+        "name":   "ロングボウ",
+    
+        "kind":   "弓術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "12",
+    
+        "hit":   "60",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "13",
+    
+        "avoid":   "0",
+    
+        "range":   "2",
+    
+        "required":   "弓C",
+    
+        "durability":   "20",
+    
+        "price":   "2000G",
+    
+        "shop":   "アギーニョ村の武器屋",
+    
+        "effect":   "戦技「狙撃」が使える\n飛行に特効効果がある",
+    
+        "url":   "https://gamewith.jp/fefw/578496"
+    
+  },
+  
+    {
+    
+        "id":   "45",
+    
+        "name":   "馬殺しの弓",
+    
+        "kind":   "弓術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "10",
+    
+        "hit":   "70",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "8",
+    
+        "avoid":   "0",
+    
+        "range":   "2",
+    
+        "required":   "弓C",
+    
+        "durability":   "20",
+    
+        "price":   "3000G",
+    
+        "shop":   "ヤーマン村の武器屋",
+    
+        "effect":   "飛行に特効効果がある",
+    
+        "url":   "https://gamewith.jp/fefw/578495"
+    
+  },
+  
+    {
+    
+        "id":   "46",
+    
+        "name":   "風の弓",
+    
+        "kind":   "弓術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "9",
+    
+        "hit":   "80",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "5",
+    
+        "avoid":   "10",
+    
+        "range":   "2",
+    
+        "required":   "弓C",
+    
+        "durability":   "20",
+    
+        "price":   "4000G",
+    
+        "shop":   "オレンスの町の武器屋",
+    
+        "effect":   "飛行に特効効果がある",
+    
+        "url":   "https://gamewith.jp/fefw/578494"
+    
+  },
+  
+    {
+    
+        "id":   "47",
+    
+        "name":   "青銅の籠手",
+    
+        "kind":   "格闘術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "3",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "2",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "格E",
+    
+        "durability":   "15",
+    
+        "price":   "500G",
+    
+        "shop":   "帝都ダグシオンの武器屋\nデモニクの村の武器屋\n城塞都市モンスの武器屋\n救世編：帝都ダグシオンの武器屋 など",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578493"
+    
+  },
+  
+    {
+    
+        "id":   "48",
+    
+        "name":   "ダ・ミナの籠手",
+    
+        "kind":   "格闘術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "11",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "4",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "格C",
+    
+        "durability":   "25",
+    
+        "price":   "4000G",
+    
+        "shop":   "城塞都市モンスの武器屋\n救世編：デモニクの村の武器屋\n救世編：ニーザの港の武器屋\n救世編：城塞都市モンスの武器屋 など",
+    
+        "effect":   "戦技での攻撃時、命中+10",
+    
+        "url":   "https://gamewith.jp/fefw/578492"
+    
+  },
+  
+    {
+    
+        "id":   "49",
+    
+        "name":   "対魔の鉄甲",
+    
+        "kind":   "格闘術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "12",
+    
+        "hit":   "80",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "5",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "格C",
+    
+        "durability":   "20",
+    
+        "price":   "3000G",
+    
+        "shop":   "ニーザの港の武器屋",
+    
+        "effect":   "魔防+3",
+    
+        "url":   "https://gamewith.jp/fefw/578491"
+    
+  },
+  
+    {
+    
+        "id":   "50",
+    
+        "name":   "乾坤圏",
+    
+        "kind":   "格闘術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "10",
+    
+        "hit":   "70",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "4",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "",
+    
+        "durability":   "20",
+    
+        "price":   "5000G",
+    
+        "shop":   "海都アレクトーの武器屋\n救世編：海都アレクトーの武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578490"
+    
+  },
+  
+    {
+    
+        "id":   "51",
+    
+        "name":   "サラマンダー",
+    
+        "kind":   "格闘術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "2",
+    
+        "hit":   "80",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "3",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "格E",
+    
+        "durability":   "3",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "魔法攻撃として扱う\n戦技「過圧縮光弾」が使える",
+    
+        "url":   "https://gamewith.jp/fefw/578619"
+    
+  },
+  
+    {
+    
+        "id":   "52",
+    
+        "name":   "ショートスピア",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "5",
+    
+        "hit":   "75",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "10",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "槍C",
+    
+        "durability":   "20",
+    
+        "price":   "3000G",
+    
+        "shop":   "帝都ダグシオンの武器屋\n領都カッシートの武器屋\nパンドラの港町の武器屋\n救世編：帝都ダグシオンの武器屋 など",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578489"
+    
+  },
+  
+    {
+    
+        "id":   "53",
+    
+        "name":   "木製の斧",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "5",
+    
+        "hit":   "70",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "7",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "斧E",
+    
+        "durability":   "15",
+    
+        "price":   "300G",
+    
+        "shop":   "帝都ダグシオンの武器屋\nトバリンの村の武器屋\nベネトナシュの村の武器屋\n救世編：帝都ダグシオンの武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578488"
+    
+  },
+  
+    {
+    
+        "id":   "54",
+    
+        "name":   "木製の弓",
+    
+        "kind":   "弓術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "2",
+    
+        "hit":   "75",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "4",
+    
+        "avoid":   "0",
+    
+        "range":   "2",
+    
+        "required":   "弓E",
+    
+        "durability":   "10",
+    
+        "price":   "300G",
+    
+        "shop":   "帝都ダグシオンの武器屋\nリベイラ村の武器屋\nヤーマン村の武器屋\nオレンスの町の武器屋 など",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578487"
+    
+  },
+  
+    {
+    
+        "id":   "55",
+    
+        "name":   "アンスウェラー",
+    
+        "kind":   "剣術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "9",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "4",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "剣E",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦技「血閃」が使える",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "56",
+    
+        "name":   "スレンドスピア",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "11",
+    
+        "hit":   "70",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "12",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "槍B",
+    
+        "durability":   "25",
+    
+        "price":   "12000G",
+    
+        "shop":   "救世編：帝都ダグシオンの武器屋\n救世編：パンドラの港町の武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578486"
+    
+  },
+  
+    {
+    
+        "id":   "57",
+    
+        "name":   "ハルバード",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "12",
+    
+        "hit":   "70",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "12",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "",
+    
+        "durability":   "25",
+    
+        "price":   "3000G",
+    
+        "shop":   "ライ・オーの港の武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578485"
+    
+  },
+  
+    {
+    
+        "id":   "58",
+    
+        "name":   "グレイブ",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "6",
+    
+        "hit":   "90",
+    
+        "crit":   "5",
+    
+        "curse_power":   "-",
+    
+        "weight":   "6",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "",
+    
+        "durability":   "20",
+    
+        "price":   "4000G",
+    
+        "shop":   "領都カッシートの武器屋\n救世編：領都カッシートの武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578484"
+    
+  },
+  
+    {
+    
+        "id":   "59",
+    
+        "name":   "シンザのモリ",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "10",
+    
+        "hit":   "65",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "16",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "槍E",
+    
+        "durability":   "30",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦技「馬鹿力投げ」が使える",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "60",
+    
+        "name":   "魔槍グラシーダ",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "14",
+    
+        "hit":   "75",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "14",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "槍B",
+    
+        "durability":   "30",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "61",
+    
+        "name":   "鷹爪斧",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "4",
+    
+        "hit":   "75",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "8",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "",
+    
+        "durability":   "20",
+    
+        "price":   "3000G",
+    
+        "shop":   "トバリンの村の武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578483"
+    
+  },
+  
+    {
+    
+        "id":   "62",
+    
+        "name":   "ゲキ",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "11",
+    
+        "hit":   "80",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "7",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "",
+    
+        "durability":   "25",
+    
+        "price":   "3000G",
+    
+        "shop":   "パンドラの港町の武器屋",
+    
+        "effect":   "戦技「風縫い」が使える",
+    
+        "url":   "https://gamewith.jp/fefw/578482"
+    
+  },
+  
+    {
+    
+        "id":   "63",
+    
+        "name":   "アウロラの星槍",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "16",
+    
+        "hit":   "85",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "8",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "槍C",
+    
+        "durability":   "25",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦技「星光の瞬き」が使える",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "64",
+    
+        "name":   "バルディッシュ",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "13",
+    
+        "hit":   "65",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "9",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "",
+    
+        "durability":   "20",
+    
+        "price":   "3000G",
+    
+        "shop":   "ベネトナシュの村の武器屋\n救世編：ベネトナシュの村の武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578481"
+    
+  },
+  
+    {
+    
+        "id":   "65",
+    
+        "name":   "ザルモクシス",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "18",
+    
+        "hit":   "80",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "10",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "斧E",
+    
+        "durability":   "30",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦技「覇絶+」が使える",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "66",
+    
+        "name":   "ツェルベルス",
+    
+        "kind":   "格闘術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "9",
+    
+        "hit":   "80",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "5",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "格A",
+    
+        "durability":   "5",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "魔法攻撃として扱う\n戦技「過圧縮光弾」が使える",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "67",
+    
+        "name":   "フリッサ",
+    
+        "kind":   "剣術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "10",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "4",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "剣C",
+    
+        "durability":   "20",
+    
+        "price":   "3000G",
+    
+        "shop":   "カリアネイラの港の武器屋\nザスタの集落の武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578480"
+    
+  },
+  
+    {
+    
+        "id":   "68",
+    
+        "name":   "ジャマダハル",
+    
+        "kind":   "格闘術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "12",
+    
+        "hit":   "90",
+    
+        "crit":   "5",
+    
+        "curse_power":   "-",
+    
+        "weight":   "5",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "",
+    
+        "durability":   "20",
+    
+        "price":   "4000G",
+    
+        "shop":   "王都ブレストンの武器屋\n救世編：王都ブレストンの武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578479"
+    
+  },
+  
+    {
+    
+        "id":   "69",
+    
+        "name":   "青銅の剣",
+    
+        "kind":   "剣術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "4",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "3",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "剣E",
+    
+        "durability":   "15",
+    
+        "price":   "500G",
+    
+        "shop":   "帝都ダグシオンの武器屋\nフィーナの漁村の武器屋\n王都グラン・アラゴンの武器屋\nカリアネイラの港の武器屋 など",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578478"
+    
+  },
+  
+    {
+    
+        "id":   "70",
+    
+        "name":   "ダ・ミナの剣",
+    
+        "kind":   "剣術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "12",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "4",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "剣C",
+    
+        "durability":   "25",
+    
+        "price":   "4000G",
+    
+        "shop":   "王都グラン・アラゴンの武器屋\nカリアネイラの港の武器屋\n救世編：王都グラン・アラゴンの武器屋\n救世編：カリアネイラの港の武器屋 など",
+    
+        "effect":   "戦技での攻撃時、命中+10",
+    
+        "url":   "https://gamewith.jp/fefw/578477"
+    
+  },
+  
+    {
+    
+        "id":   "71",
+    
+        "name":   "グレートソード",
+    
+        "kind":   "剣術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "15",
+    
+        "hit":   "60",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "15",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "",
+    
+        "durability":   "30",
+    
+        "price":   "4000G",
+    
+        "shop":   "王都グラン・アラゴンの武器屋\n救世編：王都グラン・アラゴンの武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578476"
+    
+  },
+  
+    {
+    
+        "id":   "72",
+    
+        "name":   "常夜のカタラ",
+    
+        "kind":   "剣術",
+    
+        "cursed":   true,
+    
+        "in_shop":   false,
+    
+        "power":   "5",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "1",
+    
+        "weight":   "4",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "剣E",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦技「奪運」が使える",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "74",
+    
+        "name":   "ダ・ミナの弓",
+    
+        "kind":   "弓術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "12",
+    
+        "hit":   "70",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "6",
+    
+        "avoid":   "0",
+    
+        "range":   "2",
+    
+        "required":   "弓C",
+    
+        "durability":   "25",
+    
+        "price":   "4000G",
+    
+        "shop":   "オレンスの町の武器屋\n救世編：オレンスの町の武器屋\n黒煙の谷ダ・ミナの武器屋",
+    
+        "effect":   "戦技での攻撃時、命中+10\n飛行に特効効果がある",
+    
+        "url":   "https://gamewith.jp/fefw/578475"
+    
+  },
+  
+    {
+    
+        "id":   "75",
+    
+        "name":   "バトルボウ",
+    
+        "kind":   "弓術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "14",
+    
+        "hit":   "50",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "14",
+    
+        "avoid":   "0",
+    
+        "range":   "2",
+    
+        "required":   "弓C",
+    
+        "durability":   "25",
+    
+        "price":   "4000G",
+    
+        "shop":   "王都ブレストンの武器屋\n救世編：王都ブレストンの武器屋",
+    
+        "effect":   "飛行に特効効果がある",
+    
+        "url":   "https://gamewith.jp/fefw/578474"
+    
+  },
+  
+    {
+    
+        "id":   "76",
+    
+        "name":   "イデアの弓",
+    
+        "kind":   "弓術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "18",
+    
+        "hit":   "80",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "8",
+    
+        "avoid":   "0",
+    
+        "range":   "2",
+    
+        "required":   "弓B",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦技「聖閃」が使える\n飛行に特効効果がある",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "77",
+    
+        "name":   "風火輪",
+    
+        "kind":   "格闘術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "17",
+    
+        "hit":   "65",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "6",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "",
+    
+        "durability":   "15",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦技「炎輪」が使える",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "78",
+    
+        "name":   "サガリス",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "15",
+    
+        "hit":   "55",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "14",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "斧B",
+    
+        "durability":   "30",
+    
+        "price":   "12000G",
+    
+        "shop":   "救世編：帝都ダグシオンの武器屋\n救世編：ベネトナシュの村の武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578473"
+    
+  },
+  
+    {
+    
+        "id":   "79",
+    
+        "name":   "銀の籠手",
+    
+        "kind":   "格闘術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "18",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "5",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "格B",
+    
+        "durability":   "20",
+    
+        "price":   "10000G",
+    
+        "shop":   "救世編：帝都ダグシオンの武器屋\n救世編：ニーザの港の武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578472"
+    
+  },
+  
+    {
+    
+        "id":   "80",
+    
+        "name":   "銀の弓",
+    
+        "kind":   "弓術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "18",
+    
+        "hit":   "75",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "5",
+    
+        "avoid":   "0",
+    
+        "range":   "2",
+    
+        "required":   "弓B",
+    
+        "durability":   "20",
+    
+        "price":   "10000G",
+    
+        "shop":   "救世編：帝都ダグシオンの武器屋\n救世編：オレンスの町の武器屋",
+    
+        "effect":   "飛行に特効効果がある",
+    
+        "url":   "https://gamewith.jp/fefw/578471"
+    
+  },
+  
+    {
+    
+        "id":   "81",
+    
+        "name":   "銀の斧",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "23",
+    
+        "hit":   "70",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "9",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "斧B",
+    
+        "durability":   "25",
+    
+        "price":   "10000G",
+    
+        "shop":   "救世編：帝都ダグシオンの武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578470"
+    
+  },
+  
+    {
+    
+        "id":   "82",
+    
+        "name":   "銀の槍",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "20",
+    
+        "hit":   "85",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "6",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "槍B",
+    
+        "durability":   "20",
+    
+        "price":   "10000G",
+    
+        "shop":   "救世編：帝都ダグシオンの武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578469"
+    
+  },
+  
+    {
+    
+        "id":   "83",
+    
+        "name":   "銀の剣",
+    
+        "kind":   "剣術",
+    
+        "cursed":   false,
+    
+        "in_shop":   true,
+    
+        "power":   "18",
+    
+        "hit":   "95",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "4",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "剣B",
+    
+        "durability":   "20",
+    
+        "price":   "10000G",
+    
+        "shop":   "救世編：帝都ダグシオンの武器屋",
+    
+        "effect":   "",
+    
+        "url":   "https://gamewith.jp/fefw/578468"
+    
+  },
+  
+    {
+    
+        "id":   "84",
+    
+        "name":   "妖槍ヴェンデッタ",
+    
+        "kind":   "槍術",
+    
+        "cursed":   true,
+    
+        "in_shop":   false,
+    
+        "power":   "27",
+    
+        "hit":   "60",
+    
+        "crit":   "0",
+    
+        "curse_power":   "2",
+    
+        "weight":   "20",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "槍A",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦技「覇蛇」が使える",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "85",
+    
+        "name":   "聖槍アッサル",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "7",
+    
+        "hit":   "85",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "8",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "槍D",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "87",
+    
+        "name":   "クレールの大鎚",
+    
+        "kind":   "斧術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "25",
+    
+        "hit":   "70",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "14",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "斧A",
+    
+        "durability":   "30",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "戦技「炎環」が使える",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "88",
+    
+        "name":   "無銘の槍",
+    
+        "kind":   "槍術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "13",
+    
+        "hit":   "90",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "7",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "槍E",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "89",
+    
+        "name":   "スミルノスの雷甲",
+    
+        "kind":   "格闘術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "7",
+    
+        "hit":   "85",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "1",
+    
+        "avoid":   "0",
+    
+        "range":   "1",
+    
+        "required":   "格A",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "",
+    
+        "url":   ""
+    
+  },
+  
+    {
+    
+        "id":   "90",
+    
+        "name":   "ショートボウ",
+    
+        "kind":   "弓術",
+    
+        "cursed":   false,
+    
+        "in_shop":   false,
+    
+        "power":   "5",
+    
+        "hit":   "75",
+    
+        "crit":   "0",
+    
+        "curse_power":   "-",
+    
+        "weight":   "5",
+    
+        "avoid":   "0",
+    
+        "range":   "1-2",
+    
+        "required":   "弓D",
+    
+        "durability":   "20",
+    
+        "price":   "",
+    
+        "shop":   "",
+    
+        "effect":   "飛行に特効効果がある",
+    
+        "url":   ""
+    
+  }
+
+]
