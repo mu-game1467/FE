@@ -38,6 +38,10 @@ $navHome     = U '30DB 30FC 30E0'                                    # ホーム
 $labelCh     = U '30AD 30E3 30E9 30AF 30BF 30FC'                    # キャラクター
 $labelSkill  = U '30B9 30AD 30EB'                                    # スキル
 $labelItem   = U '30A2 30A4 30C6 30E0'                               # アイテム
+$labelGear   = U '88C5 5099 54C1'                               # 装備品
+$labelWeapon = U '6B66 5668'                                     # 武器
+$labelArt    = U '6226 6280'                                     # 戦技
+$labelMagic  = U '9B54 6CD5'                                     # 魔法
 $labelEvent  = U '96A0 3057 30A4 30D9 30F3 30C8'                    # 隠しイベント
 $back        = (U '2190 0020') + $titleSuffix + (U '4E00 89A7')      # ← 兵種一覧
 
@@ -78,6 +82,10 @@ foreach ($c in $classes) {
                 <li><a href="../" class="active">$titleSuffix</a></li>
                 <li><a href="../../skills/">$labelSkill</a></li>
                 <li><a href="../../items/">$labelItem</a></li>
+                <li><a href="../../gear/">$labelGear</a></li>
+                <li><a href="../../weapons/">$labelWeapon</a></li>
+                <li><a href="../../arts/">$labelArt</a></li>
+                <li><a href="../../magic/">$labelMagic</a></li>
                 <li><a href="../../events/">$labelEvent</a></li>
             </ul>
         </nav>

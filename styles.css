@@ -380,6 +380,7 @@ body > footer {
 .card-head {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0.5rem;
     padding-right: 4.5rem;
@@ -394,7 +395,13 @@ body > footer {
     right: 0;
 }
 
-.card-head .card-name { margin-bottom: 0; }
+/* the card name keeps its own line when the tags need more room than fits,
+   so a long name such as フォレストナイト is not squeezed into a break */
+.card-head > .card-name {
+    flex: 1 1 auto;
+    min-width: max-content;
+    margin-bottom: 0;
+}
 
 .card-block { margin-bottom: 1rem; }
 
