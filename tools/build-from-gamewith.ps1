@@ -522,7 +522,20 @@ for ($i = $last; $i -ge 0; $i--) {
     foreach ($r in $rankByName[$byName[$i]]) { $items += ('"' + $r + '"') }
     # Write-Json と同じ書式にそろえて、要素を1行ずつ書く
     $body = ($items -join (',' + [char]0x0A + '                            '))
-    $jsonText = $jsonText.Substring(0, $keyIdx) + ('"magic_ranks":   [' + [char]0x0A + '                            ' + $body + [char]0x0A + '                        ') + $jsonText.Substring($markIdx + '<<RANKS>>"'.Length)
+    # 閉じ括弧 ']' を必ず添える。抜けると全キャラの magic_ranks が
+    # 配列の途中で途切れ、json 全体が読み込めなくなる。
+    $jsonText = $jsonText.Substring(0, $keyIdx) + ('"magic_ranks":   [' + [char]0x0A + '                            ' + $body + [char]0x0A + '                        ]') + $jsonText.Substring($markIdx + '<<RANKS>>"'.Length)
 }
 [IO.File]::WriteAllText($charsPath, $jsonText, $utf8)
+
+# 文字列を直接差し替えた後は、ブラウザと同じパーサで読み直して必ず検証する。
+# 検証を省くと壊れた json がそのまま公開され、ページが「データを読み込めません」
+# と表示するだけで、原因に気づけないまま公開され続ける。
+try {
+    $check = [IO.File]::ReadAllText($charsPath, [Text.Encoding]::UTF8) | ConvertFrom-Json
+    Write-Host ('characters.json verified: ' + @($check).Count + ' records')
+}
+catch {
+    throw ('characters.json is not valid JSON: ' + $_.Exception.Message)
+}
 Write-Host 'characters.json updated'
