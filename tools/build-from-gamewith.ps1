@@ -398,37 +398,131 @@ Write-Host 'three data files written'
 # unlocks a different spell.
 $charsPath = Join-Path $outDir 'characters.json'
 $chars = [IO.File]::ReadAllText($charsPath, [Text.Encoding]::UTF8) | ConvertFrom-Json
-$rankOf = @{}
-foreach ($item in $magic) {
-    foreach ($l in $item.learnable) {
-        if (-not $rankOf.ContainsKey($l.name)) { $rankOf[$l.name] = New-Object System.Collections.ArrayList }
-        if (-not $rankOf[$l.name].Contains($l.condition)) { [void]$rankOf[$l.name].Add($l.condition) }
+
+# --- 習得条件の並び順 ---------------------------------------------------
+# 系統の順番は 黒魔術 → 白魔術 → 剣術 → 槍術 → 斧術 → 弓術 →
+# 格闘術 → 指揮術 → 重装術 → マスター。各系統の中では
+# 初期 → E → D → C → B → A → S の順に並べ、「+」はそのLvのすぐ後ろに置く。
+# 「Lv48」のように系統を持たない記載は、どの系統より後ろに置く。
+$systemOrder = @(
+    (U @(0x9ED2, 0x9B54, 0x8853))       # 黒魔術
+    (U @(0x767D, 0x9B54, 0x8853))       # 白魔術
+    (U @(0x5263, 0x8853))                 # 剣術
+    (U @(0x69CD, 0x8853))                 # 槍術
+    (U @(0x65A7, 0x8853))                 # 斧術
+    (U @(0x5F13, 0x8853))                 # 弓術
+    (U @(0x683C, 0x95D8, 0x8853))         # 格闘術
+    (U @(0x6307, 0x63EE, 0x8853))         # 指揮術
+    (U @(0x91CD, 0x88C5, 0x8853))         # 重装術
+    (U @(0x30DE, 0x30B9, 0x30BF))         # マスター
+)
+$gradeOrder = @(
+    (U @(0x521D, 0x671F))                 # 初期
+    'E'; 'D'; 'C'; 'B'; 'A'; 'S'
+)
+$rankOrder = @{}
+$gi = 0
+foreach ($sw in $systemOrder) {
+    foreach ($gw in $gradeOrder) {
+        $rankOrder[$sw + $gw] = $gi; $gi++
+        # 「+」はそのLv以上という意味なので、対応するLvのすぐ後ろに置く
+        $rankOrder[$sw + $gw + '+'] = $gi; $gi++
     }
 }
-# highest first so the list reads like the in-game skill screen
-$rankOrder = @{}
-$seenRank = New-Object System.Collections.ArrayList
-foreach ($item in $magic) {
-    foreach ($l in $item.learnable) { if (-not $seenRank.Contains($l.condition)) { [void]$seenRank.Add($l.condition) } }
+# 表に無い記載（Lv48 など）は末尾帯へ。初出順で安定させる。
+$restSeen = New-Object System.Collections.ArrayList
+$script:rankOrder = $rankOrder
+$script:restSeen = $restSeen
+
+function Rank-Key {
+    param([string]$Condition)
+    if ($script:rankOrder.ContainsKey($Condition)) { return [int]$script:rankOrder[$Condition] }
+    $text = [string]$Condition
+    if ($text -match '^Lv(\d+)$') { return 900000 + [int]$Matches[1] }
+    if (-not $script:restSeen.Contains($text)) { [void]$script:restSeen.Add($text) }
+    return 800000 + $script:restSeen.IndexOf($text)
 }
-for ($ri = 0; $ri -lt $seenRank.Count; $ri++) { $rankOrder[$seenRank[$ri]] = $ri }
+
+# 魔法と戦技の両方から、キャラごとの習得条件をまとめる
+$rankOf = @{}
+foreach ($source in @($magic, $arts)) {
+    foreach ($item in $source) {
+        foreach ($l in $item.learnable) {
+            if (-not $rankOf.ContainsKey($l.name)) { $rankOf[$l.name] = New-Object System.Collections.ArrayList }
+            if (-not $rankOf[$l.name].Contains($l.condition)) { [void]$rankOf[$l.name].Add($l.condition) }
+        }
+    }
+}
+
+# 並び替えは自前の挿入ソートで行う。Sort-Object はカルチャ比較が絡むため、
+# 数値キーだけを見て確実に整列させる。
+function Sort-Conditions {
+    param($List)
+    $n = $List.Count
+    $keys = [int[]]::new($n)
+    $vals = [string[]]::new($n)
+    for ($i = 0; $i -lt $n; $i++) {
+        $vals[$i] = [string]$List[$i]
+        $keys[$i] = [int](Rank-Key $vals[$i])
+    }
+    for ($a = 1; $a -lt $n; $a++) {
+        $kv = $keys[$a]; $vv = $vals[$a]; $b = $a - 1
+        while ($b -ge 0 -and $keys[$b] -gt $kv) {
+            $keys[$b + 1] = $keys[$b]; $vals[$b + 1] = $vals[$b]; $b--
+        }
+        $keys[$b + 1] = $kv; $vals[$b + 1] = $vv
+    }
+    return ,$vals
+}
 
 $touched = 0
+$rankByName = @{}
 $rebuilt = New-Object System.Collections.ArrayList
 foreach ($c in $chars) {
     $ordered = [ordered]@{}
+    # まず magic_ranks を含まない状態を作る
     foreach ($p in $c.PSObject.Properties) {
+        if ($p.Name -eq 'magic_ranks') { continue }
         $ordered[$p.Name] = $p.Value
-        if ($p.Name -eq 'weak_skills' -and $rankOf.ContainsKey($c.name)) {
-            $ordered['magic_ranks'] = @($rankOf[$c.name] | Sort-Object { $rankOrder[$_] })
+    }
+    if ($rankOf.ContainsKey($c.name)) {
+        $sorted = Sort-Conditions $rankOf[$c.name]
+        if ($sorted -and $sorted.Length -gt 0) {
+            # 配列を [ordered] へ直接代入すると順序が入れ替わることがあるので、
+            # いったん印だけを置いておき、書き出し後の json テキストへ並び順のまま差し込む。
+            $ordered['magic_ranks'] = '<<RANKS>>'
+            $rankByName[$c.name] = $sorted
+            $touched++
         }
     }
-    if (-not $ordered.Contains('magic_ranks') -and $rankOf.ContainsKey($c.name)) {
-        $ordered['magic_ranks'] = @($rankOf[$c.name] | Sort-Object { $rankOrder[$_] })
-    }
-    if ($rankOf.ContainsKey($c.name)) { $touched++ }
     [void]$rebuilt.Add([pscustomobject]$ordered)
 }
 Write-Host ("characters with magic_ranks: " + $touched)
 Write-Json $rebuilt $charsPath
+
+# 差し込んだ印を、並び順を保った JSON 配列へ置き換える。
+# インデントの空白数は Write-Json によって変わるため、
+# 印の前後だけを切り出して置換する。
+# 注意: キャラ名で位置を探すと同じ名前の他キャラにずれることがある。
+# 印はキャラの順に並ぶので、json に出現する順に一つずつ消費する。
+$jsonText = [IO.File]::ReadAllText($charsPath, [Text.Encoding]::UTF8)
+$marks = [regex]::Matches($jsonText, '<<RANKS>>')
+$byName = @()
+foreach ($c in $rebuilt) {
+    if ($rankByName.ContainsKey($c.name)) { $byName += [string]$c.name }
+}
+# 後ろから置き換えると、置換済みの位置がずれない。
+# 前からだと文字数が変わり、後ろの印の位置がずれてしまう。
+$last = [Math]::Min($marks.Count, $byName.Count) - 1
+for ($i = $last; $i -ge 0; $i--) {
+    $markIdx = $marks[$i].Index
+    $keyIdx = $jsonText.LastIndexOf('"magic_ranks"', $markIdx)
+    if ($keyIdx -lt 0) { continue }
+    $items = @()
+    foreach ($r in $rankByName[$byName[$i]]) { $items += ('"' + $r + '"') }
+    # Write-Json と同じ書式にそろえて、要素を1行ずつ書く
+    $body = ($items -join (',' + [char]0x0A + '                            '))
+    $jsonText = $jsonText.Substring(0, $keyIdx) + ('"magic_ranks":   [' + [char]0x0A + '                            ' + $body + [char]0x0A + '                        ') + $jsonText.Substring($markIdx + '<<RANKS>>"'.Length)
+}
+[IO.File]::WriteAllText($charsPath, $jsonText, $utf8)
 Write-Host 'characters.json updated'

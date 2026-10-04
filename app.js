@@ -1586,16 +1586,30 @@ function learnableOf(list, characterName) {
         .filter(Boolean);
 }
 
-/** 習得条件の並び順。Lv は低い順に、末尾に等级の数字だけを書いたものは最後に回す。 */
-const RANK_ORDER = ['初期', 'E', 'D', 'C', 'B', 'A', 'S', 'SS'];
+/**
+ * 習得条件の並び順。系統を 黒魔術 → 白魔術 → 剣術 → 槍術 → 斧術 → 弓術 →
+ * 格闘術 → 指揮術 → 重装術 → マスター の順に並べ、その中で初期 → E → D →
+ * C → B → A → S。「+」はそのLvの直後に置く。
+ * 末尾に数字だけを書いた記載（Lv48 など）は表の最後に回す。
+ * tools\build-from-gamewith.ps1 が magic_ranks を出力するときの順序と揃える。
+ */
+const RANK_SYSTEMS = [
+    '黒魔術', '白魔術',
+    '剣術', '槍術', '斧術', '弓術',
+    '格闘術', '指揮術', '重装術', 'マスター',
+];
+const RANK_GRADES = ['初期', 'E', 'D', 'C', 'B', 'A', 'S'];
 
 function rankIndex(condition) {
-    const m = String(condition || '').match(/([A-Z]+)([+-]?)$/);
-    if (!m) return RANK_ORDER.length + 1;
-    const base = RANK_ORDER.indexOf(m[1]);
-    if (base === -1) return RANK_ORDER.length + 1;
-    // "+" means the character learns it at that rank and above
-    return base - (m[2] === '+' ? 0.5 : 0);
+    const text = String(condition || '');
+    // 末尾に数字だけを書いた記載（Lv48 など）はどの系統にも属さないので最後に回す
+    const sys = RANK_SYSTEMS.find((s) => text.startsWith(s));
+    if (!sys) return RANK_SYSTEMS.length * (RANK_GRADES.length + 1) + 1;
+    const grade = RANK_GRADES.indexOf(text.slice(sys.length).replace('+', ''));
+    if (grade === -1) return RANK_SYSTEMS.length * (RANK_GRADES.length + 1) + 1;
+    const base = RANK_SYSTEMS.indexOf(sys) * (RANK_GRADES.length + 1) + grade;
+    // "+" はそのLv以上で習得なので、同じ系統の次の等級の手前に置く
+    return text.endsWith('+') ? base + 0.5 : base;
 }
 
 /** 習得できる技・魔法の一覧。条件ごとにまとめ、詳細ページへリンクする。 */
