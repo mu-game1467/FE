@@ -2381,9 +2381,8 @@ function eventRows() {
 }
 
 /**
- * 外伝の行を、ルート絞り込みと検索の条件下で並べる。
- * 外伝は隠しイベントと別立てで、どのルートでいつ発生するかが変わるため、
- * その発生期間（章と期日）を1行ずつに展開する。
+ * 隠しイベントと外伝を1つの表にまとめるための行を作る。
+ * 外伝はルートごとに章と期日が変わるので、ルートごとに1行へ展開する。
  * タリムーン外伝のように発生時期が2回あるものは、複数行になる。
  */
 function gaidenRows() {
@@ -2434,83 +2433,30 @@ function dateString(value) {
     return String(value || '').replace(/[^0-9]/g, '');
 }
 
-/** 外伝の一覧。隠しイベントと同じ列構成で、ルートごとにまとめる。 */
-function renderGaidenList() {
-    const list = listElement('events');
-    if (!list) return;
-    const data = state.events || {};
-    const rows = gaidenRows();
+/** 外伝の行を、隠しイベントと同じ列構成（章／項目／条件／期日）にそろえる */
+function gaidenCells(row) {
+    const g = row.gaiden;
+    const w = row.window;
+    const period = w.from ? `${esc(w.from)}〜${esc(w.to)}` : '発生しない';
 
-    // 件数は renderEventList 側で合算して出す
-    const host = document.getElementById('events-gaiden');
-    if (!host) return;
+    // 条件欄に、依頼場所と報酬をまとめて入れる
+    const reward = g.reward || {};
+    const bits = [];
+    if (g.location) bits.push(`依頼場所: ${esc(g.location)}`);
+    if ((reward.unlocks || []).length) bits.push(`スカウト解放: ${reward.unlocks.map((n) => esc(n)).join('、')}`);
+    if (reward.extra) bits.push(esc(reward.extra));
+    if (reward.material) bits.push(esc(reward.material));
+    if (reward.gold) bits.push(esc(reward.gold));
+    if (reward.fame) bits.push(`名声値 ${reward.fame}`);
+    if (reward.bonus) bits.push(`追加報酬: ${esc(reward.bonus)}`);
 
-    if (!(data.gaiden || []).length) { host.innerHTML = ''; return; }
-
-    const groups = [];
-    rows.forEach((row) => {
-        const key = row.routeId;
-        let group = groups.find((g) => g.id === key);
-        if (!group) {
-            const route = ROUTES.find((r) => r.id === key);
-            group = { id: key, label: route ? route.label : key, rows: [] };
-            groups.push(group);
-        }
-        group.rows.push(row);
-    });
-
-    const body = groups.length ? groups.map((group) => `
-        <div class="panel">
-            <h3>${esc(group.label)}</h3>
-            <div class="tablewrap">
-                <table class="classtable">
-                    <thead>
-                        <tr>
-                            <th class="sticky">外伝</th>
-                            <th>章</th>
-                            <th>期日</th>
-                            <th>依頼場所・報酬</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${group.rows.map((row) => {
-                            const g = row.gaiden;
-                            const w = row.window;
-                            const period = w.from ? `${esc(w.from)}〜${esc(w.to)}` : '発生しない';
-                            const reward = g.reward || {};
-                            const bits = [];
-                            if (g.location) bits.push(`依頼場所: ${esc(g.location)}`);
-                            if ((reward.unlocks || []).length) bits.push(`スカウト解放: ${reward.unlocks.map((n) => esc(n)).join('、')}`);
-                            if (reward.extra) bits.push(esc(reward.extra));
-                            if (reward.material) bits.push(esc(reward.material));
-                            if (reward.gold) bits.push(esc(reward.gold));
-                            if (reward.fame) bits.push(`名声値 ${reward.fame}`);
-                            if (reward.bonus) bits.push(`追加報酬: ${esc(reward.bonus)}`);
-                            return `
-                            <tr>
-                                <th class="sticky">${esc(g.name)}<br><span class="muted">${esc(g.title)}</span></th>
-                                <td>${esc(w.chapter)}</td>
-                                <td>${period}</td>
-                                <td class="muted">${bits.join('<br>')}</td>
-                            </tr>`;
-                        }).join('')}
-                    </tbody>
-                </table>
-            </div>
-        </div>`).join('') : '<p class="muted">該当する外伝がありません</p>';
-
-    const note = g => (g.note ? `<p class="muted">${esc(g.note)}</p>` : '');
-    const notes = (data.gaiden || []).map(note).filter(Boolean).join('');
-
-    host.innerHTML = `
-        <h2>外伝</h2>
-        ${data.gaiden_overview ? `<p>${esc(data.gaiden_overview)}</p>` : ''}
-        ${(data.gaiden_notes || []).length ? `
-            <ul class="eventnotes">
-                ${data.gaiden_notes.map((n) => `<li>${esc(n)}</li>`).join('')}
-            </ul>` : ''}
-        ${notes}
-        ${body}`;
+    const title = g.title ? `<br><span class="muted">${esc(g.title)}</span>` : '';
+    return {
+        chapter: esc(w.chapter),
+        name: `${esc(g.name)}${title}`,
+        condition: bits.join('<br>'),
+        period,
+    };
 }
 
 function renderEventList() {
@@ -2518,31 +2464,55 @@ function renderEventList() {
     if (!list) return;
     const data = state.events || {};
     const rows = eventRows();
+    const gRows = gaidenRows();
 
     const count = document.getElementById('result-count');
-    // 外伝も同じ検索・ルート絞り込みを使うので、件数は合算して出す
-    if (count) count.textContent = `${rows.length + gaidenRows().length} 件`;
+    // 外伝も同じ検索・ルート絞り込みを使い、同じ表に並ぶので件数は合算する
+    if (count) count.textContent = `${rows.length + gRows.length} 件`;
 
-    if (!rows.length) {
+    if (!rows.length && !gRows.length) {
         list.innerHTML = `<p class="muted">該当する隠しイベントがありません</p>`;
         return;
     }
 
-    // one table per route, in the order the rows are grouped, so a route filter
-    // or a search keeps the section headings
-    const groups = [];
-    rows.forEach((row) => {
-        let group = groups.find((g) => g.label === row.section.label);
-        if (!group) {
-            group = { label: row.section.label, rows: [] };
-            groups.push(group);
-        }
-        group.rows.push(row);
-    });
+    // ルートごとにまとめる。ルート順の並びは ROUTES の定義に従い、
+    // ルート絞り込みや検索でも見出しが残るようにする。
+    const order = state.eventRoute === 'all'
+        ? ROUTES
+        : ROUTES.filter((r) => r.id === state.eventRoute);
 
-    list.innerHTML = groups.map((group) => `
+    const html = order.map((route) => {
+        const events = rows
+            .filter((row) => row.section.route === route.id)
+            .sort((a, b) => chapterNumber(a.event.chapter) - chapterNumber(b.event.chapter));
+        const gaiden = gRows.filter((row) => row.routeId === route.id);
+        if (!events.length && !gaiden.length) return '';
+
+        // 見出しは隠しイベントのものを流用し、外伝だけのルートは「ルート名（外伝）」とする
+        const label = events.length ? events[0].section.label : `${route.label}（外伝）`;
+        const body = [
+            ...events.map((row) => `
+                            <tr>
+                                <th class="sticky">${esc(row.event.chapter)}</th>
+                                <td><strong>${esc(row.event.name)}</strong></td>
+                                <td class="muted">${esc(row.event.condition)}</td>
+                                <td></td>
+                            </tr>`),
+            ...gaiden.map((row) => {
+                const c = gaidenCells(row);
+                return `
+                            <tr>
+                                <th class="sticky">${c.chapter}</th>
+                                <td><strong>${c.name}</strong></td>
+                                <td class="muted">${c.condition}</td>
+                                <td>${c.period}</td>
+                            </tr>`;
+            }),
+        ].join('');
+
+        return `
         <div class="panel">
-            <h3>${esc(group.label)}</h3>
+            <h3>${esc(label)}</h3>
             <div class="tablewrap">
                 <table class="classtable">
                     <thead>
@@ -2550,19 +2520,17 @@ function renderEventList() {
                             <th class="sticky">章</th>
                             <th>項目</th>
                             <th>条件</th>
+                            <th>期日</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        ${group.rows.map((row) => `
-                            <tr>
-                                <th class="sticky">${esc(row.event.chapter)}</th>
-                                <td><strong>${esc(row.event.name)}</strong></td>
-                                <td class="muted">${esc(row.event.condition)}</td>
-                            </tr>`).join('')}
+                    <tbody>${body}
                     </tbody>
                 </table>
             </div>
-        </div>`).join('');
+        </div>`;
+    }).join('');
+
+    list.innerHTML = html;
 
     // the overview and the cautionary notes only frame the list once, above it
     const intro = document.getElementById('events-intro');
@@ -2572,11 +2540,13 @@ function renderEventList() {
             ${(data.notes || []).length ? `
                 <ul class="eventnotes">
                     ${(data.notes || []).map((n) => `<li>${esc(n)}</li>`).join('')}
+                </ul>` : ''}
+            ${data.gaiden_overview ? `<p>${esc(data.gaiden_overview)}</p>` : ''}
+            ${(data.gaiden_notes || []).length ? `
+                <ul class="eventnotes">
+                    ${data.gaiden_notes.map((n) => `<li>${esc(n)}</li>`).join('')}
                 </ul>` : ''}`;
     }
-
-    // 外伝は同じページの別セクションに并列する
-    renderGaidenList();
 }
 
 /** the events file is an object, not a flat array, so it gets its own toolbar */
