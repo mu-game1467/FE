@@ -2380,6 +2380,139 @@ function eventRows() {
     return rows;
 }
 
+/**
+ * 外伝の行を、ルート絞り込みと検索の条件下で並べる。
+ * 外伝は隠しイベントと別立てで、どのルートでいつ発生するかが変わるため、
+ * その発生期間（章と期日）を1行ずつに展開する。
+ * タリムーン外伝のように発生時期が2回あるものは、複数行になる。
+ */
+function gaidenRows() {
+    const data = state.events || {};
+    const list = data.gaiden || [];
+    const query = state.query;
+
+    const rows = [];
+    list.forEach((gaiden, gaidenIndex) => {
+        const windows = gaiden.windows || [];
+        const hit = (text) => text && text.toLowerCase().indexOf(query) !== -1;
+        if (query) {
+            // 章や期日、依頼場所、報酬のどれかに当たらなければ出さない
+            const inWindow = windows.some((w) => hit(w.chapter) || hit(w.from) || hit(w.to));
+            const inReward = gaiden.reward && (
+                hit(gaiden.reward.material) || hit(gaiden.reward.gold) ||
+                (gaiden.reward.unlocks || []).some((n) => hit(n)) || hit(gaiden.reward.extra)
+            );
+            if (!hit(gaiden.name) && !hit(gaiden.title) && !hit(gaiden.location) &&
+                !inWindow && !inReward) return;
+        }
+        const matched = state.eventRoute === 'all'
+            ? windows
+            : windows.filter((w) => w.route === state.eventRoute);
+        if (!matched.length) return;
+        matched.forEach((w) => {
+            rows.push({ gaiden, window: w, gaidenIndex, routeId: w.route });
+        });
+    });
+
+    if (state.sort === 'chapter') {
+        rows.sort((a, b) =>
+            chapterNumber(a.window.chapter) - chapterNumber(b.window.chapter) ||
+            a.gaidenIndex - b.gaidenIndex);
+    } else if (state.sort === 'name') {
+        rows.sort((a, b) =>
+            a.gaiden.name.localeCompare(b.gaiden.name, 'ja') ||
+            a.gaidenIndex - b.gaidenIndex ||
+            dateString(a.window.from).localeCompare(dateString(b.window.from)));
+    }
+    // 'route' keeps the file order (by route, then gaiden)
+
+    return rows;
+}
+
+/** 「1449/10/16(火)」を比較できる形（数字だけ）にする */
+function dateString(value) {
+    return String(value || '').replace(/[^0-9]/g, '');
+}
+
+/** 外伝の一覧。隠しイベントと同じ列構成で、ルートごとにまとめる。 */
+function renderGaidenList() {
+    const list = listElement('events');
+    if (!list) return;
+    const data = state.events || {};
+    const rows = gaidenRows();
+
+    // 件数は renderEventList 側で合算して出す
+    const host = document.getElementById('events-gaiden');
+    if (!host) return;
+
+    if (!(data.gaiden || []).length) { host.innerHTML = ''; return; }
+
+    const groups = [];
+    rows.forEach((row) => {
+        const key = row.routeId;
+        let group = groups.find((g) => g.id === key);
+        if (!group) {
+            const route = ROUTES.find((r) => r.id === key);
+            group = { id: key, label: route ? route.label : key, rows: [] };
+            groups.push(group);
+        }
+        group.rows.push(row);
+    });
+
+    const body = groups.length ? groups.map((group) => `
+        <div class="panel">
+            <h3>${esc(group.label)}</h3>
+            <div class="tablewrap">
+                <table class="classtable">
+                    <thead>
+                        <tr>
+                            <th class="sticky">外伝</th>
+                            <th>章</th>
+                            <th>期日</th>
+                            <th>依頼場所・報酬</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${group.rows.map((row) => {
+                            const g = row.gaiden;
+                            const w = row.window;
+                            const period = w.from ? `${esc(w.from)}〜${esc(w.to)}` : '発生しない';
+                            const reward = g.reward || {};
+                            const bits = [];
+                            if (g.location) bits.push(`依頼場所: ${esc(g.location)}`);
+                            if ((reward.unlocks || []).length) bits.push(`スカウト解放: ${reward.unlocks.map((n) => esc(n)).join('、')}`);
+                            if (reward.extra) bits.push(esc(reward.extra));
+                            if (reward.material) bits.push(esc(reward.material));
+                            if (reward.gold) bits.push(esc(reward.gold));
+                            if (reward.fame) bits.push(`名声値 ${reward.fame}`);
+                            if (reward.bonus) bits.push(`追加報酬: ${esc(reward.bonus)}`);
+                            return `
+                            <tr>
+                                <th class="sticky">${esc(g.name)}<br><span class="muted">${esc(g.title)}</span></th>
+                                <td>${esc(w.chapter)}</td>
+                                <td>${period}</td>
+                                <td class="muted">${bits.join('<br>')}</td>
+                            </tr>`;
+                        }).join('')}
+                    </tbody>
+                </table>
+            </div>
+        </div>`).join('') : '<p class="muted">該当する外伝がありません</p>';
+
+    const note = g => (g.note ? `<p class="muted">${esc(g.note)}</p>` : '');
+    const notes = (data.gaiden || []).map(note).filter(Boolean).join('');
+
+    host.innerHTML = `
+        <h2>外伝</h2>
+        ${data.gaiden_overview ? `<p>${esc(data.gaiden_overview)}</p>` : ''}
+        ${(data.gaiden_notes || []).length ? `
+            <ul class="eventnotes">
+                ${data.gaiden_notes.map((n) => `<li>${esc(n)}</li>`).join('')}
+            </ul>` : ''}
+        ${notes}
+        ${body}`;
+}
+
 function renderEventList() {
     const list = listElement('events');
     if (!list) return;
@@ -2387,7 +2520,8 @@ function renderEventList() {
     const rows = eventRows();
 
     const count = document.getElementById('result-count');
-    if (count) count.textContent = `${rows.length} 件`;
+    // 外伝も同じ検索・ルート絞り込みを使うので、件数は合算して出す
+    if (count) count.textContent = `${rows.length + gaidenRows().length} 件`;
 
     if (!rows.length) {
         list.innerHTML = `<p class="muted">該当する隠しイベントがありません</p>`;
@@ -2440,6 +2574,9 @@ function renderEventList() {
                     ${(data.notes || []).map((n) => `<li>${esc(n)}</li>`).join('')}
                 </ul>` : ''}`;
     }
+
+    // 外伝は同じページの別セクションに并列する
+    renderGaidenList();
 }
 
 /** the events file is an object, not a flat array, so it gets its own toolbar */
