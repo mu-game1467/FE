@@ -476,7 +476,6 @@ function Sort-Conditions {
 }
 
 $touched = 0
-$rankByName = @{}
 $rebuilt = New-Object System.Collections.ArrayList
 foreach ($c in $chars) {
     $ordered = [ordered]@{}
@@ -488,10 +487,10 @@ foreach ($c in $chars) {
     if ($rankOf.ContainsKey($c.name)) {
         $sorted = Sort-Conditions $rankOf[$c.name]
         if ($sorted -and $sorted.Length -gt 0) {
-            # 配列を [ordered] へ直接代入すると順序が入れ替わることがあるので、
-            # いったん印だけを置いておき、書き出し後の json テキストへ並び順のまま差し込む。
-            $ordered['magic_ranks'] = '<<RANKS>>'
-            $rankByName[$c.name] = $sorted
+            # 並び順は Sort-Conditions が決めたとおりで、ここでは並べ替えない。
+            # string[] のままだと要素ごとに展開されず、ConvertTo-Json が
+            # 同じ順序で配列を書き出す。
+            $ordered['magic_ranks'] = [string[]]@($sorted)
             $touched++
         }
     }
@@ -500,42 +499,69 @@ foreach ($c in $chars) {
 Write-Host ("characters with magic_ranks: " + $touched)
 Write-Json $rebuilt $charsPath
 
-# 差し込んだ印を、並び順を保った JSON 配列へ置き換える。
-# インデントの空白数は Write-Json によって変わるため、
-# 印の前後だけを切り出して置換する。
-# 注意: キャラ名で位置を探すと同じ名前の他キャラにずれることがある。
-# 印はキャラの順に並ぶので、json に出現する順に一つずつ消費する。
-$jsonText = [IO.File]::ReadAllText($charsPath, [Text.Encoding]::UTF8)
-$marks = [regex]::Matches($jsonText, '<<RANKS>>')
-$byName = @()
-foreach ($c in $rebuilt) {
-    if ($rankByName.ContainsKey($c.name)) { $byName += [string]$c.name }
-}
-# 後ろから置き換えると、置換済みの位置がずれない。
-# 前からだと文字数が変わり、後ろの印の位置がずれてしまう。
-$last = [Math]::Min($marks.Count, $byName.Count) - 1
-for ($i = $last; $i -ge 0; $i--) {
-    $markIdx = $marks[$i].Index
-    $keyIdx = $jsonText.LastIndexOf('"magic_ranks"', $markIdx)
-    if ($keyIdx -lt 0) { continue }
-    $items = @()
-    foreach ($r in $rankByName[$byName[$i]]) { $items += ('"' + $r + '"') }
-    # Write-Json と同じ書式にそろえて、要素を1行ずつ書く
-    $body = ($items -join (',' + [char]0x0A + '                            '))
-    # 閉じ括弧 ']' を必ず添える。抜けると全キャラの magic_ranks が
-    # 配列の途中で途切れ、json 全体が読み込めなくなる。
-    $jsonText = $jsonText.Substring(0, $keyIdx) + ('"magic_ranks":   [' + [char]0x0A + '                            ' + $body + [char]0x0A + '                        ]') + $jsonText.Substring($markIdx + '<<RANKS>>"'.Length)
-}
-[IO.File]::WriteAllText($charsPath, $jsonText, $utf8)
-
-# 文字列を直接差し替えた後は、ブラウザと同じパーサで読み直して必ず検証する。
-# 検証を省くと壊れた json がそのまま公開され、ページが「データを読み込めません」
-# と表示するだけで、原因に気づけないまま公開され続ける。
+# 書き込み後に必ず読み戻して検証する。json を手で組み立てると、
+# 閉じ括弧の抜けなどで構文が壊れたまま公開されることがある。
+# 壊れた json はページ上で「データを読み込めませんでした」になるだけなので、
+# 公開前に気づけるようにしておく。
 try {
     $check = [IO.File]::ReadAllText($charsPath, [Text.Encoding]::UTF8) | ConvertFrom-Json
-    Write-Host ('characters.json verified: ' + @($check).Count + ' records')
 }
 catch {
     throw ('characters.json is not valid JSON: ' + $_.Exception.Message)
 }
+if (@($check).Count -ne $chars.Count) {
+    throw ('characters.json record count changed: ' + @($check).Count + ' vs ' + $chars.Count)
+}
+# 並び順も検証する。json に書かれた並びが定義と違っていたら、
+# ページ上の並びが期待と違っても気づけない。
+$sysOrder = $systemOrder
+$gradeIdx = @{}
+$gi = 0
+foreach ($g in $gradeOrder) { $gradeIdx[$g] = $gi; $gi++ }
+$checkByName = @{}
+foreach ($x in @($check)) { $checkByName[[string]$x.name] = $x }
+# 戦技・魔法側の learnable には、キャラクターではなく兵種名も並ぶ
+# （ソードマスター、ボウナイトなど）。それらは characters.json に存在しないので、
+# 対象はキャラクターに限って検証する。
+$withRanks = 0
+foreach ($c in $chars) {
+    $nm = [string]$c.name
+    $x = $checkByName[$nm]
+    if (-not $x) { throw ('character dropped from characters.json: ' + $nm) }
+    $seen = @($x.magic_ranks)
+    if (-not $rankOf.ContainsKey($c.name) -or $seen.Count -eq 0) {
+        # 習得対象が無いキャラクターは magic_ranks を付けない
+        if ($rankOf.ContainsKey($c.name)) { throw ('magic_ranks missing for ' + $nm) }
+        continue
+    }
+    $withRanks++
+    $prevSys = -1
+    $prevKey = -99
+    foreach ($r in $seen) {
+        $t = [string]$r
+        if ($t -match '^Lv(\d+)$') { continue }
+        $sys = -1
+        for ($i = 0; $i -lt $sysOrder.Count; $i++) { if ($t.StartsWith($sysOrder[$i])) { $sys = $i; break } }
+        if ($sys -lt 0) { throw ('unknown learnable condition: ' + $t) }
+        $g = $t.Substring($sysOrder[$sys].Length)
+        $plus = $g.EndsWith('+')
+        if ($plus) { $g = $g.Substring(0, $g.Length - 1) }
+        $gv = $gradeIdx[$g]
+        if ($null -eq $gv) { throw ('unknown grade in condition: ' + $t) }
+        # 「+」はそのLvのすぐ後ろ（次の等級の手前）に置く
+        $rank = $gv * 2 + $(if ($plus) { 1 } else { 0 })
+        if ($sys -eq $prevSys) {
+            if ($rank -lt $prevKey) { throw ('magic_ranks out of order for ' + $nm + ': ' + $t) }
+        } else {
+            if ($sys -lt $prevSys) { throw ('magic_ranks out of order for ' + $nm + ': ' + $t) }
+            $prevKey = -99
+        }
+        $prevKey = $rank
+        $prevSys = $sys
+    }
+}
+if ($withRanks -ne $touched) {
+    throw ('magic_ranks count mismatch: written ' + $touched + ' vs read ' + $withRanks)
+}
+Write-Host ('characters.json verified: ' + @($check).Count + ' records, ' + $withRanks + ' with magic_ranks, order checked')
 Write-Host 'characters.json updated'
