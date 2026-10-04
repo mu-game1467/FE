@@ -498,17 +498,6 @@ body > footer {
 .desc { margin: 0.5rem 0 0.75rem; }
 .effect { font-size: 0.88rem; margin-bottom: 0.6rem; color: #4a4a4a; }
 
-/* ------------------------------------------------------- hidden events -- */
-
-/* the cautionary notes under the hidden-event overview */
-ul.eventnotes {
-    margin: 0.5rem 0 0;
-    padding-left: 1.15rem;
-    color: #6f5b3c;
-    font-size: 0.82rem;
-}
-ul.eventnotes li { margin: 0.2rem 0; }
-
 /* ---------------------------------------------------- character compare -- */
 
 .cmp-btn {
@@ -1107,7 +1096,6 @@ html[data-theme="dark"] .muted,
 html[data-theme="dark"] .kv-label,
 html[data-theme="dark"] .result-count,
 html[data-theme="dark"] .cell-sub,
-html[data-theme="dark"] ul.eventnotes,
 html[data-theme="dark"] .desc { color: #bcae9c; }
 html[data-theme="dark"] .effect { color: #ded3c5; }
 html[data-theme="dark"] .card-block h4,

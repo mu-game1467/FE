@@ -2462,7 +2462,6 @@ function gaidenCells(row) {
 function renderEventList() {
     const list = listElement('events');
     if (!list) return;
-    const data = state.events || {};
     const rows = eventRows();
     const gRows = gaidenRows();
 
@@ -2531,22 +2530,6 @@ function renderEventList() {
     }).join('');
 
     list.innerHTML = html;
-
-    // the overview and the cautionary notes only frame the list once, above it
-    const intro = document.getElementById('events-intro');
-    if (intro) {
-        intro.innerHTML = `
-            ${data.overview ? `<p>${esc(data.overview)}</p>` : ''}
-            ${(data.notes || []).length ? `
-                <ul class="eventnotes">
-                    ${(data.notes || []).map((n) => `<li>${esc(n)}</li>`).join('')}
-                </ul>` : ''}
-            ${data.gaiden_overview ? `<p>${esc(data.gaiden_overview)}</p>` : ''}
-            ${(data.gaiden_notes || []).length ? `
-                <ul class="eventnotes">
-                    ${data.gaiden_notes.map((n) => `<li>${esc(n)}</li>`).join('')}
-                </ul>` : ''}`;
-    }
 }
 
 /** the events file is an object, not a flat array, so it gets its own toolbar */

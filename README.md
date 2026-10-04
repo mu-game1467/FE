@@ -125,5 +125,5 @@ powershell -ExecutionPolicy Bypass -File tools\scan-stray-characters.ps1
   ルート別一覧（章・項目・発生条件）を転記して登録したものです。
 - 同ファイルの外伝（`gaiden`）も手入力で、
   [GameWith「外伝一覧と発生条件・期日を逃した時の対処法」](https://gamewith.jp/fefw/577815) の
-  ルート別一覧（章・期日・依頼場所・報酬）と発生条件の説明を転記して登録したものです。
+  ルート別一覧（章・期日・依頼場所・報酬）を転記して登録したものです。
   `windows` は発生しないルートも「発生しない」章で残しています。
