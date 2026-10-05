@@ -389,7 +389,7 @@ function renderCharacter(item) {
                 <div class="card-block">
                     <h4>加入条件</h4>
                     <table class="mini">
-                        <thead><tr><th>ルート</th><th>方式</th><th>支援</th><th>名声</th><th>交渉</th><th>その他</th></tr></thead>
+                        <thead><tr><th>ルート</th><th>方式</th><th>名声</th><th>支援</th><th>交渉</th><th>その他</th></tr></thead>
                         <tbody>
                         ${ROUTES.filter((r) => item.recruit[r.id]).map((r) => {
                             const e = item.recruit[r.id];
@@ -398,8 +398,8 @@ function renderCharacter(item) {
                             return `<tr>
                                 <td>${esc(r.label)}</td>
                                 <td>${esc(e.method || '')}</td>
-                                <td class="num">${e.support_level === undefined ? '' : esc(e.support_level)}</td>
                                 <td class="num">${e.fame_level === undefined ? '' : esc(e.fame_level)}</td>
+                                <td class="num">${e.support_level === undefined ? '' : esc(e.support_level)}</td>
                                 <td>${negotiationCell(e)}</td>
                                 <td class="muted">${esc(other)}</td>
                             </tr>`;
@@ -439,7 +439,7 @@ function renderRecruitTable(list) {
                                 return `<td${active}><span class="cell-main">${esc(e.method || '')}</span><span class="cell-sub">${esc([e.part, e.stage].filter(Boolean).join(' '))}</span></td>`;
                             }
                             return `<td${active}>
-                                <span class="cell-main">支援${esc(e.support_level)} / 名声${esc(e.fame_level)}</span>
+                                <span class="cell-main">名声${esc(e.fame_level)} / 支援${esc(e.support_level)}</span>
                                 <span class="cell-sub">${esc([e.stage, e.place].filter(Boolean).join(' '))}</span>
                             </td>`;
                         }).join('')}
@@ -1674,8 +1674,8 @@ function renderCharacterDetail(character, classes, container, extra) {
         return `<tr>
             <td>${esc(r.label)}</td>
             <td>${esc(e.method || '')}</td>
-            <td class="num">${e.support_level === undefined ? '' : esc(e.support_level)}</td>
             <td class="num">${e.fame_level === undefined ? '' : esc(e.fame_level)}</td>
+            <td class="num">${e.support_level === undefined ? '' : esc(e.support_level)}</td>
             <td>${negotiationCell(e)}</td>
             <td class="muted">${esc(other)}</td>
         </tr>`;
@@ -2154,9 +2154,8 @@ function renderAffinityMatrix(list) {
 /* ------------------------------------------- recruit schedule (by route) -- */
 
 /**
- * ルートごとに「その章で誰が参加できる」を時系列に並べる表。
- * 加入条件（支援Lv / 名声Lv）はしきい値なので、章と併せて読むと
- * 「そのルートで何を育成すれば、誰を参加させられるか」が分かる。
+ * ルートごとに「そのルートで誰が参加できるか」をしきい値の低い順に並べる表。
+ * 加入条件（名声Lv / 支援Lv）はしきい値なので、低い方が早く参加できる。
  * data/characters.json の recruit のみを使うので、推測は入らない。
  */
 
@@ -2197,9 +2196,10 @@ function scheduleCell(entry) {
     if (entry.support === undefined && entry.fame === undefined) {
         return `<span class="cell-main">${esc(entry.method)}</span><span class="cell-sub">${esc([entry.part, entry.place].filter(Boolean).join(' '))}</span>`;
     }
+    // 名声 -> 支援 の順で表示する（並び順と読み方に揃える）
     const parts = [];
-    if (entry.support !== undefined) parts.push('支援' + esc(entry.support));
     if (entry.fame !== undefined) parts.push('名声' + esc(entry.fame));
+    if (entry.support !== undefined) parts.push('支援' + esc(entry.support));
     return `<span class="cell-main">${parts.join(' / ')}</span><span class="cell-sub">${esc(entry.place)}</span>`;
 }
 
@@ -2216,17 +2216,18 @@ function renderRecruitSchedule(characters) {
             if (e) rows.push(e);
         });
         if (!rows.length) return;
-        // 章の早い順 -> 名声Lv の低い順 -> 支援Lv の低い順 -> 名前順。
-        // 名声と支援を入れ替えても並びは変わらないが、加入条件の表示が
-        // 「支援x / 名声y」の順なので、その読み順に揃える。
+        // 名声Lv の低い順 -> 支援Lv の低い順 -> 章の早い順 -> 名前順。
+        // 名声と支援はしきい値なので、低い方が早く参加できる。
+        // どちらも無い（章だけで参加できる）ものは、しきい値なしとして最後に置く。
+        const levelOrLast = (v) => (v === undefined ? Infinity : v);
         rows.sort((a, b) => {
-            if (a.order !== b.order) return a.order - b.order;
-            const af = a.fame === undefined ? -1 : a.fame;
-            const bf = b.fame === undefined ? -1 : b.fame;
+            const af = levelOrLast(a.fame);
+            const bf = levelOrLast(b.fame);
             if (af !== bf) return af - bf;
-            const as = a.support === undefined ? -1 : a.support;
-            const bs = b.support === undefined ? -1 : b.support;
+            const as = levelOrLast(a.support);
+            const bs = levelOrLast(b.support);
             if (as !== bs) return as - bs;
+            if (a.order !== b.order) return a.order - b.order;
             return a.character.name.localeCompare(b.character.name, 'ja');
         });
 
@@ -2259,7 +2260,7 @@ function renderRecruitSchedule(characters) {
 
     return `
         <p class="muted">
-            参加条件は「その値に達すれば参加できる」しきい値です。先に条件を満たしておけば、掲載の章より前からでも参加できます。並び順は章、名声Lv、支援Lv の低い順です。
+            参加条件は「その値に達すれば参加できる」しきい値です。先に条件を満たしておけば、掲載の章より前からでも参加できます。並び順は名声Lv、支援Lv の低い順で、同じ場合は章の早い順です。
         </p>
         ${out.join('')}`;
 }
