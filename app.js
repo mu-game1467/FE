@@ -34,7 +34,8 @@ const PAGES = {
     weapons:    { file: 'data/weapons.json',    icon: '🗡️', label: '武器' },
     arts:       { file: 'data/arts.json',       icon: '💥', label: '戦技' },
     magic:      { file: 'data/magic.json',      icon: '🔮', label: '魔法' },
-    events:     { file: 'data/events.json',     icon: '📜', label: '隠しイベント' }
+    events:     { file: 'data/events.json',     icon: '📜', label: '隠しイベント' },
+    growth:     { file: 'data/characters.json', icon: '📈', label: '成長確認' }
 };
 
 const state = {
@@ -49,6 +50,8 @@ const state = {
     scale: null,
     // gojūon row id used by the a-z jump row ('' = no filter)
     initial: '',
+    // 所属・勢力の絞り込み。'' = すべて、'none' = 所属の記載が無いもの
+    faction: '',
     // ids of the characters picked for the side-by-side comparison
     compare: [],
     // search text per record, aligned with `data`; see buildHaystacks
@@ -57,7 +60,12 @@ const state = {
     eventRoute: 'all',
     // characters, kept loaded on every list page so the skills renderer can link
     // each holder back to their character page
-    characters: null
+    characters: null,
+    // growth checker: unit pick, class path, entered values ('' = nothing picked)
+    growth: { charId: '', segments: [], currentLevel: 1, criterion: 'total', values: null },
+    // growth checker: only the units whose join stats are known
+    growthCharacters: null,
+    growthClasses: null
 };
 
 /* ------------------------------------------------------------ helpers -- */
@@ -189,6 +197,29 @@ function kanaRow(name) {
 function matchesInitial(item) {
     if (!state.initial) return true;
     return kanaRow(item.name) === state.initial;
+}
+
+/** 所属・勢力で絞り込む。'none' は出典に記載が無いキャラクター用 */
+function matchesFaction(item) {
+    if (!state.faction) return true;
+    if (state.faction === 'none') return !item.faction;
+    return item.faction === state.faction;
+}
+
+/**
+ * 所属セレクトの選択肢。データ中の所属を五十音順で並べ、
+ * 記載の無いキャラクター用の「記載なし」を末尾に添える。
+ */
+function factionOptions() {
+    const seen = new Set();
+    (state.data || []).forEach((c) => { if (c.faction) seen.add(c.faction); });
+    const options = [{ value: '', label: 'すべて' }];
+    Array.from(seen).sort((a, b) => a.localeCompare(b, 'ja'))
+        .forEach((f) => options.push({ value: f, label: f }));
+    if ((state.data || []).some((c) => !c.faction)) {
+        options.push({ value: 'none', label: '記載なし' });
+    }
+    return options;
 }
 
 /**
@@ -339,6 +370,7 @@ function renderCharacter(item) {
 
     const badges = [];
     if (item.gender) badges.push(`<span class="tag">${esc(item.gender)}</span>`);
+    if (item.faction) badges.push(`<span class="tag tag-faction">${esc(item.faction)}</span>`);
     if (item.blaze_type) badges.push(`<span class="tag tag-blaze">${esc(item.blaze_type)}</span>`);
     if (item.blaze_skill) badges.push(`<span class="tag tag-blaze">${esc(item.blaze_skill)}</span>`);
     if (item.blaze_arts) badges.push(`<span class="tag tag-blaze">${esc(item.blaze_arts)}</span>`);
@@ -971,7 +1003,7 @@ function renderListInner() {
     // the comparison ignores the search and the jump strip: it is a fixed set
     const filtered = isCompare
         ? state.data
-        : state.data.filter(matchesQuery).filter(matchesInitial);
+        : state.data.filter(matchesQuery).filter(matchesInitial).filter(matchesFaction);
     const isTable = state.type === 'characters' && state.view === 'table';
     const isNameTable = state.type === 'characters' && state.view === 'names';
     const list = isTable
@@ -1002,6 +1034,9 @@ function renderListInner() {
     } else if (state.view === 'schedule') {
         container.classList.add('as-table');
         container.innerHTML = renderRecruitSchedule(state.data);
+    } else if (state.view === 'factions') {
+        container.classList.add('as-table');
+        container.innerHTML = renderFactionSections(list);
     } else {
         container.classList.remove('as-table');
         const render = RENDERERS[state.type] || renderItem;
@@ -1024,6 +1059,8 @@ function renderListInner() {
     if (search) search.hidden = isCompare;
     const sortControl = document.getElementById('sort-control');
     if (sortControl) sortControl.hidden = isCompare;
+    const factionControl = document.getElementById('faction-control');
+    if (factionControl) factionControl.hidden = isCompare;
     renderCompareTray();
 }
 
@@ -1653,6 +1690,7 @@ function renderCharacterDetail(character, classes, container, extra) {
 
     const badges = [];
     if (character.gender) badges.push(`<span class="tag">${esc(character.gender)}</span>`);
+    if (character.faction) badges.push(`<span class="tag tag-faction">${esc(character.faction)}</span>`);
     if (character.blaze_type) badges.push(`<span class="tag tag-blaze">${esc(character.blaze_type)}</span>`);
     if (character.blaze_skill) badges.push(`<span class="tag tag-blaze">${esc(character.blaze_skill)}</span>`);
     if (character.blaze_arts) badges.push(`<span class="tag tag-blaze">${esc(character.blaze_arts)}</span>`);
@@ -1666,6 +1704,7 @@ function renderCharacterDetail(character, classes, container, extra) {
         own.push(['血印', `${skillRefLink(seal.name)}${seal.effect ? `<br><span class="muted">${esc(seal.effect)}</span>` : ''}`]);
     });
     if (character.favorites) own.push(['好きなもの', esc(character.favorites)]);
+    if (character.faction) own.push(['所属・勢力', esc(character.faction)]);
 
     const recruit = character.recruit || {};
     const recruitRows = ROUTES.filter((r) => recruit[r.id]).map((r) => {
@@ -1696,6 +1735,8 @@ function renderCharacterDetail(character, classes, container, extra) {
                 </div>
                 <a class="backlink" href="../">← キャラクター一覧</a>
             </header>
+
+            ${character.start ? `<p class="page-note"><a href="${esc(assetUrl('growth/?char=' + encodeURIComponent(character.id)))}">🌱 成長確認ツールでこのキャラを判定する</a></p>` : ''}
 
             <section class="panel">
                 <h3>成長率 <span class="muted">合計 ${esc(growth.total)}</span></h3>
@@ -2149,6 +2190,43 @@ function renderAffinityMatrix(list) {
             <span class="legend-item is-weak">苦手</span>苦手の技能。
             選択中の検索・あ行ジャンプ・並び替えがそのまま反映されます。
         </p>`;
+}
+
+/* ------------------------------------------ faction sections (by 所属) -- */
+
+/**
+ * 所属・勢力ごとにグルーピングした一覧。並びは五十音順で、
+ * 出典に所属の記載が無いキャラクターは最後にまとめる。
+ */
+function renderFactionSections(list) {
+    const groups = new Map();
+    list.forEach((c) => {
+        const key = c.faction || '';
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(c);
+    });
+    const keys = Array.from(groups.keys()).sort((a, b) => {
+        if (!a) return 1;
+        if (!b) return -1;
+        return a.localeCompare(b, 'ja');
+    });
+    const out = keys.map((key) => {
+        const members = groups.get(key).slice()
+            .sort((a, b) => a.name.localeCompare(b.name, 'ja'));
+        return `
+            <section class="panel">
+                <h3>${key ? esc(key) : '所属の記載なし'} <span class="muted">${members.length}人</span></h3>
+                <div class="faction-members">
+                    ${members.map((c) => `
+                        <a class="faction-member" href="${assetUrl('characters/' + encodeURIComponent(c.id) + '/')}">
+                            ${characterAvatar(c)}<span>${esc(c.name)}</span>
+                        </a>`).join('')}
+                </div>
+            </section>`;
+    }).join('');
+    return `
+        <p class="muted">所属・勢力は redfreshet の「所属・勢力」一覧に基づきます。記載の無いキャラクターは最後にまとめています。</p>
+        ${out}`;
 }
 
 /* ------------------------------------------- recruit schedule (by route) -- */
@@ -2756,7 +2834,7 @@ async function copyTable(button) {
 
 /* ---------------------------------------------------------- url state -- */
 
-const LIST_VIEWS = ['cards', 'table', 'names', 'compare', 'matrix', 'schedule'];
+const LIST_VIEWS = ['cards', 'table', 'names', 'compare', 'matrix', 'schedule', 'factions'];
 
 /**
  * Restore the view state from the query string, so a filtered or re-sorted
@@ -2779,6 +2857,8 @@ function readUrl() {
     if (order !== null) state.tableOrder = order;
     const initial = one('initial');
     if (initial !== null && KANA_ROWS.some((r) => r.id === initial)) state.initial = initial;
+    const faction = one('faction');
+    if (faction !== null) state.faction = faction;
     const eroute = one('eroute');
     if (eroute !== null && ROUTES.some((r) => r.id === eroute)) state.eventRoute = eroute;
     // the selection lives in localStorage; the query string is just a mirror.
@@ -2813,6 +2893,7 @@ function flushUrl() {
     if (state.tableRoute !== 'kai') params.set('route', state.tableRoute);
     if (state.tableOrder !== 'both') params.set('order', state.tableOrder);
     if (state.initial) params.set('initial', state.initial);
+    if (state.faction) params.set('faction', state.faction);
     if (isEvent && state.eventRoute !== 'all') params.set('eroute', state.eventRoute);
     if (state.type === 'characters' && state.compare.length) params.set('cmp', state.compare.join(','));
     const qs = params.toString();
@@ -2823,7 +2904,7 @@ function flushUrl() {
 }
 
 /** Views that are only reachable from the characters page. */
-const CHARACTER_VIEWS = ['table', 'names', 'compare', 'matrix', 'schedule'];
+const CHARACTER_VIEWS = ['table', 'names', 'compare', 'matrix', 'schedule', 'factions'];
 
 /** Drop state that does not apply to this page (e.g. view=names on /items/). */
 function validateState() {
@@ -2833,6 +2914,10 @@ function validateState() {
     }
     if (state.type !== 'characters' || CHARACTER_VIEWS.indexOf(state.view) === -1) {
         state.view = 'cards';
+    }
+    // URL 由来の所属は実在する値だけを残す（手で編集された ?faction= 対策）
+    if (state.faction && !factionOptions().some((o) => o.value === state.faction)) {
+        state.faction = '';
     }
 }
 
@@ -2890,6 +2975,12 @@ function buildToolbar() {
                 </select>
             </label>
             ${state.type === 'characters' ? `
+            <label class="control" id="faction-control">
+                <span>所属</span>
+                <select id="faction">
+                    ${factionOptions().map((o) => `<option value="${esc(o.value)}"${o.value === state.faction ? ' selected' : ''}>${esc(o.label)}</option>`).join('')}
+                </select>
+            </label>
             <label class="control" id="view-control">
                 <span>表示</span>
                 <select id="view">
@@ -2899,6 +2990,7 @@ function buildToolbar() {
                     <option value="compare"${state.view === 'compare' ? ' selected' : ''}>比較</option>
                     <option value="matrix"${state.view === 'matrix' ? ' selected' : ''}>技相性マトリクス</option>
                     <option value="schedule"${state.view === 'schedule' ? ' selected' : ''}>参加スケジュール</option>
+                    <option value="factions"${state.view === 'factions' ? ' selected' : ''}>所属・勢力</option>
                 </select>
             </label>
             <span class="control" id="table-controls" hidden>
@@ -2957,6 +3049,13 @@ function buildToolbar() {
             renderList();
         });
     }
+    const faction = host.querySelector('#faction');
+    if (faction) {
+        faction.addEventListener('change', (event) => {
+            state.faction = event.target.value;
+            renderList();
+        });
+    }
 
     // Delegated on purpose: renderList() replaces the list's innerHTML, so a
     // listener bound to the header cells themselves would not survive a re-render.
@@ -2984,6 +3083,683 @@ function buildToolbar() {
 
     const copyButton = host.querySelector('#copy-table');
     if (copyButton) copyButton.addEventListener('click', () => copyTable(copyButton));
+}
+
+/* ---------------------------------------------------- growth checker -- */
+
+const GROWTH_STORAGE_KEY = 'fe.growth';
+const GROWTH_MAX_LV = 99;
+
+/**
+ * 判定基準。stats が null の 'each' は能力ごとの判定（結果は各行に表示）。
+ * 物理・魔法の対象は攻略記事の定義に合わせている。
+ */
+const GROWTH_CRITERIA = [
+    { id: 'total',    label: '合計',       desc: '9つの能力すべて', stats: STATS.map((s) => s.key) },
+    { id: 'physical', label: '物理',       desc: 'HP・力・技・速さ・守備', stats: ['hp', 'str', 'dex', 'spd', 'def'] },
+    { id: 'magical',  label: '魔法',       desc: 'HP・魔力・速さ・魔防', stats: ['hp', 'mag', 'spd', 'res'] },
+    { id: 'str-spd',  label: '力＋速さ',   desc: '', stats: ['str', 'spd'] },
+    { id: 'mag-spd',  label: '魔力＋速さ', desc: '', stats: ['mag', 'spd'] },
+    { id: 'def-res',  label: '守備＋魔防', desc: '', stats: ['def', 'res'] },
+    { id: 'each',     label: '能力ごと',   desc: '9つの能力をそれぞれ判定', stats: null }
+];
+
+const GROWTH_VERDICTS = [
+    { id: 'god',    label: '神成長', cls: 'v-god' },
+    { id: 'good',   label: '良成長', cls: 'v-good' },
+    { id: 'normal', label: '並',     cls: 'v-normal' },
+    { id: 'bad',    label: 'へたれ', cls: 'v-bad' }
+];
+
+/** 上位％から4段階の判定へ（上位5%以内で神成長、下位25%でへたれ） */
+function growthVerdict(percent) {
+    if (percent === null || percent === undefined) return null;
+    if (percent <= 5) return GROWTH_VERDICTS[0];
+    if (percent <= 25) return GROWTH_VERDICTS[1];
+    if (percent < 75) return GROWTH_VERDICTS[2];
+    return GROWTH_VERDICTS[3];
+}
+
+function growthChar() {
+    return (state.growthCharacters || []).find((c) => c.id === state.growth.charId) || null;
+}
+
+function growthClass(id) {
+    return (state.growthClasses || []).find((c) => c.id === id) || null;
+}
+
+/** キャラ成長率＋兵種成長ボーナス（%） */
+function growthRateFor(ch, cls, key) {
+    const base = statValue(ch.growth_rates, key) || 0;
+    const bonus = statValue((cls || {}).growth_bonus, key) || 0;
+    return base + bonus;
+}
+
+/**
+ * 育て方の区間プラン。segments[0] は加入時の兵種（Lvは固定）で、
+ * 以降の入力は「そのLvで兵種に変わった」という区切り。
+ * 戻り値は [{ cls, from, to, levels }]（levels はその区間で上がったLv数）。
+ */
+function growthPlan() {
+    const ch = growthChar();
+    if (!ch || !ch.start) return null;
+    const joinLv = ch.start.level;
+    let current = Math.round(Number(state.growth.currentLevel));
+    if (!Number.isFinite(current)) current = joinLv;
+    current = Math.max(joinLv, Math.min(GROWTH_MAX_LV, current));
+    const segs = [{ cls: growthClass(ch.start.class), from: joinLv, to: current }];
+    let prev = joinLv;
+    (state.growth.segments || []).forEach((seg) => {
+        const cls = growthClass(seg.classId);
+        if (!cls) return;
+        let from = Math.round(Number(seg.from));
+        if (!Number.isFinite(from)) return;
+        from = Math.max(prev + 1, Math.min(current, from));
+        segs[segs.length - 1].to = from;
+        segs.push({ cls, from, to: current });
+        prev = from;
+    });
+    segs.forEach((seg) => { seg.levels = Math.max(0, seg.to - seg.from); });
+    return { ch, joinLv, current, segs };
+}
+
+/* ------------------------------------------------- growth expected -- */
+
+/**
+ * 期待値。加入時の能力値に「区間のレベル数×成長率」を足し、
+ * 兵種の能力値補正は加入時の兵種との差分だけを加える
+ * （登場時ステータスには加入時の兵種補正が乗っているとみなすため。
+ * 判定の上位％は補正の扱いに依存しない。同じ育て方なら同じ補正が両方に乗る）。
+ */
+function growthExpected(plan, level, cls, extendLast) {
+    const ch = plan.ch;
+    const joinCls = growthClass(ch.start.class);
+    const out = {};
+    STATS.forEach((s) => {
+        let value = statValue(ch.start.stats, s.key) || 0;
+        plan.segs.forEach((seg, i) => {
+            const segTo = (extendLast && i === plan.segs.length - 1) ? level : seg.to;
+            const ups = Math.max(0, Math.min(segTo, level) - seg.from);
+            value += ups * growthRateFor(ch, seg.cls, s.key) / 100;
+        });
+        const bonus = (statValue((cls || {}).stat_bonus, s.key) || 0)
+            - (statValue((joinCls || {}).stat_bonus, s.key) || 0);
+        out[s.key] = value + bonus;
+    });
+    return out;
+}
+
+/**
+ * 対象能力の増加分の確率分布（dist[k] = 増加が k になる確率）。
+ * レベルアップごとに能力ごと独立で「成長率%」だけ上がる二項試行として、
+ * 動的計画法で厳密に畳み込む。
+ */
+function growthDistribution(plan, statKeys) {
+    let dist = [1];
+    plan.segs.forEach((seg) => {
+        for (let i = 0; i < seg.levels; i += 1) {
+            statKeys.forEach((key) => {
+                const p = Math.max(0, Math.min(1, growthRateFor(plan.ch, seg.cls, key) / 100));
+                const next = new Array(dist.length + 1).fill(0);
+                for (let k = 0; k < dist.length; k += 1) {
+                    next[k] += dist[k] * (1 - p);
+                    next[k + 1] += dist[k] * p;
+                }
+                dist = next;
+            });
+        }
+    });
+    return dist;
+}
+
+/** あなたの増加分が同じ育て方の分布の上から何％にいるか */
+function growthTopPercent(plan, statKeys, yourIncrease) {
+    if (yourIncrease <= 0) return 100;
+    const dist = growthDistribution(plan, statKeys);
+    if (yourIncrease >= dist.length) return 0;
+    let tail = 0;
+    for (let k = Math.ceil(yourIncrease); k < dist.length; k += 1) tail += dist[k];
+    return tail * 100;
+}
+
+/** 期待値（小数） */
+function growthExpectedMap(plan) {
+    return growthExpected(plan, plan.current, plan.segs[plan.segs.length - 1].cls);
+}
+
+/** 補正込みの基準値（登場値＋現在の兵種との補正差）。上位％計算の起点 */
+function growthBaseMap(plan) {
+    return growthExpected(plan, plan.joinLv, plan.segs[plan.segs.length - 1].cls);
+}
+
+/** 入力値。未入力の能力は期待値の四捨五入をそのまま使う */
+function growthValue(plan, key) {
+    const expected = growthExpectedMap(plan);
+    const entered = state.growth.values && state.growth.values[key];
+    if (entered !== null && entered !== undefined && Number.isFinite(Number(entered))) {
+        return Math.round(Number(entered));
+    }
+    return Math.round(expected[key]);
+}
+
+/** 能力ごとの判定 */
+function growthStatResult(plan, key, value) {
+    const expected = growthExpectedMap(plan);
+    const base = growthBaseMap(plan);
+    const exp = expected[key];
+    const diff = value - exp;
+    const levels = plan.segs.reduce((n, seg) => n + seg.levels, 0);
+    if (!levels) return { exp, diff, percent: null, verdict: null };
+    const percent = growthTopPercent(plan, [key], value - base[key]);
+    // 期待値との差が1未満の能力は判定できないため「並」
+    const verdict = Math.abs(diff) < 1 ? GROWTH_VERDICTS[2] : growthVerdict(percent);
+    return { exp, diff, percent, verdict };
+}
+
+function growthFmt1(value) {
+    return (Math.round(value * 10) / 10).toFixed(1);
+}
+
+function growthFmtDelta(value) {
+    const v = Math.round(value * 10) / 10;
+    return `${v > 0 ? '+' : ''}${v.toFixed(1)}`;
+}
+
+function growthBadge(verdict) {
+    if (!verdict) return '<span class="grow-verdict v-none">—</span>';
+    return `<span class="grow-verdict ${esc(verdict.cls)}">${esc(verdict.label)}</span>`;
+}
+
+/** 兵種の選択肢。なれない兵種も残して「なれない」と明示 */
+function growthClassOptions(selectedId, ch) {
+    const all = (state.growthClasses || []).slice()
+        .sort((a, b) => tierIndex(a.tier) - tierIndex(b.tier) || a.name.localeCompare(b.name, 'ja'));
+    const list = all.filter((cls) => !classUnavailable(ch, cls));
+    const selected = growthClass(selectedId);
+    if (selected && !list.some((cls) => cls.id === selectedId)) list.unshift(selected);
+    return list.map((cls) => {
+        const bad = classUnavailable(ch, cls);
+        const label = `${cls.name}${cls.tier ? `（${cls.tier}）` : ''}${bad ? ' なれない' : ''}`;
+        return `<option value="${esc(cls.id)}"${cls.id === selectedId ? ' selected' : ''}>${label}</option>`;
+    }).join('');
+}
+
+function growthSelect(id) {
+    const ch = (state.growthCharacters || []).find((c) => c.id === id || c.name === id);
+    state.growth.charId = ch ? ch.id : '';
+    state.growth.segments = [];
+    state.growth.currentLevel = ch ? ch.start.level : 1;
+    state.growth.values = null;
+    saveGrowth();
+}
+
+function saveGrowth() {
+    try {
+        window.localStorage.setItem(GROWTH_STORAGE_KEY, JSON.stringify(state.growth));
+    } catch (error) {
+        // 保存できない環境でもツール自体は動く
+    }
+}
+
+function loadGrowthState() {
+    let saved = null;
+    try { saved = JSON.parse(window.localStorage.getItem(GROWTH_STORAGE_KEY) || 'null'); } catch (error) { saved = null; }
+    if (saved && typeof saved === 'object') {
+        if (typeof saved.charId === 'string') state.growth.charId = saved.charId;
+        if (Array.isArray(saved.segments)) {
+            state.growth.segments = saved.segments
+                .filter((seg) => seg && growthClass(seg.classId))
+                .map((seg) => ({ classId: seg.classId, from: Number(seg.from) || 0 }));
+        }
+        if (Number.isFinite(Number(saved.currentLevel))) state.growth.currentLevel = Number(saved.currentLevel);
+        if (GROWTH_CRITERIA.some((c) => c.id === saved.criterion)) state.growth.criterion = saved.criterion;
+        if (saved.values && typeof saved.values === 'object') {
+            state.growth.values = {};
+            STATS.forEach((s) => {
+                const v = Number(saved.values[s.key]);
+                if (Number.isFinite(v)) state.growth.values[s.key] = Math.round(v);
+            });
+        }
+    }
+    if (state.growth.charId && !growthChar()) growthSelect('');
+}
+
+/* ------------------------------------------------- growth rendering -- */
+
+function renderGrowth() {
+    const host = document.getElementById('growth-tool');
+    if (!host) return;
+    const pool = state.growthCharacters || [];
+    if (!pool.length) {
+        host.innerHTML = emptyState('判定できるキャラクターがありません');
+        return;
+    }
+    const plan = growthPlan();
+    const options = pool.slice()
+        .sort((a, b) => a.name.localeCompare(b.name, 'ja'))
+        .map((c) => `<option value="${esc(c.id)}"${c.id === state.growth.charId ? ' selected' : ''}>${esc(c.name)}（Lv${esc(c.start.level)} ${esc(c.start.class)}）</option>`)
+        .join('');
+
+    host.innerHTML = `
+        <section class="panel">
+            <h3>1. ユニットを選ぶ</h3>
+            <div class="toolbar-inner">
+                <label class="control">
+                    <span>キャラクター</span>
+                    <select id="grow-char"><option value="">選択してください</option>${options}</select>
+                </label>
+            </div>
+            <p class="muted">加入時の能力値が確認できる${pool.length}名が対象です。因果融合した後の能力値は判定できません。</p>
+        </section>
+        ${plan ? growthSetupHtml(plan) : ''}
+        ${plan ? growthExpectedHtml(plan) : ''}
+        ${plan ? growthValuesHtml(plan) : ''}
+        ${plan ? growthResultHtml(plan) : ''}
+        ${plan ? growthFaqHtml() : ''}`;
+
+    if (plan) wireGrowth(plan);
+}
+
+function growthSetupHtml(plan) {
+    const ch = plan.ch;
+    const startStats = STATS.map((s) => `${s.label}${esc(statValue(ch.start.stats, s.key))}`).join(' ');
+    const segRows = (state.growth.segments || []).map((seg, i) => `
+        <div class="grow-row">
+            <span class="grow-row-label">Lv</span>
+            <input type="number" class="grow-num" data-grow-from="${i}" min="${plan.joinLv + 1}" max="${plan.current}" value="${esc(seg.from)}">
+            <span>で</span>
+            <select data-grow-class="${i}">${growthClassOptions(seg.classId, ch)}</select>
+            <span>に変更</span>
+            <button type="button" class="copy-btn" data-grow-remove="${i}">削除</button>
+        </div>`).join('');
+
+    return `
+        <section class="panel">
+            <h3>2. 育ててきた兵種と現在Lvを入れる</h3>
+            <p class="muted">加入: Lv${esc(plan.joinLv)} ${esc(ch.start.class)} ／ ${startStats}</p>
+            ${segRows}
+            <div class="grow-row">
+                <button type="button" class="copy-btn" id="grow-add">＋兵種を追加</button>
+                <span class="grow-row-label">現在 Lv</span>
+                <input type="number" class="grow-num" id="grow-lv" min="${plan.joinLv}" max="${GROWTH_MAX_LV}" value="${esc(plan.current)}">
+            </div>
+            <p class="muted">兵種を変えたLvと兵種を足していき、最後に現在Lvを入れてください。成長率は区間ごとに「キャラの成長率＋兵種の成長ボーナス」で切り替わります。</p>
+        </section>`;
+}
+
+function growthExpectedHtml(plan) {
+    const rows = [];
+    plan.segs.forEach((seg, i) => {
+        if (i === 0) return;
+        rows.push({ level: seg.from, cls: seg.cls, stats: growthExpected(plan, seg.from, seg.cls) });
+    });
+    const last = plan.segs[plan.segs.length - 1];
+    rows.push({ level: plan.current, cls: last.cls, stats: growthExpected(plan, plan.current, last.cls), current: true });
+    rows.push({ level: GROWTH_MAX_LV, cls: last.cls, stats: growthExpected(plan, GROWTH_MAX_LV, last.cls, true) });
+
+    const body = rows.map((row) => {
+        const total = STATS.reduce((n, s) => n + row.stats[s.key], 0);
+        const tag = row.current ? '（現在）' : (row.level === GROWTH_MAX_LV ? '（Lv99）' : '');
+        return `
+            <tr${row.current ? ' class="is-current"' : ''}>
+                <td>Lv${esc(row.level)}${tag}</td>
+                <td>${esc(row.cls ? row.cls.name : '－')}</td>
+                ${STATS.map((s) => `<td class="num">${growthFmt1(row.stats[s.key])}</td>`).join('')}
+                <td class="num"><strong>${growthFmt1(total)}</strong></td>
+            </tr>`;
+    }).join('');
+
+    return `
+        <section class="panel">
+            <h3>期待値の表</h3>
+            <p class="muted">兵種を変えたLvごと・現在Lv・Lv99の値です。兵種の能力値補正は加入時の兵種との差分を加えています（登場時ステータスには加入時の補正が乗っているため）。判定の上位％はこの補正の扱いには依存しません。</p>
+            <div class="tablewrap">
+                <table class="mini grow-expect">
+                    <thead>
+                        <tr><th>Lv</th><th>兵種</th>${STATS.map((s) => `<th class="num">${esc(s.label)}</th>`).join('')}<th class="num">合計</th></tr>
+                    </thead>
+                    <tbody>${body}</tbody>
+                </table>
+            </div>
+            <p class="muted">Lv99の行は、今の兵種のままで99まで育てた場合の目安です。</p>
+        </section>`;
+}
+
+function growthValuesHtml(plan) {
+    const rows = STATS.map((s) => {
+        const value = growthValue(plan, s.key);
+        const result = growthStatResult(plan, s.key, value);
+        return `
+            <tr data-grow-row="${esc(s.key)}">
+                <th>${esc(s.label)}</th>
+                <td class="grow-input-cell">
+                    <button type="button" class="grow-step" data-grow-step="${esc(s.key)},-1" aria-label="${esc(s.label)}を1下げる">−</button>
+                    <input type="number" class="grow-num" data-grow-val="${esc(s.key)}" value="${esc(value)}">
+                    <button type="button" class="grow-step" data-grow-step="${esc(s.key)},1" aria-label="${esc(s.label)}を1上げる">＋</button>
+                </td>
+                <td class="num">${growthFmt1(result.exp)}</td>
+                <td class="num grow-diff">${esc(growthFmtDelta(result.diff))}</td>
+                <td class="num grow-pct">${result.percent === null ? '—' : `上位 ${growthFmt1(result.percent)}%`}</td>
+                <td class="num">${growthBadge(result.verdict)}</td>
+            </tr>`;
+    }).join('');
+
+    return `
+        <section class="panel">
+            <h3>3. あなたの能力値</h3>
+            <p class="muted">欄には現在Lvの期待値が入っています。ゲーム内の能力値と違う能力だけ直してください。能力を上げるアイテムを使った場合は、上がった分を引いた値を入れてください。</p>
+            <div class="tablewrap">
+                <table class="mini grow-values">
+                    <thead>
+                        <tr><th>能力</th><th>あなたの値</th><th class="num">期待値</th><th class="num">差</th><th class="num">上位</th><th class="num">判定</th></tr>
+                    </thead>
+                    <tbody>${rows}</tbody>
+                </table>
+            </div>
+        </section>`;
+}
+
+function growthOverallHtml(plan) {
+    const crit = GROWTH_CRITERIA.find((c) => c.id === state.growth.criterion) || GROWTH_CRITERIA[0];
+    const levels = plan.segs.reduce((n, seg) => n + seg.levels, 0);
+    if (!levels) {
+        return '<p class="muted">現在Lvが加入時のLvと同じ間は、まだ成長していないため判定は出ません。Lvが上がってから入れてください。</p>';
+    }
+    if (!crit.stats) {
+        const items = STATS.map((s) => {
+            const result = growthStatResult(plan, s.key, growthValue(plan, s.key));
+            return `<li>${esc(s.label)}: ${growthBadge(result.verdict)}</li>`;
+        }).join('');
+        return `<ul class="grow-each">${items}</ul><p class="muted">能力ごとの判定は各能力の行の右側にも表示しています。</p>`;
+    }
+    const expected = growthExpectedMap(plan);
+    const base = growthBaseMap(plan);
+    let yourTotal = 0;
+    let expTotal = 0;
+    let baseTotal = 0;
+    crit.stats.forEach((key) => {
+        yourTotal += growthValue(plan, key);
+        expTotal += expected[key];
+        baseTotal += base[key];
+    });
+    const percent = growthTopPercent(plan, crit.stats, yourTotal - baseTotal);
+    const verdict = growthVerdict(percent);
+    return `
+        <div class="grow-summary">
+            <span class="grow-summary-label">上位</span>
+            <span class="grow-summary-pct">${growthFmt1(percent)}%</span>
+            ${growthBadge(verdict)}
+            <span class="muted">あなた ${yourTotal} ／ 期待値 ${growthFmt1(expTotal)}</span>
+        </div>`;
+}
+
+function growthResultHtml(plan) {
+    const crit = GROWTH_CRITERIA.find((c) => c.id === state.growth.criterion) || GROWTH_CRITERIA[0];
+    const options = GROWTH_CRITERIA.map((c) =>
+        `<option value="${esc(c.id)}"${c.id === crit.id ? ' selected' : ''}>${esc(c.label)}${c.desc ? `（${esc(c.desc)}）` : ''}</option>`).join('');
+    return `
+        <section class="panel">
+            <h3>結果</h3>
+            <div class="toolbar-inner">
+                <label class="control">
+                    <span>判定基準</span>
+                    <select id="grow-criterion">${options}</select>
+                </label>
+                <button type="button" class="copy-btn" id="grow-copy">結果をコピー</button>
+            </div>
+            <div id="grow-result">${growthOverallHtml(plan)}</div>
+            <p class="muted">上位％は、同じキャラを同じ兵種・同じLvまで育てたときに出る能力値のばらつきの中であなたの値が上から何％かです（他のプレイヤーと比べたものではありません）。上位5%以内が神成長、上位6〜25%が良成長、上位26〜74%が並、下位25%がへたれです。</p>
+        </section>`;
+}
+
+function growthFaqHtml() {
+    return `
+        <section class="panel">
+            <h3>補足</h3>
+            <ul class="grow-notes">
+                <li>期待値は加入時の能力値に「上がったLvの数×成長率」を足した値です。成長率は区間ごとにキャラの成長率＋兵種の成長ボーナスで切り替わります。</li>
+                <li>因果融合した後の能力値は判定の対象外です。融合前の1体の目安として期待値の表は使えます。</li>
+                <li>能力を上げるアイテムを使った場合は、上がった分を引いた値を入れてください。</li>
+                <li>加入時のLvのままはまだ成長していないため判定は出ません。</li>
+                <li>加入時の能力値が確認できていないキャラクターは選べません。</li>
+            </ul>
+        </section>`;
+}
+
+/* -------------------------------------------------- growth behavior -- */
+
+/** 値の入力では該当セルと結果欄だけ更新する（テーブルを作り直さずフォーカスを保つ） */
+function updateGrowthStatCell(key) {
+    const plan = growthPlan();
+    if (!plan) return;
+    const value = growthValue(plan, key);
+    const result = growthStatResult(plan, key, value);
+    const row = document.querySelector(`[data-grow-row="${CSS.escape(key)}"]`);
+    if (row) {
+        row.querySelector('.grow-diff').textContent = growthFmtDelta(result.diff);
+        row.querySelector('.grow-pct').textContent = result.percent === null ? '—' : `上位 ${growthFmt1(result.percent)}%`;
+        const badge = row.querySelector('.grow-verdict');
+        if (badge) {
+            badge.className = `grow-verdict ${result.verdict ? result.verdict.cls : 'v-none'}`;
+            badge.textContent = result.verdict ? result.verdict.label : '—';
+        }
+    }
+    const resultHost = document.getElementById('grow-result');
+    if (resultHost) resultHost.innerHTML = growthOverallHtml(plan);
+}
+
+function growthResultText(plan) {
+    const crit = GROWTH_CRITERIA.find((c) => c.id === state.growth.criterion) || GROWTH_CRITERIA[0];
+    const lines = [];
+    lines.push(`${plan.ch.name} 成長確認（Lv${plan.joinLv}→Lv${plan.current}）`);
+    lines.push(`育て方: ${plan.segs.map((seg) => `${seg.cls ? seg.cls.name : '－'} Lv${seg.from}〜${seg.to}`).join(' / ')}`);
+    lines.push(`判定基準: ${crit.label}`);
+    const levels = plan.segs.reduce((n, seg) => n + seg.levels, 0);
+    if (crit.stats) {
+        const expected = growthExpectedMap(plan);
+        let yourTotal = 0;
+        let expTotal = 0;
+        crit.stats.forEach((key) => { yourTotal += growthValue(plan, key); expTotal += expected[key]; });
+        if (levels) {
+            const base = growthBaseMap(plan);
+            let baseTotal = 0;
+            crit.stats.forEach((key) => { baseTotal += base[key]; });
+            const percent = growthTopPercent(plan, crit.stats, yourTotal - baseTotal);
+            const verdict = growthVerdict(percent);
+            lines.push(`あなた ${yourTotal} ／ 期待値 ${growthFmt1(expTotal)} → 上位 ${growthFmt1(percent)}% ${verdict.label}`);
+        } else {
+            lines.push(`あなた ${yourTotal} ／ 期待値 ${growthFmt1(expTotal)} → 判定なし（Lvが変わっていない）`);
+        }
+    }
+    STATS.forEach((s) => {
+        const value = growthValue(plan, s.key);
+        const result = growthStatResult(plan, s.key, value);
+        const judge = result.verdict ? result.verdict.label : '判定なし';
+        const pct = result.percent === null ? '' : ` 上位 ${growthFmt1(result.percent)}%`;
+        lines.push(`${s.label}: ${value}（期待 ${growthFmt1(result.exp)} / 差 ${growthFmtDelta(result.diff)}${pct} ${judge}）`);
+    });
+    return lines.join('\n');
+}
+
+async function copyGrowthResult(button) {
+    const plan = growthPlan();
+    if (!plan) return;
+    const text = growthResultText(plan);
+    const idle = button.getAttribute('data-idle') || button.textContent;
+    const say = (message, bad) => {
+        button.textContent = message;
+        button.classList.toggle('is-error', !!bad);
+        setTimeout(() => {
+            button.textContent = idle;
+            button.classList.remove('is-error');
+        }, 1800);
+    };
+    try {
+        await navigator.clipboard.writeText(text);
+        say('コピーしました');
+    } catch (error) {
+        // clipboard API は https が必須なので、http では execCommand に逃がす
+        const area = document.createElement('textarea');
+        area.value = text;
+        area.setAttribute('readonly', '');
+        area.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+        document.body.appendChild(area);
+        area.select();
+        let ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+        document.body.removeChild(area);
+        say(ok ? 'コピーしました' : 'コピーできませんでした', !ok);
+    }
+}
+
+function wireGrowth(plan) {
+    const host = document.getElementById('growth-tool');
+    if (!host) return;
+    const ch = plan.ch;
+
+    const charSelect = host.querySelector('#grow-char');
+    if (charSelect) {
+        charSelect.addEventListener('change', (event) => {
+            growthSelect(event.target.value);
+            renderGrowth();
+        });
+    }
+
+    host.querySelectorAll('[data-grow-from]').forEach((input) => {
+        input.addEventListener('change', (event) => {
+            const i = Number(event.target.getAttribute('data-grow-from'));
+            const seg = state.growth.segments[i];
+            if (!seg) return;
+            seg.from = Number(event.target.value);
+            state.growth.values = null;
+            saveGrowth();
+            renderGrowth();
+        });
+    });
+
+    host.querySelectorAll('[data-grow-class]').forEach((select) => {
+        select.addEventListener('change', (event) => {
+            const i = Number(event.target.getAttribute('data-grow-class'));
+            const seg = state.growth.segments[i];
+            if (!seg) return;
+            seg.classId = event.target.value;
+            state.growth.values = null;
+            saveGrowth();
+            renderGrowth();
+        });
+    });
+
+    host.querySelectorAll('[data-grow-remove]').forEach((button) => {
+        button.addEventListener('click', (event) => {
+            const i = Number(event.target.getAttribute('data-grow-remove'));
+            state.growth.segments.splice(i, 1);
+            state.growth.values = null;
+            saveGrowth();
+            renderGrowth();
+        });
+    });
+
+    const addButton = host.querySelector('#grow-add');
+    if (addButton) {
+        addButton.addEventListener('click', () => {
+            const segs = state.growth.segments;
+            const prevFrom = segs.length ? Number(segs[segs.length - 1].from) : plan.joinLv;
+            const from = Math.min(plan.current, prevFrom + 1);
+            const lastClassId = segs.length ? segs[segs.length - 1].classId : ch.start.class;
+            segs.push({ classId: lastClassId, from });
+            state.growth.values = null;
+            saveGrowth();
+            renderGrowth();
+        });
+    }
+
+    const levelInput = host.querySelector('#grow-lv');
+    if (levelInput) {
+        levelInput.addEventListener('change', (event) => {
+            state.growth.currentLevel = Number(event.target.value);
+            state.growth.values = null;
+            saveGrowth();
+            renderGrowth();
+        });
+    }
+
+    host.querySelectorAll('[data-grow-val]').forEach((input) => {
+        input.addEventListener('input', (event) => {
+            const key = event.target.getAttribute('data-grow-val');
+            const value = Number(event.target.value);
+            if (!Number.isFinite(value)) return;
+            if (!state.growth.values) state.growth.values = {};
+            state.growth.values[key] = Math.round(value);
+            saveGrowth();
+            updateGrowthStatCell(key);
+        });
+    });
+
+    host.querySelectorAll('[data-grow-step]').forEach((button) => {
+        button.addEventListener('click', (event) => {
+            const pair = event.target.getAttribute('data-grow-step').split(',');
+            const key = pair[0];
+            const delta = Number(pair[1]);
+            const input = host.querySelector(`[data-grow-val="${CSS.escape(key)}"]`);
+            if (!input) return;
+            const next = (Number(input.value) || 0) + delta;
+            input.value = String(next);
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+    });
+
+    const criterionSelect = host.querySelector('#grow-criterion');
+    if (criterionSelect) {
+        criterionSelect.addEventListener('change', (event) => {
+            state.growth.criterion = event.target.value;
+            saveGrowth();
+            const resultHost = host.querySelector('#grow-result');
+            if (resultHost) resultHost.innerHTML = growthOverallHtml(plan);
+        });
+    }
+
+    const copyButton = host.querySelector('#grow-copy');
+    if (copyButton) {
+        copyButton.addEventListener('click', () => copyGrowthResult(copyButton));
+    }
+}
+
+async function loadGrowthPage() {
+    const host = document.getElementById('growth-tool');
+    if (!host) return;
+    try {
+        const [characters, classes] = await Promise.all([
+            fetchJson({ file: 'data/characters.json' }),
+            fetchJson({ file: 'data/classes.json' })
+        ]);
+        // 初期値（登場時ステータス）が無いキャラクターは計算できない
+        state.growthCharacters = (characters || []).filter((c) => c.start && c.start.stats);
+        state.growthClasses = classes || [];
+    } catch (error) {
+        console.error('Failed to load the growth checker data', error);
+        host.innerHTML = `
+            <div class="card empty">
+                <div class="card-image">📈</div>
+                <div class="card-content">
+                    <h3 class="card-name">データを読み込めませんでした</h3>
+                    <p class="muted">サーバー経由でアクセスしてください（file:// では fetch() が制限されます）</p>
+                </div>
+            </div>`;
+        return;
+    }
+
+    loadGrowthState();
+
+    // ?char= が来たらそのキャラで始める（キャラ詳細ページからのリンク用）
+    const preset = new URLSearchParams(window.location.search).get('char');
+    if (preset) {
+        const found = state.growthCharacters.find((c) => c.id === preset || c.name === preset);
+        if (found) growthSelect(found.id);
+    }
+    if (state.growth.charId && !growthChar()) growthSelect('');
+
+    renderGrowth();
+    loadMeta();
 }
 
 /* -------------------------------------------------------------- boot -- */
@@ -3035,6 +3811,13 @@ async function loadData() {
     // array pipeline (loadData's generic path below) and renders on its own
     if (state.type === 'events') {
         loadEventPage();
+        return;
+    }
+
+    // the growth checker is a form, not a list: it loads the units and the
+    // classes and renders its own panel
+    if (state.type === 'growth') {
+        loadGrowthPage();
         return;
     }
 

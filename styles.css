@@ -591,6 +591,144 @@ table.cmptable .is-blank { color: #b3a795; }
 
 .tag-class { background: #f6e7d8; border-color: #e0c3a1; color: #8b4513; }
 .tag-blaze { background: #ece7f6; border-color: #cfc2e6; color: #4b3a78; }
+.tag-faction { background: #e6eff5; border-color: #bcd0de; color: #2f5570; }
+
+/* ---- faction sections (characters page, view=factions) ---------------- */
+.faction-members { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; }
+
+.faction-member {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.faction-member .avatar { vertical-align: 0; margin-right: 0.4rem; }
+
+/* ---- growth checker (growth page) ---------------------------- */
+.grow-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.grow-row-label {
+    font-size: 0.85rem;
+    color: #6d4c41;
+    white-space: nowrap;
+}
+
+.grow-num {
+    width: 5.5rem;
+    padding: 0.4rem 0.5rem;
+    border: 1px solid #d8ccbd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background: #fdfbf7;
+}
+
+.grow-num:focus {
+    outline: 2px solid #a0522d;
+    outline-offset: 1px;
+}
+
+.grow-step {
+    font: inherit;
+    min-width: 34px;
+    min-height: 34px;
+    padding: 0 0.4rem;
+    color: #5d4037;
+    background: #f5f0e8;
+    border: 1px solid #d3c3ac;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.grow-step:hover { background: #efe0c9; color: #8b4513; }
+
+.grow-input-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    white-space: nowrap;
+}
+
+table.grow-values td.num, table.grow-values th { white-space: nowrap; }
+
+.grow-diff { font-variant-numeric: tabular-nums; }
+
+/* 判定バッジ（神成長・良成長・並・へたれ） */
+.grow-verdict {
+    display: inline-block;
+    padding: 0.1rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.grow-verdict.v-god    { background: #fdf3d7; border-color: #e0c48c; color: #8a6a12; }
+.grow-verdict.v-good   { background: #e8f3e4; border-color: #b7d6ab; color: #3d6b32; }
+.grow-verdict.v-normal { background: #efeae2; border-color: #d3c3ac; color: #6f5b3c; }
+.grow-verdict.v-bad    { background: #f7e2e2; border-color: #d9a3a3; color: #8b2f2f; }
+.grow-verdict.v-none   { background: #f2ede5; border-color: #d9c9b4; color: #a4937b; }
+
+.grow-summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1rem;
+    background: #fdfbf7;
+    border: 1px solid #d9c9b4;
+    border-radius: 8px;
+}
+
+.grow-summary-label { font-size: 0.85rem; color: #6d4c41; }
+
+.grow-summary-pct {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #8b4513;
+    font-variant-numeric: tabular-nums;
+}
+
+.grow-each {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.4rem;
+    list-style: none;
+    font-size: 0.9rem;
+}
+
+.grow-notes { margin-left: 1.2rem; font-size: 0.9rem; color: #6d4c41; }
+.grow-notes li { margin-bottom: 0.3rem; }
+
+table.grow-expect tbody tr.is-current td, table.grow-expect tbody tr.is-current th { background: #fdf3e7; }
+
+@media (max-width: 768px) {
+    .grow-num { width: 4.5rem; }
+    .grow-summary-pct { font-size: 1.3rem; }
+}
+
+html[data-theme="dark"] .grow-num { background: #2a241d; border-color: #4d4237; color: #ded3c5; }
+html[data-theme="dark"] .grow-step { background: #332c25; border-color: #4d4237; color: #ded3c5; }
+html[data-theme="dark"] .grow-step:hover { background: #3f3629; color: #ecc99b; }
+html[data-theme="dark"] .grow-row-label { color: #bcae9e; }
+html[data-theme="dark"] .grow-verdict.v-god    { background: #3b3213; border-color: #7a6420; color: #ecc99b; }
+html[data-theme="dark"] .grow-verdict.v-good   { background: #22301f; border-color: #446037; color: #9fd6a6; }
+html[data-theme="dark"] .grow-verdict.v-normal { background: #332c25; border-color: #4d4237; color: #cbbfae; }
+html[data-theme="dark"] .grow-verdict.v-bad    { background: #3a2424; border-color: #6b4040; color: #e79a9a; }
+html[data-theme="dark"] .grow-verdict.v-none   { background: #2a241d; border-color: #4d4237; color: #8d8272; }
+html[data-theme="dark"] .grow-summary { background: #2a241d; border-color: #4d4237; }
+html[data-theme="dark"] .grow-summary-label { color: #bcae9e; }
+html[data-theme="dark"] .grow-summary-pct { color: #ecc99b; }
+html[data-theme="dark"] .grow-notes { color: #bcae9e; }
+html[data-theme="dark"] table.grow-expect tbody tr.is-current td,
+html[data-theme="dark"] table.grow-expect tbody tr.is-current th { background: #362e22; }
 
 /* ---- skill affinity matrix (characters page, view=matrix) ------------- */
 /* borders and the opaque sticky header come from the shared rules further
@@ -1114,6 +1252,7 @@ html[data-theme="dark"] .card-head { border-bottom-color: #4a4034; }
 html[data-theme="dark"] .tag { background: #332c25; border-color: #4d4237; color: #ded3c5; }
 html[data-theme="dark"] .tag-class { background: #453425; border-color: #6b5233; color: #ecc99b; }
 html[data-theme="dark"] .tag-blaze { background: #322c44; border-color: #4a4160; color: #cfc4e8; }
+html[data-theme="dark"] .tag-faction { background: #24333f; border-color: #3c566b; color: #a9c7dd; }
 html[data-theme="dark"] .tag-forte { background: #2b3a29; border-color: #4a6446; color: #9fd6a6; }
 html[data-theme="dark"] .tag-nego { background: #3a2f20; border-color: #6b5636; color: #e0bb87; }
 html[data-theme="dark"] .tag-cursed { background: #302740; border-color: #55447a; color: #c5b0e6; }

@@ -43,6 +43,7 @@ $labelWeapon = U '6B66 5668'                                     # 武器
 $labelArt    = U '6226 6280'                                     # 戦技
 $labelMagic  = U '9B54 6CD5'                                     # 魔法
 $labelEvent  = U '96A0 3057 30A4 30D9 30F3 30C8'                    # 隠しイベント
+$labelGrow   = U '6210 9577 78BA 8A8D'                              # 成長確認
 $back        = (U '2190 0020') + $titleSuffix + (U '4E00 89A7')      # ← 兵種一覧
 
 $classes = Get-Content $DataFile -Raw -Encoding UTF8 | ConvertFrom-Json
@@ -87,6 +88,7 @@ foreach ($c in $classes) {
                 <li><a href="../../arts/">$labelArt</a></li>
                 <li><a href="../../magic/">$labelMagic</a></li>
                 <li><a href="../../events/">$labelEvent</a></li>
+                <li><a href="../../growth/">$labelGrow</a></li>
             </ul>
         </nav>
     </header>
