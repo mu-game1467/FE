@@ -1656,33 +1656,24 @@ function learnablePanel(character, arts, magic, classSkills) {
     const artRows = learnableOf(arts, character.name)
         .sort((a, b) => rankIndex(a.condition) - rankIndex(b.condition) || a.entry.name.localeCompare(b.entry.name, 'ja'));
     if (artRows.length) {
-        const items = artRows.map((r) => `<li>
-            <a href="${assetUrl('arts/?q=' + encodeURIComponent(r.entry.name))}">${esc(r.entry.name)}</a>
-            <span class="muted">${esc(r.entry.skill || '')}</span>
-            <span class="rank">${esc(r.condition)}</span>
-        </li>`).join('');
+        const items = artRows.map((r) => `<li><a href="${assetUrl('arts/?q=' + encodeURIComponent(r.entry.name))}">${esc(r.entry.name)}</a><span class="muted">${esc(r.entry.skill || '')}</span><span class="rank">${esc(r.condition)}</span></li>`).join('');
+
         sections.push(`<h3>戦技（${artRows.length}）</h3><ul class="learnable">${items}</ul>`);
     }
 
     const magicRows = learnableOf(magic, character.name)
         .sort((a, b) => rankIndex(a.condition) - rankIndex(b.condition) || a.entry.name.localeCompare(b.entry.name, 'ja'));
     if (magicRows.length) {
-        const items = magicRows.map((r) => `<li>
-            <a href="${assetUrl('magic/?q=' + encodeURIComponent(r.entry.name))}">${esc(r.entry.name)}</a>
-            <span class="muted">${esc(r.entry.element || '')}</span>
-            <span class="rank">${esc(r.condition)}</span>
-        </li>`).join('');
+        const items = magicRows.map((r) => `<li><a href="${assetUrl('magic/?q=' + encodeURIComponent(r.entry.name))}">${esc(r.entry.name)}</a><span class="muted">${esc(r.entry.element || '')}</span><span class="rank">${esc(r.condition)}</span></li>`).join('');
+
         sections.push(`<h3>魔法（${magicRows.length}）</h3><ul class="learnable">${items}</ul>`);
     }
 
     const classSkillRows = learnableOf(classSkills || [], character.name)
         .sort((a, b) => rankIndex(a.condition) - rankIndex(b.condition) || a.entry.name.localeCompare(b.entry.name, 'ja'));
     if (classSkillRows.length) {
-        const items = classSkillRows.map((r) => `<li>
-            <a href="${assetUrl('skills/?q=' + encodeURIComponent(r.entry.name))}">${esc(r.entry.name)}</a>
-            <span class="muted">${esc(r.entry.skill || '')}</span>
-            <span class="rank">${esc(r.condition)}</span>
-        </li>`).join('');
+        const items = classSkillRows.map((r) => `<li><a href="${assetUrl('skills/?q=' + encodeURIComponent(r.entry.name))}">${esc(r.entry.name)}</a><span class="muted">${esc(r.entry.skill || '')}</span><span class="rank">${esc(r.condition)}</span></li>`).join('');
+
         sections.push(`<h3>クラススキル（${classSkillRows.length}）</h3><ul class="learnable">${items}</ul>`);
     }
 
