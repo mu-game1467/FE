@@ -20606,6 +20606,128 @@
                       
     ]
     
+  },
+  
+    {
+    
+        "id":   "231",
+    
+        "name":   "乱射",
+    
+        "skill":   "弓術",
+    
+        "special":   false,
+    
+        "cost":   10,
+    
+        "power":   0,
+    
+        "hit":   -50,
+    
+        "crit":   0,
+    
+        "range":   "2",
+    
+        "target":   "-",
+    
+        "effect":   "4回連続で攻撃する （1回のダメージは90％になる）",
+    
+        "requires":   null,
+    
+        "learnable":   [
+      
+                          {
+        
+                              "name":   "ディートリヒ",
+        
+                              "condition":   "弓術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577324"
+                          
+      },
+      
+                          {
+        
+                              "name":   "オリンピア",
+        
+                              "condition":   "弓術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577309"
+                          
+      },
+      
+                          {
+        
+                              "name":   "キロイカ",
+        
+                              "condition":   "弓術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577287"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ザーコネ",
+        
+                              "condition":   "弓術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577292"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ダイトウ",
+        
+                              "condition":   "弓術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577336"
+                          
+      },
+      
+                          {
+        
+                              "name":   "トビヤス",
+        
+                              "condition":   "弓術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577313"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ペペ",
+        
+                              "condition":   "弓術A",
+        
+                              "url":   "https://game8.jp/fe-banshisenko/816449"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ベンディッツ",
+        
+                              "condition":   "弓術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577297"
+                          
+      },
+      
+                          {
+        
+                              "name":   "ロレッタ",
+        
+                              "condition":   "弓術A",
+        
+                              "url":   "https://gamewith.jp/fefw/577378"
+                          
+      }
+                      
+    ]
+    
   }
 
 ]
