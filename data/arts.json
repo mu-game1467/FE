@@ -20728,6 +20728,2335 @@
                       
     ]
     
-  }
-
+  },
+{
+    "id":  "232",
+    "name":  "ぶっ飛ばし",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "【歩兵】隣接する味方を 3マス奥に移動させる (大型ユニットには使用できない)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "オリンピア",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ゴライアス",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "マジーデ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "タホウニア",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "オリンピア",
+                   "ゴライアス",
+                   "タホウニア",
+                   "マジーデ"
+               ]
+},
+{
+    "id":  "233",
+    "name":  "安全策の号令",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "範囲にいる味方に 「安全策」を付与する (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "リリアン",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "リリアン"
+               ]
+},
+{
+    "id":  "234",
+    "name":  "威嚇",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "隣接する敵の必殺-5",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ディートリヒ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "エスメラルダ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "トビヤス",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ゴライアス",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "シモン",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ニネ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "イオ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ザーコネ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "マジーデ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "キロイカ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "オリンピア",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "カターニャ",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "イオ",
+                   "エスメラルダ",
+                   "オリンピア",
+                   "カターニャ",
+                   "キロイカ",
+                   "ゴライアス",
+                   "ザーコネ",
+                   "シモン",
+                   "ディートリヒ",
+                   "トビヤス",
+                   "ニネ",
+                   "マジーデ"
+               ]
+},
+{
+    "id":  "235",
+    "name":  "威嚇+",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "隣接する敵の必殺-10",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ディートリヒ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "トビヤス",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "オリンピア",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ゴライアス",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "シモン",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ニネ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ザーコネ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "マジーデ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "キロイカ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "カターニャ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "オリンピア",
+                   "カターニャ",
+                   "キロイカ",
+                   "ゴライアス",
+                   "ザーコネ",
+                   "シモン",
+                   "ディートリヒ",
+                   "トビヤス",
+                   "ニネ",
+                   "マジーデ"
+               ]
+},
+{
+    "id":  "236",
+    "name":  "一発勝負の教え",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "味方に「一発勝負」を付与する (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ダイトウ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ダイトウ"
+               ]
+},
+{
+    "id":  "237",
+    "name":  "雲手の教え",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "味方に「雲手」を付与する (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "トロイア",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "トロイア"
+               ]
+},
+{
+    "id":  "238",
+    "name":  "応急手当の構え",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "「応急手当」の範囲が 周囲3マスになる (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ウルタンド",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ウルタンド"
+               ]
+},
+{
+    "id":  "239",
+    "name":  "鎧葬流の教え",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "味方に「鎧葬流」を付与する (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ベルトラン",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ベルトラン"
+               ]
+},
+{
+    "id":  "240",
+    "name":  "強行突破の号令",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "範囲にいる味方に 「強行突破」を付与する (そのフェイズ中のみ)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ヌディーヌ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ヌディーヌ"
+               ]
+},
+{
+    "id":  "241",
+    "name":  "強者の号令",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "範囲にいる味方に 「歴戦の強者」を付与する (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ミカエラ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ミカエラ"
+               ]
+},
+{
+    "id":  "242",
+    "name":  "計略の達人",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "計略の回数+1",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "カイ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ティアラ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ピーテル",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ウルタンド",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ディートリヒ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ファビオ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "エスメラルダ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ミカエラ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "セオドラ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ボナパルテ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "トビヤス",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "リリアン",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ライサンダー",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "レダ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "バッカニア",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "シロッコ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "オリンピア",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ムウ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ベルトラン",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ジェスター",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ゴライアス",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ゲイツ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ダンテ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "タリムーン",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ウーシュラ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ルルディヤー",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "シモン",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "フィアナ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "オルヘル",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ディエゴ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ロレッタ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "セテス",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ニネ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "アナトリア",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ナジャ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "サラン",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ダイトウ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ハルヴィン",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "イシュマール",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "イシュマール",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "コウカ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "コウカ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "トロイア",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "トロイア",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "グザラン",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ヨーカイ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "イオ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ノクチュラ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ソフィア",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "カターニャ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ペペ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ヌディーヌ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ザーコネ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "マジーデ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ベンディッツ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "イニオニ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ジャスミン",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "アレキサンドラ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ヌッツォ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "キロイカ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "セントリオン",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "タホウニア",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ネイサン",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "キリーク",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "アスワン",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "クラプカ",
+                          "condition":  "指揮術S+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "アスワン",
+                   "アナトリア",
+                   "アレキサンドラ",
+                   "イオ",
+                   "イシュマール",
+                   "イニオニ",
+                   "ウーシュラ",
+                   "ウルタンド",
+                   "エスメラルダ",
+                   "オリンピア",
+                   "オルヘル",
+                   "カイ",
+                   "カターニャ",
+                   "キリーク",
+                   "キロイカ",
+                   "グザラン",
+                   "クラプカ",
+                   "ゲイツ",
+                   "コウカ",
+                   "ゴライアス",
+                   "ザーコネ",
+                   "サラン",
+                   "ジェスター",
+                   "シモン",
+                   "ジャスミン",
+                   "シロッコ",
+                   "セオドラ",
+                   "セテス",
+                   "セントリオン",
+                   "ソフィア",
+                   "ダイトウ",
+                   "タホウニア",
+                   "タリムーン",
+                   "ダンテ",
+                   "ティアラ",
+                   "ディートリヒ",
+                   "ディエゴ",
+                   "トビヤス",
+                   "トロイア",
+                   "ナジャ",
+                   "ニネ",
+                   "ヌッツォ",
+                   "ヌディーヌ",
+                   "ネイサン",
+                   "ノクチュラ",
+                   "バッカニア",
+                   "ハルヴィン",
+                   "ピーテル",
+                   "ファビオ",
+                   "フィアナ",
+                   "ペペ",
+                   "ベルトラン",
+                   "ベンディッツ",
+                   "ボナパルテ",
+                   "マジーデ",
+                   "ミカエラ",
+                   "ムウ",
+                   "ヨーカイ",
+                   "ライサンダー",
+                   "リリアン",
+                   "ルルディヤー",
+                   "レダ",
+                   "ロレッタ"
+               ]
+},
+{
+    "id":  "243",
+    "name":  "牽制",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "隣接する敵の回避-3",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ウルタンド",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ミカエラ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "セオドラ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ルルディヤー",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ディエゴ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ヌッツォ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "キリーク",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "バッカニア",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ノクチュラ",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "マジーデ",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ウルタンド",
+                   "キリーク",
+                   "セオドラ",
+                   "ディエゴ",
+                   "ヌッツォ",
+                   "ノクチュラ",
+                   "バッカニア",
+                   "マジーデ",
+                   "ミカエラ",
+                   "ルルディヤー"
+               ]
+},
+{
+    "id":  "244",
+    "name":  "牽制+",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "隣接する敵の回避-5",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ディエゴ",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ウルタンド",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ミカエラ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "セオドラ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "バッカニア",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ルルディヤー",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ヌッツォ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "キリーク",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ノクチュラ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "マジーデ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ウルタンド",
+                   "キリーク",
+                   "セオドラ",
+                   "ディエゴ",
+                   "ヌッツォ",
+                   "ノクチュラ",
+                   "バッカニア",
+                   "マジーデ",
+                   "ミカエラ",
+                   "ルルディヤー"
+               ]
+},
+{
+    "id":  "245",
+    "name":  "攻撃陣形",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "隣接する味方の攻撃力+1",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "カイ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "オリンピア",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ベルトラン",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "タリムーン",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "イニオニ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "タホウニア",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ネイサン",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "アスワン",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "セオドラ",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ナジャ",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "イオ",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "アスワン",
+                   "イオ",
+                   "イニオニ",
+                   "オリンピア",
+                   "カイ",
+                   "セオドラ",
+                   "タホウニア",
+                   "タリムーン",
+                   "ナジャ",
+                   "ネイサン",
+                   "ベルトラン"
+               ]
+},
+{
+    "id":  "246",
+    "name":  "攻撃陣形+",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "隣接する味方の攻撃力+2",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "イシュマール",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "セオドラ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "オリンピア",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ベルトラン",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "タリムーン",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ナジャ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "イオ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "イニオニ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "タホウニア",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ネイサン",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "アスワン",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "アスワン",
+                   "イオ",
+                   "イシュマール",
+                   "イニオニ",
+                   "オリンピア",
+                   "セオドラ",
+                   "タホウニア",
+                   "タリムーン",
+                   "ナジャ",
+                   "ネイサン",
+                   "ベルトラン"
+               ]
+},
+{
+    "id":  "247",
+    "name":  "治癒の号令",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "範囲にいる味方に 「治癒の心得」を付与する (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ソフィア",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ソフィア"
+               ]
+},
+{
+    "id":  "248",
+    "name":  "疾風の号令",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "範囲にいる味方に 「疾風」を付与する (そのフェイズ中のみ)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "カターニャ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "カターニャ"
+               ]
+},
+{
+    "id":  "249",
+    "name":  "守護騎士の教え",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "味方に「守護騎士の務め」を 付与する (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "バッカニア",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "バッカニア"
+               ]
+},
+{
+    "id":  "250",
+    "name":  "狩人の号令",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "範囲にいる味方に 「狩人の待ち伏せ」を付与する (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ペペ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ペペ"
+               ]
+},
+{
+    "id":  "251",
+    "name":  "集中の号令",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "範囲にいる味方に 「集中」を付与する (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ノクチュラ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ノクチュラ"
+               ]
+},
+{
+    "id":  "252",
+    "name":  "助太刀の構え",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "「助太刀」の範囲が 周囲2マスになる (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ゲイツ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ゲイツ"
+               ]
+},
+{
+    "id":  "253",
+    "name":  "先手必勝の号令",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "範囲にいる味方に 「先手必勝」を付与する (そのフェイズ中のみ)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ナジャ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ナジャ"
+               ]
+},
+{
+    "id":  "254",
+    "name":  "前線計略術",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "攻撃系計略を使用後、攻撃力+5 (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "セオドラ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ボナパルテ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "トビヤス",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "リリアン",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ライサンダー",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "セオドラ",
+                   "トビヤス",
+                   "ボナパルテ",
+                   "ライサンダー",
+                   "リリアン"
+               ]
+},
+{
+    "id":  "255",
+    "name":  "対騎兵戦術",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1-2",
+    "target":  "-",
+    "effect":  "周囲2マスにいる騎兵の敵の 命中・回避-5",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ヌディーヌ",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ジャスミン",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ゲイツ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "イオ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "カイ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "セテス",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "イオ",
+                   "カイ",
+                   "ゲイツ",
+                   "ジャスミン",
+                   "セテス",
+                   "ヌディーヌ"
+               ]
+},
+{
+    "id":  "256",
+    "name":  "対騎兵戦術+",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1-3",
+    "target":  "-",
+    "effect":  "周囲3マスにいる騎兵の敵の 命中・回避-5",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "カイ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ゲイツ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "セテス",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "イオ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ヌディーヌ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ジャスミン",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "イオ",
+                   "カイ",
+                   "ゲイツ",
+                   "ジャスミン",
+                   "セテス",
+                   "ヌディーヌ"
+               ]
+},
+{
+    "id":  "257",
+    "name":  "対狙撃戦術",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1-2",
+    "target":  "-",
+    "effect":  "周囲2マスにいる弓の敵の 命中・回避-5",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ピーテル",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ムウ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ウーシュラ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ロレッタ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ウーシュラ",
+                   "ピーテル",
+                   "ムウ",
+                   "ロレッタ"
+               ]
+},
+{
+    "id":  "258",
+    "name":  "対狙撃戦術+",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1-3",
+    "target":  "-",
+    "effect":  "周囲3マスにいる弓の敵の 命中・回避-5",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ピーテル",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ムウ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ウーシュラ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ロレッタ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ウーシュラ",
+                   "ピーテル",
+                   "ムウ",
+                   "ロレッタ"
+               ]
+},
+{
+    "id":  "259",
+    "name":  "対飛行戦術",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1-2",
+    "target":  "-",
+    "effect":  "周囲2マスにいる飛行の敵の 命中・回避-5",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ディエゴ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "イニオニ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "トロイア",
+                          "condition":  "指揮術B+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "イニオニ",
+                   "ディエゴ",
+                   "トロイア"
+               ]
+},
+{
+    "id":  "260",
+    "name":  "対飛行戦術+",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1-3",
+    "target":  "-",
+    "effect":  "周囲3マスにいる飛行の敵の 命中・回避-5",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "トロイア",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ディエゴ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "イニオニ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "イニオニ",
+                   "ディエゴ",
+                   "トロイア"
+               ]
+},
+{
+    "id":  "261",
+    "name":  "対魔法戦術",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1-2",
+    "target":  "-",
+    "effect":  "周囲2マスにいる魔法の敵の 命中・回避-5",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ファビオ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "レダ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "フィアナ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ファビオ",
+                   "フィアナ",
+                   "レダ"
+               ]
+},
+{
+    "id":  "262",
+    "name":  "対魔法戦術+",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1-3",
+    "target":  "-",
+    "effect":  "周囲3マスにいる魔法の敵の 命中・回避-5",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ファビオ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "レダ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ファビオ",
+                   "レダ"
+               ]
+},
+{
+    "id":  "263",
+    "name":  "大技の号令",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "範囲にいる味方に 「大技」を付与する (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "トビヤス",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "トビヤス"
+               ]
+},
+{
+    "id":  "264",
+    "name":  "破戒僧の教え",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "味方に「破戒僧」を付与する (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ヨーカイ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ヨーカイ"
+               ]
+},
+{
+    "id":  "265",
+    "name":  "反撃の号令",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "範囲にいる味方に 「熟練の反撃術」を付与する (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ジャスミン",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ジャスミン"
+               ]
+},
+{
+    "id":  "266",
+    "name":  "暴虐の号令",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "範囲にいる味方に 「暴虐」を付与する (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "キロイカ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "キロイカ"
+               ]
+},
+{
+    "id":  "267",
+    "name":  "防御陣形",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "隣接する味方の防御力+1",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "バッカニア",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "オルヘル",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ヌディーヌ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ジャスミン",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "セントリオン",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ウルタンド",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ゴライアス",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "サラン",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "クラプカ",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "リリアン",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ウルタンド",
+                   "オルヘル",
+                   "クラプカ",
+                   "ゴライアス",
+                   "サラン",
+                   "ジャスミン",
+                   "セントリオン",
+                   "ヌディーヌ",
+                   "バッカニア",
+                   "リリアン"
+               ]
+},
+{
+    "id":  "268",
+    "name":  "防御陣形+",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "隣接する味方の防御力+2",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "オルヘル",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ウルタンド",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "リリアン",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "バッカニア",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ゴライアス",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "サラン",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "イシュマール",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ヌディーヌ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ジャスミン",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "セントリオン",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "クラプカ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "イシュマール",
+                   "ウルタンド",
+                   "オルヘル",
+                   "クラプカ",
+                   "ゴライアス",
+                   "サラン",
+                   "ジャスミン",
+                   "セントリオン",
+                   "ヌディーヌ",
+                   "バッカニア",
+                   "リリアン"
+               ]
+},
+{
+    "id":  "269",
+    "name":  "魔法指揮+",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "味方の魔力・魔防+5 (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "フィアナ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ヨーカイ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "コウカ",
+                          "condition":  "指揮術B+",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ティアラ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ファビオ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "オルヘル",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ソフィア",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ティアラ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ファビオ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "フィアナ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "オルヘル",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "コウカ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ヨーカイ",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ソフィア",
+                          "condition":  "指揮術S",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "オルヘル",
+                   "コウカ",
+                   "ソフィア",
+                   "ティアラ",
+                   "ファビオ",
+                   "フィアナ",
+                   "ヨーカイ"
+               ]
+},
+{
+    "id":  "270",
+    "name":  "命運指揮",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "味方の幸運+2 (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "タリムーン",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "タリムーン"
+               ]
+},
+{
+    "id":  "271",
+    "name":  "用心棒の構え",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "0",
+    "target":  "-",
+    "effect":  "「用心棒」の範囲が 周囲2マスになる (次の自分のフェイズまで)",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ディエゴ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "ディエゴ"
+               ]
+},
+{
+    "id":  "272",
+    "name":  "陽動",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "隣接する敵の命中-3",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ライサンダー",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "レダ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "シロッコ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ムウ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ジェスター",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ゲイツ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ウーシュラ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ロレッタ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "セテス",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "アナトリア",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ナジャ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ハルヴィン",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "グザラン",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ノクチュラ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "カターニャ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "アレキサンドラ",
+                          "condition":  "指揮術D",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "カイ",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ミカエラ",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ベルトラン",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "トロイア",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "アナトリア",
+                   "アレキサンドラ",
+                   "ウーシュラ",
+                   "カイ",
+                   "カターニャ",
+                   "グザラン",
+                   "ゲイツ",
+                   "ジェスター",
+                   "シロッコ",
+                   "セテス",
+                   "トロイア",
+                   "ナジャ",
+                   "ノクチュラ",
+                   "ハルヴィン",
+                   "ベルトラン",
+                   "ミカエラ",
+                   "ムウ",
+                   "ライサンダー",
+                   "レダ",
+                   "ロレッタ"
+               ]
+},
+{
+    "id":  "273",
+    "name":  "陽動+",
+    "skill":  "指揮術",
+    "special":  false,
+    "cost":  null,
+    "power":  null,
+    "hit":  null,
+    "crit":  0,
+    "range":  "1",
+    "target":  "-",
+    "effect":  "隣接する敵の命中-5",
+    "requires":  null,
+    "learnable":  [
+                      {
+                          "name":  "ゲイツ",
+                          "condition":  "指揮術C",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "カイ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ライサンダー",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "レダ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "シロッコ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ムウ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ベルトラン",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ジェスター",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ウーシュラ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ロレッタ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "セテス",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "アナトリア",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ナジャ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "トロイア",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "グザラン",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ノクチュラ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "カターニャ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "アレキサンドラ",
+                          "condition":  "指揮術B",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      },
+                      {
+                          "name":  "ミカエラ",
+                          "condition":  "指揮術A",
+                          "url":  "https://hyperwiki.jp/fefw/ability6/"
+                      }
+                  ],
+    "owners":  [
+                   "アナトリア",
+                   "アレキサンドラ",
+                   "ウーシュラ",
+                   "カイ",
+                   "カターニャ",
+                   "グザラン",
+                   "ゲイツ",
+                   "ジェスター",
+                   "シロッコ",
+                   "セテス",
+                   "トロイア",
+                   "ナジャ",
+                   "ノクチュラ",
+                   "ベルトラン",
+                   "ミカエラ",
+                   "ムウ",
+                   "ライサンダー",
+                   "レダ",
+                   "ロレッタ"
+               ]
+}
 ]

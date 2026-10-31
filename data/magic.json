@@ -1138,7 +1138,7 @@
         
                               "name":   "ファビオ",
         
-                              "condition":   "白魔術D",
+                              "condition":   "黒魔術D",
         
                               "url":   "https://gamewith.jp/fefw/577318"
                           
@@ -2656,7 +2656,7 @@
         
                               "name":   "ファビオ",
         
-                              "condition":   "白魔術B",
+                              "condition":   "黒魔術B",
         
                               "url":   "https://gamewith.jp/fefw/577318"
                           
@@ -3250,10 +3250,16 @@
     
         "effect":   "対騎兵に特化した性能を誇る魔法。\n騎兵特効",
     
-        "learnable":   [
-      
-
-                      
+        "learnable":   [    
+                          {
+        
+                              "name":   "ファビオ",
+        
+                              "condition":   "鮟帝ｭ碑｡鉄",
+        
+                              "url":   "https://gamewith.jp/fefw/577318"
+        
+                          }
     ]
     
   },
@@ -6548,7 +6554,7 @@
         
                               "name":   "ファビオ",
         
-                              "condition":   "白魔術A",
+                              "condition":   "黒魔術A",
         
                               "url":   "https://gamewith.jp/fefw/577318"
                           
