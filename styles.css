@@ -381,7 +381,7 @@ body > footer {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.5rem;
     padding-right: 4.5rem;
     border-bottom: 2px solid #dfd2bf;
