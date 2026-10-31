@@ -6,27 +6,44 @@
         "effect":  "【歩兵】敵のいるマスを 通過して移動できる",
         "learnable":  [
                           {
+                              "name":  "ディートリヒ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577324"
+                          },
+                          {
+                              "name":  "レダ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577322"
+                          },
+                          {
                               "name":  "ウーシュラ",
                               "condition":  "歩兵B",
                               "url":  "https://gamewith.jp/fefw/577307"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs2",
-        "name":  "すり抜け[B+]狙撃回避",
-        "skill":  "歩兵",
-        "effect":  "",
-        "learnable":  [
+                          },
+                          {
+                              "name":  "ペペ",
+                              "condition":  "歩兵S",
+                              "url":  "https://game8.jp/fe-banshisenko/816449"
+                          },
+                          {
+                              "name":  "ルルディヤー",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577289"
+                          },
+                          {
+                              "name":  "アナトリア",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577372"
+                          },
                           {
                               "name":  "コウカ",
-                              "condition":  "歩兵B",
+                              "condition":  "歩兵B+",
                               "url":  "https://gamewith.jp/fefw/577535"
                           }
                       ]
     },
     {
-        "id":  "cs3",
+        "id":  "cs2",
         "name":  "奇襲",
         "skill":  "歩兵",
         "effect":  "【歩兵】戦闘時、 自分が有利な地形にいるなら、 命中+15",
@@ -60,24 +77,16 @@
                               "name":  "キリーク",
                               "condition":  "歩兵B",
                               "url":  "https://gamewith.jp/fefw/577615"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs4",
-        "name":  "奇襲[B+]身躱し",
-        "skill":  "歩兵",
-        "effect":  "",
-        "learnable":  [
+                          },
                           {
                               "name":  "トロイア",
-                              "condition":  "歩兵B",
+                              "condition":  "歩兵B+",
                               "url":  "https://gamewith.jp/fefw/577532"
                           }
                       ]
     },
     {
-        "id":  "cs5",
+        "id":  "cs3",
         "name":  "窮地の回避",
         "skill":  "歩兵",
         "effect":  "【歩兵】戦闘時、自分の残りHPが 半分以下なら、回避+20",
@@ -91,6 +100,16 @@
                               "name":  "イニオニ",
                               "condition":  "歩兵C",
                               "url":  "https://gamewith.jp/fefw/577379"
+                          },
+                          {
+                              "name":  "エスメラルダ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577317"
+                          },
+                          {
+                              "name":  "シモン",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577304"
                           },
                           {
                               "name":  "ナジャ",
@@ -111,24 +130,16 @@
                               "name":  "ベルトラン",
                               "condition":  "歩兵B",
                               "url":  "https://gamewith.jp/fefw/577593"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs6",
-        "name":  "窮地の回避[A+]歩行移動術",
-        "skill":  "歩兵",
-        "effect":  "",
-        "learnable":  [
+                          },
                           {
                               "name":  "イシュマール",
-                              "condition":  "歩兵A",
+                              "condition":  "歩兵A+",
                               "url":  null
                           }
                       ]
     },
     {
-        "id":  "cs7",
+        "id":  "cs4",
         "name":  "射撃安定",
         "skill":  "歩兵",
         "effect":  "【歩兵】弓・魔法を装備中、 命中+5",
@@ -216,7 +227,7 @@
                       ]
     },
     {
-        "id":  "cs8",
+        "id":  "cs5",
         "name":  "射撃安定+",
         "skill":  "歩兵",
         "effect":  "",
@@ -284,7 +295,7 @@
                       ]
     },
     {
-        "id":  "cs9",
+        "id":  "cs6",
         "name":  "身躱し",
         "skill":  "歩兵",
         "effect":  "【歩兵】戦闘時、 敵が弓・魔法なら、回避+5",
@@ -350,6 +361,11 @@
                               "url":  "https://gamewith.jp/fefw/577378"
                           },
                           {
+                              "name":  "トロイア",
+                              "condition":  "歩兵B",
+                              "url":  "https://gamewith.jp/fefw/577532"
+                          },
+                          {
                               "name":  "アナトリア",
                               "condition":  "歩兵D",
                               "url":  "https://gamewith.jp/fefw/577372"
@@ -362,7 +378,7 @@
                       ]
     },
     {
-        "id":  "cs10",
+        "id":  "cs7",
         "name":  "身躱し+",
         "skill":  "歩兵",
         "effect":  "",
@@ -378,9 +394,19 @@
                               "url":  "https://gamewith.jp/fefw/577322"
                           },
                           {
+                              "name":  "ウーシュラ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577307"
+                          },
+                          {
                               "name":  "ウルタンド",
                               "condition":  "歩兵B",
                               "url":  "https://gamewith.jp/fefw/577319"
+                          },
+                          {
+                              "name":  "ジェスター",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577290"
                           },
                           {
                               "name":  "シロッコ",
@@ -388,14 +414,39 @@
                               "url":  "https://gamewith.jp/fefw/577311"
                           },
                           {
+                              "name":  "ナジャ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577302"
+                          },
+                          {
+                              "name":  "ノクチュラ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577296"
+                          },
+                          {
+                              "name":  "ムウ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577308"
+                          },
+                          {
+                              "name":  "トロイア",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577532"
+                          },
+                          {
                               "name":  "アナトリア",
                               "condition":  "歩兵B",
                               "url":  "https://gamewith.jp/fefw/577372"
+                          },
+                          {
+                              "name":  "タホウニア",
+                              "condition":  "歩兵S",
+                              "url":  "https://game8.jp/fe-banshisenko/816903"
                           }
                       ]
     },
     {
-        "id":  "cs11",
+        "id":  "cs8",
         "name":  "陣取り",
         "skill":  "歩兵",
         "effect":  "【歩兵】戦闘時、 自分が有利な地形にいるなら、 回避+10",
@@ -483,7 +534,7 @@
                       ]
     },
     {
-        "id":  "cs12",
+        "id":  "cs9",
         "name":  "陣取り+",
         "skill":  "歩兵",
         "effect":  "",
@@ -494,9 +545,24 @@
                               "url":  "https://gamewith.jp/fefw/577298"
                           },
                           {
+                              "name":  "ゴライアス",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577291"
+                          },
+                          {
+                              "name":  "ザーコネ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577292"
+                          },
+                          {
                               "name":  "ジャスミン",
                               "condition":  "歩兵B",
                               "url":  "https://gamewith.jp/fefw/577383"
+                          },
+                          {
+                              "name":  "ディエゴ",
+                              "condition":  "歩兵S",
+                              "url":  "https://game8.jp/fe-banshisenko/816436"
                           },
                           {
                               "name":  "ヌッツォ",
@@ -507,11 +573,31 @@
                               "name":  "ヌディーヌ",
                               "condition":  "歩兵B",
                               "url":  "https://gamewith.jp/fefw/577300"
+                          },
+                          {
+                              "name":  "ハルヴィン",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577341"
+                          },
+                          {
+                              "name":  "ピーテル",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577320"
+                          },
+                          {
+                              "name":  "マジーデ",
+                              "condition":  "歩兵S",
+                              "url":  "https://game8.jp/fe-banshisenko/816459"
+                          },
+                          {
+                              "name":  "タリムーン",
+                              "condition":  "歩兵S",
+                              "url":  "https://game8.jp/fe-banshisenko/816883"
                           }
                       ]
     },
     {
-        "id":  "cs13",
+        "id":  "cs10",
         "name":  "狙撃回避",
         "skill":  "歩兵",
         "effect":  "【歩兵】3マス以上離れた 敵との戦闘時、回避+10",
@@ -585,24 +671,64 @@
                               "name":  "ロレッタ",
                               "condition":  "歩兵B",
                               "url":  "https://gamewith.jp/fefw/577378"
+                          },
+                          {
+                              "name":  "イシュマール",
+                              "condition":  "歩兵B+",
+                              "url":  null
+                          },
+                          {
+                              "name":  "コウカ",
+                              "condition":  "歩兵B",
+                              "url":  "https://gamewith.jp/fefw/577535"
                           }
                       ]
     },
     {
-        "id":  "cs14",
-        "name":  "狙撃回避[B+]致命避け",
+        "id":  "cs11",
+        "name":  "狙撃回避+",
         "skill":  "歩兵",
         "effect":  "",
         "learnable":  [
                           {
-                              "name":  "イシュマール",
-                              "condition":  "歩兵B",
-                              "url":  null
+                              "name":  "アレキサンドラ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577376"
+                          },
+                          {
+                              "name":  "サラン",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577339"
+                          },
+                          {
+                              "name":  "ソフィア",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577294"
+                          },
+                          {
+                              "name":  "ダンテ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577305"
+                          },
+                          {
+                              "name":  "ティアラ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577321"
+                          },
+                          {
+                              "name":  "ファビオ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577318"
+                          },
+                          {
+                              "name":  "ロレッタ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577378"
                           }
                       ]
     },
     {
-        "id":  "cs15",
+        "id":  "cs12",
         "name":  "致命避け",
         "skill":  "歩兵",
         "effect":  "【歩兵】必避+10",
@@ -678,6 +804,11 @@
                               "url":  "https://gamewith.jp/fefw/577593"
                           },
                           {
+                              "name":  "イシュマール",
+                              "condition":  "歩兵B",
+                              "url":  null
+                          },
+                          {
                               "name":  "オルヘル",
                               "condition":  "歩兵C",
                               "url":  "https://gamewith.jp/fefw/577374"
@@ -690,7 +821,7 @@
                       ]
     },
     {
-        "id":  "cs16",
+        "id":  "cs13",
         "name":  "致命避け+",
         "skill":  "歩兵",
         "effect":  "",
@@ -709,11 +840,36 @@
                               "name":  "サラン",
                               "condition":  "歩兵B",
                               "url":  "https://gamewith.jp/fefw/577339"
+                          },
+                          {
+                              "name":  "トビヤス",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577313"
+                          },
+                          {
+                              "name":  "バッカニア",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577310"
+                          },
+                          {
+                              "name":  "フィアナ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577288"
+                          },
+                          {
+                              "name":  "イシュマール",
+                              "condition":  "歩兵S",
+                              "url":  null
+                          },
+                          {
+                              "name":  "クラプカ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577935"
                           }
                       ]
     },
     {
-        "id":  "cs17",
+        "id":  "cs14",
         "name":  "白兵の間合い",
         "skill":  "歩兵",
         "effect":  "【歩兵】隣接する敵の移動力-1",
@@ -841,15 +997,25 @@
                       ]
     },
     {
-        "id":  "cs18",
+        "id":  "cs15",
         "name":  "白兵の間合い+",
         "skill":  "歩兵",
         "effect":  "",
         "learnable":  [
                           {
+                              "name":  "カイ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577325"
+                          },
+                          {
                               "name":  "ディートリヒ",
                               "condition":  "歩兵B",
                               "url":  "https://gamewith.jp/fefw/577324"
+                          },
+                          {
+                              "name":  "セオドラ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577323"
                           },
                           {
                               "name":  "エスメラルダ",
@@ -912,6 +1078,11 @@
                               "url":  "https://gamewith.jp/fefw/577295"
                           },
                           {
+                              "name":  "ベルトラン",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577593"
+                          },
+                          {
                               "name":  "オルヘル",
                               "condition":  "歩兵B",
                               "url":  "https://gamewith.jp/fefw/577374"
@@ -934,7 +1105,7 @@
                       ]
     },
     {
-        "id":  "cs19",
+        "id":  "cs16",
         "name":  "歩行移動術",
         "skill":  "歩兵",
         "effect":  "【歩兵】移動時、 地形の移動コスト-1 (1より小さくならない)",
@@ -1205,6 +1376,11 @@
                               "url":  "https://gamewith.jp/fefw/577593"
                           },
                           {
+                              "name":  "イシュマール",
+                              "condition":  "歩兵A",
+                              "url":  null
+                          },
+                          {
                               "name":  "オルヘル",
                               "condition":  "歩兵A",
                               "url":  "https://gamewith.jp/fefw/577374"
@@ -1252,246 +1428,333 @@
                       ]
     },
     {
-        "id":  "cs20",
-        "name":  "歩行移動術+[S+]すり抜け",
-        "skill":  "歩兵",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "ディートリヒ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577324"
-                          },
-                          {
-                              "name":  "レダ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577322"
-                          },
-                          {
-                              "name":  "ペペ",
-                              "condition":  "歩兵S",
-                              "url":  "https://game8.jp/fe-banshisenko/816449"
-                          },
-                          {
-                              "name":  "ルルディヤー",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577289"
-                          },
-                          {
-                              "name":  "アナトリア",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577372"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs21",
-        "name":  "歩行移動術+[S+]窮地の回避",
-        "skill":  "歩兵",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "エスメラルダ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577317"
-                          },
-                          {
-                              "name":  "シモン",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577304"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs22",
-        "name":  "歩行移動術+[S+]身躱し+",
-        "skill":  "歩兵",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "ウーシュラ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577307"
-                          },
-                          {
-                              "name":  "ジェスター",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577290"
-                          },
-                          {
-                              "name":  "ナジャ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577302"
-                          },
-                          {
-                              "name":  "ノクチュラ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577296"
-                          },
-                          {
-                              "name":  "ムウ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577308"
-                          },
-                          {
-                              "name":  "トロイア",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577532"
-                          },
-                          {
-                              "name":  "タホウニア",
-                              "condition":  "歩兵S",
-                              "url":  "https://game8.jp/fe-banshisenko/816903"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs23",
-        "name":  "歩行移動術+[S+]陣取り+",
-        "skill":  "歩兵",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "ゴライアス",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577291"
-                          },
-                          {
-                              "name":  "ザーコネ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577292"
-                          },
-                          {
-                              "name":  "ディエゴ",
-                              "condition":  "歩兵S",
-                              "url":  "https://game8.jp/fe-banshisenko/816436"
-                          },
-                          {
-                              "name":  "ハルヴィン",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577341"
-                          },
-                          {
-                              "name":  "ピーテル",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577320"
-                          },
-                          {
-                              "name":  "マジーデ",
-                              "condition":  "歩兵S",
-                              "url":  "https://game8.jp/fe-banshisenko/816459"
-                          },
-                          {
-                              "name":  "タリムーン",
-                              "condition":  "歩兵S",
-                              "url":  "https://game8.jp/fe-banshisenko/816883"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs24",
-        "name":  "歩行移動術+[S+]狙撃回避+",
-        "skill":  "歩兵",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "アレキサンドラ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577376"
-                          },
-                          {
-                              "name":  "サラン",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577339"
-                          },
-                          {
-                              "name":  "ソフィア",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577294"
-                          },
-                          {
-                              "name":  "ダンテ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577305"
-                          },
-                          {
-                              "name":  "ティアラ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577321"
-                          },
-                          {
-                              "name":  "ファビオ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577318"
-                          },
-                          {
-                              "name":  "ロレッタ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577378"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs25",
-        "name":  "歩行移動術+[S+]致命避け+",
-        "skill":  "歩兵",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "トビヤス",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577313"
-                          },
-                          {
-                              "name":  "バッカニア",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577310"
-                          },
-                          {
-                              "name":  "フィアナ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577288"
-                          },
-                          {
-                              "name":  "イシュマール",
-                              "condition":  "歩兵S",
-                              "url":  null
-                          },
-                          {
-                              "name":  "クラプカ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577935"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs26",
-        "name":  "歩行移動術+[S+]白兵の間合い+",
+        "id":  "cs17",
+        "name":  "歩行移動術+",
         "skill":  "歩兵",
         "effect":  "",
         "learnable":  [
                           {
                               "name":  "カイ",
-                              "condition":  "歩兵S",
+                              "condition":  "歩兵S+",
                               "url":  "https://gamewith.jp/fefw/577325"
                           },
                           {
+                              "name":  "ディートリヒ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577324"
+                          },
+                          {
                               "name":  "セオドラ",
-                              "condition":  "歩兵S",
+                              "condition":  "歩兵S+",
                               "url":  "https://gamewith.jp/fefw/577323"
                           },
                           {
+                              "name":  "レダ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577322"
+                          },
+                          {
+                              "name":  "アレキサンドラ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577376"
+                          },
+                          {
+                              "name":  "イオ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577299"
+                          },
+                          {
+                              "name":  "イニオニ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577379"
+                          },
+                          {
+                              "name":  "ウーシュラ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577307"
+                          },
+                          {
+                              "name":  "ウルタンド",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577319"
+                          },
+                          {
+                              "name":  "エスメラルダ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577317"
+                          },
+                          {
+                              "name":  "オリンピア",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577309"
+                          },
+                          {
+                              "name":  "カターニャ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577298"
+                          },
+                          {
+                              "name":  "キロイカ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577287"
+                          },
+                          {
+                              "name":  "グザラン",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577301"
+                          },
+                          {
+                              "name":  "ゲイツ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://game8.jp/fe-banshisenko/816432"
+                          },
+                          {
+                              "name":  "ゴライアス",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577291"
+                          },
+                          {
+                              "name":  "ザーコネ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577292"
+                          },
+                          {
+                              "name":  "サラン",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577339"
+                          },
+                          {
+                              "name":  "ジェスター",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577290"
+                          },
+                          {
+                              "name":  "シモン",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577304"
+                          },
+                          {
+                              "name":  "ジャスミン",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577383"
+                          },
+                          {
+                              "name":  "シロッコ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577311"
+                          },
+                          {
+                              "name":  "セテス",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577340"
+                          },
+                          {
+                              "name":  "ソフィア",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577294"
+                          },
+                          {
+                              "name":  "ダイトウ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577336"
+                          },
+                          {
+                              "name":  "ダンテ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577305"
+                          },
+                          {
+                              "name":  "ティアラ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577321"
+                          },
+                          {
+                              "name":  "ディエゴ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://game8.jp/fe-banshisenko/816436"
+                          },
+                          {
+                              "name":  "トビヤス",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577313"
+                          },
+                          {
+                              "name":  "ナジャ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577302"
+                          },
+                          {
+                              "name":  "ニネ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577303"
+                          },
+                          {
+                              "name":  "ヌッツォ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577380"
+                          },
+                          {
+                              "name":  "ヌディーヌ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577300"
+                          },
+                          {
+                              "name":  "ノクチュラ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577296"
+                          },
+                          {
+                              "name":  "バッカニア",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577310"
+                          },
+                          {
+                              "name":  "ハルヴィン",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577341"
+                          },
+                          {
+                              "name":  "ピーテル",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577320"
+                          },
+                          {
+                              "name":  "ファビオ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577318"
+                          },
+                          {
+                              "name":  "フィアナ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577288"
+                          },
+                          {
+                              "name":  "ペペ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://game8.jp/fe-banshisenko/816449"
+                          },
+                          {
+                              "name":  "ベンディッツ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577297"
+                          },
+                          {
+                              "name":  "ボナパルテ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577315"
+                          },
+                          {
+                              "name":  "マジーデ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://game8.jp/fe-banshisenko/816459"
+                          },
+                          {
+                              "name":  "ミカエラ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577316"
+                          },
+                          {
+                              "name":  "ムウ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577308"
+                          },
+                          {
+                              "name":  "ヨーカイ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577295"
+                          },
+                          {
+                              "name":  "ライサンダー",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577312"
+                          },
+                          {
+                              "name":  "リリアン",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577314"
+                          },
+                          {
+                              "name":  "ルルディヤー",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577289"
+                          },
+                          {
+                              "name":  "ロレッタ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577378"
+                          },
+                          {
+                              "name":  "キリーク",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577615"
+                          },
+                          {
+                              "name":  "ネイサン",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577895"
+                          },
+                          {
                               "name":  "ベルトラン",
-                              "condition":  "歩兵S",
+                              "condition":  "歩兵S+",
                               "url":  "https://gamewith.jp/fefw/577593"
+                          },
+                          {
+                              "name":  "イシュマール",
+                              "condition":  "歩兵S+",
+                              "url":  null
+                          },
+                          {
+                              "name":  "オルヘル",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577374"
+                          },
+                          {
+                              "name":  "トロイア",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577532"
+                          },
+                          {
+                              "name":  "タリムーン",
+                              "condition":  "歩兵S+",
+                              "url":  "https://game8.jp/fe-banshisenko/816883"
+                          },
+                          {
+                              "name":  "アナトリア",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577372"
+                          },
+                          {
+                              "name":  "コウカ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577535"
+                          },
+                          {
+                              "name":  "セントリオン",
+                              "condition":  "歩兵S+",
+                              "url":  "https://game8.jp/fe-banshisenko/816877"
+                          },
+                          {
+                              "name":  "アスワン",
+                              "condition":  "歩兵S+",
+                              "url":  "https://game8.jp/fe-banshisenko/816902"
+                          },
+                          {
+                              "name":  "タホウニア",
+                              "condition":  "歩兵S+",
+                              "url":  "https://game8.jp/fe-banshisenko/816903"
+                          },
+                          {
+                              "name":  "クラプカ",
+                              "condition":  "歩兵S+",
+                              "url":  "https://gamewith.jp/fefw/577935"
                           }
                       ]
     },
     {
-        "id":  "cs27",
-        "name":  "歩行移動術+[S+]歩行再移動",
+        "id":  "cs18",
+        "name":  "歩行再移動",
         "skill":  "歩兵",
-        "effect":  "",
+        "effect":  "【歩兵】戦闘後、 1マスまで移動できる",
         "learnable":  [
                           {
                               "name":  "ウルタンド",
@@ -1531,10 +1794,10 @@
                       ]
     },
     {
-        "id":  "cs28",
-        "name":  "歩行移動術+[S+]優位戦闘術",
+        "id":  "cs19",
+        "name":  "優位戦闘術",
         "skill":  "歩兵",
-        "effect":  "",
+        "effect":  "【歩兵】戦闘時、 自分が有利な地形にいるなら、 攻撃力+5",
         "learnable":  [
                           {
                               "name":  "イニオニ",
@@ -1599,55 +1862,7 @@
                       ]
     },
     {
-        "id":  "cs29",
-        "name":  "歩行移動術+[S+]咄嗟の回避+",
-        "skill":  "歩兵",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "イオ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577299"
-                          },
-                          {
-                              "name":  "グザラン",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577301"
-                          },
-                          {
-                              "name":  "ゲイツ",
-                              "condition":  "歩兵S",
-                              "url":  "https://game8.jp/fe-banshisenko/816432"
-                          },
-                          {
-                              "name":  "ヌディーヌ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577300"
-                          },
-                          {
-                              "name":  "ミカエラ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577316"
-                          },
-                          {
-                              "name":  "ヨーカイ",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577295"
-                          },
-                          {
-                              "name":  "ライサンダー",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577312"
-                          },
-                          {
-                              "name":  "キリーク",
-                              "condition":  "歩兵S",
-                              "url":  "https://gamewith.jp/fefw/577615"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs30",
+        "id":  "cs20",
         "name":  "咄嗟の回避",
         "skill":  "歩兵",
         "effect":  "【歩兵】攻撃された時、 3％で発動 回避+100",
@@ -1775,20 +1990,60 @@
                       ]
     },
     {
-        "id":  "cs31",
+        "id":  "cs21",
         "name":  "咄嗟の回避+",
         "skill":  "歩兵",
         "effect":  "",
         "learnable":  [
+                          {
+                              "name":  "イオ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577299"
+                          },
+                          {
+                              "name":  "グザラン",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577301"
+                          },
+                          {
+                              "name":  "ゲイツ",
+                              "condition":  "歩兵S",
+                              "url":  "https://game8.jp/fe-banshisenko/816432"
+                          },
                           {
                               "name":  "ソフィア",
                               "condition":  "歩兵B",
                               "url":  "https://gamewith.jp/fefw/577294"
                           },
                           {
+                              "name":  "ヌディーヌ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577300"
+                          },
+                          {
                               "name":  "ペペ",
                               "condition":  "歩兵B",
                               "url":  "https://game8.jp/fe-banshisenko/816449"
+                          },
+                          {
+                              "name":  "ミカエラ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577316"
+                          },
+                          {
+                              "name":  "ヨーカイ",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577295"
+                          },
+                          {
+                              "name":  "ライサンダー",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577312"
+                          },
+                          {
+                              "name":  "キリーク",
+                              "condition":  "歩兵S",
+                              "url":  "https://gamewith.jp/fefw/577615"
                           },
                           {
                               "name":  "ネイサン",
@@ -1803,11 +2058,31 @@
                       ]
     },
     {
-        "id":  "cs32",
+        "id":  "cs22",
         "name":  "ヒールアーマー",
         "skill":  "重装",
         "effect":  "【重装】攻撃時、魔力％で発動 与えたダメージの半分HP回復する",
         "learnable":  [
+                          {
+                              "name":  "オリンピア",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577309"
+                          },
+                          {
+                              "name":  "ダンテ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577305"
+                          },
+                          {
+                              "name":  "フィアナ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577288"
+                          },
+                          {
+                              "name":  "ヨーカイ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577295"
+                          },
                           {
                               "name":  "イシュマール",
                               "condition":  "重装B",
@@ -1816,7 +2091,7 @@
                       ]
     },
     {
-        "id":  "cs33",
+        "id":  "cs23",
         "name":  "ヘビーブレイク",
         "skill":  "重装",
         "effect":  "【重装】攻撃時、 (守備÷2)％で発動 与えるダメージが1.5倍になる",
@@ -1874,7 +2149,7 @@
                       ]
     },
     {
-        "id":  "cs34",
+        "id":  "cs24",
         "name":  "ヘビーブレイク+",
         "skill":  "重装",
         "effect":  "",
@@ -1912,7 +2187,7 @@
                       ]
     },
     {
-        "id":  "cs35",
+        "id":  "cs25",
         "name":  "鎧飛び",
         "skill":  "重装",
         "effect":  "【重装】回避+10",
@@ -1990,7 +2265,7 @@
                       ]
     },
     {
-        "id":  "cs36",
+        "id":  "cs26",
         "name":  "鎧飛び+",
         "skill":  "重装",
         "effect":  "",
@@ -2001,9 +2276,24 @@
                               "url":  "https://gamewith.jp/fefw/577322"
                           },
                           {
+                              "name":  "カターニャ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577298"
+                          },
+                          {
+                              "name":  "ジェスター",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577290"
+                          },
+                          {
                               "name":  "シロッコ",
                               "condition":  "重装B",
                               "url":  "https://gamewith.jp/fefw/577311"
+                          },
+                          {
+                              "name":  "ノクチュラ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577296"
                           },
                           {
                               "name":  "ボナパルテ",
@@ -2011,9 +2301,29 @@
                               "url":  "https://gamewith.jp/fefw/577315"
                           },
                           {
+                              "name":  "ライサンダー",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577312"
+                          },
+                          {
+                              "name":  "ルルディヤー",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577289"
+                          },
+                          {
+                              "name":  "ロレッタ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577378"
+                          },
+                          {
                               "name":  "キリーク",
                               "condition":  "重装B",
                               "url":  "https://gamewith.jp/fefw/577615"
+                          },
+                          {
+                              "name":  "トロイア",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577532"
                           },
                           {
                               "name":  "アナトリア",
@@ -2028,20 +2338,141 @@
                       ]
     },
     {
-        "id":  "cs37",
-        "name":  "強化防弓盾[A+]体格",
+        "id":  "cs27",
+        "name":  "技の大防御",
         "skill":  "重装",
-        "effect":  "",
+        "effect":  "攻撃された時、(技÷2)％で発動 受けるダメージを半減する",
         "learnable":  [
                           {
-                              "name":  "イシュマール",
-                              "condition":  "重装A",
-                              "url":  null
+                              "name":  "ディートリヒ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577324"
+                          },
+                          {
+                              "name":  "ザーコネ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577292"
+                          },
+                          {
+                              "name":  "ディエゴ",
+                              "condition":  "重装S",
+                              "url":  "https://game8.jp/fe-banshisenko/816436"
+                          },
+                          {
+                              "name":  "ピーテル",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577320"
+                          },
+                          {
+                              "name":  "ペペ",
+                              "condition":  "重装S",
+                              "url":  "https://game8.jp/fe-banshisenko/816449"
+                          },
+                          {
+                              "name":  "リリアン",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577314"
+                          },
+                          {
+                              "name":  "アスワン",
+                              "condition":  "重装S",
+                              "url":  "https://game8.jp/fe-banshisenko/816902"
                           }
                       ]
     },
     {
-        "id":  "cs38",
+        "id":  "cs28",
+        "name":  "強化防弓盾",
+        "skill":  "重装",
+        "effect":  "【重装】戦闘時、 敵が弓なら、防御力+10",
+        "learnable":  [
+                          {
+                              "name":  "レダ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577322"
+                          },
+                          {
+                              "name":  "エスメラルダ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577317"
+                          },
+                          {
+                              "name":  "ニネ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577303"
+                          },
+                          {
+                              "name":  "ヌディーヌ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577300"
+                          },
+                          {
+                              "name":  "ハルヴィン",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577341"
+                          },
+                          {
+                              "name":  "ベンディッツ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577297"
+                          },
+                          {
+                              "name":  "イシュマール",
+                              "condition":  "重装A+",
+                              "url":  null
+                          },
+                          {
+                              "name":  "アナトリア",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577372"
+                          }
+                      ]
+    },
+    {
+        "id":  "cs29",
+        "name":  "幸運の大防御",
+        "skill":  "重装",
+        "effect":  "攻撃された時、 (幸運÷2)％で発動 受けるダメージを半減する",
+        "learnable":  [
+                          {
+                              "name":  "アレキサンドラ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577376"
+                          },
+                          {
+                              "name":  "ウルタンド",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577319"
+                          },
+                          {
+                              "name":  "キロイカ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577287"
+                          },
+                          {
+                              "name":  "グザラン",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577301"
+                          },
+                          {
+                              "name":  "シモン",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577304"
+                          },
+                          {
+                              "name":  "シロッコ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577311"
+                          },
+                          {
+                              "name":  "タリムーン",
+                              "condition":  "重装S",
+                              "url":  "https://game8.jp/fe-banshisenko/816883"
+                          }
+                      ]
+    },
+    {
+        "id":  "cs30",
         "name":  "守備の構え",
         "skill":  "重装",
         "effect":  "【歩兵】自分の守備+3 回避-10 (次の自分のフェイズまで)",
@@ -2074,7 +2505,35 @@
                       ]
     },
     {
-        "id":  "cs39",
+        "id":  "cs31",
+        "name":  "守備の大防御",
+        "skill":  "重装",
+        "effect":  "攻撃された時、 (守備÷2)％で発動 受けるダメージを半減する",
+        "learnable":  [
+                          {
+                              "name":  "ゲイツ",
+                              "condition":  "重装S",
+                              "url":  "https://game8.jp/fe-banshisenko/816432"
+                          },
+                          {
+                              "name":  "バッカニア",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577310"
+                          },
+                          {
+                              "name":  "セントリオン",
+                              "condition":  "重装S",
+                              "url":  "https://game8.jp/fe-banshisenko/816877"
+                          },
+                          {
+                              "name":  "クラプカ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577935"
+                          }
+                      ]
+    },
+    {
+        "id":  "cs32",
         "name":  "重装移動術",
         "skill":  "重装",
         "effect":  "【重装】移動力+1",
@@ -2197,7 +2656,7 @@
                       ]
     },
     {
-        "id":  "cs40",
+        "id":  "cs33",
         "name":  "重装移動術+",
         "skill":  "重装",
         "effect":  "",
@@ -2228,6 +2687,11 @@
                               "url":  "https://gamewith.jp/fefw/577305"
                           },
                           {
+                              "name":  "ナジャ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577302"
+                          },
+                          {
                               "name":  "ヌディーヌ",
                               "condition":  "重装B",
                               "url":  "https://gamewith.jp/fefw/577300"
@@ -2243,6 +2707,11 @@
                               "url":  "https://gamewith.jp/fefw/577314"
                           },
                           {
+                              "name":  "キリーク",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577615"
+                          },
+                          {
                               "name":  "ベルトラン",
                               "condition":  "重装B",
                               "url":  "https://gamewith.jp/fefw/577593"
@@ -2255,7 +2724,7 @@
                       ]
     },
     {
-        "id":  "cs41",
+        "id":  "cs34",
         "name":  "重装戦闘術",
         "skill":  "重装",
         "effect":  "【重装】技+5",
@@ -2333,7 +2802,7 @@
                       ]
     },
     {
-        "id":  "cs42",
+        "id":  "cs35",
         "name":  "重装戦闘術+",
         "skill":  "重装",
         "effect":  "",
@@ -2366,7 +2835,7 @@
                       ]
     },
     {
-        "id":  "cs43",
+        "id":  "cs36",
         "name":  "絶対防御",
         "skill":  "重装",
         "effect":  "【重装】攻撃された時、 10％で発動 防御力+10",
@@ -2399,7 +2868,7 @@
                       ]
     },
     {
-        "id":  "cs44",
+        "id":  "cs37",
         "name":  "絶対防御+",
         "skill":  "重装",
         "effect":  "",
@@ -2413,11 +2882,74 @@
                               "name":  "トビヤス",
                               "condition":  "重装B",
                               "url":  "https://gamewith.jp/fefw/577313"
+                          },
+                          {
+                              "name":  "ミカエラ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577316"
                           }
                       ]
     },
     {
-        "id":  "cs45",
+        "id":  "cs38",
+        "name":  "多重反撃術",
+        "skill":  "重装",
+        "effect":  "後攻での戦闘時、 20％で発動 攻速に関係なく追撃する",
+        "learnable":  [
+                          {
+                              "name":  "カイ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577325"
+                          },
+                          {
+                              "name":  "セオドラ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577323"
+                          },
+                          {
+                              "name":  "ウーシュラ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577307"
+                          },
+                          {
+                              "name":  "ジャスミン",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577383"
+                          },
+                          {
+                              "name":  "セテス",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577340"
+                          },
+                          {
+                              "name":  "ヌッツォ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577380"
+                          },
+                          {
+                              "name":  "ムウ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577308"
+                          },
+                          {
+                              "name":  "ネイサン",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577895"
+                          },
+                          {
+                              "name":  "イシュマール",
+                              "condition":  "重装S",
+                              "url":  null
+                          },
+                          {
+                              "name":  "タホウニア",
+                              "condition":  "重装S",
+                              "url":  "https://game8.jp/fe-banshisenko/816903"
+                          }
+                      ]
+    },
+    {
+        "id":  "cs39",
         "name":  "体格",
         "skill":  "重装",
         "effect":  "体格+5",
@@ -2688,6 +3220,11 @@
                               "url":  "https://gamewith.jp/fefw/577593"
                           },
                           {
+                              "name":  "イシュマール",
+                              "condition":  "重装A",
+                              "url":  null
+                          },
+                          {
                               "name":  "オルヘル",
                               "condition":  "重装A",
                               "url":  "https://gamewith.jp/fefw/577374"
@@ -2735,418 +3272,330 @@
                       ]
     },
     {
-        "id":  "cs46",
-        "name":  "体格+[S+]ヒールアーマー",
-        "skill":  "重装",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "オリンピア",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577309"
-                          },
-                          {
-                              "name":  "ダンテ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577305"
-                          },
-                          {
-                              "name":  "フィアナ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577288"
-                          },
-                          {
-                              "name":  "ヨーカイ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577295"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs47",
-        "name":  "体格+[S+]鎧飛び+",
-        "skill":  "重装",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "カターニャ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577298"
-                          },
-                          {
-                              "name":  "ジェスター",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577290"
-                          },
-                          {
-                              "name":  "ノクチュラ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577296"
-                          },
-                          {
-                              "name":  "ライサンダー",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577312"
-                          },
-                          {
-                              "name":  "ルルディヤー",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577289"
-                          },
-                          {
-                              "name":  "ロレッタ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577378"
-                          },
-                          {
-                              "name":  "トロイア",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577532"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs48",
-        "name":  "体格+[S+]技の大防御",
-        "skill":  "重装",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "ディートリヒ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577324"
-                          },
-                          {
-                              "name":  "ザーコネ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577292"
-                          },
-                          {
-                              "name":  "ディエゴ",
-                              "condition":  "重装S",
-                              "url":  "https://game8.jp/fe-banshisenko/816436"
-                          },
-                          {
-                              "name":  "ピーテル",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577320"
-                          },
-                          {
-                              "name":  "ペペ",
-                              "condition":  "重装S",
-                              "url":  "https://game8.jp/fe-banshisenko/816449"
-                          },
-                          {
-                              "name":  "リリアン",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577314"
-                          },
-                          {
-                              "name":  "アスワン",
-                              "condition":  "重装S",
-                              "url":  "https://game8.jp/fe-banshisenko/816902"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs49",
-        "name":  "体格+[S+]強化防弓盾",
-        "skill":  "重装",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "レダ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577322"
-                          },
-                          {
-                              "name":  "エスメラルダ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577317"
-                          },
-                          {
-                              "name":  "ニネ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577303"
-                          },
-                          {
-                              "name":  "ヌディーヌ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577300"
-                          },
-                          {
-                              "name":  "ハルヴィン",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577341"
-                          },
-                          {
-                              "name":  "ベンディッツ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577297"
-                          },
-                          {
-                              "name":  "アナトリア",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577372"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs50",
-        "name":  "体格+[S+]幸運の大防御",
-        "skill":  "重装",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "アレキサンドラ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577376"
-                          },
-                          {
-                              "name":  "ウルタンド",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577319"
-                          },
-                          {
-                              "name":  "キロイカ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577287"
-                          },
-                          {
-                              "name":  "グザラン",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577301"
-                          },
-                          {
-                              "name":  "シモン",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577304"
-                          },
-                          {
-                              "name":  "シロッコ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577311"
-                          },
-                          {
-                              "name":  "タリムーン",
-                              "condition":  "重装S",
-                              "url":  "https://game8.jp/fe-banshisenko/816883"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs51",
-        "name":  "体格+[S+]守備の大防御",
-        "skill":  "重装",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "ゲイツ",
-                              "condition":  "重装S",
-                              "url":  "https://game8.jp/fe-banshisenko/816432"
-                          },
-                          {
-                              "name":  "バッカニア",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577310"
-                          },
-                          {
-                              "name":  "セントリオン",
-                              "condition":  "重装S",
-                              "url":  "https://game8.jp/fe-banshisenko/816877"
-                          },
-                          {
-                              "name":  "クラプカ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577935"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs52",
-        "name":  "体格+[S+]重装移動術+",
-        "skill":  "重装",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "ナジャ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577302"
-                          },
-                          {
-                              "name":  "キリーク",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577615"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs53",
-        "name":  "体格+[S+]絶対防御+",
-        "skill":  "重装",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "ミカエラ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577316"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs54",
-        "name":  "体格+[S+]多重反撃術",
+        "id":  "cs40",
+        "name":  "体格+",
         "skill":  "重装",
         "effect":  "",
         "learnable":  [
                           {
                               "name":  "カイ",
-                              "condition":  "重装S",
+                              "condition":  "重装S+",
                               "url":  "https://gamewith.jp/fefw/577325"
                           },
                           {
+                              "name":  "ディートリヒ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577324"
+                          },
+                          {
                               "name":  "セオドラ",
-                              "condition":  "重装S",
+                              "condition":  "重装S+",
                               "url":  "https://gamewith.jp/fefw/577323"
                           },
                           {
-                              "name":  "ウーシュラ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577307"
+                              "name":  "レダ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577322"
                           },
                           {
-                              "name":  "ジャスミン",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577383"
+                              "name":  "アレキサンドラ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577376"
                           },
-                          {
-                              "name":  "セテス",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577340"
-                          },
-                          {
-                              "name":  "ヌッツォ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577380"
-                          },
-                          {
-                              "name":  "ムウ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577308"
-                          },
-                          {
-                              "name":  "ネイサン",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577895"
-                          },
-                          {
-                              "name":  "イシュマール",
-                              "condition":  "重装S",
-                              "url":  null
-                          },
-                          {
-                              "name":  "タホウニア",
-                              "condition":  "重装S",
-                              "url":  "https://game8.jp/fe-banshisenko/816903"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs55",
-        "name":  "体格+[S+]追撃防御",
-        "skill":  "重装",
-        "effect":  "",
-        "learnable":  [
                           {
                               "name":  "イオ",
-                              "condition":  "重装S",
+                              "condition":  "重装S+",
                               "url":  "https://gamewith.jp/fefw/577299"
                           },
                           {
-                              "name":  "ゴライアス",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577291"
-                          },
-                          {
-                              "name":  "トビヤス",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577313"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs56",
-        "name":  "体格+[S+]魔力の大防御",
-        "skill":  "重装",
-        "effect":  "",
-        "learnable":  [
-                          {
-                              "name":  "サラン",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577339"
-                          },
-                          {
-                              "name":  "ソフィア",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577294"
-                          },
-                          {
-                              "name":  "ティアラ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577321"
-                          },
-                          {
-                              "name":  "ファビオ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577318"
-                          },
-                          {
-                              "name":  "ボナパルテ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577315"
-                          },
-                          {
-                              "name":  "オルヘル",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577374"
-                          },
-                          {
-                              "name":  "コウカ",
-                              "condition":  "重装S",
-                              "url":  "https://gamewith.jp/fefw/577535"
-                          }
-                      ]
-    },
-    {
-        "id":  "cs57",
-        "name":  "体格+[S+]力の大防御",
-        "skill":  "重装",
-        "effect":  "",
-        "learnable":  [
-                          {
                               "name":  "イニオニ",
-                              "condition":  "重装S",
+                              "condition":  "重装S+",
                               "url":  "https://gamewith.jp/fefw/577379"
                           },
                           {
+                              "name":  "ウーシュラ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577307"
+                          },
+                          {
+                              "name":  "ウルタンド",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577319"
+                          },
+                          {
+                              "name":  "エスメラルダ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577317"
+                          },
+                          {
+                              "name":  "オリンピア",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577309"
+                          },
+                          {
+                              "name":  "カターニャ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577298"
+                          },
+                          {
+                              "name":  "キロイカ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577287"
+                          },
+                          {
+                              "name":  "グザラン",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577301"
+                          },
+                          {
+                              "name":  "ゲイツ",
+                              "condition":  "重装S+",
+                              "url":  "https://game8.jp/fe-banshisenko/816432"
+                          },
+                          {
+                              "name":  "ゴライアス",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577291"
+                          },
+                          {
+                              "name":  "ザーコネ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577292"
+                          },
+                          {
+                              "name":  "サラン",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577339"
+                          },
+                          {
+                              "name":  "ジェスター",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577290"
+                          },
+                          {
+                              "name":  "シモン",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577304"
+                          },
+                          {
+                              "name":  "ジャスミン",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577383"
+                          },
+                          {
+                              "name":  "シロッコ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577311"
+                          },
+                          {
+                              "name":  "セテス",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577340"
+                          },
+                          {
+                              "name":  "ソフィア",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577294"
+                          },
+                          {
                               "name":  "ダイトウ",
-                              "condition":  "重装S",
+                              "condition":  "重装S+",
                               "url":  "https://gamewith.jp/fefw/577336"
                           },
                           {
+                              "name":  "ダンテ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577305"
+                          },
+                          {
+                              "name":  "ティアラ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577321"
+                          },
+                          {
+                              "name":  "ディエゴ",
+                              "condition":  "重装S+",
+                              "url":  "https://game8.jp/fe-banshisenko/816436"
+                          },
+                          {
+                              "name":  "トビヤス",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577313"
+                          },
+                          {
+                              "name":  "ナジャ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577302"
+                          },
+                          {
+                              "name":  "ニネ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577303"
+                          },
+                          {
+                              "name":  "ヌッツォ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577380"
+                          },
+                          {
+                              "name":  "ヌディーヌ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577300"
+                          },
+                          {
+                              "name":  "ノクチュラ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577296"
+                          },
+                          {
+                              "name":  "バッカニア",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577310"
+                          },
+                          {
+                              "name":  "ハルヴィン",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577341"
+                          },
+                          {
+                              "name":  "ピーテル",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577320"
+                          },
+                          {
+                              "name":  "ファビオ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577318"
+                          },
+                          {
+                              "name":  "フィアナ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577288"
+                          },
+                          {
+                              "name":  "ペペ",
+                              "condition":  "重装S+",
+                              "url":  "https://game8.jp/fe-banshisenko/816449"
+                          },
+                          {
+                              "name":  "ベンディッツ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577297"
+                          },
+                          {
+                              "name":  "ボナパルテ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577315"
+                          },
+                          {
                               "name":  "マジーデ",
-                              "condition":  "重装S",
+                              "condition":  "重装S+",
                               "url":  "https://game8.jp/fe-banshisenko/816459"
                           },
                           {
+                              "name":  "ミカエラ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577316"
+                          },
+                          {
+                              "name":  "ムウ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577308"
+                          },
+                          {
+                              "name":  "ヨーカイ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577295"
+                          },
+                          {
+                              "name":  "ライサンダー",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577312"
+                          },
+                          {
+                              "name":  "リリアン",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577314"
+                          },
+                          {
+                              "name":  "ルルディヤー",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577289"
+                          },
+                          {
+                              "name":  "ロレッタ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577378"
+                          },
+                          {
+                              "name":  "キリーク",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577615"
+                          },
+                          {
+                              "name":  "ネイサン",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577895"
+                          },
+                          {
                               "name":  "ベルトラン",
-                              "condition":  "重装S",
+                              "condition":  "重装S+",
                               "url":  "https://gamewith.jp/fefw/577593"
+                          },
+                          {
+                              "name":  "イシュマール",
+                              "condition":  "重装S+",
+                              "url":  null
+                          },
+                          {
+                              "name":  "オルヘル",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577374"
+                          },
+                          {
+                              "name":  "トロイア",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577532"
+                          },
+                          {
+                              "name":  "タリムーン",
+                              "condition":  "重装S+",
+                              "url":  "https://game8.jp/fe-banshisenko/816883"
+                          },
+                          {
+                              "name":  "アナトリア",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577372"
+                          },
+                          {
+                              "name":  "コウカ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577535"
+                          },
+                          {
+                              "name":  "セントリオン",
+                              "condition":  "重装S+",
+                              "url":  "https://game8.jp/fe-banshisenko/816877"
+                          },
+                          {
+                              "name":  "アスワン",
+                              "condition":  "重装S+",
+                              "url":  "https://game8.jp/fe-banshisenko/816902"
+                          },
+                          {
+                              "name":  "タホウニア",
+                              "condition":  "重装S+",
+                              "url":  "https://game8.jp/fe-banshisenko/816903"
+                          },
+                          {
+                              "name":  "クラプカ",
+                              "condition":  "重装S+",
+                              "url":  "https://gamewith.jp/fefw/577935"
                           }
                       ]
     },
     {
-        "id":  "cs58",
+        "id":  "cs41",
         "name":  "直前防御",
         "skill":  "重装",
         "effect":  "攻撃された時、25％で発動 防御力+3",
@@ -3294,20 +3743,35 @@
                       ]
     },
     {
-        "id":  "cs59",
+        "id":  "cs42",
         "name":  "追撃防御",
         "skill":  "重装",
         "effect":  "追撃された時、50％で発動 受けるダメージを半減する",
         "learnable":  [
                           {
+                              "name":  "イオ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577299"
+                          },
+                          {
+                              "name":  "ゴライアス",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577291"
+                          },
+                          {
                               "name":  "ジャスミン",
                               "condition":  "重装B",
                               "url":  "https://gamewith.jp/fefw/577383"
+                          },
+                          {
+                              "name":  "トビヤス",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577313"
                           }
                       ]
     },
     {
-        "id":  "cs60",
+        "id":  "cs43",
         "name":  "抵抗魔装",
         "skill":  "重装",
         "effect":  "【重装】魔防+5",
@@ -3370,7 +3834,7 @@
                       ]
     },
     {
-        "id":  "cs61",
+        "id":  "cs44",
         "name":  "抵抗魔装+",
         "skill":  "重装",
         "effect":  "",
@@ -3413,7 +3877,7 @@
                       ]
     },
     {
-        "id":  "cs62",
+        "id":  "cs45",
         "name":  "必殺守備",
         "skill":  "重装",
         "effect":  "必殺の一撃を受けた時、 30％で発動 受けるダメージを半減する",
@@ -3476,7 +3940,7 @@
                       ]
     },
     {
-        "id":  "cs63",
+        "id":  "cs46",
         "name":  "防弓術",
         "skill":  "重装",
         "effect":  "【重装】戦闘時、 敵が弓なら、防御力+5",
@@ -3534,7 +3998,7 @@
                       ]
     },
     {
-        "id":  "cs64",
+        "id":  "cs47",
         "name":  "防槍術",
         "skill":  "重装",
         "effect":  "【重装】戦闘時、 敵が槍なら、防御力+5",
@@ -3582,7 +4046,7 @@
                       ]
     },
     {
-        "id":  "cs65",
+        "id":  "cs48",
         "name":  "魔盾の構え",
         "skill":  "重装",
         "effect":  "【歩兵】自分の魔防+3 回避-10 (次の自分のフェイズまで)",
@@ -3635,7 +4099,7 @@
                       ]
     },
     {
-        "id":  "cs66",
+        "id":  "cs49",
         "name":  "魔力の大防御",
         "skill":  "重装",
         "effect":  "攻撃された時、 (魔防÷2)％で発動 受けるダメージを半減する",
@@ -3646,27 +4110,82 @@
                               "url":  "https://gamewith.jp/fefw/577309"
                           },
                           {
+                              "name":  "サラン",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577339"
+                          },
+                          {
+                              "name":  "ソフィア",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577294"
+                          },
+                          {
+                              "name":  "ティアラ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577321"
+                          },
+                          {
+                              "name":  "ファビオ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577318"
+                          },
+                          {
                               "name":  "フィアナ",
                               "condition":  "重装B",
                               "url":  "https://gamewith.jp/fefw/577288"
+                          },
+                          {
+                              "name":  "ボナパルテ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577315"
+                          },
+                          {
+                              "name":  "オルヘル",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577374"
+                          },
+                          {
+                              "name":  "コウカ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577535"
                           }
                       ]
     },
     {
-        "id":  "cs67",
+        "id":  "cs50",
         "name":  "力の大防御",
         "skill":  "重装",
         "effect":  "攻撃された時、(力÷2)％で発動 受けるダメージを半減する",
         "learnable":  [
                           {
+                              "name":  "イニオニ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577379"
+                          },
+                          {
+                              "name":  "ダイトウ",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577336"
+                          },
+                          {
+                              "name":  "マジーデ",
+                              "condition":  "重装S",
+                              "url":  "https://game8.jp/fe-banshisenko/816459"
+                          },
+                          {
                               "name":  "ネイサン",
                               "condition":  "重装B",
                               "url":  "https://gamewith.jp/fefw/577895"
+                          },
+                          {
+                              "name":  "ベルトラン",
+                              "condition":  "重装S",
+                              "url":  "https://gamewith.jp/fefw/577593"
                           }
                       ]
     },
     {
-        "id":  "cs68",
+        "id":  "cs51",
         "name":  "高速飛行術",
         "skill":  "飛行",
         "effect":  "【飛行】先攻での戦闘時、 攻速+2",
@@ -3989,7 +4508,330 @@
                       ]
     },
     {
-        "id":  "cs69",
+        "id":  "cs52",
+        "name":  "高速飛行術+",
+        "skill":  "飛行",
+        "effect":  "",
+        "learnable":  [
+                          {
+                              "name":  "カイ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577325"
+                          },
+                          {
+                              "name":  "ディートリヒ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577324"
+                          },
+                          {
+                              "name":  "セオドラ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577323"
+                          },
+                          {
+                              "name":  "レダ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577322"
+                          },
+                          {
+                              "name":  "アレキサンドラ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577376"
+                          },
+                          {
+                              "name":  "イオ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577299"
+                          },
+                          {
+                              "name":  "イニオニ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577379"
+                          },
+                          {
+                              "name":  "ウーシュラ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577307"
+                          },
+                          {
+                              "name":  "ウルタンド",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577319"
+                          },
+                          {
+                              "name":  "エスメラルダ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577317"
+                          },
+                          {
+                              "name":  "オリンピア",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577309"
+                          },
+                          {
+                              "name":  "カターニャ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577298"
+                          },
+                          {
+                              "name":  "キロイカ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577287"
+                          },
+                          {
+                              "name":  "グザラン",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577301"
+                          },
+                          {
+                              "name":  "ゲイツ",
+                              "condition":  "飛行S",
+                              "url":  "https://game8.jp/fe-banshisenko/816432"
+                          },
+                          {
+                              "name":  "ゴライアス",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577291"
+                          },
+                          {
+                              "name":  "ザーコネ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577292"
+                          },
+                          {
+                              "name":  "サラン",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577339"
+                          },
+                          {
+                              "name":  "ジェスター",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577290"
+                          },
+                          {
+                              "name":  "シモン",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577304"
+                          },
+                          {
+                              "name":  "ジャスミン",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577383"
+                          },
+                          {
+                              "name":  "シロッコ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577311"
+                          },
+                          {
+                              "name":  "セテス",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577340"
+                          },
+                          {
+                              "name":  "ソフィア",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577294"
+                          },
+                          {
+                              "name":  "ダイトウ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577336"
+                          },
+                          {
+                              "name":  "ダンテ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577305"
+                          },
+                          {
+                              "name":  "ティアラ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577321"
+                          },
+                          {
+                              "name":  "ディエゴ",
+                              "condition":  "飛行S",
+                              "url":  "https://game8.jp/fe-banshisenko/816436"
+                          },
+                          {
+                              "name":  "トビヤス",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577313"
+                          },
+                          {
+                              "name":  "ナジャ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577302"
+                          },
+                          {
+                              "name":  "ニネ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577303"
+                          },
+                          {
+                              "name":  "ヌッツォ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577380"
+                          },
+                          {
+                              "name":  "ヌディーヌ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577300"
+                          },
+                          {
+                              "name":  "ノクチュラ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577296"
+                          },
+                          {
+                              "name":  "バッカニア",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577310"
+                          },
+                          {
+                              "name":  "ハルヴィン",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577341"
+                          },
+                          {
+                              "name":  "ピーテル",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577320"
+                          },
+                          {
+                              "name":  "ファビオ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577318"
+                          },
+                          {
+                              "name":  "フィアナ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577288"
+                          },
+                          {
+                              "name":  "ペペ",
+                              "condition":  "飛行S",
+                              "url":  "https://game8.jp/fe-banshisenko/816449"
+                          },
+                          {
+                              "name":  "ベンディッツ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577297"
+                          },
+                          {
+                              "name":  "ボナパルテ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577315"
+                          },
+                          {
+                              "name":  "マジーデ",
+                              "condition":  "飛行S",
+                              "url":  "https://game8.jp/fe-banshisenko/816459"
+                          },
+                          {
+                              "name":  "ミカエラ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577316"
+                          },
+                          {
+                              "name":  "ムウ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577308"
+                          },
+                          {
+                              "name":  "ヨーカイ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577295"
+                          },
+                          {
+                              "name":  "ライサンダー",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577312"
+                          },
+                          {
+                              "name":  "リリアン",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577314"
+                          },
+                          {
+                              "name":  "ルルディヤー",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577289"
+                          },
+                          {
+                              "name":  "ロレッタ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577378"
+                          },
+                          {
+                              "name":  "キリーク",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577615"
+                          },
+                          {
+                              "name":  "ネイサン",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577895"
+                          },
+                          {
+                              "name":  "ベルトラン",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577593"
+                          },
+                          {
+                              "name":  "イシュマール",
+                              "condition":  "飛行S",
+                              "url":  null
+                          },
+                          {
+                              "name":  "オルヘル",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577374"
+                          },
+                          {
+                              "name":  "トロイア",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577532"
+                          },
+                          {
+                              "name":  "タリムーン",
+                              "condition":  "飛行S",
+                              "url":  "https://game8.jp/fe-banshisenko/816883"
+                          },
+                          {
+                              "name":  "アナトリア",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577372"
+                          },
+                          {
+                              "name":  "コウカ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577535"
+                          },
+                          {
+                              "name":  "セントリオン",
+                              "condition":  "飛行S",
+                              "url":  "https://game8.jp/fe-banshisenko/816877"
+                          },
+                          {
+                              "name":  "アスワン",
+                              "condition":  "飛行S",
+                              "url":  "https://game8.jp/fe-banshisenko/816902"
+                          },
+                          {
+                              "name":  "タホウニア",
+                              "condition":  "飛行S",
+                              "url":  "https://game8.jp/fe-banshisenko/816903"
+                          },
+                          {
+                              "name":  "クラプカ",
+                              "condition":  "飛行S",
+                              "url":  "https://gamewith.jp/fefw/577935"
+                          }
+                      ]
+    },
+    {
+        "id":  "cs53",
         "name":  "飛行戦闘術",
         "skill":  "飛行",
         "effect":  "【飛行】先攻での戦闘時、 命中+5",
@@ -4312,330 +5154,330 @@
                       ]
     },
     {
-        "id":  "cs70",
-        "name":  "飛行戦闘術+[S+]高速飛行術+",
+        "id":  "cs54",
+        "name":  "飛行戦闘術+",
         "skill":  "飛行",
         "effect":  "",
         "learnable":  [
                           {
                               "name":  "カイ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577325"
                           },
                           {
                               "name":  "ディートリヒ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577324"
                           },
                           {
                               "name":  "セオドラ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577323"
                           },
                           {
                               "name":  "レダ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577322"
                           },
                           {
                               "name":  "アレキサンドラ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577376"
                           },
                           {
                               "name":  "イオ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577299"
                           },
                           {
                               "name":  "イニオニ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577379"
                           },
                           {
                               "name":  "ウーシュラ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577307"
                           },
                           {
                               "name":  "ウルタンド",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577319"
                           },
                           {
                               "name":  "エスメラルダ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577317"
                           },
                           {
                               "name":  "オリンピア",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577309"
                           },
                           {
                               "name":  "カターニャ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577298"
                           },
                           {
                               "name":  "キロイカ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577287"
                           },
                           {
                               "name":  "グザラン",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577301"
                           },
                           {
                               "name":  "ゲイツ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://game8.jp/fe-banshisenko/816432"
                           },
                           {
                               "name":  "ゴライアス",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577291"
                           },
                           {
                               "name":  "ザーコネ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577292"
                           },
                           {
                               "name":  "サラン",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577339"
                           },
                           {
                               "name":  "ジェスター",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577290"
                           },
                           {
                               "name":  "シモン",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577304"
                           },
                           {
                               "name":  "ジャスミン",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577383"
                           },
                           {
                               "name":  "シロッコ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577311"
                           },
                           {
                               "name":  "セテス",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577340"
                           },
                           {
                               "name":  "ソフィア",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577294"
                           },
                           {
                               "name":  "ダイトウ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577336"
                           },
                           {
                               "name":  "ダンテ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577305"
                           },
                           {
                               "name":  "ティアラ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577321"
                           },
                           {
                               "name":  "ディエゴ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://game8.jp/fe-banshisenko/816436"
                           },
                           {
                               "name":  "トビヤス",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577313"
                           },
                           {
                               "name":  "ナジャ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577302"
                           },
                           {
                               "name":  "ニネ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577303"
                           },
                           {
                               "name":  "ヌッツォ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577380"
                           },
                           {
                               "name":  "ヌディーヌ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577300"
                           },
                           {
                               "name":  "ノクチュラ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577296"
                           },
                           {
                               "name":  "バッカニア",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577310"
                           },
                           {
                               "name":  "ハルヴィン",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577341"
                           },
                           {
                               "name":  "ピーテル",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577320"
                           },
                           {
                               "name":  "ファビオ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577318"
                           },
                           {
                               "name":  "フィアナ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577288"
                           },
                           {
                               "name":  "ペペ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://game8.jp/fe-banshisenko/816449"
                           },
                           {
                               "name":  "ベンディッツ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577297"
                           },
                           {
                               "name":  "ボナパルテ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577315"
                           },
                           {
                               "name":  "マジーデ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://game8.jp/fe-banshisenko/816459"
                           },
                           {
                               "name":  "ミカエラ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577316"
                           },
                           {
                               "name":  "ムウ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577308"
                           },
                           {
                               "name":  "ヨーカイ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577295"
                           },
                           {
                               "name":  "ライサンダー",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577312"
                           },
                           {
                               "name":  "リリアン",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577314"
                           },
                           {
                               "name":  "ルルディヤー",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577289"
                           },
                           {
                               "name":  "ロレッタ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577378"
                           },
                           {
                               "name":  "キリーク",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577615"
                           },
                           {
                               "name":  "ネイサン",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577895"
                           },
                           {
                               "name":  "ベルトラン",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577593"
                           },
                           {
                               "name":  "イシュマール",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  null
                           },
                           {
                               "name":  "オルヘル",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577374"
                           },
                           {
                               "name":  "トロイア",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577532"
                           },
                           {
                               "name":  "タリムーン",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://game8.jp/fe-banshisenko/816883"
                           },
                           {
                               "name":  "アナトリア",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577372"
                           },
                           {
                               "name":  "コウカ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577535"
                           },
                           {
                               "name":  "セントリオン",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://game8.jp/fe-banshisenko/816877"
                           },
                           {
                               "name":  "アスワン",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://game8.jp/fe-banshisenko/816902"
                           },
                           {
                               "name":  "タホウニア",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://game8.jp/fe-banshisenko/816903"
                           },
                           {
                               "name":  "クラプカ",
-                              "condition":  "飛行S",
+                              "condition":  "飛行S+",
                               "url":  "https://gamewith.jp/fefw/577935"
                           }
                       ]
     },
     {
-        "id":  "cs71",
+        "id":  "cs55",
         "name":  "風読み",
         "skill":  "飛行",
         "effect":  "戦闘時、敵が弓なら、 回避+10",
@@ -4958,7 +5800,7 @@
                       ]
     },
     {
-        "id":  "cs72",
+        "id":  "cs56",
         "name":  "騎士の感覚",
         "skill":  "馬",
         "effect":  "戦闘時、敵が槍なら、 回避+10",
@@ -5281,7 +6123,7 @@
                       ]
     },
     {
-        "id":  "cs73",
+        "id":  "cs57",
         "name":  "騎士の先陣",
         "skill":  "馬",
         "effect":  "【騎兵】先攻での戦闘時、 防御力+2",
@@ -5604,7 +6446,330 @@
                       ]
     },
     {
-        "id":  "cs74",
+        "id":  "cs58",
+        "name":  "騎士の先陣+",
+        "skill":  "馬",
+        "effect":  "",
+        "learnable":  [
+                          {
+                              "name":  "カイ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577325"
+                          },
+                          {
+                              "name":  "ディートリヒ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577324"
+                          },
+                          {
+                              "name":  "セオドラ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577323"
+                          },
+                          {
+                              "name":  "レダ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577322"
+                          },
+                          {
+                              "name":  "アレキサンドラ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577376"
+                          },
+                          {
+                              "name":  "イオ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577299"
+                          },
+                          {
+                              "name":  "イニオニ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577379"
+                          },
+                          {
+                              "name":  "ウーシュラ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577307"
+                          },
+                          {
+                              "name":  "ウルタンド",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577319"
+                          },
+                          {
+                              "name":  "エスメラルダ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577317"
+                          },
+                          {
+                              "name":  "オリンピア",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577309"
+                          },
+                          {
+                              "name":  "カターニャ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577298"
+                          },
+                          {
+                              "name":  "キロイカ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577287"
+                          },
+                          {
+                              "name":  "グザラン",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577301"
+                          },
+                          {
+                              "name":  "ゲイツ",
+                              "condition":  "馬S",
+                              "url":  "https://game8.jp/fe-banshisenko/816432"
+                          },
+                          {
+                              "name":  "ゴライアス",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577291"
+                          },
+                          {
+                              "name":  "ザーコネ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577292"
+                          },
+                          {
+                              "name":  "サラン",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577339"
+                          },
+                          {
+                              "name":  "ジェスター",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577290"
+                          },
+                          {
+                              "name":  "シモン",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577304"
+                          },
+                          {
+                              "name":  "ジャスミン",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577383"
+                          },
+                          {
+                              "name":  "シロッコ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577311"
+                          },
+                          {
+                              "name":  "セテス",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577340"
+                          },
+                          {
+                              "name":  "ソフィア",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577294"
+                          },
+                          {
+                              "name":  "ダイトウ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577336"
+                          },
+                          {
+                              "name":  "ダンテ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577305"
+                          },
+                          {
+                              "name":  "ティアラ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577321"
+                          },
+                          {
+                              "name":  "ディエゴ",
+                              "condition":  "馬S",
+                              "url":  "https://game8.jp/fe-banshisenko/816436"
+                          },
+                          {
+                              "name":  "トビヤス",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577313"
+                          },
+                          {
+                              "name":  "ナジャ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577302"
+                          },
+                          {
+                              "name":  "ニネ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577303"
+                          },
+                          {
+                              "name":  "ヌッツォ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577380"
+                          },
+                          {
+                              "name":  "ヌディーヌ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577300"
+                          },
+                          {
+                              "name":  "ノクチュラ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577296"
+                          },
+                          {
+                              "name":  "バッカニア",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577310"
+                          },
+                          {
+                              "name":  "ハルヴィン",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577341"
+                          },
+                          {
+                              "name":  "ピーテル",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577320"
+                          },
+                          {
+                              "name":  "ファビオ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577318"
+                          },
+                          {
+                              "name":  "フィアナ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577288"
+                          },
+                          {
+                              "name":  "ペペ",
+                              "condition":  "馬S",
+                              "url":  "https://game8.jp/fe-banshisenko/816449"
+                          },
+                          {
+                              "name":  "ベンディッツ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577297"
+                          },
+                          {
+                              "name":  "ボナパルテ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577315"
+                          },
+                          {
+                              "name":  "マジーデ",
+                              "condition":  "馬S",
+                              "url":  "https://game8.jp/fe-banshisenko/816459"
+                          },
+                          {
+                              "name":  "ミカエラ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577316"
+                          },
+                          {
+                              "name":  "ムウ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577308"
+                          },
+                          {
+                              "name":  "ヨーカイ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577295"
+                          },
+                          {
+                              "name":  "ライサンダー",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577312"
+                          },
+                          {
+                              "name":  "リリアン",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577314"
+                          },
+                          {
+                              "name":  "ルルディヤー",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577289"
+                          },
+                          {
+                              "name":  "ロレッタ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577378"
+                          },
+                          {
+                              "name":  "キリーク",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577615"
+                          },
+                          {
+                              "name":  "ネイサン",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577895"
+                          },
+                          {
+                              "name":  "ベルトラン",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577593"
+                          },
+                          {
+                              "name":  "イシュマール",
+                              "condition":  "馬S",
+                              "url":  null
+                          },
+                          {
+                              "name":  "オルヘル",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577374"
+                          },
+                          {
+                              "name":  "トロイア",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577532"
+                          },
+                          {
+                              "name":  "タリムーン",
+                              "condition":  "馬S",
+                              "url":  "https://game8.jp/fe-banshisenko/816883"
+                          },
+                          {
+                              "name":  "アナトリア",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577372"
+                          },
+                          {
+                              "name":  "コウカ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577535"
+                          },
+                          {
+                              "name":  "セントリオン",
+                              "condition":  "馬S",
+                              "url":  "https://game8.jp/fe-banshisenko/816877"
+                          },
+                          {
+                              "name":  "アスワン",
+                              "condition":  "馬S",
+                              "url":  "https://game8.jp/fe-banshisenko/816902"
+                          },
+                          {
+                              "name":  "タホウニア",
+                              "condition":  "馬S",
+                              "url":  "https://game8.jp/fe-banshisenko/816903"
+                          },
+                          {
+                              "name":  "クラプカ",
+                              "condition":  "馬S",
+                              "url":  "https://gamewith.jp/fefw/577935"
+                          }
+                      ]
+    },
+    {
+        "id":  "cs59",
         "name":  "騎兵移動術",
         "skill":  "馬",
         "effect":  "【騎兵】移動時、 地形の移動コスト-1 (1より小さくならない)",
@@ -5927,324 +7092,324 @@
                       ]
     },
     {
-        "id":  "cs75",
-        "name":  "騎兵移動術+[S+]騎士の先陣+",
+        "id":  "cs60",
+        "name":  "騎兵移動術+",
         "skill":  "馬",
         "effect":  "",
         "learnable":  [
                           {
                               "name":  "カイ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577325"
                           },
                           {
                               "name":  "ディートリヒ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577324"
                           },
                           {
                               "name":  "セオドラ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577323"
                           },
                           {
                               "name":  "レダ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577322"
                           },
                           {
                               "name":  "アレキサンドラ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577376"
                           },
                           {
                               "name":  "イオ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577299"
                           },
                           {
                               "name":  "イニオニ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577379"
                           },
                           {
                               "name":  "ウーシュラ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577307"
                           },
                           {
                               "name":  "ウルタンド",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577319"
                           },
                           {
                               "name":  "エスメラルダ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577317"
                           },
                           {
                               "name":  "オリンピア",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577309"
                           },
                           {
                               "name":  "カターニャ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577298"
                           },
                           {
                               "name":  "キロイカ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577287"
                           },
                           {
                               "name":  "グザラン",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577301"
                           },
                           {
                               "name":  "ゲイツ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://game8.jp/fe-banshisenko/816432"
                           },
                           {
                               "name":  "ゴライアス",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577291"
                           },
                           {
                               "name":  "ザーコネ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577292"
                           },
                           {
                               "name":  "サラン",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577339"
                           },
                           {
                               "name":  "ジェスター",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577290"
                           },
                           {
                               "name":  "シモン",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577304"
                           },
                           {
                               "name":  "ジャスミン",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577383"
                           },
                           {
                               "name":  "シロッコ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577311"
                           },
                           {
                               "name":  "セテス",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577340"
                           },
                           {
                               "name":  "ソフィア",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577294"
                           },
                           {
                               "name":  "ダイトウ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577336"
                           },
                           {
                               "name":  "ダンテ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577305"
                           },
                           {
                               "name":  "ティアラ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577321"
                           },
                           {
                               "name":  "ディエゴ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://game8.jp/fe-banshisenko/816436"
                           },
                           {
                               "name":  "トビヤス",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577313"
                           },
                           {
                               "name":  "ナジャ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577302"
                           },
                           {
                               "name":  "ニネ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577303"
                           },
                           {
                               "name":  "ヌッツォ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577380"
                           },
                           {
                               "name":  "ヌディーヌ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577300"
                           },
                           {
                               "name":  "ノクチュラ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577296"
                           },
                           {
                               "name":  "バッカニア",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577310"
                           },
                           {
                               "name":  "ハルヴィン",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577341"
                           },
                           {
                               "name":  "ピーテル",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577320"
                           },
                           {
                               "name":  "ファビオ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577318"
                           },
                           {
                               "name":  "フィアナ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577288"
                           },
                           {
                               "name":  "ペペ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://game8.jp/fe-banshisenko/816449"
                           },
                           {
                               "name":  "ベンディッツ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577297"
                           },
                           {
                               "name":  "ボナパルテ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577315"
                           },
                           {
                               "name":  "マジーデ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://game8.jp/fe-banshisenko/816459"
                           },
                           {
                               "name":  "ミカエラ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577316"
                           },
                           {
                               "name":  "ムウ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577308"
                           },
                           {
                               "name":  "ヨーカイ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577295"
                           },
                           {
                               "name":  "ライサンダー",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577312"
                           },
                           {
                               "name":  "リリアン",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577314"
                           },
                           {
                               "name":  "ルルディヤー",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577289"
                           },
                           {
                               "name":  "ロレッタ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577378"
                           },
                           {
                               "name":  "キリーク",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577615"
                           },
                           {
                               "name":  "ネイサン",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577895"
                           },
                           {
                               "name":  "ベルトラン",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577593"
                           },
                           {
                               "name":  "イシュマール",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  null
                           },
                           {
                               "name":  "オルヘル",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577374"
                           },
                           {
                               "name":  "トロイア",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577532"
                           },
                           {
                               "name":  "タリムーン",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://game8.jp/fe-banshisenko/816883"
                           },
                           {
                               "name":  "アナトリア",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577372"
                           },
                           {
                               "name":  "コウカ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577535"
                           },
                           {
                               "name":  "セントリオン",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://game8.jp/fe-banshisenko/816877"
                           },
                           {
                               "name":  "アスワン",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://game8.jp/fe-banshisenko/816902"
                           },
                           {
                               "name":  "タホウニア",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://game8.jp/fe-banshisenko/816903"
                           },
                           {
                               "name":  "クラプカ",
-                              "condition":  "馬S",
+                              "condition":  "馬S+",
                               "url":  "https://gamewith.jp/fefw/577935"
                           }
                       ]
