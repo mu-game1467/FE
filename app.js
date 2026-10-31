@@ -1633,7 +1633,7 @@ function learnableOf(list, characterName) {
 const RANK_SYSTEMS = [
     '黒魔術', '白魔術',
     '剣術', '槍術', '斧術', '弓術',
-    '格闘術', '指揮術', '重装術', 'マスター',
+    '格闘術', '指揮術', '重装術', '重装', '歩兵', '飛行', '馬', 'マスター',
 ];
 const RANK_GRADES = ['初期', 'E', 'D', 'C', 'B', 'A', 'S'];
 
@@ -1650,7 +1650,7 @@ function rankIndex(condition) {
 }
 
 /** 習得できる技・魔法の一覧。条件ごとにまとめ、詳細ページへリンクする。 */
-function learnablePanel(character, arts, magic) {
+function learnablePanel(character, arts, magic, classSkills) {
     const sections = [];
 
     const artRows = learnableOf(arts, character.name)
@@ -1675,7 +1675,17 @@ function learnablePanel(character, arts, magic) {
         sections.push(`<h3>魔法（${magicRows.length}）</h3><ul class="learnable">${items}</ul>`);
     }
 
-    if (!sections.length) return '';
+    const classSkillRows = learnableOf(classSkills || [], character.name)
+        .sort((a, b) => rankIndex(a.condition) - rankIndex(b.condition) || a.entry.name.localeCompare(b.entry.name, 'ja'));
+    if (classSkillRows.length) {
+        const items = classSkillRows.map((r) => `<li>
+            <a href="${assetUrl('skills/?q=' + encodeURIComponent(r.entry.name))}">${esc(r.entry.name)}</a>
+            <span class="muted">${esc(r.entry.skill || '')}</span>
+            <span class="rank">${esc(r.condition)}</span>
+        </li>`).join('');
+        sections.push(`<h3>クラススキル（${classSkillRows.length}）</h3><ul class="learnable">${items}</ul>`);
+    }
+
     return `
         <section class="panel">
             ${sections.join('')}
@@ -1687,6 +1697,7 @@ function renderCharacterDetail(character, classes, container, extra) {
     const growth = character.growth_rates || {};
     const arts = (extra && extra.arts) || [];
     const magic = (extra && extra.magic) || [];
+    const classSkills = (extra && extra.classSkills) || [];
 
     const badges = [];
     if (character.gender) badges.push(`<span class="tag">${esc(character.gender)}</span>`);
@@ -1752,7 +1763,7 @@ function renderCharacterDetail(character, classes, container, extra) {
                 ${character.weak_skills ? `<p class="skillline"><span class="skill-tag weak">苦手</span>${tagList(character.weak_skills)}</p>` : ''}
             </section>` : ''}
 
-            ${learnablePanel(character, arts, magic)}
+            ${learnablePanel(character, arts, magic, classSkills)}
 
             ${recruitRows ? `
             <section class="panel">
@@ -1837,12 +1848,13 @@ async function loadDetailPage(id) {
     if (!container) return;
 
     try {
-        const [characters, classes, arts, magic] = await Promise.all([
+        const [characters, classes, arts, magic, classSkills] = await Promise.all([
             fetchJson({ file: 'data/characters.json' }),
             fetchJson({ file: 'data/classes.json' }),
             // the learnable lists are optional: an older cache without them still renders
             fetchJson({ file: 'data/arts.json' }).catch(() => []),
-            fetchJson({ file: 'data/magic.json' }).catch(() => [])
+            fetchJson({ file: 'data/magic.json' }).catch(() => []),
+            fetchJson({ file: 'data/class_skills.json' }).catch(() => [])
         ]);
         state.scale = rateScale(characters);
         const character = characters.find((c) => c.id === id || c.name === id);
@@ -1853,7 +1865,8 @@ async function loadDetailPage(id) {
         document.title = `${character.name} - FE万紫千紅 データベース`;
         renderCharacterDetail(character, classes, container, {
             arts: arts || [],
-            magic: magic || []
+            magic: magic || [],
+            classSkills: classSkills || []
         });
     } catch (error) {
         console.error('Failed to load the character detail page', error);
